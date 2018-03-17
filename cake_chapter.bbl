@@ -1,0 +1,67 @@
+\begin{thebibliography}{7}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+
+\bibitem[{Bahdanau et~al.(2014)Bahdanau, Cho, and Bengio}]{bahdanau2014neural}
+Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio (2014), \enquote{Neural
+  machine translation by jointly learning to align and translate.} \emph{arXiv
+  preprint arXiv:1409.0473}.
+\bibAnnoteFile{bahdanau2014neural}
+
+\bibitem[{Cho et~al.(2014{\natexlab{a}})Cho, Van~Merri{\"e}nboer, Bahdanau, and
+  Bengio}]{cho2014properties}
+Cho, Kyunghyun, Bart Van~Merri{\"e}nboer, Dzmitry Bahdanau, and Yoshua Bengio
+  (2014{\natexlab{a}}), \enquote{On the properties of neural machine
+  translation: Encoder-decoder approaches.} \emph{arXiv preprint
+  arXiv:1409.1259}.
+\bibAnnoteFile{cho2014properties}
+
+\bibitem[{Cho et~al.(2014{\natexlab{b}})Cho, Van~Merri{\"e}nboer, Gulcehre,
+  Bahdanau, Bougares, Schwenk, and Bengio}]{cho2014learning}
+Cho, Kyunghyun, Bart Van~Merri{\"e}nboer, Caglar Gulcehre, Dzmitry Bahdanau,
+  Fethi Bougares, Holger Schwenk, and Yoshua Bengio (2014{\natexlab{b}}),
+  \enquote{Learning phrase representations using rnn encoder-decoder for
+  statistical machine translation.} \emph{arXiv preprint arXiv:1406.1078}.
+\bibAnnoteFile{cho2014learning}
+
+\bibitem[{Klein et~al.(2017)Klein, Kim, Deng, Senellart, and
+  Rush}]{2017opennmt}
+Klein, Guillaume, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander~M. Rush
+  (2017), \enquote{Opennmt: Open-source toolkit for neural machine
+  translation.} \emph{CoRR}, abs/1701.02810,
+  \urlprefix\url{http://arxiv.org/abs/1701.02810}.
+\bibAnnoteFile{2017opennmt}
+
+\bibitem[{Koehn et~al.(2007)Koehn, Hoang, Birch, Callison-Burch, Federico,
+  Bertoldi, Cowan, Shen, Moran, Zens et~al.}]{moses}
+Koehn, Philipp, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello
+  Federico, Nicola Bertoldi, Brooke Cowan, Wade Shen, Christine Moran, Richard
+  Zens, et~al. (2007), \enquote{Moses: Open source toolkit for statistical
+  machine translation.} In \emph{Proceedings of the 45th annual meeting of the
+  ACL on interactive poster and demonstration sessions}, 177--180, Association
+  for Computational Linguistics.
+\bibAnnoteFile{moses}
+
+\bibitem[{Kotsiantis et~al.(2007)Kotsiantis, Zaharakis, and
+  Pintelas}]{kotsiantis2007supervised}
+Kotsiantis, Sotiris~B, I~Zaharakis, and P~Pintelas (2007), \enquote{Supervised
+  machine learning: A review of classification techniques.} \emph{Emerging
+  artificial intelligence applications in computer engineering}, 160, 3--24.
+\bibAnnoteFile{kotsiantis2007supervised}
+
+\bibitem[{Papineni et~al.(2002)Papineni, Roukos, Ward, and Zhu}]{bleu}
+Papineni, Kishore, Salim Roukos, Todd Ward, and Wei-Jing Zhu (2002),
+  \enquote{Bleu: a method for automatic evaluation of machine translation.} In
+  \emph{Proceedings of the 40th annual meeting on association for computational
+  linguistics}, 311--318, Association for Computational Linguistics.
+\bibAnnoteFile{bleu}
+
+\end{thebibliography}
