@@ -28,34 +28,39 @@
 \newlabel{weak_hy}{{1b}{2}{Introduction}{Item.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Technical Settings of the Machine Translation Experiments}{2}{section.2}}
 \newlabel{sec:experimet_setting}{{2}{2}{Technical Settings of the Machine Translation Experiments}{section.2}{}}
+\citation{Ter}
+\citation{damerau1964technique,levenshtein1966binary}
 \citation{bleu}
 \citation{moses}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{3}{section.3}}
 \newlabel{gd_to_gl_to_en}{{3}{3}{Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Procedure of the Experiments}{3}{subsection.3.1}}
-\newlabel{GLOSStoENTrain}{{2a-i}{3}{Procedure of the Experiments}{Item.6}{}}
-\newlabel{GDtoENTrain}{{2a-ii}{3}{Procedure of the Experiments}{Item.7}{}}
-\newlabel{GLOSStoENVal}{{2a-iii}{3}{Procedure of the Experiments}{Item.8}{}}
-\newlabel{GDtoENVal}{{2a-iv}{3}{Procedure of the Experiments}{Item.9}{}}
-\newlabel{GLOSStoENTest}{{2a-v}{3}{Procedure of the Experiments}{Item.10}{}}
-\newlabel{GDtoENTest}{{2a-vi}{3}{Procedure of the Experiments}{Item.11}{}}
+\newlabel{GLOSStoENTrain}{{2b-i}{3}{Procedure of the Experiments}{Item.7}{}}
+\newlabel{GLOSStoENVal}{{2b-ii}{3}{Procedure of the Experiments}{Item.8}{}}
+\newlabel{GLOSStoENTest}{{2b-iii}{4}{Procedure of the Experiments}{Item.9}{}}
+\newlabel{GDtoENTrain}{{2c-i}{4}{Procedure of the Experiments}{Item.11}{}}
+\newlabel{GDtoENVal}{{2c-ii}{4}{Procedure of the Experiments}{Item.12}{}}
+\newlabel{GDtoENTest}{{2c-iii}{4}{Procedure of the Experiments}{Item.13}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Result}{4}{subsection.3.2}}
 \newlabel{gdglen_results}{{3.2}{4}{Result}{subsection.3.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces BLEU scores of Model\textsubscript  {GLOSStoEN} and Model\textsubscript  {GDtoEN}}}{4}{table.1}}
 \newlabel{Table:BLEUGlossGD}{{1}{4}{BLEU scores of Model\textsubscript {GLOSStoEN} and Model\textsubscript {GDtoEN}}{table.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Discussion}{4}{subsection.3.3}}
 \bibstyle{te}
 \bibdata{ref}
 \bibcite{bahdanau2014neural}{{1}{2014}{{Bahdanau et~al.}}{{Bahdanau, Cho, and Bengio}}}
-\bibcite{cho2014properties}{{2}{2014{a}}{{Cho et~al.}}{{Cho, Van~Merri{\"e}nboer, Bahdanau, and Bengio}}}
-\bibcite{cho2014learning}{{3}{2014{b}}{{Cho et~al.}}{{Cho, Van~Merri{\"e}nboer, Gulcehre, Bahdanau, Bougares, Schwenk, and Bengio}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Discussion}{5}{subsection.3.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Section: Combining Gaelic words with Glosses }{5}{section.4}}
 \newlabel{gd_plus_gl_to_en}{{4}{5}{Section: Combining Gaelic words with Glosses}{section.4}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces More BLEU scores of the Models, where `ConcatGLOSSGaelic' is `GLOSS\textunderscore Gaelic', `GLOSS.Gaelic' is `GLOSS Gaelic', `hyGD' is using the less ambigious one from either Gaelic word or gloss with Gaelic word as the default, `hyGW' is the same as `hyGD' but with the default as gloss.}}{5}{table.2}}
 \newlabel{Table:BLEUGlossGDALL}{{2}{5}{More BLEU scores of the Models, where `ConcatGLOSSGaelic' is `GLOSS\textunderscore Gaelic', `GLOSS.Gaelic' is `GLOSS Gaelic', `hyGD' is using the less ambigious one from either Gaelic word or gloss with Gaelic word as the default, `hyGW' is the same as `hyGD' but with the default as gloss}{table.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces `Para' is `GLOSS -> Gaelic; Gloss -> En; Gaelic -> En', `ParaPart' is `Para plus Gaelic word token -> Gloss token', `Over' means oversampling, `Half' means using half of the training data.}}{5}{table.3}}
 \newlabel{Table:BLEUGlossGDALL}{{3}{5}{`Para' is `GLOSS -> Gaelic; Gloss -> En; Gaelic -> En', `ParaPart' is `Para plus Gaelic word token -> Gloss token', `Over' means oversampling, `Half' means using half of the training data}{table.3}{}}
-\bibcite{2017opennmt}{{4}{2017}{{Klein et~al.}}{{Klein, Kim, Deng, Senellart, and Rush}}}
-\bibcite{moses}{{5}{2007}{{Koehn et~al.}}{{Koehn, Hoang, Birch, Callison-Burch, Federico, Bertoldi, Cowan, Shen, Moran, Zens et~al.}}}
-\bibcite{kotsiantis2007supervised}{{6}{2007}{{Kotsiantis et~al.}}{{Kotsiantis, Zaharakis, and Pintelas}}}
-\bibcite{bleu}{{7}{2002}{{Papineni et~al.}}{{Papineni, Roukos, Ward, and Zhu}}}
+\bibcite{cho2014properties}{{2}{2014{a}}{{Cho et~al.}}{{Cho, Van~Merri{\"e}nboer, Bahdanau, and Bengio}}}
+\bibcite{cho2014learning}{{3}{2014{b}}{{Cho et~al.}}{{Cho, Van~Merri{\"e}nboer, Gulcehre, Bahdanau, Bougares, Schwenk, and Bengio}}}
+\bibcite{damerau1964technique}{{4}{1964}{{Damerau}}{{}}}
+\bibcite{2017opennmt}{{5}{2017}{{Klein et~al.}}{{Klein, Kim, Deng, Senellart, and Rush}}}
+\bibcite{moses}{{6}{2007}{{Koehn et~al.}}{{Koehn, Hoang, Birch, Callison-Burch, Federico, Bertoldi, Cowan, Shen, Moran, Zens et~al.}}}
+\bibcite{kotsiantis2007supervised}{{7}{2007}{{Kotsiantis et~al.}}{{Kotsiantis, Zaharakis, and Pintelas}}}
+\bibcite{levenshtein1966binary}{{8}{1966}{{Levenshtein}}{{}}}
+\bibcite{bleu}{{9}{2002}{{Papineni et~al.}}{{Papineni, Roukos, Ward, and Zhu}}}
+\bibcite{Ter}{{10}{}{{Snover et~al.}}{{Snover, Dorr, Schwartz, Micciulla, and Makhoul}}}

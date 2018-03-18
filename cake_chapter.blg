@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: cake_chapter.aux
+The style file: te.bst
+Database file #1: ref.bib
+Warning--can't use both volume and number fields in levenshtein1966binary
+Warning--empty year in Ter; set to ????
+Warning--empty booktitle in Ter
+You've used 10 entries,
+            2904 wiz_defined-function locations,
+            656 strings with 7074 characters,
+and the built_in function-call counts, 7052 in all, are:
+= -- 525
+> -- 431
+< -- 3
++ -- 147
+- -- 132
+* -- 585
+:= -- 1061
+add.period$ -- 29
+call.type$ -- 10
+change.case$ -- 99
+chr.to.int$ -- 9
+cite$ -- 23
+duplicate$ -- 519
+empty$ -- 470
+format.name$ -- 158
+if$ -- 1398
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 108
+newline$ -- 53
+num.names$ -- 40
+pop$ -- 223
+preamble$ -- 1
+purify$ -- 83
+quote$ -- 0
+skip$ -- 174
+stack$ -- 0
+substring$ -- 251
+swap$ -- 249
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 90
+warning$ -- 3
+while$ -- 43
+width$ -- 0
+write$ -- 131
+(There were 3 warnings)

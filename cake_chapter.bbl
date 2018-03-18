@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{10}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -32,6 +32,12 @@ Cho, Kyunghyun, Bart Van~Merri{\"e}nboer, Caglar Gulcehre, Dzmitry Bahdanau,
   statistical machine translation.} \emph{arXiv preprint arXiv:1406.1078}.
 \bibAnnoteFile{cho2014learning}
 
+\bibitem[{Damerau(1964)}]{damerau1964technique}
+Damerau, Fred~J (1964), \enquote{A technique for computer detection and
+  correction of spelling errors.} \emph{Communications of the ACM}, 7,
+  171--176.
+\bibAnnoteFile{damerau1964technique}
+
 \bibitem[{Klein et~al.(2017)Klein, Kim, Deng, Senellart, and
   Rush}]{2017opennmt}
 Klein, Guillaume, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander~M. Rush
@@ -57,11 +63,23 @@ Kotsiantis, Sotiris~B, I~Zaharakis, and P~Pintelas (2007), \enquote{Supervised
   artificial intelligence applications in computer engineering}, 160, 3--24.
 \bibAnnoteFile{kotsiantis2007supervised}
 
+\bibitem[{Levenshtein(1966)}]{levenshtein1966binary}
+Levenshtein, Vladimir~I (1966), \enquote{Binary codes capable of correcting
+  deletions, insertions, and reversals.} In \emph{Soviet physics doklady},
+  volume~10, 707--710.
+\bibAnnoteFile{levenshtein1966binary}
+
 \bibitem[{Papineni et~al.(2002)Papineni, Roukos, Ward, and Zhu}]{bleu}
 Papineni, Kishore, Salim Roukos, Todd Ward, and Wei-Jing Zhu (2002),
   \enquote{Bleu: a method for automatic evaluation of machine translation.} In
   \emph{Proceedings of the 40th annual meeting on association for computational
   linguistics}, 311--318, Association for Computational Linguistics.
 \bibAnnoteFile{bleu}
+
+\bibitem[{Snover et~al.()Snover, Dorr, Schwartz, Micciulla, and Makhoul}]{Ter}
+Snover, Matthew, Bonnie Dorr, Richard Schwartz, Linnea Micciulla, and John
+  Makhoul (????), \enquote{A study of translation edit rate with targeted human
+  annotation.}
+\bibAnnoteFile{Ter}
 
 \end{thebibliography}

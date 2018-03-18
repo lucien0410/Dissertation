@@ -94,28 +94,31 @@ Given the assumption that gloss may be better than any natural language in terms
 
 \subsection{Procedure of the Experiments}
 I use repeated random sub-sampling validation to compare the performances of the two type of models. 
-Specifically, the samples (i.e. pairs of a gloss line and an English sentence, or pairs of a Gaelic sentence and an English sentence) are randomly split into three datasets: training set (N=6,388), validation set (N=1,000), and test set (N=1,000). The model is trained with the training and validation set (i.e. the model learns how to map the source sequence to the target sequence); the trained model then maps the source sequences of the test set to the predicted target sequences. To evaluate the model, the predicted target sequences are checked against the target sequences of the test set. Specifically, the BLEU score metric \citep{bleu} of each prediction is calculated using \begin{myfont} multi-bleu.perl \end{myfont} 
-script, a public implementation of Moses \citep{moses}\footnote{\url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}}.  
+Specifically, the samples (i.e. pairs of a gloss line and an English sentence, or pairs of a Gaelic sentence and an English sentence) are randomly split into three datasets: training set (N=6,388), validation set (N=1,000), and test set (N=1,000). The model is trained with the training and validation set (i.e. the model learns how to map the source sequence to the target sequence); the trained model then maps the source sequences of the test set to the predicted target sequences. To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard). Specifically, the BLEU (bilingual evaluation understudy)\footnote{There are other automatic machine translation evaluation algorithms available, such as translation edit rate \citep{Ter} and Damerau–Levenshtein distance \citep{damerau1964technique, levenshtein1966binary}. BLEU is chosen for the current experiments because it is the most widely used evaluation algorithm, and the correlation between the BLUE score evaluation and human judgment evaluation is also well-acknowledged.} score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}} 
+script, a public implementation of Moses \citep{moses}. The BLEU score calculation is an automatic evaluation of how similar two copora are. In the current experiments we are comparing the predicted target sequences and the gold standard. The BLEU score of 100 means the two copora are identical, and the BLEU score of 0 means the two copora are completely distinct from each other.
 This procedure is executed for ten times. 
 
 The procedure is depicted schematically as follows:
 \begin{exe}
 \ex Definitions of datasets:
-\begin{xlist}
-\ex Let: \\
-    Train, Validation, and Test be sets of random indexes from 0 to 8,387, and \\
-    Train $\cap$ Validation $\cap$ Test = $\emptyset$ 
-
-      \begin{xlist}
-      \ex \label{GLOSStoENTrain} GLOSStoEN\textsubscript{Train}   = $\{<gloss_i,En_i>  \mid i \in Train \}$ \\
-      \ex \label{GDtoENTrain} GDtoEN\textsubscript{Train}   = $\{<GD_i,En_i>  \mid i \in Train \}$ \\
-      \ex \label{GLOSStoENVal} GLOSStoEN\textsubscript{Validation}   = $\{<gloss_i,En_i>  \mid i \in Validation \}$ \\
-      \ex \label{GDtoENVal} GDtoEN\textsubscript{Validation}   = $\{<GD_i,En_i>  \mid i \in Validation \}$ \\
-      \ex \label{GLOSStoENTest}GLOSStoEN\textsubscript{Test} = $\{<gloss_i,En_i>  \mid i \in Test \}$ \\
-      \ex \label{GDtoENTest} GDtoEN\textsubscript{Test}    = $\{<GD_i,En_i>  \mid i \in Test \}$ \\
-      \ex $\text{score}(MT\textsubscript{GLOSStoEN}, GLOSS\textsubscript{Test}) \geq  \text{score}(MT\textsubscript{GDtoEN}, GD\textsubscript{Test})$
-      \end{xlist}
-\end{xlist}
+	\begin{xlist}
+	\ex Let: \\
+    		Train, Validation, and Test be sets of random indexes from 0 to 8,387, and \\
+    		Train $\cap$ Validation $\cap$ Test = $\emptyset$ 
+	\ex Gloss to English
+		\begin{xlist}
+		\ex \label{GLOSStoENTrain} GLOSStoEN\textsubscript{Train}   = $\{<gloss_i,En_i>  \mid i \in Train \}$ \\
+		\ex \label{GLOSStoENVal} GLOSStoEN\textsubscript{Validation}   = $\{<gloss_i,En_i>  \mid i \in Validation \}$ \\
+		\ex \label{GLOSStoENTest}GLOSStoEN\textsubscript{Test} = $\{<gloss_i,En_i>  \mid i \in Test \}$ \\
+		\end{xlist}
+	
+	\ex Gaelic to English
+		\begin{xlist}
+		\ex \label{GDtoENTrain} GDtoEN\textsubscript{Train}   = $\{<GD_i,En_i>  \mid i \in Train \}$ \\
+		\ex \label{GDtoENVal} GDtoEN\textsubscript{Validation}   = $\{<GD_i,En_i>  \mid i \in Validation \}$ \\
+		\ex \label{GDtoENTest} GDtoEN\textsubscript{Test}    = $\{<GD_i,En_i>  \mid i \in Test \}$ \\
+		\end{xlist}
+	\end{xlist}
 \end{exe}
 
 
@@ -140,8 +143,8 @@ The procedure is depicted schematically as follows:
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table. 
 
 
-% latex table generated in R 3.4.3 by xtable 1.8-2 package
-% Sat Mar 17 14:43:44 2018
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Sat Mar 17 22:19:52 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrr}
@@ -174,8 +177,8 @@ Now that the weak version of the Gloss-helps-hypothesis fails; we may now try to
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Section: Combining Gaelic words with Glosses }\label{gd_plus_gl_to_en}
 
-% latex table generated in R 3.4.3 by xtable 1.8-2 package
-% Sat Mar 17 14:43:44 2018
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Sat Mar 17 22:19:52 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrr}
@@ -198,8 +201,8 @@ Mean & 17.70 & 16.59 & 15.44 & 12.26 & 9.24 & 10.24 \\
 \end{tabular}
 \caption{More BLEU scores of the Models, where `ConcatGLOSSGaelic' is `GLOSS\textunderscore Gaelic', `GLOSS.Gaelic' is `GLOSS Gaelic', `hyGD' is using the less ambigious one from either Gaelic word or gloss with Gaelic word as the default, `hyGW' is the same as `hyGD' but with the default as gloss.} 
 \label{Table:BLEUGlossGDALL}
-\end{table}% latex table generated in R 3.4.3 by xtable 1.8-2 package
-% Sat Mar 17 14:43:44 2018
+\end{table}% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Sat Mar 17 22:19:52 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrr}
