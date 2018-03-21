@@ -76,10 +76,12 @@ Papineni, Kishore, Salim Roukos, Todd Ward, and Wei-Jing Zhu (2002),
   linguistics}, 311--318, Association for Computational Linguistics.
 \bibAnnoteFile{bleu}
 
-\bibitem[{Snover et~al.()Snover, Dorr, Schwartz, Micciulla, and Makhoul}]{Ter}
+\bibitem[{Snover et~al.(2006)Snover, Dorr, Schwartz, Micciulla, and
+  Makhoul}]{Snover06astudy}
 Snover, Matthew, Bonnie Dorr, Richard Schwartz, Linnea Micciulla, and John
-  Makhoul (????), \enquote{A study of translation edit rate with targeted human
-  annotation.}
-\bibAnnoteFile{Ter}
+  Makhoul (2006), \enquote{A study of translation edit rate with targeted human
+  annotation.} In \emph{In Proceedings of Association for Machine Translation
+  in the Americas}, 223--231.
+\bibAnnoteFile{Snover06astudy}
 
 \end{thebibliography}
