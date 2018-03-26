@@ -1,0 +1,123 @@
+\begin{thebibliography}{15}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+
+\bibitem[{Bahdanau et~al.(2014)Bahdanau, Cho, and Bengio}]{bahdanau2014neural}
+Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio (2014), \enquote{Neural
+  machine translation by jointly learning to align and translate.} \emph{arXiv
+  preprint arXiv:1409.0473}.
+\bibAnnoteFile{bahdanau2014neural}
+
+\bibitem[{Cho et~al.(2014{\natexlab{a}})Cho, Van~Merri{\"e}nboer, Bahdanau, and
+  Bengio}]{cho2014properties}
+Cho, Kyunghyun, Bart Van~Merri{\"e}nboer, Dzmitry Bahdanau, and Yoshua Bengio
+  (2014{\natexlab{a}}), \enquote{On the properties of neural machine
+  translation: Encoder-decoder approaches.} \emph{arXiv preprint
+  arXiv:1409.1259}.
+\bibAnnoteFile{cho2014properties}
+
+\bibitem[{Cho et~al.(2014{\natexlab{b}})Cho, Van~Merri{\"e}nboer, Gulcehre,
+  Bahdanau, Bougares, Schwenk, and Bengio}]{cho2014learning}
+Cho, Kyunghyun, Bart Van~Merri{\"e}nboer, Caglar Gulcehre, Dzmitry Bahdanau,
+  Fethi Bougares, Holger Schwenk, and Yoshua Bengio (2014{\natexlab{b}}),
+  \enquote{Learning phrase representations using rnn encoder-decoder for
+  statistical machine translation.} \emph{arXiv preprint arXiv:1406.1078}.
+\bibAnnoteFile{cho2014learning}
+
+\bibitem[{Damerau(1964)}]{damerau1964technique}
+Damerau, Fred~J (1964), \enquote{A technique for computer detection and
+  correction of spelling errors.} \emph{Communications of the ACM}, 7,
+  171--176.
+\bibAnnoteFile{damerau1964technique}
+
+\bibitem[{Johnson et~al.(2016)Johnson, Schuster, Le, Krikun, Wu, Chen, Thorat,
+  Vi{\'e}gas, Wattenberg, Corrado et~al.}]{google_zero_shot}
+Johnson, Melvin, Mike Schuster, Quoc~V Le, Maxim Krikun, Yonghui Wu, Zhifeng
+  Chen, Nikhil Thorat, Fernanda Vi{\'e}gas, Martin Wattenberg, Greg Corrado,
+  et~al. (2016), \enquote{Google's multilingual neural machine translation
+  system: enabling zero-shot translation.} \emph{arXiv preprint
+  arXiv:1611.04558}.
+\bibAnnoteFile{google_zero_shot}
+
+\bibitem[{Klein et~al.(2017)Klein, Kim, Deng, Senellart, and
+  Rush}]{2017opennmt}
+Klein, Guillaume, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander~M. Rush
+  (2017), \enquote{Opennmt: Open-source toolkit for neural machine
+  translation.} \emph{CoRR}, abs/1701.02810,
+  \urlprefix\url{http://arxiv.org/abs/1701.02810}.
+\bibAnnoteFile{2017opennmt}
+
+\bibitem[{Koehn et~al.(2007)Koehn, Hoang, Birch, Callison-Burch, Federico,
+  Bertoldi, Cowan, Shen, Moran, Zens et~al.}]{moses}
+Koehn, Philipp, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello
+  Federico, Nicola Bertoldi, Brooke Cowan, Wade Shen, Christine Moran, Richard
+  Zens, et~al. (2007), \enquote{Moses: Open source toolkit for statistical
+  machine translation.} In \emph{Proceedings of the 45th annual meeting of the
+  ACL on interactive poster and demonstration sessions}, 177--180, Association
+  for Computational Linguistics.
+\bibAnnoteFile{moses}
+
+\bibitem[{Kotsiantis et~al.(2007)Kotsiantis, Zaharakis, and
+  Pintelas}]{kotsiantis2007supervised}
+Kotsiantis, Sotiris~B, I~Zaharakis, and P~Pintelas (2007), \enquote{Supervised
+  machine learning: A review of classification techniques.} \emph{Emerging
+  artificial intelligence applications in computer engineering}, 160, 3--24.
+\bibAnnoteFile{kotsiantis2007supervised}
+
+\bibitem[{Levenshtein(1966)}]{levenshtein1966binary}
+Levenshtein, Vladimir~I (1966), \enquote{Binary codes capable of correcting
+  deletions, insertions, and reversals.} In \emph{Soviet physics doklady},
+  volume~10, 707--710.
+\bibAnnoteFile{levenshtein1966binary}
+
+\bibitem[{Luong et~al.(2015)Luong, Le, Sutskever, Vinyals, and
+  Kaiser}]{luong2015multi}
+Luong, Minh-Thang, Quoc~V Le, Ilya Sutskever, Oriol Vinyals, and Lukasz Kaiser
+  (2015), \enquote{Multi-task sequence to sequence learning.} \emph{arXiv
+  preprint arXiv:1511.06114}.
+\bibAnnoteFile{luong2015multi}
+
+\bibitem[{Nadejde et~al.(2017)Nadejde, Reddy, Sennrich, Dwojak,
+  Junczys-Dowmunt, Koehn, and Birch}]{ccg_target_seq}
+Nadejde, Maria, Siva Reddy, Rico Sennrich, Tomasz Dwojak, Marcin
+  Junczys-Dowmunt, Philipp Koehn, and Alexandra Birch (2017),
+  \enquote{Predicting target language ccg supertags improves neural machine
+  translation.} In \emph{Proceedings of the Second Conference on Machine
+  Translation}, 68--79.
+\bibAnnoteFile{ccg_target_seq}
+
+\bibitem[{Papineni et~al.(2002)Papineni, Roukos, Ward, and Zhu}]{bleu}
+Papineni, Kishore, Salim Roukos, Todd Ward, and Wei-Jing Zhu (2002),
+  \enquote{Bleu: a method for automatic evaluation of machine translation.} In
+  \emph{Proceedings of the 40th annual meeting on association for computational
+  linguistics}, 311--318, Association for Computational Linguistics.
+\bibAnnoteFile{bleu}
+
+\bibitem[{Ruder(2017)}]{Overview_Multi-Task_Learning}
+Ruder, Sebastian (2017), \enquote{An overview of multi-task learning in deep
+  neural networks.} \emph{CoRR}, abs/1706.05098,
+  \urlprefix\url{http://arxiv.org/abs/1706.05098}.
+\bibAnnoteFile{Overview_Multi-Task_Learning}
+
+\bibitem[{Sennrich and Haddow(2016)}]{sennrich2016linguistic}
+Sennrich, Rico and Barry Haddow (2016), \enquote{Linguistic input features
+  improve neural machine translation.} \emph{arXiv preprint arXiv:1606.02892}.
+\bibAnnoteFile{sennrich2016linguistic}
+
+\bibitem[{Snover et~al.(2006)Snover, Dorr, Schwartz, Micciulla, and
+  Makhoul}]{Snover06astudy}
+Snover, Matthew, Bonnie Dorr, Richard Schwartz, Linnea Micciulla, and John
+  Makhoul (2006), \enquote{A study of translation edit rate with targeted human
+  annotation.} In \emph{In Proceedings of Association for Machine Translation
+  in the Americas}, 223--231.
+\bibAnnoteFile{Snover06astudy}
+
+\end{thebibliography}

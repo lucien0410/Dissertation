@@ -1,38 +1,3 @@
-\documentclass[a4paper]{article}
-
-%% Language and font encodings
-\usepackage{gb4e}
-\noautomath
-\usepackage{natbib}
-\usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
-
-%% Sets page size and margins
-%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-%% Useful packages
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{fixltx2e}
-\usepackage{Sweave}
-
-\newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
-%the newcommand change the selected word into 'ccr' font
-%e.g. \begin{myfont} multi-bleu.perl \end{myfont}
-
-\title{Chapter N: Experimenting Interlinear Glossing Text}
-\author{Yuan-Lu Chen}
-
-\begin{document}
-\SweaveOpts{concordance=TRUE}
-%\SweaveOpts{concordance=TRUE}
-
-\maketitle
-%\SweaveOpts{concordance=TRUE}
-
 (
 
 \textbf{Assuming that in the previous chapters the following points are addressed already:} 
@@ -162,7 +127,8 @@ The two trained models (gloss-to-English and Gaelic-to-English) then take the ri
 	\end{xlist}	
 \end{exe}
 
-To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard/human-translated English sentences). Specifically, the BLEU (bilingual evaluation understudy)\footnote{There are other automatic machine translation evaluation algorithms available, such as translation edit rate \citep{Snover06astudy} and Damerau-Levenshtein distance \citep{damerau1964technique, levenshtein1966binary}. BLEU is chosen for the current experiments because it is the most widely used evaluation algorithm, and the correlation between the BLUE score evaluation and human judgment evaluation is also well-acknowledged.} score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}} 
+To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard/human-translated English sentences). 
+Specifically, the BLEU (bilingual evaluation understudy)\footnote{There are other automatic machine translation evaluation algorithms available, such as translation edit rate \citep{Snover06astudy} and Damerau-Levenshtein distance \citep{damerau1964technique, levenshtein1966binary}. BLEU is chosen for the current experiments because it is the most widely used evaluation algorithm, and the correlation between the BLUE score evaluation and human judgment evaluation is also well-acknowledged.} score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}} 
 script, a public implementation of Moses \citep{moses}. The BLEU score calculation is an automatic evaluation of how similar two copora are. In the current experiments we are comparing the predicted target sequences with the gold standard. The BLEU score of 100 means the two copora are identical, and the BLEU score of 0 means the two copora are completely distinct from each other.
 
 \begin{exe}
@@ -254,10 +220,3 @@ Multi-task Sequence to Sequence Learning: \citep{luong2015multi}\\
 what is Multi-task learning:  \citep{Overview_Multi-Task_Learning}\\
 add ccc to target seq: \citep{ccg_target_seq}\\
 google zero shot: \citep{google_zero_shot}\\
-
-%###############################
-\bibliographystyle{te}
-\bibliography{ref}
-
-
-\end{document}

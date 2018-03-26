@@ -1,0 +1,77 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage{gb4e}
+\noautomath
+\usepackage{natbib}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{fixltx2e}
+\usepackage{Sweave}
+
+
+\title{Chapter N: Experimenting Interlinear Glossing Text}
+\author{Yuan-Lu Chen}
+
+\begin{document}
+\input{fakeMaster-concordance}
+
+
+\maketitle
+% !Rnw root = fakeMaster.Rnw
+
+(
+
+\textbf{Assuming that in the previous chapters the following points are addressed already:} 
+\begin{itemize}
+\item The nature of glosses has been well-explained  (Target audience: CS people without any formal linguistics background):
+	\begin{itemize}
+	\item What glosses are: A basic intro of interlinear gloss for non-linguists
+    \item The golden nature of glosses (encodes NON-LINEAR syntax (i.e. structure parse) and semantics information) 
+    \item The potential of gloss:	
+		\begin{itemize}
+		\item potential: providing disambiguation, labeling important grammar morphemes in the source language, providing morphological analysis, providing one-to-many and many-to-one relations of source tokens and target tokens.  
+		\end{itemize}
+	\end{itemize}
+\item A history of machine translation, and a non-mathy description of the methods of doing machine translation. (Target reader: theoretical linguists)
+\end{itemize}
+
+
+)
+
+\section{Introduction}
+The Innovation is to incorporate the gloss information of Interlinear Glossed Text data into machine translation. 
+
+In supervised machine learning models, two factors effects the performance of the trained systems:
+a.) the quality of the training data and b.) the choices of the features. The properties of the gloss data as described in *CHAPTERXYZ* make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons. 
+First, glosses are more purified that natural language words. 
+The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. 
+Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Glosses provide this one-to-one mapping. 
+Second, the gloss data provides hierarchical (non-linear) syntactic parsing information to some degree. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information. 
+
+Therefore, \citep{2017opennmt} theoretically incorporation of the gloss data should improve the translation systems. Specifically, I propose the following hypothesis:
+\begin{exe}  
+\ex \textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
+
+The hypothesis can have two versions, strong and weak:
+	\begin{xlist}
+	\ex \label{strong_hy} Strong version: Gloss may replace the source natural language totally, and the system outperforms the system trained with source natural language to target language sentence pairs (i.e. the baseline systems).   
+	\ex \label{weak_hy} Weak version: Gloss only increases the performance of the baseline systems, but cannot replace the source language. 
+	\end{xlist}
+\end{exe}
+\subsection{literature}
+
+\bibliographystyle{te}
+\bibliography{ref}
+
+\end{document}

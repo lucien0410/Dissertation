@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.9.19)  26 MAR 2018 14:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  26 MAR 2018 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**\nonstopmode \input ./cake_chapter.tex
-(./cake_chapter.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+**\nonstopmode \input ./fakeMaster.tex
+(./fakeMaster.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
@@ -694,8 +694,8 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))) (./cake_chapter.aux)
-\openout1 = `cake_chapter.aux'.
+)))) (./fakeMaster.aux)
+\openout1 = `fakeMaster.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
@@ -766,26 +766,31 @@ LaTeX Info: Redefining \ref on input line 29.
 LaTeX Info: Redefining \pageref on input line 29.
 LaTeX Info: Redefining \nameref on input line 29.
 
-(./cake_chapter.out) (./cake_chapter.out)
+(./fakeMaster.out) (./fakeMaster.out)
 \@outlinefile=\write5
-\openout5 = `cake_chapter.out'.
+\openout5 = `fakeMaster.out'.
 
- (./cake_chapter-concordance.tex)
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 40.
+ (./fakeMaster-concordance.tex)
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 39.
 
 (/usr/share/R/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 40.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 39.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 81.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 80.
  (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
  []
@@ -796,7 +801,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--133
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
@@ -811,27 +816,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--142
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
-
- []
-
-
-Overfull \hbox (43.98836pt too wide) in paragraph at lines 152--153
+Overfull \hbox (43.98836pt too wide) in paragraph at lines 151--152
 []\T1/aer/m/n/10 Model$[]$ = Model trained with GDtoEN$[]$ in ([][]6a[][]) and 
 GDtoEN$[]$
  []
 
 [4]
-Overfull \hbox (18.29305pt too wide) in paragraph at lines 160--161
+Overfull \hbox (18.29305pt too wide) in paragraph at lines 159--160
 []\T1/aer/m/n/10 Predictions$[]$ = A list of En-glish se-quences that Model$[]$
 
  []
 
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
 LaTeX Font Info:    Try loading font information for T1+ccr on input line 165.
-
 (/usr/share/texlive/texmf-dist/tex/latex/ccfonts/t1ccr.fd
 File: t1ccr.fd 1999/11/22 v1.0a (WaS)
 )
@@ -900,29 +896,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 435--439
 
  []
 
-(./cake_chapter.bbl [9] [10])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
+(./fakeMaster.bbl [9] [10])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 444.
  [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
- (./cake_chapter.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 445.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
-Package rerunfilecheck Info: File `cake_chapter.out' has not changed.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 444.
+ (./fakeMaster.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 444.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 444.
+Package rerunfilecheck Info: File `fakeMaster.out' has not changed.
 (rerunfilecheck)             Checksum: 40C48DD1FE9B5E7225453CD2064ACD60;1347.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 444.
  ) 
 Here is how much of TeX's memory you used:
- 17165 strings out of 493304
- 294634 string characters out of 6139871
+ 16915 strings out of 493304
+ 291731 string characters out of 6139871
  383607 words of memory out of 5000000
- 20129 multiletter control sequences out of 15000+600000
+ 19882 multiletter control sequences out of 15000+600000
  38486 words of font info for 81 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,9n,57p,1107b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,9n,57p,1079b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
@@ -939,10 +935,10 @@ ts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sform10
 .pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on cake_chapter.pdf (11 pages, 233703 bytes).
+Output written on fakeMaster.pdf (11 pages, 233799 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
+ 353 PDF objects out of 1000 (max. 8388607)
  303 compressed objects within 4 object streams
  87 named destinations out of 1000 (max. 500000)
- 209 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
