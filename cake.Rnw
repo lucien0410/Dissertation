@@ -1,0 +1,191 @@
+% !Rnw root = Master.Rnw
+
+\section{Introduction}
+The Innovation is to incorporate the gloss information of Interlinear Glossed Text data into machine translation. 
+
+In supervised machine learning models, two factors effects the performance of the trained systems \citep{kotsiantis2007supervised}: a.) the quality of the training data and b.) the choices of the features. The properties of the gloss data as described in *CHAPTERXYZ* make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons. First, glosses are more purified that natural language words. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information to some degree. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information. 
+
+Therefore, theoretically incorporation of the gloss data should improve the translation systems. Specifically, I propose the following hypothesis:
+\begin{exe}  
+\ex \textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
+
+The hypothesis can have two versions, strong and weak:
+	\begin{xlist}
+	\ex \label{strong_hy} Strong version: Gloss may replace the source natural language totally, and the system outperforms the system trained with source natural language to target language sentence pairs (i.e. the baseline systems).   
+	\ex \label{weak_hy} Weak version: Gloss only increases the performance of the baseline systems, but cannot replace the source language. 
+	\end{xlist}
+\end{exe}
+
+The experiments reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However,it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly.  
+
+This chapter describes the experiments conducted to test the Gloss-helps hypothesis and the results attest the weak version. 
+The rest of the chapter is organized as follows: Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}),and section 5 concludes the chapter.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
+The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}. 
+The following default hyper-parameter settings of OpenNMT\footnote{See their documentation for the complete default hyper-parameter settings: \url{http://opennmt.net/OpenNMT-py/}.} are used across all models so that the only independent variable is the type of the training data: 
+\begin{itemize}
+\item Word vector size: 500
+\item Type of recurrent cell: Long Short Term Memory
+\item Number of recurrent layers of the encoder and decoder: 2
+\item Number of epochs: 13 
+\item Size of mini batches: 64 
+\end{itemize}
+
+The settings of the hyper-parameters do have effects on the performances of the trained models. A common practice to find the optimal settings of the hyper-parameters is to hold out a subset of the training dataset as the developing dataset, then test the models on the developing data to see what settings are optimal, then merge the developing dataset and training dataset as a new training set, and then train on this new training set using the found optimal hyper-parameters. However, finding the optimal settings of the hyper-parameters is not relevant to our research and causing unnecessary complications. So, the process of optimizing the settings of the hyper-parameters is not implemented, and I simply adopt OpenNMT's default settings. So, the employed settings of the hyper-parameters may be viewed as arbitrarily chosen. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.
+
+The data and the scripts will be accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.   
+
+\section{Gloss Representation Solely Does NOT Outperform Gaelic Sentences} \label{gd_to_gl_to_en}
+This section tests the strong version of Gloss-helps hypothesis in (\ref{strong_hy}).
+Given the assumption that gloss may be better than any natural language in terms of representing meanings, it is expected that for neural net machine translation systems it is easier to learn how to translate from the glosses of Scottish Gaelic to English than to learn how to translate from Scottish Gaelic to English. However, the results show that there is no significance difference between the two types of data (i.e. GLOSS $\rightarrow$ English and Gaelic $\rightarrow$ English). 
+
+\subsection{Procedure of the Experiments}
+I use repeated random sub-sampling validation to compare the performances of the two type of models.
+
+Totally we have 8,388 indexed 3-tuples of Gaelic sentence, a gloss line and an English translation. In the interlinear glossed text example below, each line is an argument of a 3-tuple sample. 
+
+\begin{exe}  
+\ex \gll    Tha a athair nas sine na a mh\`athair.\\  
+            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
+\\  
+    \glt    `His father is older than his mother.'  
+\end{exe}
+
+The 3-tuple above is:
+\begin{exe}
+ \ex <``Tha a athair nas sine na a mh\`athair.'', ``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother.''>
+\end{exe}
+
+First, the samples (i.e. the 3-tuples) are randomly split into three datasets: training set (N=6,388), validation set (N=1,000), and test set (N=1,000). models
+
+\begin{exe}
+\ex Definitions of datasets:\\
+	Let:
+	\begin{xlist}
+	\ex 	Index\textsubscript{Train}, Index\textsubscript{Validation}, and Index\textsubscript{Test} be sets of random indexes from 0 to 8,387.
+    \ex		Index\textsubscript{Train} $\cap$ Index\textsubscript{Validation} $\cap$ Index\textsubscript{Test} = $\emptyset$ 
+    \ex 	|Index\textsubscript{Train}| = 6,388; |Index\textsubscript{Validation}| = 1,000; |Index\textsubscript{Test}| = 1,000. 
+    \end{xlist}
+\end{exe}
+The step above just randomly splits the indexes of the 3-tuples into three distinct sets: Index\textsubscript{Train}, Index\textsubscript{Validation}, and Index\textsubscript{Test}. Based on the indexes, we generate the sets of samples. For each index, the 3-tuple is split into two pairs: <gloss, English>, <Gaelic, English>, so that later we can compare the different effects of gloss lines and Gaelic sentences. For each pair, the first item is the source sequence, and the second item is the target sequence. The systems learns how to map the source sequence to the target sequence.    
+
+\begin{exe}
+	\ex Gloss to English
+		\begin{xlist}
+		\ex \label{GLOSStoENTrain} GLOSStoEN\textsubscript{Train}   = $\{<gloss_i,En_i>  \mid i \in Index\textsubscript{Train} \}$ \\
+		\ex \label{GLOSStoENVal} GLOSStoEN\textsubscript{Validation}   = $\{<gloss_i,En_i>  \mid i \in Index\textsubscript{Validation} \}$ \\
+		\ex \label{GLOSStoENTest}GLOSStoEN\textsubscript{Test} = $\{<gloss_i,En_i>  \mid i \in Index\textsubscript{Test} \}$ \\
+		\ex  Example: <``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother.''>
+		\end{xlist}
+
+	
+	\ex Gaelic to English
+		\begin{xlist}
+		\ex \label{GDtoENTrain} GDtoEN\textsubscript{Train}   = $\{<GD_i,En_i>  \mid i \in Index\textsubscript{Train} \}$ \\
+		\ex \label{GDtoENVal} GDtoEN\textsubscript{Validation}   = $\{<GD_i,En_i>  \mid i \in Index\textsubscript{Validation} \}$ \\
+		\ex \label{GDtoENTest} GDtoEN\textsubscript{Test}    = $\{<GD_i,En_i>  \mid i \in Index\textsubscript{Test} \}$ \\
+		\ex Example: <``Tha a athair nas sine na a mh\`athair.'', ``His father is older than his mother.''>
+		\end{xlist}
+\end{exe}
+The models are trained with the training set and validation set (i.e. the model learns how to map the source sequence to the target sequence). Both training set and validation set are known information for the models\footnote{Technically speaking, the validation set is part of the training data in terms of machine learning. The presence of the validation set is a special requirement of neural net machine learning, which uses the validation set to evaluate the convergence of the training.}. Specifically, the neural net system learns how to maps gloss lines to English sentences from samples in (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}), and another neural net system learns how to maps Gaelic sentences to English sentences from from samples in (\ref{GDtoENTrain}) and (\ref{GDtoENVal}). 
+
+\begin{exe}
+\ex Models: 
+	\begin{xlist}
+	\ex \label{ModelGlossToEN} Model\textsubscript{GLOSStoEN} = Model trained with GLOSStoEN\textsubscript{Train} in (\ref{GLOSStoENTrain}) and GLOSStoEN\textsubscript{Validation} in (\ref{GLOSStoENVal})
+	\ex \label{ModelGDToEN}Model\textsubscript{GDtoEN} = Model trained with GDtoEN\textsubscript{Train} in (\ref{GDtoENTrain}) and GDtoEN\textsubscript{Validation} in (\ref{GDtoENVal}) 
+	\end{xlist}	
+\end{exe}
+The two trained models (gloss-to-English and Gaelic-to-English) then take the right source sequences of the test sets (i.e. glossing lines and Gaelic sentences for Model\textsubscript{GLOSStoEN} and Model\textsubscript{GDoEN} respectively) as inputs and then generate the predicted target sequences (i.e. English sentences). 
+
+\begin{exe}
+\ex Predictions: 
+	\begin{xlist}
+	\ex Predictions\textsubscript{GLOSStoEN} = A list of English sequences that Model\textsubscript{GLOSStoEN} maps to from the gloss sequences in (\ref{GLOSStoENTest}) 
+	\ex Predictions\textsubscript{GDtoEN} = A list of English sequences that Model\textsubscript{GDtoEN} maps to from the Gaelic sentences in (\ref{GDtoENTest}) 
+	\end{xlist}	
+\end{exe}
+
+To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard/human-translated English sentences). Specifically, the BLEU (bilingual evaluation understudy)\footnote{There are other automatic machine translation evaluation algorithms available, such as translation edit rate \citep{Snover06astudy} and Damerau–Levenshtein distance \citep{damerau1964technique, levenshtein1966binary}. BLEU is chosen for the current experiments because it is the most widely used evaluation algorithm, and the correlation between the BLUE score evaluation and human judgment evaluation is also well-acknowledged.} score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}} 
+script, a public implementation of Moses \citep{moses}. The BLEU score calculation is an automatic evaluation of how similar two copora are. In the current experiments we are comparing the predicted target sequences with the gold standard. The BLEU score of 100 means the two copora are identical, and the BLEU score of 0 means the two copora are completely distinct from each other.
+
+\begin{exe}
+\ex Gold-Standard = English sentences in (\ref{GLOSStoENTest}) = English sentences in (\ref{GDtoENTest})
+\end{exe}
+Note that the gold-standard is the same because they are the same English sentences in the 3-tuples samples. Then the two sets of predicted English sentences are evaluated, yielding two BLEU scores.   
+
+\begin{exe}
+\ex Scores: \\
+  \begin{xlist}
+	\ex Score\textsubscript{GLOSStoEN} = BLEU(Gold-Standard, Predictions\textsubscript{GLOSStoEN}) \\
+	\ex Score\textsubscript{GDtoEN} = BLEU(Gold-Standard, Predictions\textsubscript{GDtoEN}) \\
+  \end{xlist}
+\end{exe}
+This procedure of splitting the data into three sub-sets, training the models, and evaluating the models is executed for ten times. 
+
+\subsection{Result} \label{gdglen_results}
+After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table. 
+
+
+<<xtable, label=gd_gloss_stat1, echo=FALSE, results=tex>>=
+require(xtable)
+n <- read.csv('gd-to-en_gloss-to-en.tsv', sep='\t', header = TRUE)
+gd<-n['Gaelic'][1:10,1]
+gloss<-n['GLOSS'][1:10,1]  # [11,1] is MEAN
+m_gd <- format(round(mean(gd), 2), nsmall = 2)
+m_gloss <- format(round(mean(gloss), 2), nsmall = 2)
+sd_gd <- format(round(sd(gd), 2), nsmall = 2) 
+sd_gloss <- format(round(sd(gloss), 2), nsmall = 2) 
+r <-t.test( gloss, gd, paired=TRUE)
+t_val=format(round(r$statistic, 2), nsmall = 2)
+p_val=format(round(r$p.value, 2), nsmall = 2)
+xtab2<-xtable(n, caption="BLEU scores of Model\\textsubscript{GLOSStoEN} and Model\\textsubscript{GDtoEN}",  label="Table:BLEUGlossGD")
+#print(xtab2,include.rownames = FALSE, hline.after = c(10))
+hlines <- c(-1,0,10, nrow(xtab2))
+xtab2<-xtab2
+print(xtab2,include.rownames =FALSE, hline.after = hlines)
+@
+The average score of the Models\textsubscript{GLOSStoEN} is only sightly higher than the average score of the Models\textsubscript{GDtoEN}. Also, after doing a paired T-test, the difference between the two types of models is not attested (M\textsubscript{GlossToEn}=\Sexpr{m_gloss}, SD\textsubscript{GlossToEn}=\Sexpr{sd_gloss}, M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}); t(9)=\Sexpr{t_val}, p=\Sexpr{p_val}).
+
+\subsection{Summary}
+The ultimate practical goal of the dissertation is to use glossing data to develop better machine translation systems. Here \textit{better} means to be better than a baseline system, which is the machine translation system trained with Gaelic-to-English translation samples. The models in (\ref{ModelGDToEN}) are the baseline systems, and their scores are in the Gaelic column of table (\ref{Table:BLEUGlossGD}). These are the target scores that we aims to outperform. The experiment above is the first attempt to improve that scores by using the \textit{gloss treatment}, in which the Gaelic sentences are replaced with gloss lines.  However, the result shows that this \textit{gloss treatment} is not effective as the scores of the gloss models are not statistically higher than the baseline Gaelic-to-English models.  
+
+\subsection{Discussion}
+It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are about the same in terms of representing meanings. The strong version of the Gloss-helps hypothesis does not hold. 
+
+We may now to combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-helps hypothesis. The experiments and results are reported in the next section. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Combining Gaelic words with Glosses}\label{gd_plus_gl_to_en}
+In the previous section, we use the \textit{gloss treatment} to attempt to improve the performance. It turns that using gloss line solely is not effective enough to improve the model. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. This section reports various ways of combining the gloss line data and the Gaelic sentence data, and the experiments and result using these different treatments. Critically, it is found that when the gloss line data is put parallel to the Gaelic sentence data and each gloss item is put parallel to the corresponding Gaelic word token as the training set, the performance is boosted significantly. The model trained with this special arranged training data also significantly outperforms Google's Gaelic-to-English translation system.    
+
+<<xtable, label=gd_gloss_stat2, echo=FALSE, results=tex>>=
+require(xtable)
+n <- read.csv('result.tsv.csv', sep='\t', header = TRUE)
+#mean(gd)
+#mean(gloss)
+#sd(gd)
+#sd(gloss)
+r <-t.test(gd, gloss,paired=TRUE)
+xtab2<-xtable(n, caption="More BLEU scores of the Models, where \`ConcatGLOSSGaelic\' is \`GLOSS\\textunderscore Gaelic\', \`GLOSS.Gaelic\' is \`GLOSS Gaelic\', \`hyGD\' is using the less ambigious one from either Gaelic word or gloss with Gaelic word as the default, \`hyGW\' is the same as \`hyGD\' but with the default as gloss.",  label="Table:BLEUGlossGDALL")
+#print(xtab2,include.rownames = FALSE, hline.after = c(10))
+hlines <- c(-1,0,10, nrow(xtab2))
+xtab2<-xtab2
+print(xtab2,include.rownames =FALSE, hline.after = hlines)
+require(xtable)
+n <- read.csv('result2.csv', sep='\t', header = TRUE)
+#mean(gd)
+#mean(gloss)
+#sd(gd)
+#sd(gloss)
+r <-t.test(gd, gloss,paired=TRUE)
+xtab2<-xtable(n, caption="\`Para\' is \`GLOSS -> Gaelic; Gloss -> En; Gaelic -> En\', \`ParaPart\' is \`Para plus Gaelic word token -> Gloss token\', \`Over\' means oversampling, \`Half\' means using half of the training data.",  label="Table:BLEUGlossGDALL")
+#print(xtab2,include.rownames = FALSE, hline.after = c(10))
+hlines <- c(-1,0,10, nrow(xtab2))
+xtab2<-xtab2
+print(xtab2,include.rownames =FALSE, hline.after = hlines)
+@
+

@@ -7,7 +7,6 @@
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{python}
 
 %% Sets page size and margins
 %\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
@@ -29,9 +28,10 @@
 
 \begin{document}
 \input{cake_chapter-concordance}
+%\SweaveOpts{concordance=TRUE}
 
 \maketitle
-
+%\SweaveOpts{concordance=TRUE}
 
 (
 
@@ -60,7 +60,7 @@ In supervised machine learning models, two factors effects the performance of th
 
 Therefore, theoretically incorporation of the gloss data should improve the translation systems. Specifically, I propose the following hypothesis:
 \begin{exe}  
-\ex \textbf{Gloss-helps-hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
+\ex \textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
 
 The hypothesis can have two versions, strong and weak:
 	\begin{xlist}
@@ -69,16 +69,16 @@ The hypothesis can have two versions, strong and weak:
 	\end{xlist}
 \end{exe}
 
-The experiments reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the gloss-helps-hypothesis is not attested. However,it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly.  
+The experiments reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However,it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly.  
 
-This chapter describes the experiments conducted to test the gloss-helps-hypothesis and the results attest the weak version. 
+This chapter describes the experiments conducted to test the Gloss-helps hypothesis and the results attest the weak version. 
 The rest of the chapter is organized as follows: Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}),and section 5 concludes the chapter.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
 The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}. 
-The following default parameters settings of OpenNMT are used across all models so that the only independent variable is the type of the training data: 
+The following default hyper-parameter settings of OpenNMT\footnote{See their documentation for the complete default hyper-parameter settings: \url{http://opennmt.net/OpenNMT-py/}.} are used across all models so that the only independent variable is the type of the training data: 
 \begin{itemize}
 \item Word vector size: 500
 \item Type of recurrent cell: Long Short Term Memory
@@ -86,10 +86,13 @@ The following default parameters settings of OpenNMT are used across all models 
 \item Number of epochs: 13 
 \item Size of mini batches: 64 
 \end{itemize}
+
+The settings of the hyper-parameters do have effects on the performances of the trained models. A common practice to find the optimal settings of the hyper-parameters is to hold out a subset of the training dataset as the developing dataset, then test the models on the developing data to see what settings are optimal, then merge the developing dataset and training dataset as a new training set, and then train on this new training set using the found optimal hyper-parameters. However, finding the optimal settings of the hyper-parameters is not relevant to our research and causing unnecessary complications. So, the process of optimizing the settings of the hyper-parameters is not implemented, and I simply adopt OpenNMT's default settings. So, the employed settings of the hyper-parameters may be viewed as arbitrarily chosen. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.
+
 The data and the scripts will be accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.   
 
 \section{Gloss Representation Solely Does NOT Outperform Gaelic Sentences} \label{gd_to_gl_to_en}
-This section tests the strong version of Gloss-helps-hypothesis in (\ref{strong_hy}).
+This section tests the strong version of Gloss-helps hypothesis in (\ref{strong_hy}).
 Given the assumption that gloss may be better than any natural language in terms of representing meanings, it is expected that for neural net machine translation systems it is easier to learn how to translate from the glosses of Scottish Gaelic to English than to learn how to translate from Scottish Gaelic to English. However, the results show that there is no significance difference between the two types of data (i.e. GLOSS $\rightarrow$ English and Gaelic $\rightarrow$ English). 
 
 \subsection{Procedure of the Experiments}
@@ -128,16 +131,19 @@ The step above just randomly splits the indexes of the 3-tuples into three disti
 		\ex \label{GLOSStoENTrain} GLOSStoEN\textsubscript{Train}   = $\{<gloss_i,En_i>  \mid i \in Index\textsubscript{Train} \}$ \\
 		\ex \label{GLOSStoENVal} GLOSStoEN\textsubscript{Validation}   = $\{<gloss_i,En_i>  \mid i \in Index\textsubscript{Validation} \}$ \\
 		\ex \label{GLOSStoENTest}GLOSStoEN\textsubscript{Test} = $\{<gloss_i,En_i>  \mid i \in Index\textsubscript{Test} \}$ \\
+		\ex  Example: <``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother.''>
 		\end{xlist}
+
 	
 	\ex Gaelic to English
 		\begin{xlist}
 		\ex \label{GDtoENTrain} GDtoEN\textsubscript{Train}   = $\{<GD_i,En_i>  \mid i \in Index\textsubscript{Train} \}$ \\
 		\ex \label{GDtoENVal} GDtoEN\textsubscript{Validation}   = $\{<GD_i,En_i>  \mid i \in Index\textsubscript{Validation} \}$ \\
 		\ex \label{GDtoENTest} GDtoEN\textsubscript{Test}    = $\{<GD_i,En_i>  \mid i \in Index\textsubscript{Test} \}$ \\
+		\ex Example: <``Tha a athair nas sine na a mh\`athair.'', ``His father is older than his mother.''>
 		\end{xlist}
 \end{exe}
-The models are trained with the training set and validation set (i.e. the model learns how to map the source sequence to the target sequence). Both training set and validation set are known information for the models\footnote{Technically speaking, the validation set is part of the training data in terms of machine learning. The presence of the validation set is a special requirement of neural net machine learning, which uses the validation set to further tune the parameters learned from the training set.}. Specifically, the neural net system learns how to maps gloss lines to English sentences from samples in (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}), and another neural net system learns how to maps Gaelic sentences to English sentences from from samples in (\ref{GDtoENTrain}) and (\ref{GDtoENVal}). 
+The models are trained with the training set and validation set (i.e. the model learns how to map the source sequence to the target sequence). Both training set and validation set are known information for the models\footnote{Technically speaking, the validation set is part of the training data in terms of machine learning. The presence of the validation set is a special requirement of neural net machine learning, which uses the validation set to evaluate the convergence of the training.}. Specifically, the neural net system learns how to maps gloss lines to English sentences from samples in (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}), and another neural net system learns how to maps Gaelic sentences to English sentences from from samples in (\ref{GDtoENTrain}) and (\ref{GDtoENVal}). 
 
 \begin{exe}
 \ex Models: 
@@ -175,95 +181,263 @@ This procedure of splitting the data into three sub-sets, training the models, a
 
 \subsection{Result} \label{gdglen_results}
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table. 
-
-
+% !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Mar 21 00:51:38 2018
+% Mon Mar 26 00:00:58 2018
 \begin{table}[ht]
 \centering
-\begin{tabular}{lrr}
+\begin{tabular}{lcc}
   \hline
-Round & GLOSS & Gaelic \\ 
+Round & Gaelic (Baseline) & GLOSS \\ 
   \hline
-1 & 18.39 & 17.29 \\ 
-  2 & 18.00 & 16.42 \\ 
-  3 & 16.02 & 15.29 \\ 
-  4 & 20.22 & 15.97 \\ 
-  5 & 19.02 & 17.79 \\ 
-  6 & 15.53 & 16.73 \\ 
-  7 & 18.00 & 17.11 \\ 
-  8 & 20.08 & 16.37 \\ 
-  9 & 15.82 & 15.93 \\ 
-  10 & 15.93 & 16.99 \\ 
+0 & 17.29 & 18.39 \\ 
+  1 & 16.42 & 18.00 \\ 
+  2 & 15.29 & 16.02 \\ 
+  3 & 15.97 & 20.22 \\ 
+  4 & 17.79 & 19.02 \\ 
+  5 & 16.73 & 15.53 \\ 
+  6 & 17.11 & 18.00 \\ 
+  7 & 16.37 & 20.08 \\ 
+  8 & 15.93 & 15.82 \\ 
+  9 & 16.99 & 15.93 \\ 
    \hline
-Mean & 17.70 & 16.59 \\ 
+Mean & 16.59 & 17.70 \\ 
    \hline
 \end{tabular}
-\caption{BLEU scores of Model\textsubscript{GLOSStoEN} and Model\textsubscript{GDtoEN}} 
-\label{Table:BLEUGlossGD}
-\end{table}The average score of the Models\textsubscript{GLOSStoEN} is only sightly higher than the average score of the Models\textsubscript{GDtoEN}. Also, after doing a paired T-test, the difference between the two types of models is not attested (M\textsubscript{GlossToEn}=17.70, SD\textsubscript{GlossToEn}=1.78, M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74); t(9)=1.97, p=0.08).
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{GLOSStoEn}} 
+\label{Table:GLOSS}
+\end{table}
+The average score of the Models\textsubscript{GLOSStoEN} is only sightly higher than the average score of the Models\textsubscript{GDtoEN}. 
+Also, after doing a paired T-test, the difference between the two types of models is not attested 
+(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{GLOSStoEN}=17.70, SD\textsubscript{GLOSStoEN}=1.78,; t(9)=1.97, p=0.080)
 
 \subsection{Summary}
 The ultimate practical goal of the dissertation is to use glossing data to develop better machine translation systems. Here \textit{better} means to be better than a baseline system, which is the machine translation system trained with Gaelic-to-English translation samples. The models in (\ref{ModelGDToEN}) are the baseline systems, and their scores are in the Gaelic column of table (\ref{Table:BLEUGlossGD}). These are the target scores that we aims to outperform. The experiment above is the first attempt to improve that scores by using the \textit{gloss treatment}, in which the Gaelic sentences are replaced with gloss lines.  However, the result shows that this \textit{gloss treatment} is not effective as the scores of the gloss models are not statistically higher than the baseline Gaelic-to-English models.  
 
 \subsection{Discussion}
-It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the two types of models have the same performance, it is concluded that glosses and natural languages are about the same in terms of representing meanings. The strong version of the Gloss-helps-hypothesis does not hold. 
+It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are about the same in terms of representing meanings. The strong version of the Gloss-helps hypothesis does not hold. 
 
-We may now to combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-helps-hypothesis. The experiments and results are reported in the next section. 
+We may now combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-helps hypothesis. The experiments and results are reported in the next section. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Section: Combining Gaelic words with Glosses }\label{gd_plus_gl_to_en}
+\section{Combining Gaelic words with Glosses}\label{gd_plus_gl_to_en}
 
+In the previous section, we attempt to build a system by using the \textit{gloss treatment} to outperform the baseline system. It turns that using gloss line solely is not effective enough to improve the system. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. This section reports various ways of combining the gloss line data and the Gaelic sentence data, and the experiments and their results using these different treatments. Critically, a specific way of combining Gloss data and Gaelic date (termed as `\textit{ParaPart}' treatment) boosts the performance significantly. The model trained with this specially arranged training data also significantly outperforms Google's Gaelic-to-English translation system.
+
+In this section, I will first describe the most effective  treatment, termed as `\textit{ParaPart}' treatment, and the results, and then I will report other experiments attempting other relevant logical treatments. 
+
+\subsection{The `ParaPart' Treatment Outperforms Any Other Treatments and The baseline Significantly}
+% !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Mar 21 00:51:38 2018
+% Mon Mar 26 00:00:59 2018
 \begin{table}[ht]
 \centering
-\begin{tabular}{lrrrrrr}
+\begin{tabular}{lcc}
   \hline
-Round & GLOSS & Gaelic & ConcatGLOSSGaelic & GLOSS.Gaelic & hyGD & hyGW \\ 
+Round & Gaelic (Baseline) & ParaPart \\ 
   \hline
-0 & 18.39 & 17.29 & 15.42 & 13.67 & 9.44 & 15.95 \\ 
-  1 & 18.00 & 16.42 & 14.31 & 12.49 & 9.07 & 15.60 \\ 
-  2 & 16.02 & 15.29 & 15.38 & 11.01 & 7.69 & 14.15 \\ 
-  3 & 20.22 & 15.97 & 14.18 & 12.33 & 9.12 & 14.72 \\ 
-  4 & 19.02 & 17.79 & 18.63 & 12.56 & 9.08 & 15.74 \\ 
-  5 & 15.53 & 16.73 & 14.89 & 12.13 & 10.45 & 14.88 \\ 
-  6 & 18.00 & 17.11 & 15.16 & 11.55 & 8.62 & 14.45 \\ 
-  7 & 20.08 & 16.37 & 15.20 & 12.78 & 10.00 & 16.41 \\ 
-  8 & 15.82 & 15.93 & 15.50 & 12.43 & 10.52 & 15.15 \\ 
-  9 & 15.93 & 16.99 & 15.72 & 11.65 & 8.46 & 17.61 \\ 
+0 & 17.29 & 32.64 \\ 
+  1 & 16.42 & 32.28 \\ 
+  2 & 15.29 & 29.94 \\ 
+  3 & 15.97 & 31.18 \\ 
+  4 & 17.79 & 32.83 \\ 
+  5 & 16.73 & 31.11 \\ 
+  6 & 17.11 & 32.19 \\ 
+  7 & 16.37 & 33.52 \\ 
+  8 & 15.93 & 30.93 \\ 
+  9 & 16.99 & 34.35 \\ 
    \hline
-Mean & 17.70 & 16.59 & 15.44 & 12.26 & 9.24 & 10.24 \\ 
+Mean & 16.59 & 32.10 \\ 
    \hline
 \end{tabular}
-\caption{More BLEU scores of the Models, where `ConcatGLOSSGaelic' is `GLOSS\textunderscore Gaelic', `GLOSS.Gaelic' is `GLOSS Gaelic', `hyGD' is using the less ambigious one from either Gaelic word or gloss with Gaelic word as the default, `hyGW' is the same as `hyGD' but with the default as gloss.} 
-\label{Table:BLEUGlossGDALL}
-\end{table}% latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Mar 21 00:51:38 2018
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ParaParttoEn}} 
+\label{Table:ParaPart}
+\end{table}(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33,; t(9)=48.95, p=0.000)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Other Logical Treatments}
+
+\subsubsection{Para}\label{treatment:Para}
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Mon Mar 26 00:00:59 2018
 \begin{table}[ht]
 \centering
-\begin{tabular}{lrrrrrr}
+\begin{tabular}{lcc}
   \hline
-Round & Para & ParaPart & ParaPartHalf & ParaPartHalfOver & Over.Gaelic & google \\ 
+Round & Gaelic (Baseline) & Para \\ 
   \hline
-0 & 25.42 & 32.64 & 24.07 & 26.31 & 29.05 & 22.09 \\ 
-  1 & 25.32 & 32.28 & 18.58 & 24.85 & 28.61 & 25.38 \\ 
-  2 & 20.72 & 29.94 & 18.00 & 22.96 & 23.78 & 23.72 \\ 
-  3 & 22.22 & 31.18 & 22.25 & 25.48 & 27.50 & 23.21 \\ 
-  4 & 24.27 & 32.83 & 23.79 & 25.33 & 25.51 & 22.31 \\ 
-  5 & 24.55 & 31.11 & 21.40 & 24.39 & 27.88 & 23.41 \\ 
-  6 & 27.03 & 32.19 & 23.61 & 26.29 & 25.72 & 24.53 \\ 
-  7 & 25.34 & 33.52 & 23.73 & 25.61 & 27.12 & 22.78 \\ 
-  8 & 24.24 & 30.93 & 23.16 & 25.59 & 25.20 & 25.67 \\ 
-  9 & 25.96 & 34.35 & 24.49 & 26.32 & 26.39 & 23.42 \\ 
+0 & 17.29 & 25.42 \\ 
+  1 & 16.42 & 25.32 \\ 
+  2 & 15.29 & 20.72 \\ 
+  3 & 15.97 & 22.22 \\ 
+  4 & 17.79 & 24.27 \\ 
+  5 & 16.73 & 24.55 \\ 
+  6 & 17.11 & 27.03 \\ 
+  7 & 16.37 & 25.34 \\ 
+  8 & 15.93 & 24.24 \\ 
+  9 & 16.99 & 25.96 \\ 
    \hline
-Mean & 24.51 & 32.10 & 22.31 & 25.31 & 26.68 & 23.65 \\ 
+Mean & 16.59 & 24.51 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ParatoEn}} 
+\label{Table:Para}
+\end{table}(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{Para}=24.51, SD\textsubscript{Para}=1.84,; t(9)=17.50, p=0.000)
+
+\subsubsection{Interleaving Gaelic Words and Gloss Words}\label{treatment:Interleaving}
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Mon Mar 26 00:00:59 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & interleavingGdGLOSS \\ 
+  \hline
+0 & 17.29 & 13.67 \\ 
+  1 & 16.42 & 12.49 \\ 
+  2 & 15.29 & 11.01 \\ 
+  3 & 15.97 & 12.33 \\ 
+  4 & 17.79 & 12.56 \\ 
+  5 & 16.73 & 12.13 \\ 
+  6 & 17.11 & 11.55 \\ 
+  7 & 16.37 & 12.78 \\ 
+  8 & 15.93 & 12.43 \\ 
+  9 & 16.99 & 11.65 \\ 
+   \hline
+Mean & 16.59 & 12.26 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{interleavingGdGLOSStoEn}} 
+\label{Table:interleavingGdGLOSS}
+\end{table}(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{interleavingGdGLOSS}=12.26, SD\textsubscript{interleavingGdGLOSS}=0.74,; t(9)=-17.06, p=0.000)
+
+%%%%%%%%%%%
+\subsubsection{Concating Gaelic Words and Gloss Words}\label{treatment:Concating}
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Mon Mar 26 00:00:59 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & ConcatGLOSSGaelic \\ 
+  \hline
+0 & 17.29 & 15.42 \\ 
+  1 & 16.42 & 14.31 \\ 
+  2 & 15.29 & 15.38 \\ 
+  3 & 15.97 & 14.18 \\ 
+  4 & 17.79 & 18.63 \\ 
+  5 & 16.73 & 14.89 \\ 
+  6 & 17.11 & 15.16 \\ 
+  7 & 16.37 & 15.20 \\ 
+  8 & 15.93 & 15.50 \\ 
+  9 & 16.99 & 15.72 \\ 
+   \hline
+Mean & 16.59 & 15.44 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN}Model\ and textsubscript{ConcatGLOSSGaelictoEn} } 
+\label{Table:Concating}
+\end{table}(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ConcatGLOSSGaelic}=15.44, SD\textsubscript{ConcatGLOSSGaelic}=1.23,; t(9)=-3.64, p=0.010)
+
+%%%%%%%%%%
+\subsubsection{Replacing ambiguous Gaelic Words}\label{treatment:ReplacingGaelic}
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Mon Mar 26 00:00:59 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & ReplacingGaelic \\ 
+  \hline
+0 & 17.29 & 9.44 \\ 
+  1 & 16.42 & 9.07 \\ 
+  2 & 15.29 & 7.69 \\ 
+  3 & 15.97 & 9.12 \\ 
+  4 & 17.79 & 9.08 \\ 
+  5 & 16.73 & 10.45 \\ 
+  6 & 17.11 & 8.62 \\ 
+  7 & 16.37 & 10.00 \\ 
+  8 & 15.93 & 10.52 \\ 
+  9 & 16.99 & 8.46 \\ 
+   \hline
+Mean & 16.59 & 9.24 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ReplacingGaelictoEn}} 
+\label{Table:ReplacingGaelic}
+\end{table}(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=9.24, SD\textsubscript{ReplacingGaelic}=0.89,; t(9)=-21.03, p=0.000)
+
+
+\subsubsection{Replacing ambiguous GLOSS Items}\label{treatment:ReplacingGloss}
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Mon Mar 26 00:00:59 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & ReplacingGLOSS \\ 
+  \hline
+0 & 17.29 & 15.95 \\ 
+  1 & 16.42 & 15.60 \\ 
+  2 & 15.29 & 14.15 \\ 
+  3 & 15.97 & 14.72 \\ 
+  4 & 17.79 & 15.74 \\ 
+  5 & 16.73 & 14.88 \\ 
+  6 & 17.11 & 14.45 \\ 
+  7 & 16.37 & 16.41 \\ 
+  8 & 15.93 & 15.15 \\ 
+  9 & 16.99 & 17.61 \\ 
+   \hline
+Mean & 16.59 & 15.47 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ReplacingGLOSStoEn}} 
+\label{Table:ReplacingGLOSS}
+\end{table}(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGLOSS}=15.47, SD\textsubscript{ReplacingGLOSS}=1.03,; t(9)=-3.67, p=0.005)
+
+\subsubsection{Complete Tables}
+
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Mon Mar 26 00:00:59 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrrrrrrrrr}
+  \hline
+Round & GLOSS & Gaelic & ConcatGLOSSGaelic & interleavingGdGLOSS & ReplacingGaelic & ReplacingGLOSS & Para & ParaPart & ParaPartHalf & ParaPartHalfOver & Over.Gaelic & google \\ 
+  \hline
+0 & 18.39 & 17.29 & 15.42 & 13.67 & 9.44 & 15.95 & 25.42 & 32.64 & 24.07 & 26.31 & 29.05 & 22.09 \\ 
+  1 & 18.00 & 16.42 & 14.31 & 12.49 & 9.07 & 15.60 & 25.32 & 32.28 & 18.58 & 24.85 & 28.61 & 25.38 \\ 
+  2 & 16.02 & 15.29 & 15.38 & 11.01 & 7.69 & 14.15 & 20.72 & 29.94 & 18.00 & 22.96 & 23.78 & 23.72 \\ 
+  3 & 20.22 & 15.97 & 14.18 & 12.33 & 9.12 & 14.72 & 22.22 & 31.18 & 22.25 & 25.48 & 27.50 & 23.21 \\ 
+  4 & 19.02 & 17.79 & 18.63 & 12.56 & 9.08 & 15.74 & 24.27 & 32.83 & 23.79 & 25.33 & 25.51 & 22.31 \\ 
+  5 & 15.53 & 16.73 & 14.89 & 12.13 & 10.45 & 14.88 & 24.55 & 31.11 & 21.40 & 24.39 & 27.88 & 23.41 \\ 
+  6 & 18.00 & 17.11 & 15.16 & 11.55 & 8.62 & 14.45 & 27.03 & 32.19 & 23.61 & 26.29 & 25.72 & 24.53 \\ 
+  7 & 20.08 & 16.37 & 15.20 & 12.78 & 10.00 & 16.41 & 25.34 & 33.52 & 23.73 & 25.61 & 27.12 & 22.78 \\ 
+  8 & 15.82 & 15.93 & 15.50 & 12.43 & 10.52 & 15.15 & 24.24 & 30.93 & 23.16 & 25.59 & 25.20 & 25.67 \\ 
+  9 & 15.93 & 16.99 & 15.72 & 11.65 & 8.46 & 17.61 & 25.96 & 34.35 & 24.49 & 26.32 & 26.39 & 23.42 \\ 
+   \hline
+Mean & 17.70 & 16.59 & 15.44 & 12.26 & 9.24 & 15.47 & 24.51 & 32.10 & 22.31 & 25.31 & 26.68 & 23.65 \\ 
    \hline
 \end{tabular}
 \caption{`Para' is `GLOSS -> Gaelic; Gloss -> En; Gaelic -> En', `ParaPart' is `Para plus Gaelic word token -> Gloss token', `Over' means oversampling, `Half' means using half of the training data.} 
-\label{Table:BLEUGlossGDALL}
+\label{table:complete_table}
 \end{table}
+\subsection{literature}
 
+what about \ref{Table:interleavingGdGLOSS} \ref{table:complete_table}
+Linguistics-informed MT: \citep{sennrich2016linguistic}\\ 
+
+Multi-task Sequence to Sequence Learning: \citep{luong2015multi}\\
+what is Multi-task learning:  \citep{Overview_Multi-Task_Learning}\\
+add ccc to target seq: \citep{ccg_target_seq}\\
+google zero shot: \citep{google_zero_shot}\\
+
+%###############################
 \bibliographystyle{te}
 \bibliography{ref}
 
