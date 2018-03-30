@@ -1,0 +1,56 @@
+%\documentclass[draft]{ua-thesis}
+\documentclass[final]{ua-thesis}
+\usepackage{verbatim}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[mathscr]{eucal}
+
+\usepackage{makeidx}
+\numberwithin{equation}{section}
+%\numberwithin{equation}{subsection}
+\input{isomath}
+\input{mathenv}
+\input{syms}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{afterpage}
+\usepackage{subfigure}
+
+\usepackage{hyperref}
+\usepackage{ifpdf}
+
+\director{Anna Mehmbuhr}
+\author{Stuart Dent}
+\title{Quadratic and cubic functions defined on the positive integers}
+\date{2010}
+\makeindex
+
+\ifpdf
+\pdfinfo{
+/Author (Stuart Dent)
+/Title  (Quadratic and cubic functions defined on the positive integers)
+}
+\fi
+
+%% ================================================================
+\begin{document}
+
+\maketitle
+
+\chapter*{Dedication}
+\thispagestyle{topright}
+\begin{center}For my mom.\end{center}
+\chapter*{Acknowledgments}
+\input{disack.tex}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\input{disabs.tex}
+\input{disbody.tex}
+
+\printindex
+\input{disbib.tex}
+
+%% ================================================================
+\end{document}

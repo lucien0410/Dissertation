@@ -1,0 +1,27 @@
+\contentsline {chapter}{List of Figures}{7}{Doc-Start}
+\contentsline {chapter}{List of Tables}{8}{Doc-Start}
+\contentsline {chapter}{Abstract}{9}{Doc-Start}
+\contentsline {chapter}{\chapterline {Chapter\ 1}Chapter title}{10}{chapter.1}
+\contentsline {section}{\numberline {1.1}Disclaimers and usage instructions}{10}{section.1.1}
+\contentsline {section}{\numberline {1.2}Section title}{11}{section.1.2}
+\contentsline {section}{\numberline {1.3}Section title}{11}{section.1.3}
+\contentsline {chapter}{\chapterline {Chapter\ 2}Chapter title}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}Section title}{13}{section.2.1}
+\contentsline {section}{\numberline {2.2}Section title}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}Introduction}{15}{section.2.3}
+\contentsline {section}{\numberline {2.4}Technical Settings of the Machine Translation Experiments}{17}{section.2.4}
+\contentsline {section}{\numberline {2.5}Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{18}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Procedure of the Experiments}{18}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Result}{22}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Summary}{22}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Discussion}{23}{subsection.2.5.4}
+\contentsline {section}{\numberline {2.6}Combining Gaelic words with Glosses}{23}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}The `ParaPart' Treatment Outperforms Any Other Treatments and The Baseline Significantly}{24}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Other Logical Treatments}{24}{subsection.2.6.2}
+\contentsline {subsubsection}{Para}{24}{table.2.3}
+\contentsline {subsubsection}{Interleaving Gaelic Words and Gloss Words}{25}{table.2.4}
+\contentsline {subsubsection}{Concating Gaelic Words and Gloss Words}{25}{table.2.5}
+\contentsline {subsubsection}{Replacing ambiguous Gaelic Words}{25}{table.2.6}
+\contentsline {subsubsection}{Replacing ambiguous GLOSS Items}{26}{table.2.7}
+\contentsline {subsubsection}{Complete Tables}{26}{table.2.8}
+\contentsline {subsection}{\numberline {2.6.3}literature}{26}{subsection.2.6.3}

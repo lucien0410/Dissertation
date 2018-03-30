@@ -1,0 +1,12 @@
+\addvspace {\medskipamount }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Short caption for the list of tables.}}{11}{table.1.1}
+\contentsline {table}{\numberline {1.2}{\ignorespaces Here is another caption. }}{12}{table.1.2}
+\addvspace {\medskipamount }
+\contentsline {table}{\numberline {2.1}{\ignorespaces BLEU scores of Model{GDtoEN} and Model{GLOSStoEn}}}{22}{table.2.1}
+\contentsline {table}{\numberline {2.2}{\ignorespaces BLEU scores of Model{GDtoEN} and Model{ParaParttoEn}}}{24}{table.2.2}
+\contentsline {table}{\numberline {2.3}{\ignorespaces BLEU scores of Model{GDtoEN} and Model{ParatoEn}}}{25}{table.2.3}
+\contentsline {table}{\numberline {2.4}{\ignorespaces BLEU scores of Model{GDtoEN} and Model{interleavingGdGLOSStoEn}}}{25}{table.2.4}
+\contentsline {table}{\numberline {2.5}{\ignorespaces BLEU scores of Model{GDtoEN}Model\ and textsubscript{ConcatGLOSSGaelictoEn} }}{26}{table.2.5}
+\contentsline {table}{\numberline {2.6}{\ignorespaces BLEU scores of Model{GDtoEN} and Model{ReplacingGaelictoEn}}}{27}{table.2.6}
+\contentsline {table}{\numberline {2.7}{\ignorespaces BLEU scores of Model{GDtoEN} and Model{ReplacingGLOSStoEn}}}{27}{table.2.7}
+\contentsline {table}{\numberline {2.8}{\ignorespaces `Para' is `GLOSS -> Gaelic; Gloss -> En; Gaelic -> En', `ParaPart' is `Para plus Gaelic word token -> Gloss token', `Over' means oversampling, `Half' means using half of the training data.}}{28}{table.2.8}

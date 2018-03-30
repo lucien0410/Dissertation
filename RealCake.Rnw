@@ -1,3 +1,6 @@
+\chapter{Building Translation Systems using Interlinear Glossed Text}
+\label{chap:cake}
+
 (
 
 \textbf{Assuming that in the previous chapters the following points are addressed already:} 
@@ -333,7 +336,7 @@ When the default setting is the Gaelic word, the performances are sightly worse 
 (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ReplacingGaelic}=\Sexpr{m_Treatment}, SD\textsubscript{ReplacingGaelic}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p < 0.01 ).
 
 
-\subsubsection{Summary and Conclusion}
+\section{Summary and Conclusion}
 The chapter reports machine translation experiments that aims to find how the gloss line information can improve the performance of the baseline Gaelic-to-English translation systems. It is found that the Parallel-Partial is highly effective. The complete BLEU scores of various treatments are given in the following table. 
 <<xtable, label=table:complete_table, echo=FALSE, results=tex>>=
 require(xtable)

@@ -61,7 +61,9 @@
 \begin{document}
 \input{RealMaster-concordance}
 
-\maketitle
+%\maketitle
+\meaning\maketitle
+
 
 \chapter*{Dedication}
 \thispagestyle{topright}
@@ -77,9 +79,6 @@
 %\input{disbody.tex}
 
 \printindex
-\chapter{Building Translation Systems using Interlinear Glossing Text}
-\label{chap:cake}
-
 (
 
 \textbf{Assuming that in the previous chapters the following points are addressed already:} 
@@ -234,7 +233,7 @@ This procedure of splitting the data into three sub-sets, training the models, a
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Mar 30 05:08:21 2018
+% Fri Mar 30 04:47:46 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -334,7 +333,7 @@ With the training and validation data ready, now we can train models and evaluat
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Mar 30 05:08:21 2018
+% Fri Mar 30 04:47:46 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -390,7 +389,7 @@ The Parallel treatment is using the parallel part of the Parallel-Partial treatm
 \paragraph{Results of the Parallel Treatment}\label{treatment:Para_result}
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Mar 30 05:08:21 2018
+% Fri Mar 30 04:47:46 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -420,7 +419,7 @@ However, the best treatment (i.e. the Parallel-Partial treatment) is still far b
 (M\textsubscript{Para}=24.51, SD\textsubscript{Para}=1.84; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=18.73, p < 0.01 ).
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Mar 30 05:08:21 2018
+% Fri Mar 30 04:47:46 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccc}
@@ -464,7 +463,7 @@ Given the chuck of interlinear glossed text data in (\ref{ex_interleave:in}), th
 The results are given in the following table. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Mar 30 05:08:21 2018
+% Fri Mar 30 04:47:46 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -511,7 +510,7 @@ A quick and close amendment of the Interleaving approach is to concatenate the a
 The performances of this treatment is given in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Mar 30 05:08:21 2018
+% Fri Mar 30 04:47:46 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -553,7 +552,7 @@ Now we aim to build a single sample that is either <Gaelic\_word, English transl
 \paragraph{Result of Hybrid}    
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Mar 30 05:08:22 2018
+% Fri Mar 30 04:47:46 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -580,7 +579,7 @@ Mean & 16.59 & 9.24 \\
 (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=9.24, SD\textsubscript{ReplacingGaelic}=0.89,; t(9)=-21.03, p < 0.01).
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Mar 30 05:08:22 2018
+% Fri Mar 30 04:47:46 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -607,10 +606,10 @@ Mean & 16.59 & 15.47 \\
 (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=15.47, SD\textsubscript{ReplacingGaelic}=1.03,; t(9)=-3.67, p < 0.01 ).
 
 
-\section{Summary and Conclusion}
+\subsubsection{Summary and Conclusion}
 The chapter reports machine translation experiments that aims to find how the gloss line information can improve the performance of the baseline Gaelic-to-English translation systems. It is found that the Parallel-Partial is highly effective. The complete BLEU scores of various treatments are given in the following table. 
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Mar 30 05:08:22 2018
+% Fri Mar 30 04:47:46 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrrrr}
