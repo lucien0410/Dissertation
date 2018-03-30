@@ -6,12 +6,14 @@
 \BOOKMARK [2][-]{subsection.3.3}{Summary}{section.3}% 6
 \BOOKMARK [2][-]{subsection.3.4}{Discussion}{section.3}% 7
 \BOOKMARK [1][-]{section.4}{Combining Gaelic words with Glosses}{}% 8
-\BOOKMARK [2][-]{subsection.4.1}{The `ParaPart' Treatment Outperforms Any Other Treatments and The Baseline Significantly}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.2}{Other Logical Treatments}{section.4}% 10
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Para}{subsection.4.2}% 11
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Interleaving Gaelic Words and Gloss Words}{subsection.4.2}% 12
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Concating Gaelic Words and Gloss Words}{subsection.4.2}% 13
-\BOOKMARK [3][-]{subsubsection.4.2.4}{Replacing ambiguous Gaelic Words}{subsection.4.2}% 14
-\BOOKMARK [3][-]{subsubsection.4.2.5}{Replacing ambiguous GLOSS Items}{subsection.4.2}% 15
-\BOOKMARK [3][-]{subsubsection.4.2.6}{Complete Tables}{subsection.4.2}% 16
-\BOOKMARK [2][-]{subsection.4.3}{literature}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.1}{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{section.4}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Data Preprocessing Using the Parallel-Partial Treatment}{subsection.4.1}% 10
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Result}{subsection.4.1}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Other Logical Treatments}{section.4}% 12
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Para}{subsection.4.2}% 13
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Interleaving Gaelic Words and Gloss Words}{subsection.4.2}% 14
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Concating Gaelic Words and Gloss Words}{subsection.4.2}% 15
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Replacing ambiguous Gaelic Words}{subsection.4.2}% 16
+\BOOKMARK [3][-]{subsubsection.4.2.5}{Replacing ambiguous GLOSS Items}{subsection.4.2}% 17
+\BOOKMARK [3][-]{subsubsection.4.2.6}{Complete Tables}{subsection.4.2}% 18
+\BOOKMARK [2][-]{subsection.4.3}{literature}{section.4}% 19

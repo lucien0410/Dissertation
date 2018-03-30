@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Technical Settings of the Machine Translation Experiments}{}% 2
+\BOOKMARK [1][-]{section.3}{Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Procedure of the Experiments}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Result}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Summary}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Discussion}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Combining Gaelic Words with Glosses}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{section.4}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Data Preprocessing Using the Parallel-Partial Treatment}{subsection.4.1}% 10
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Results of the Parallel-Partial Treatment}{subsection.4.1}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Other Possible Treatments}{section.4}% 12
+\BOOKMARK [3][-]{subsubsection.4.2.1}{The Parallel Treatment}{subsection.4.2}% 13
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Interleaving Gaelic Words and Gloss Items And Concating them}{subsection.4.2}% 14
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Hybrid: Gaelic or Gloss}{subsection.4.2}% 15
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Summary and Conclusion}{subsection.4.2}% 16
