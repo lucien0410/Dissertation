@@ -1,11 +1,11 @@
 \select@language {english}
 \addvspace {\medskipamount }
-\contentsline {table}{\numberline {1.1}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {GLOSStoEn}}}{17}{table.1.1}
-\contentsline {table}{\numberline {1.2}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {ParaParttoEn}}}{21}{table.1.2}
+\contentsline {table}{\numberline {1.1}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {GLOSStoEn}}}{18}{table.1.1}
+\contentsline {table}{\numberline {1.2}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {ParaParttoEn}}}{22}{table.1.2}
 \contentsline {table}{\numberline {1.3}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {ParatoEn}}}{23}{table.1.3}
-\contentsline {table}{\numberline {1.4}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN}, Model\textsubscript {ParatoEN} and Model\textsubscript {ParaParttoEN} }}{23}{table.1.4}
+\contentsline {table}{\numberline {1.4}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN}, Model\textsubscript {ParatoEN} and Model\textsubscript {ParaParttoEN} }}{24}{table.1.4}
 \contentsline {table}{\numberline {1.5}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {interleavingGdGLOSStoEn}}}{24}{table.1.5}
 \contentsline {table}{\numberline {1.6}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {ConcatGLOSSGaelictoEn} }}{25}{table.1.6}
-\contentsline {table}{\numberline {1.7}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {HybridDefaultAsGaelictoEn}}}{26}{table.1.7}
+\contentsline {table}{\numberline {1.7}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {HybridDefaultAsGaelictoEn}}}{27}{table.1.7}
 \contentsline {table}{\numberline {1.8}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {HybridDefaultAsGLOSS}}}{27}{table.1.8}
 \contentsline {table}{\numberline {1.9}{\ignorespaces BLEU scores of the treatments}}{28}{table.1.9}

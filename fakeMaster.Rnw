@@ -32,7 +32,7 @@
 
 \maketitle
 
-\SweaveInput{fakeCake.Rnw}
+\SweaveInput{RealCake.Rnw}
 
 \bibliographystyle{te}
 

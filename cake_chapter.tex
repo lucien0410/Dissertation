@@ -18,6 +18,7 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{fixltx2e}
 \usepackage{Sweave}
+\usepackage{rotating} 
 
 \newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
 %the newcommand change the selected word into 'ccr' font
@@ -162,7 +163,7 @@ The two trained models (gloss-to-English and Gaelic-to-English) then take the ri
 	\end{xlist}	
 \end{exe}
 
-To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard/human-translated English sentences). Specifically, the BLEU (bilingual evaluation understudy)\footnote{There are other automatic machine translation evaluation algorithms available, such as translation edit rate \citep{Snover06astudy} and Damerau–Levenshtein distance \citep{damerau1964technique, levenshtein1966binary}. BLEU is chosen for the current experiments because it is the most widely used evaluation algorithm, and the correlation between the BLUE score evaluation and human judgment evaluation is also well-acknowledged.} score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}} 
+To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard/human-translated English sentences). Specifically, the BLEU (bilingual evaluation understudy)\footnote{There are other automatic machine translation evaluation algorithms available, such as translation edit rate \citep{Snover06astudy} and Damerau-Levenshtein distance \citep{damerau1964technique, levenshtein1966binary}. BLEU is chosen for the current experiments because it is the most widely used evaluation algorithm, and the correlation between the BLUE score evaluation and human judgment evaluation is also well-acknowledged.} score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}} 
 script, a public implementation of Moses \citep{moses}. The BLEU score calculation is an automatic evaluation of how similar two copora are. In the current experiments we are comparing the predicted target sequences with the gold standard. The BLEU score of 100 means the two copora are identical, and the BLEU score of 0 means the two copora are completely distinct from each other.
 
 \begin{exe}
@@ -183,7 +184,7 @@ This procedure of splitting the data into three sub-sets, training the models, a
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Mar 26 14:18:33 2018
+% Fri Mar 30 11:30:28 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -229,7 +230,7 @@ In this section, I will first describe the most effective  treatment, termed as 
 \subsection{The `ParaPart' Treatment Outperforms Any Other Treatments and The Baseline Significantly}
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Mar 26 14:18:35 2018
+% Fri Mar 30 11:30:29 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -260,7 +261,7 @@ Mean & 16.59 & 32.10 \\
 \subsubsection{Para}\label{treatment:Para}
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Mar 26 14:18:35 2018
+% Fri Mar 30 11:30:29 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -288,7 +289,7 @@ Mean & 16.59 & 24.51 \\
 \subsubsection{Interleaving Gaelic Words and Gloss Words}\label{treatment:Interleaving}
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Mar 26 14:18:35 2018
+% Fri Mar 30 11:30:29 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -317,7 +318,7 @@ Mean & 16.59 & 12.26 \\
 \subsubsection{Concating Gaelic Words and Gloss Words}\label{treatment:Concating}
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Mar 26 14:18:35 2018
+% Fri Mar 30 11:30:29 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -346,12 +347,12 @@ Mean & 16.59 & 15.44 \\
 \subsubsection{Replacing ambiguous Gaelic Words}\label{treatment:ReplacingGaelic}
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Mar 26 14:18:35 2018
+% Fri Mar 30 11:30:29 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
   \hline
-Round & Gaelic (Baseline) & ReplacingGaelic \\ 
+Round & Gaelic (Baseline) & HybridDefaultAsGaelic \\ 
   \hline
 0 & 17.29 & 9.44 \\ 
   1 & 16.42 & 9.07 \\ 
@@ -367,20 +368,20 @@ Round & Gaelic (Baseline) & ReplacingGaelic \\
 Mean & 16.59 & 9.24 \\ 
    \hline
 \end{tabular}
-\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ReplacingGaelictoEn}} 
-\label{Table:ReplacingGaelic}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{HybridDefaultAsGaelictoEn}} 
+\label{Table:HybridDefaultAsGaelic}
 \end{table}(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=9.24, SD\textsubscript{ReplacingGaelic}=0.89,; t(9)=-21.03, p=0.000)
 
 
 \subsubsection{Replacing ambiguous GLOSS Items}\label{treatment:ReplacingGloss}
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Mar 26 14:18:35 2018
+% Fri Mar 30 11:30:30 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
   \hline
-Round & Gaelic (Baseline) & ReplacingGLOSS \\ 
+Round & Gaelic (Baseline) & HybridDefaultAsGLOSS \\ 
   \hline
 0 & 17.29 & 15.95 \\ 
   1 & 16.42 & 15.60 \\ 
@@ -396,15 +397,17 @@ Round & Gaelic (Baseline) & ReplacingGLOSS \\
 Mean & 16.59 & 15.47 \\ 
    \hline
 \end{tabular}
-\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ReplacingGLOSStoEn}} 
-\label{Table:ReplacingGLOSS}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{HybridDefaultAsGLOSS}} 
+\label{Table:HybridDefaultAsGLOSS}
 \end{table}(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGLOSS}=15.47, SD\textsubscript{ReplacingGLOSS}=1.03,; t(9)=-3.67, p=0.005)
 
 \subsubsection{Complete Tables}
 
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Mar 26 14:18:35 2018
+% Fri Mar 30 11:30:30 2018
+
 \begin{table}[ht]
+\begin{sidewaystable} 
 \centering
 \begin{tabular}{lrrrrrrrrrrrr}
   \hline
@@ -426,10 +429,11 @@ Mean & 17.70 & 16.59 & 15.44 & 12.26 & 9.24 & 15.47 & 24.51 & 32.10 & 22.31 & 25
 \end{tabular}
 \caption{`Para' is `GLOSS -> Gaelic; Gloss -> En; Gaelic -> En', `ParaPart' is `Para plus Gaelic word token -> Gloss token', `Over' means oversampling, `Half' means using half of the training data.} 
 \label{table:complete_table}
+\end{sidewaystable} 
 \end{table}
 \subsection{literature}
 
-what about \ref{Table:interleavingGdGLOSS} \ref{table:complete_table}
+XXXwhat about \ref{Table:interleavingGdGLOSS} \ref{table:complete_table}
 Linguistics-informed MT: \citep{sennrich2016linguistic}\\ 
 
 Multi-task Sequence to Sequence Learning: \citep{luong2015multi}\\

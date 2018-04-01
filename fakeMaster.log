@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  27 MAR 2018 16:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  1 APR 2018 10:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -694,7 +694,11 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))) (./fakeMaster.aux)
+)))) (./fakeMaster.aux
+
+LaTeX Warning: Label `Table:Concating' multiply defined.
+
+)
 \openout1 = `fakeMaster.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -713,8 +717,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 29.
@@ -771,143 +774,134 @@ LaTeX Info: Redefining \nameref on input line 29.
 \openout5 = `fakeMaster.out'.
 
  (./fakeMaster-concordance.tex)
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 39.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 42.
 
 (/usr/share/R/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 39.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 42.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 80.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 83.
  (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+[2]
+LaTeX Font Info:    Try loading font information for T1+ccr on input line 120.
+ (/usr/share/texlive/texmf-dist/tex/latex/ccfonts/t1ccr.fd
+File: t1ccr.fd 1999/11/22 v1.0a (WaS)
+) [3]
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
 
-Overfull \hbox (43.98836pt too wide) in paragraph at lines 154--155
+Overfull \hbox (43.98836pt too wide) in paragraph at lines 157--158
 []\T1/aer/m/n/10 Model$[]$ = Model trained with GDtoEN$[]$ in ([][]6a[][]) and 
 GDtoEN$[]$
  []
 
 [4]
-Overfull \hbox (18.29305pt too wide) in paragraph at lines 162--163
+Overfull \hbox (18.29305pt too wide) in paragraph at lines 165--166
 []\T1/aer/m/n/10 Predictions$[]$ = A list of En-glish se-quences that Model$[]$
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+ccr on input line 168.
-(/usr/share/texlive/texmf-dist/tex/latex/ccfonts/t1ccr.fd
-File: t1ccr.fd 1999/11/22 v1.0a (WaS)
-)
-Underfull \hbox (badness 10000) in paragraph at lines 177--179
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
 [5] [6]
-Overfull \hbox (16.59175pt too wide) in paragraph at lines 241--241
+Overfull \hbox (16.59175pt too wide) in paragraph at lines 244--244
 []\T1/aer/bx/n/12 The `Parallel-Partial' Treat-ment Out-per-forms Any Other
  []
 
-[7] [8]
-Overfull \hbox (1.12146pt too wide) in paragraph at lines 348--349
-[]\T1/aer/m/n/10 (M$[]$=16.59, SD$[]$=0.74; M$[]$=24.51, SD$[]$=1.84,; t(9)=17.
-50,
+[7] [8] [9]
+Overfull \hbox (5.81471pt too wide) in paragraph at lines 418--448
+\T1/aer/m/n/10 SD$[]$=0.74; M$[]$=12.26, SD$[]$=0.74,; t(9)=-
+ []
+
+[10]
+Overfull \hbox (22.65555pt too wide) in paragraph at lines 461--462
+[]\T1/aer/m/n/10 <``Tha_be.pres a_3sm.poss athair_father nas_comp sine_old.cmpr
+ na_comp
+ []
+
+[11]
+Overfull \hbox (27.67268pt too wide) in paragraph at lines 534--563
+\T1/aer/m/n/10 ([][]7[][]). (M$[]$=16.59, SD$[]$=0.74; M$[]$=9.24, SD$[]$=0.89,
+;
  []
 
 
-Overfull \hbox (70.80025pt too wide) in paragraph at lines 376--377
-[]\T1/aer/m/n/10 (M$[]$=16.59, SD$[]$=0.74; M$[]$=12.26, SD$[]$=0.74,;
- []
-
-
-Overfull \hbox (46.3084pt too wide) in paragraph at lines 405--406
-\T1/aer/m/n/10 (M$[]$=16.59, SD$[]$=0.74; M$[]$=15.44, SD$[]$=1.23,;
- []
-
-[9]
-Overfull \hbox (23.0731pt too wide) in paragraph at lines 434--435
-[]\T1/aer/m/n/10 (M$[]$=16.59, SD$[]$=0.74; M$[]$=9.24, SD$[]$=0.89,;
- []
-
-
-Overfull \hbox (21.65486pt too wide) in paragraph at lines 463--464
+Overfull \hbox (13.0731pt too wide) in paragraph at lines 534--563
 \T1/aer/m/n/10 (M$[]$=16.59, SD$[]$=0.74; M$[]$=15.47, SD$[]$=1.03,;
  []
 
 
-Overfull \hbox (513.11313pt too wide) in paragraph at lines 471--489
+Overfull \hbox (110.90665pt too wide) in paragraph at lines 571--589
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 494--496
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 497--501
-
- []
-
-[10] (./fakeMaster.bbl [11])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 506.
- [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 506.
+[12] (./fakeMaster.bbl [13])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 615.
+ [14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 615.
  (./fakeMaster.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 506.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 506.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 615.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 615.
 Package rerunfilecheck Info: File `fakeMaster.out' has not changed.
-(rerunfilecheck)             Checksum: 52B1D9668CD06503E1845EF7E320AE59;1536.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 506.
+(rerunfilecheck)             Checksum: D0EBB4B4DA396699213BA02DE8D391F4;1334.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 615.
  ) 
 Here is how much of TeX's memory you used:
- 16935 strings out of 493304
- 291911 string characters out of 6139871
- 385612 words of memory out of 5000000
- 19883 multiletter control sequences out of 15000+600000
- 38486 words of font info for 81 fonts, out of 8000000 for 9000
+ 16957 strings out of 493304
+ 292034 string characters out of 6139871
+ 382702 words of memory out of 5000000
+ 19885 multiletter control sequences out of 15000+600000
+ 39264 words of font info for 82 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  63i,9n,57p,1079b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
@@ -925,11 +919,12 @@ st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sform10
-.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on fakeMaster.pdf (12 pages, 238468 bytes).
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sform8.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on fakeMaster.pdf (14 pages, 262338 bytes).
 PDF statistics:
- 389 PDF objects out of 1000 (max. 8388607)
- 338 compressed objects within 4 object streams
- 106 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 414 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
+ 125 named destinations out of 1000 (max. 500000)
+ 225 words of extra memory for PDF output out of 10000 (max. 10000000)
 
