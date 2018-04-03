@@ -1,5 +1,5 @@
-\documentclass[a4paper]{article}
-
+%\documentclass[a4paper]{article}
+\documentclass[final]{ua-thesis}
 %% Language and font encodings
 \usepackage{gb4e}
 \noautomath
@@ -23,16 +23,20 @@
 %the newcommand change the selected word into 'ccr' font
 %e.g. \begin{myfont} multi-bleu.perl \end{myfont}
 
-\title{Chapter N: Experimenting Interlinear Glossing Text}
+\title{Develong Linguistically Imformed Neural Net Machine Translation Systems}
 \author{Yuan-Lu Chen}
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 %\SweaveOpts{concordance=TRUE}
 
-\maketitle
-
+%\maketitle
+\SweaveInput{Introduction.Rnw}
+\SweaveInput{gloss.Rnw}
+\SweaveInput{Description_of_Corpus.Rnw}
+\SweaveInput{intro_MT.Rnw}
 \SweaveInput{RealCake.Rnw}
+
 
 \bibliographystyle{te}
 

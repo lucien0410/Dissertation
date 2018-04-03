@@ -1,0 +1,43 @@
+\chapter{What are glosses? Why are them golden representations of meanings?}
+\label{chap:gloss}
+
+\section{Key Points of The Chapter}
+	\begin{enumerate}
+	\item Target Audience: CS people
+	\item main points:
+		\begin{enumerate}
+    	\item summary of the Leipzig Glossing Rules \citep{bickel2008leipzig}.  
+		\item glossing is the initial processing of the data guided by some specific syntax theory. 
+    	\item Glosses contain morphology information (with examples); glosses disambiguate homographs (with many examples); gloss also provide some parsing information because some glosses are determined by structural/constituency context (with examples).       
+		\end{enumerate}
+ 
+	\end{enumerate}
+
+\section{Introduction: What are Glosses}
+
+Interlinear Glossed Text (IGT) is widely used in linguistic studies. (\ref{gloss_eg})  is an example of Scottish Gaelic IGT.
+\begin{exe}  
+\ex\label{gloss_eg} \gll    Tha a athair nas sine na a mh\`athair.\\  
+            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
+\\  
+    \glt    `His father is older than his mother.'  
+\end{exe}
+
+
+
+\section{The Golden Properties of Glosses}
+
+The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Theoretically, this claim can be tested empirically. Imagine there is a set of special gold meta-linguistic semantic representations, which has the following property: each concept is mapped to one and one representation and each representation is mapped to one and one concept. Given, theses gold representations, it is expected that each gold representation will map to more natural language words than gloss items, and each natural language word will map to more gold representations than gloss items. However, in practice, this is an impossible experiment to conduct, because there are no such gold representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special gold meta-linguistic semantic representations.}. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information to some degree. 
+
+
+\subsection{Glosses cluster different words with the same meanings}
+Gloss collapses words   
+
+\subsection{Glosses disambiguates ambiguous words}
+Critically glosses provide `redundant' information. Here `redundant' means that  
+
+\subsection{Glosses are sensitive to hierarchical structure of natural language sentences}
+Critically glosses provide `redundant' information. Here `redundant' means that  
+
+\section{What is a Gloss Line}
+A gloss line is an artificial sentence using the purified `gloss words'. 

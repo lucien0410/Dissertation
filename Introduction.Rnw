@@ -1,0 +1,14 @@
+\chapter{Introduction}
+\label{chap:Introduction}
+
+Key information to be included:
+\begin{enumerate}
+\item outline/organization of the dissertation 
+\item Arguments to be made in the dissertation: 
+	\begin{enumerate}
+	\item To understand language, NLP and Linguistics should work together.
+    \item  Gloss is the right `lingua franca' for the two fields.
+    \item Linguistics helps NLP.
+    \item NLP helps linguistics. 
+	\end{enumerate}
+\end{enumerate}
