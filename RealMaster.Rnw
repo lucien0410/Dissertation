@@ -77,7 +77,17 @@
 %\input{disbody.tex}
 
 \printindex
+
+\SweaveInput{Introduction.Rnw}
+\SweaveInput{gloss.Rnw}
+\SweaveInput{Description_of_Corpus.Rnw}
+\SweaveInput{intro_MT.Rnw}
 \SweaveInput{RealCake.Rnw}
+\SweaveInput{RealCake2.Rnw}
+\SweaveInput{gloss_in_other_languages.Rnw}
+\SweaveInput{Implications_ling.Rnw}
+\SweaveInput{Conclusion.Rnw}
+
 
 \bibliographystyle{te}
 

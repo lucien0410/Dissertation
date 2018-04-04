@@ -4,45 +4,45 @@ The top-level auxiliary file: fakeMaster.aux
 The style file: te.bst
 Database file #1: ref.bib
 Warning--can't use both volume and number fields in levenshtein1966binary
-You've used 13 entries,
+You've used 12 entries,
             2904 wiz_defined-function locations,
-            675 strings with 7565 characters,
-and the built_in function-call counts, 8596 in all, are:
-= -- 658
+            669 strings with 7464 characters,
+and the built_in function-call counts, 8274 in all, are:
+= -- 630
 > -- 484
-< -- 5
-+ -- 167
+< -- 4
++ -- 166
 - -- 147
-* -- 690
-:= -- 1300
-add.period$ -- 38
-call.type$ -- 13
-change.case$ -- 120
-chr.to.int$ -- 12
-cite$ -- 27
-duplicate$ -- 641
-empty$ -- 595
-format.name$ -- 178
-if$ -- 1719
+* -- 676
+:= -- 1240
+add.period$ -- 35
+call.type$ -- 12
+change.case$ -- 115
+chr.to.int$ -- 11
+cite$ -- 25
+duplicate$ -- 611
+empty$ -- 562
+format.name$ -- 181
+if$ -- 1654
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 131
-newline$ -- 65
-num.names$ -- 52
-pop$ -- 259
+missing$ -- 125
+newline$ -- 61
+num.names$ -- 48
+pop$ -- 253
 preamble$ -- 1
-purify$ -- 100
+purify$ -- 96
 quote$ -- 0
-skip$ -- 231
+skip$ -- 218
 stack$ -- 0
-substring$ -- 318
-swap$ -- 303
+substring$ -- 307
+swap$ -- 295
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 114
+type$ -- 105
 warning$ -- 1
-while$ -- 55
+while$ -- 52
 width$ -- 0
-write$ -- 168
+write$ -- 155
 (There was 1 warning)

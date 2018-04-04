@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{12}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -53,16 +53,6 @@ Klein, Guillaume, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander~M. Rush
   \urlprefix\url{http://arxiv.org/abs/1701.02810}.
 \bibAnnoteFile{2017opennmt}
 
-\bibitem[{Koehn(2009)}]{koehn2009statistical}
-Koehn, Philipp (2009), \emph{Statistical machine translation}. Cambridge
-  University Press.
-\bibAnnoteFile{koehn2009statistical}
-
-\bibitem[{Koehn(2017)}]{Koehn_NMT2017}
-Koehn, Philipp (2017), \enquote{Neural machine translation.} \emph{CoRR},
-  abs/1709.07809, \urlprefix\url{http://arxiv.org/abs/1709.07809}.
-\bibAnnoteFile{Koehn_NMT2017}
-
 \bibitem[{Koehn et~al.(2007)Koehn, Hoang, Birch, Callison-Burch, Federico,
   Bertoldi, Cowan, Shen, Moran, Zens et~al.}]{moses}
 Koehn, Philipp, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello
@@ -79,6 +69,11 @@ Kotsiantis, Sotiris~B, I~Zaharakis, and P~Pintelas (2007), \enquote{Supervised
   machine learning: A review of classification techniques.} \emph{Emerging
   artificial intelligence applications in computer engineering}, 160, 3--24.
 \bibAnnoteFile{kotsiantis2007supervised}
+
+\bibitem[{Kratzer and Heim(1998)}]{kratzer1998semantics}
+Kratzer, Angelika and Irene Heim (1998), \emph{Semantics in generative
+  grammar}. Blackwell Oxford.
+\bibAnnoteFile{kratzer1998semantics}
 
 \bibitem[{Levenshtein(1966)}]{levenshtein1966binary}
 Levenshtein, Vladimir~I (1966), \enquote{Binary codes capable of correcting

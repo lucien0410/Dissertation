@@ -77,103 +77,190 @@
 %\input{disbody.tex}
 
 \printindex
-\chapter{Building Translation Systems using Interlinear Glossed Text}
-\label{chap:cake}
 
-(
+\chapter{Introduction}
+\label{chap:Introduction}
 
-\textbf{Assuming that in the previous chapters the following points are addressed already:} 
-\begin{itemize}
-\item The nature of glosses has been well-explained  (Target audience: CS people without any formal linguistics background):
-	\begin{itemize}
-	\item What glosses are: A basic intro of interlinear gloss for non-linguists
-    \item The golden nature of glosses (encodes NON-LINEAR syntax (i.e. structure parse) and semantics information) 
-    \item The potential of gloss:	
-		\begin{itemize}
-		\item potential: providing disambiguation, labeling important grammar morphemes in the source language, providing morphological analysis, providing one-to-many and many-to-one relations of source tokens and target tokens.  
-		\end{itemize}
-	\end{itemize}
-\item A history of machine translation, and a non-mathy description of the methods of doing machine translation. (Target reader: theoretical linguists)
-\end{itemize}
+Key information to be included:
+\begin{enumerate}
+\item outline/organization of the dissertation 
+\item Arguments to be made in the dissertation: 
+	\begin{enumerate}
+	\item To understand language, NLP and Linguistics should work together.
+    \item  Gloss is the right `lingua franca' for the two fields.
+    \item Linguistics helps NLP.
+    \item NLP helps linguistics. 
+	\end{enumerate}
+\end{enumerate}
+\chapter{What are glosses? Why are them golden representations of meanings?}
+\label{chap:gloss}
 
-                 
-)
+\section{Key Points of The Chapter}
+	\begin{enumerate}
+	\item Target Audience: CS people
+	\item main points:
+		\begin{enumerate}
+    	\item summary of the Leipzig Glossing Rules \citep{bickel2008leipzig}.  
+		\item glossing is the initial processing of the data guided by some specific syntax theory. 
+    	\item Glosses contain morphology information (with examples); glosses disambiguate homographs (with many examples); gloss also provide some parsing information because some glosses are determined by structural/constituency context (with examples).       
+		\end{enumerate}
+ 
+	\end{enumerate}
 
+\section{Introduction: What are Glosses}
 
-\section{Introduction}
-The Innovation is to incorporate the gloss information of Interlinear Glossed Text data into machine translation. 
-
-In supervised machine learning models, two factors effects the performance of the trained systems \citep{kotsiantis2007supervised}: a.) the quality of the training data and b.) the choices of the features. The properties of the gloss data as described in *CHAPTERXYZ* make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons. First, glosses are more purified that natural language words. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information to some degree. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information. 
-
-Therefore, theoretically incorporation of the gloss data should improve the translation systems. Specifically, I propose the following hypothesis:
+Interlinear Glossed Text (IGT) is widely used in linguistic studies. (\ref{gloss_eg})  is an example of Scottish Gaelic IGT.
 \begin{exe}  
-\ex \textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
-
-The hypothesis can have two versions, strong and weak:
-	\begin{xlist}
-	\ex \label{strong_hy} Strong version: Gloss may replace the source natural language totally, and the system outperforms the system trained with source natural language to target language sentence pairs (i.e. the baseline systems).   
-	\ex \label{weak_hy} Weak version: Gloss only increases the performance of the baseline systems, but cannot replace the source language. 
-	\end{xlist}
-\end{exe}
-
-The experiments reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However, it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly.  
-
-This chapter describes the experiments conducted to test the Gloss-helps hypothesis and the results attest the weak version. 
-The rest of the chapter is organized as follows: Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}),and section 5 concludes the chapter.  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
-The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}. 
-The following default hyper-parameter settings of OpenNMT\footnote{See their documentation for the complete default hyper-parameter settings: \url{http://opennmt.net/OpenNMT-py/}.} are used across all models so that the only independent variable is the type of the training data: 
-\begin{itemize}
-\item Word vector size: 500
-\item Type of recurrent cell: Long Short Term Memory
-\item Number of recurrent layers of the encoder and decoder: 2
-\item Number of epochs: 13 
-\item Size of mini batches: 64 
-\end{itemize}
-
-The settings of the hyper-parameters do have effects on the performances of the trained models. 
-A common practice to find the optimal settings of the hyper-parameters is to hold out a subset of the training dataset as the developing dataset, then test the models on the developing data to see what settings are optimal, then merge the developing dataset and training dataset as a new training set, and then train on this new training set using the found optimal hyper-parameters. 
-
-However, given that finding the optimal settings of the hyper-parameters is not relevant to our research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and I simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen, and there are room to tune the models for better performance. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.
-
-The data and the scripts will be accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.   
-
-\section{Gloss Representation Solely Does NOT Outperform Gaelic Sentences} \label{gd_to_gl_to_en}
-This section tests the strong version of Gloss-helps hypothesis in (\ref{strong_hy}).
-Given the assumption that gloss may be better than any natural language in terms of representing meanings, it is expected that for neural net machine translation systems it is easier to learn how to translate from the glosses of Scottish Gaelic to English than to learn how to translate from Scottish Gaelic to English. However, the results show that there is no significance difference between the two types of data (i.e. GLOSS $\rightarrow$ English and Gaelic $\rightarrow$ English). 
-
-\subsection{Procedure of the Experiments}
-I use repeated random sub-sampling validation to compare the performances of the two type of models.
-
-Totally we have 8,388 indexed 3-tuples of Gaelic sentence, a gloss line and an English translation. In the interlinear glossed text example below, each line is an argument of a 3-tuple sample. 
-
-\begin{exe}  
-\ex \gll    Tha a athair nas sine na a mh\`athair.\\  
+\ex\label{gloss_eg} \gll    Tha a athair nas sine na a mh\`athair.\\  
             be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
 \\  
     \glt    `His father is older than his mother.'  
 \end{exe}
 
-The 3-tuple representation of the above example is:
-\begin{exe}
- \ex <``Tha a athair nas sine na a mh\`athair'', ``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother''>
+(summarize and exemplify the Leipzig Glossing Rules)
+
+
+\section{The Golden Properties of Glosses}
+
+The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Theoretically, this claim can be tested empirically. Imagine there is a set of special gold meta-linguistic semantic representations, which has the following property: each concept is mapped to one and one representation and each representation is mapped to one and one concept. Given, theses gold representations, it is expected that each gold representation will map to more natural language words than gloss items, and each natural language word will map to more gold representations than gloss items. However, in practice, this is an impossible experiment to conduct, because there are no such gold representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special golden meta-linguistic semantic representations, and the mappings between the golden representations to natural languages.}. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information to some degree. 
+
+
+\subsection{Glosses Cluster Different Words with the Same Meanings}
+Gloss collapses words with different forms with the same meanings into a single gloss. In natural languages, the morphology of a word (i.e. the form of a word) may be sensitive to the phonological environments and changing into different forms. Consider the following English example: 
+\begin{exe}  
+\ex \gll John ate \textbf{an} apple.\\
+	John eat.past	\textbf{Det} apple\\
+\ex \gll John ate \textbf{a} banana.\\
+	John eat.past   \textbf{Det} banana\\
+\end{exe}
+In the above example, \textit{an} and \textit{a} have the identical meaning\footnote{Semantically, \textit{an} and \textit{a} are existential quantifiers, which declare that a member of a set exists in the world. In formal semantics, \textit{an} and \textit{a} may be defined as follows: $\exists\lambda P[P(x)]$. In the current example, \textit{apple} and \textit{banana} will instantiate $P$ in the formula, and the meanings will be `an apple exists' and `a banana exists'. \citet{kratzer1998semantics} would be a nice introduction for interested readers to see how linguists, specifically semanticians, define, decompose, and compose meanings of languages formally.}. 
+
+\subsection{Glosses disambiguates ambiguous words}
+Critically glosses provide `redundant' information. Here `redundant' means that  
+
+\subsection{Glosses are sensitive to hierarchical structure of natural language sentences}
+Critically glosses provide `redundant' information. Here `redundant' means that  
+
+\section{What is a Gloss Line}
+A gloss line is an artificial sentence using the purified `gloss words'. 
+
+\section{Conclusion} 
+
+% section conclusion (end)
+\chapter{Description of the Scottish Gaelic Interlinear Glossed Text Corpus}
+\label{chap:Corpus}
+
+	\begin{enumerate}
+    \item Original goal of the corpus: a bank of examples of specific syntactic patterns for syntacticians.  
+	\item Description of UA Celtic Group's Scottish Gaelic documentation project
+    \item Collection of interlinear glossed text data used in syntax paper/dissertations AND language documentation
+    \item Auto-glosser and literature on auto-glosser
+	\end{enumerate}
+\chapter{A Gental Introduction of Machine Learning and Machine Translation}
+\label{chap:MT}
+
+	\begin{enumerate}
+	\item General review of supervised Machine learning \citep{kotsiantis2007supervised}: The goal is provide a high level of understanding of what machine learning is. Machine Learning is to learn from EXAMPLES/SAMPLES. For example, to define the meaning of `dog', instead of giving all the definable features of `dog', we feed the machine with as many as possible of information of entities of dogs that we have access. Montague Semantics is actually a variant of ML, within which `dog' is defined as `the set of all the dog that exists in the current world.'. As such, Montague Semantics is Machine Learning, because instead of defining 'dog' with certain arbitrary rules (+/- FEATURE), it says 'all the dog entities in the current world'. Definition by samples/examples not by rules.    
+	\item Literature on machine translation: from statistical machine translation \citep{koehn2009statistical} to neural machine translation \citep{cho2014learning,cho2014properties,bahdanau2014neural,Koehn_NMT2017}. (Target audience: linguists)
+	\end{enumerate}
+    
+\chapter{Building Translation Systems using Interlinear Glossed Text}
+\label{chap:cake}
+
+(
+
+\textbf{Assuming that in the previous chapters the following points are addressed already:}
+\begin{itemize}
+\item The nature of glosses has been well-explained  (Target audience: CS people without any formal linguistics background):
+	\begin{itemize}
+	\item What glosses are: A basic intro of interlinear gloss for non-linguists
+   \item The golden nature of glosses (encodes NON-LINEAR syntax (i.e. structure parse) and semantics information)
+   \item The potential of gloss:	
+		\begin{itemize}
+		\item potential: providing disambiguation, labeling important grammar morphemes in the source language, providing morphological analysis, providing one-to-many and many-to-one relations of source tokens and target tokens. 
+		\end{itemize}
+	\end{itemize}
+\item A history of machine translation, and a non-mathy description of the methods of doing machine translation. (Target reader: theoretical linguists)
+\end{itemize}
+
+               
+)
+
+
+\section{Introduction}
+The Innovation is to incorporate the gloss information of Interlinear Glossed Text data into machine translation.
+
+In supervised machine learning models, two factors effects the performance of the trained systems \citep{kotsiantis2007supervised}: a.) the quality of the training data and b.) the choice of the features. The properties of the gloss data as described in *CHAPTERXYZ* make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons. First, glosses are more purified that natural language words. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information. See chapter \ref{chap:gloss} for the discussion on the golden properties of glosses.  
+
+Therefore, theoretically incorporation of the gloss data should improve the translation systems. Specifically, I propose the following hypothesis:
+\begin{exe} 
+\ex \textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
+
+The hypothesis can have two versions, strong and weak:
+	\begin{xlist}
+	\ex \label{strong_hy} Strong version: Gloss may replace the source natural language totally, and the system outperforms the system trained with source natural language to target language sentence pairs (i.e. the baseline systems).  
+	\ex \label{weak_hy} Weak version: Gloss only increases the performance of the baseline systems, but cannot replace the source language.
+	\end{xlist}
 \end{exe}
 
-First, the samples (i.e. the 3-tuples) are randomly split into three datasets: training set (N=6,388), validation set (N=1,000), and test set (N=1,000)\footnote{Here the random sampling process is achieved by using the \begin{myfont}random.sample(population, k)\end{myfont} function in the standard library of python.}. 
+The experiments reveal that replacing Gaelic words with glosses doesn't bochoiceost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However, it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly. 
+
+This chapter describes the experiments conducted to test the Gloss-helps hypothesis and the results attest the weak version.
+The rest of the chapter is organized as follows: Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}),and section 5 concludes the chapter. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
+The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}.
+The following default hyper-parameter settings of OpenNMT\footnote{See their documentation for the complete default hyper-parameter settings: \url{http://opennmt.net/OpenNMT-py/}.} are used across all models so that the only independent variable is the type of the training data:
+\begin{itemize}
+\item Word vector size: 500
+\item Type of recurrent cell: Long Short Term Memory
+\item Number of recurrent layers of the encoder and decoder: 2
+\item Number of epochs: 13
+\item Size of mini batches: 64
+\end{itemize}
+
+The settings of the hyper-parameters do have effects on the performances of the trained models.
+A common practice to find the optimal settings of the hyper-parameters is to hold out a subset of the training dataset as the developing dataset, then test the models on the developing data to see what settings are optimal, then merge the developing dataset and training dataset as a new training set, and then train on this new training set using the found optimal hyper-parameters.
+
+However, given that finding the optimal settings of the hyper-parameters is not relevant to our research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and I simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen, and there are room to tune the models for better performance. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.
+
+The data and the scripts will be accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.  
+
+\section{Gloss Representation Solely Does NOT Outperform Gaelic Sentences} \label{gd_to_gl_to_en}
+This section tests the strong version of Gloss-helps hypothesis in (\ref{strong_hy}).
+Given the assumption that gloss may be better than any natural language in terms of representing meanings, it is expected that for neural net machine translation systems it is easier to learn how to translate from the glosses of Scottish Gaelic to English than to learn how to translate from Scottish Gaelic to English. However, the results show that there is no significance difference between the two types of data (i.e. GLOSS $\rightarrow$ English and Gaelic $\rightarrow$ English).
+
+\subsection{Procedure of the Experiments}
+I use repeated random sub-sampling validation to compare the performances of the two type of models.
+
+Totally we have 8,388 indexed 3-tuples of Gaelic sentence, a gloss line and an English translation. In the interlinear glossed text example below, each line is an argument of a 3-tuple sample.
+
+\begin{exe} 
+\ex \gll    Tha a athair nas sine na a mh\`athair.\\ 
+           be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
+\\ 
+   \glt    `His father is older than his mother.' 
+\end{exe}
+
+The 3-tuple representation of the above example is:
+\begin{exe}
+\ex <``Tha a athair nas sine na a mh\`athair'', ``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother''>
+\end{exe}
+
+First, the samples (i.e. the 3-tuples) are randomly split into three datasets: training set (N=6,388), validation set (N=1,000), and test set (N=1,000)\footnote{Here the random sampling process is achieved by using the \begin{myfont}random.sample(population, k)\end{myfont} function in the standard library of python.}.
 
 \begin{exe}
 \ex Definitions of datasets:\\
 	Let:
 	\begin{xlist}
 	\ex 	Index\textsubscript{Train}, Index\textsubscript{Validation}, and Index\textsubscript{Test} be sets of random indexes from 0 to 8,387.
-    \ex		Index\textsubscript{Train} $\cap$ Index\textsubscript{Validation} $\cap$ Index\textsubscript{Test} = $\emptyset$ 
-    \ex 	|Index\textsubscript{Train}| = 6,388; |Index\textsubscript{Validation}| = 1,000; |Index\textsubscript{Test}| = 1,000. 
-    \end{xlist}
+   \ex		Index\textsubscript{Train} $\cap$ Index\textsubscript{Validation} $\cap$ Index\textsubscript{Test} = $\emptyset$
+   \ex 	|Index\textsubscript{Train}| = 6,388; |Index\textsubscript{Validation}| = 1,000; |Index\textsubscript{Test}| = 1,000.
+   \end{xlist}
 \end{exe}
-The step above just randomly splits the indexes of the 3-tuples into three distinct sets: Index\textsubscript{Train}, Index\textsubscript{Validation}, and Index\textsubscript{Test}. Based on the indexes, we generate the sets of samples. For each index, the 3-tuple is split into two pairs: <gloss, English>, <Gaelic, English>, so that later we can compare the different effects of gloss lines and Gaelic sentences. For each pair, the first item is the source sequence, and the second item is the target sequence. The systems learns how to map the source sequence to the target sequence.    
+The step above just randomly splits the indexes of the 3-tuples into three distinct sets: Index\textsubscript{Train}, Index\textsubscript{Validation}, and Index\textsubscript{Test}. Based on the indexes, we generate the sets of samples. For each index, the 3-tuple is split into two pairs: <gloss, English>, <Gaelic, English>, so that later we can compare the different effects of gloss lines and Gaelic sentences. For each pair, the first item is the source sequence, and the second item is the target sequence. The systems learns how to map the source sequence to the target sequence.   
 
 \begin{exe}
 	\ex Gloss to English
@@ -193,48 +280,48 @@ The step above just randomly splits the indexes of the 3-tuples into three disti
 		\ex Example: <``Tha a athair nas sine na a mh\`athair.'', ``His father is older than his mother.''>
 		\end{xlist}
 \end{exe}
-The models are trained with the training set and validation set (i.e. the model learns how to map the source sequence to the target sequence). Both training set and validation set are known information for the models\footnote{Technically speaking, the validation set is part of the training data in terms of machine learning. The presence of the validation set is a special requirement of neural net machine learning, which uses the validation set to evaluate the convergence of the training.}. Specifically, the neural net system learns how to maps gloss lines to English sentences from samples in (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}), and another neural net system learns how to maps Gaelic sentences to English sentences from from samples in (\ref{GDtoENTrain}) and (\ref{GDtoENVal}). 
+The models are trained with the training set and validation set (i.e. the model learns how to map the source sequence to the target sequence). Both training set and validation set are known information for the models\footnote{Technically speaking, the validation set is part of the training data in terms of machine learning. The presence of the validation set is a special requirement of neural net machine learning, which uses the validation set to evaluate the convergence of the training.}. Specifically, the neural net system learns how to maps gloss lines to English sentences from samples in (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}), and another neural net system learns how to maps Gaelic sentences to English sentences from from samples in (\ref{GDtoENTrain}) and (\ref{GDtoENVal}).
 
 \begin{exe}
-\ex Models: 
+\ex Models:
 	\begin{xlist}
 	\ex \label{ModelGlossToEN} Model\textsubscript{GLOSStoEN} = Model trained with GLOSStoEN\textsubscript{Train} in (\ref{GLOSStoENTrain}) and GLOSStoEN\textsubscript{Validation} in (\ref{GLOSStoENVal})
-	\ex \label{ModelGDToEN}Model\textsubscript{GDtoEN} = Model trained with GDtoEN\textsubscript{Train} in (\ref{GDtoENTrain}) and GDtoEN\textsubscript{Validation} in (\ref{GDtoENVal}) 
+	\ex \label{ModelGDToEN}Model\textsubscript{GDtoEN} = Model trained with GDtoEN\textsubscript{Train} in (\ref{GDtoENTrain}) and GDtoEN\textsubscript{Validation} in (\ref{GDtoENVal})
 	\end{xlist}	
 \end{exe}
-The two trained models (gloss-to-English and Gaelic-to-English) then take the right source sequences of the test sets (i.e. glossing lines and Gaelic sentences for Model\textsubscript{GLOSStoEN} and Model\textsubscript{GDoEN} respectively) as inputs and then generate the predicted target sequences (i.e. English sentences). 
+The two trained models (gloss-to-English and Gaelic-to-English) then take the right source sequences of the test sets (i.e. glossing lines and Gaelic sentences for Model\textsubscript{GLOSStoEN} and Model\textsubscript{GDoEN} respectively) as inputs and then generate the predicted target sequences (i.e. English sentences).
 
 \begin{exe}
-\ex Predictions: 
+\ex Predictions:
 	\begin{xlist}
-	\ex Predictions\textsubscript{GLOSStoEN} = A list of English sequences that Model\textsubscript{GLOSStoEN} maps to from the gloss sequences in (\ref{GLOSStoENTest}) 
-	\ex Predictions\textsubscript{GDtoEN} = A list of English sequences that Model\textsubscript{GDtoEN} maps to from the Gaelic sentences in (\ref{GDtoENTest}) 
+	\ex Predictions\textsubscript{GLOSStoEN} = A list of English sequences that Model\textsubscript{GLOSStoEN} maps to from the gloss sequences in (\ref{GLOSStoENTest})
+	\ex Predictions\textsubscript{GDtoEN} = A list of English sequences that Model\textsubscript{GDtoEN} maps to from the Gaelic sentences in (\ref{GDtoENTest})
 	\end{xlist}	
 \end{exe}
 
-To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard/human-translated English sentences). 
-Specifically, the BLEU (bilingual evaluation understudy)\footnote{There are other automatic machine translation evaluation algorithms available, such as translation edit rate \citep{Snover06astudy} and Damerau-Levenshtein edit distance \citep{damerau1964technique, levenshtein1966binary}. BLEU is chosen for the current experiments because it is the most widely used evaluation algorithm, and the correlation between the BLUE score evaluation and human judgment evaluation is also well-acknowledged.} score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}} 
+To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard/human-translated English sentences).
+Specifically, the BLEU (bilingual evaluation understudy)\footnote{There are other automatic machine translation evaluation algorithms available, such as translation edit rate \citep{Snover06astudy} and Damerau-Levenshtein edit distance \citep{damerau1964technique, levenshtein1966binary}. BLEU is chosen for the current experiments because it is the most widely used evaluation algorithm, and the correlation between the BLUE score evaluation and human judgment evaluation is also well-acknowledged.} score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}}
 script, a public implementation of Moses \citep{moses}. The BLEU score calculation is an automatic evaluation of how similar two copora are. In the current experiments we are comparing the predicted target sequences with the gold standard. The BLEU score of 100 means the two copora are identical, and the BLEU score of 0 means the two copora are completely distinct from each other.
 
 \begin{exe}
 \ex Gold-Standard = English sentences in (\ref{GLOSStoENTest}) = English sentences in (\ref{GDtoENTest})
 \end{exe}
-Note that the gold-standard is the same because they are the same English sentences in the 3-tuples samples. Then the two sets of predicted English sentences are evaluated, yielding two BLEU scores.   
+Note that the gold-standard is the same because they are the same English sentences in the 3-tuples samples. Then the two sets of predicted English sentences are evaluated, yielding two BLEU scores.  
 
 \begin{exe}
 \ex Scores: \\
-  \begin{xlist}
+ \begin{xlist}
 	\ex Score\textsubscript{GLOSStoEN} = BLEU(Gold-Standard, Predictions\textsubscript{GLOSStoEN}) \\
 	\ex Score\textsubscript{GDtoEN} = BLEU(Gold-Standard, Predictions\textsubscript{GDtoEN}) \\
-  \end{xlist}
+ \end{xlist}
 \end{exe}
-This procedure of splitting the data into three sub-sets, training the models, and evaluating the models is executed for ten times. 
+This procedure of splitting the data into three sub-sets, training the models, and evaluating the models is executed for ten times.
 
 \subsection{Result} \label{gdglen_results}
-After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table. 
+After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Mar 31 22:26:54 2018
+% Wed Apr  4 13:20:48 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -258,21 +345,25 @@ Mean & 16.59 & 17.70 \\
 \caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{GLOSStoEn}} 
 \label{Table:GLOSS}
 \end{table}
-The average score of the Models\textsubscript{GLOSStoEN} is only sightly higher than the average score of the Models\textsubscript{GDtoEN}. 
-Also, after doing a paired T-test, the difference between the two types of models is not attested 
+The average score of the Models\textsubscript{GLOSStoEN} is only sightly higher than the average score of the Models\textsubscript{GDtoEN}.
+Also, after doing a paired T-test, the difference between the two types of models is not attested
 (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{GLOSStoEN}=17.70, SD\textsubscript{GLOSStoEN}=1.78; t(9)=1.97, p=0.080)
 
 \subsection{Summary}
-The ultimate practical goal of the dissertation is to use glossing data to develop better machine translation systems. Here \textit{better} means to be better than a baseline system, which is the machine translation system trained with Gaelic-to-English translation samples. The models in (\ref{ModelGDToEN}) are the baseline systems, and their scores are in the Gaelic column of table (\ref{Table:GLOSS}). These are the target scores that we aims to outperform. The experiment above is the first attempt to improve that scores by using the \textit{gloss treatment}, in which the Gaelic sentences are replaced with gloss lines.  However, the result shows that this \textit{gloss treatment} is not effective as the scores of the gloss models are not statistically higher than the baseline Gaelic-to-English models.  
+The ultimate practical goal of the dissertation is to use glossing data to develop better machine translation systems. Here \textit{better} means to be better than a baseline system, which is the machine translation system trained with Gaelic-to-English translation samples. The models in (\ref{ModelGDToEN}) are the baseline systems, and their scores are in the Gaelic column of table (\ref{Table:GLOSS}). These are the target scores that we aims to outperform. The experiment above is the first attempt to improve that scores by using the \textit{gloss treatment}, in which the Gaelic sentences are replaced with gloss lines.  However, the result shows that this \textit{gloss treatment} is not effective as the scores of the gloss models are not statistically higher than the baseline Gaelic-to-English models. 
 
 \subsection{Discussion}
-It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are equally good in terms of representing meanings. The strong version of the Gloss-helps hypothesis does not hold. 
+It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are equally good in terms of representing meanings. The strong version of the Gloss-helps hypothesis does not hold.
 
-We may now combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-helps hypothesis. The experiments and results are reported in the next section. 
+There are several remarks that need to make for the current result. First, the result falsifies the point of view about glosses in chapter (\ref{chap:gloss}) that the gloss line is a golden semantic representation hand-crafted by linguists.
+It turns that this artificial language, the gloss lines, is only marginal better than Gaelic, as the mean BLEU score of the gloss treatment is slightly higher than that of the baseline systems. This can be viewed as an evidence of language evolution.
+The written form of a natural language is actually already optimized for representing semantics to the same degree of gloss line representations.
+Second, if we want to actually apply the gloss treatment to translate a Gaelic sentence to English, we encounter an immediate problem. The actual source sequence is a Gaelic sentence, while the required source sequence for the gloss treatment is a gloss line. The auto-glosser described in chapter (\ref{chap:gloss}) may convert the Gaelic sentence to a gloss line, but the conversion is not perfect at all. Given this, even if the gloss treatment should work, it is not practical unless we may convert Gaelic sentence to gloss line perfectly.      
 
+We may now combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-helps hypothesis. The experiments and results are reported in the next chapter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Combining Gaelic Words with Glosses}\label{gd_plus_gl_to_en}
-
+\chapter{Combining Gaelic Words with Glosses}\label{gd_plus_gl_to_en}
+\section{Introduction}
 In the previous section, we attempt to build a system by using the \textit{gloss treatment} to outperform the baseline system. It turns that using gloss line solely is not effective enough to improve the system. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
 \begin{exe}
 	\ex 
@@ -286,9 +377,9 @@ This section reports various ways of combining the gloss line data and the Gaeli
 
 In this section, I will first describe the most effective treatment, termed as `\textit{Parallel-Partial}' treatment, and the results, and then I will report the experiments done with other relevant logical treatments (i.e. other ways of combining glossing data and Gaelic data). 
 
-\subsection{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}
+\section{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}
 
-\subsubsection{Data Preprocessing Using the Parallel-Partial Treatment}
+\subsection{Data Preprocessing Using the Parallel-Partial Treatment}
 The Parallel-Partial treatment uses the training and validation data of the baseline system and that of the gloss treatment system.  
 The training and validation data of the baseline system are pairs of a Gaelic sentence and a English sentences (see (\ref{GDtoENTrain}) and (\ref{GDtoENVal}) ), 
 and the data of the gloss treatment are pairs of a gloss line and a English sentences (see (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}). 
@@ -328,13 +419,13 @@ The partial treatment then generates pairs of a Gaelic word and a gloss token:
 	\end{xlist}
 \end{exe}
 
-\subsubsection{Results of the Parallel-Partial Treatment}
+\subsection{Results of the Parallel-Partial Treatment}
 
 With the training and validation data ready, now we can train models and evaluate them. Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. The only difference is the training and validation data. As shown in the following table, the Parallel-Partial treatment has a tremendous effect in improving the baseline system.        
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Mar 31 22:26:54 2018
+% Wed Apr  4 13:20:48 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -365,11 +456,11 @@ The comparison of the average BLUE scores of the groups of systems shows that th
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Other Possible Treatments}
+\section{Other Possible Treatments}
 This section reports other possible ways of blending the Gaelic sentences and gloss lines. However, all of these treatments are not as effective as the Parallel-Partial treatment. Again, the same procedure and the same test datasets are used across all the experiments.    
 
-\subsubsection{The Parallel Treatment}\label{treatment:Para}
-\paragraph{Method of the Parallel Treatment}
+\subsection{The Parallel Treatment}\label{treatment:Para}
+\subsubsection{Method of the Parallel Treatment}
 The Parallel treatment is using the parallel part of the Parallel-Partial treatment. With this treatment, a chunk of interlinear glossed text is split into two pairs. For example, the chunk of interlinear glossed text in (\ref{igt}) becomes two samples in (\ref{sample_pair}): 
 \begin{exe} 
 \ex \label{igt}
@@ -387,10 +478,10 @@ The Parallel treatment is using the parallel part of the Parallel-Partial treatm
 	\end{xlist}
 \end{exe}
 
-\paragraph{Results of the Parallel Treatment}\label{treatment:Para_result}
+\subsubsection{Results of the Parallel Treatment}\label{treatment:Para_result}
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Mar 31 22:26:54 2018
+% Wed Apr  4 13:20:48 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -420,7 +511,7 @@ However, the best treatment (i.e. the Parallel-Partial treatment) is still far b
 (M\textsubscript{Para}=24.51, SD\textsubscript{Para}=1.84; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=18.73, p < 0.01 ).
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Mar 31 22:26:54 2018
+% Wed Apr  4 13:20:48 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccc}
@@ -444,8 +535,8 @@ Mean & 16.59 & 24.51 & 32.10 \\
 \caption{BLEU scores of Model\textsubscript{GDtoEN}, Model\textsubscript{ParatoEN} and Model\textsubscript{ParaParttoEN} } 
 \label{Table:Concating}
 \end{table}
-\subsubsection{Interleaving Gaelic Words and Gloss Items And Concating them}\label{treatment:InterleavingAndConCat}
-\paragraph{Method of the Interleaving Treatment}
+\subsection{Interleaving Gaelic Words and Gloss Items And Concating them}\label{treatment:InterleavingAndConCat}
+\subsubsection{Method of the Interleaving Treatment}
 Instead of putting the pairs of a Gaelic sentence and a English sentences and the pairs of a gloss line and a English sentence in a parallel manner, we may just literally blend a Gaelic sentence and a gloss line by interleaving them. Consider the following example:
 
 \begin{exe} 
@@ -464,7 +555,7 @@ Given the chuck of interlinear glossed text data in (\ref{ex_interleave:in}), th
 The results are given in the following table. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Mar 31 22:26:54 2018
+% Wed Apr  4 13:20:48 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -492,7 +583,7 @@ It turns out this treatment has a significant negative effect
 (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{interleavingGdGLOSS}=12.26, SD\textsubscript{interleavingGdGLOSS}=0.74,; t(9)=-17.06, p=0.000). This is not the right way of incorporating gloss line data. 
 
 
-\paragraph{Method of Concating Gaelic Words and Gloss Words }\label{treatment:Concating}
+\subsubsection{Method of Concating Gaelic Words and Gloss Words }\label{treatment:Concating}
 A quick and close amendment of the Interleaving approach is to concatenate the aligned Gaelic word and gloss item as a single token. Given the same chunk of interlinear glossed text data, this treatment generates the following sample:
 
 \begin{exe} 
@@ -507,11 +598,11 @@ A quick and close amendment of the Interleaving approach is to concatenate the a
     \end{xlist}
 \end{exe}
 
-\paragraph{Results of Concating Gaelic Words and Gloss Words}
+\subsubsection{Results of Concating Gaelic Words and Gloss Words}
 The performances of this treatment is given in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Mar 31 22:26:54 2018
+% Wed Apr  4 13:20:48 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -538,8 +629,8 @@ Mean & 16.59 & 15.44 \\
 The result shows that this treatment hurts the baseline systems badly instead of improving them (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ConcatGLOSSGaelic}=15.44, SD\textsubscript{ConcatGLOSSGaelic}=1.23,; t(9)=-3.64, p=0.010).
 
 %%%%%%%%%%
-\subsubsection{Hybrid: Gaelic or Gloss}
-\paragraph{Method of Hybrid}
+\subsection{Hybrid: Gaelic or Gloss}
+\subsubsection{Method of Hybrid}
 The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic word may maps to multiple gloss, and a glosses may maps to multiple Gaelic words. Let's assume a toy chunk of interlinear glossed text data (a one-word sentence): 
 
 \begin{exe} 
@@ -550,10 +641,10 @@ The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic wo
 \end{exe} 
 
 Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. The criterion is which one, the Gaelic word or the gloss item, is less ambiguous. The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic word, then <Gloss\_item, English translation> is chosen; other the other hand if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. However, when the situation is tight (i.e. both the Gaelic word and gloss item are equally ambiguous), a default setting is needed to be chosen. The choices of the default setting split this single treatment into two treatments: default as Gaelic or default as gloss.
-\paragraph{Result of Hybrid}    
+\subsubsection{Result of Hybrid}    
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Mar 31 22:26:54 2018
+% Wed Apr  4 13:20:48 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -580,7 +671,7 @@ Mean & 16.59 & 9.24 \\
 (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=9.24, SD\textsubscript{ReplacingGaelic}=0.89,; t(9)=-21.03, p < 0.01).
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Mar 31 22:26:54 2018
+% Wed Apr  4 13:20:48 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -610,7 +701,7 @@ Mean & 16.59 & 15.47 \\
 \section{Summary and Conclusion}
 The chapter reports machine translation experiments that aims to find how the gloss line information can improve the performance of the baseline Gaelic-to-English translation systems. It is found that the Parallel-Partial is highly effective. The complete BLEU scores of various treatments are given in the following table. 
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Mar 31 22:26:55 2018
+% Wed Apr  4 13:20:48 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrrrr}
@@ -652,6 +743,15 @@ the next chapter I will discuss the why questions, and discuss similar works in 
 % what is Multi-task learning:  \citep{Overview_Multi-Task_Learning}\\
 % add ccc to target seq: \citep{ccg_target_seq}\\
 % google zero shot: \citep{google_zero_shot}\\
+\chapter{Interlinear Glossed Text Data In Other Languages}
+\label{chap:gloss_in_other_languages}
+
+To run the same experiments on Online Database of Interlinear Text \citep{ODIN, Xia2016} to show that incorporating gloss information works effectively across different languages.  
+\chapter{Implications on Theoretical Linguistics}
+\label{chap:Implications_ling}
+\chapter{Conclusion}
+Conclusion
+
 
 \bibliographystyle{te}
 

@@ -17,6 +17,14 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{fixltx2e}
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+% \titleformat{\paragraph}
+% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+% \titlespacing*{\paragraph}
+% {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 \usepackage{Sweave}
 
 \newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
@@ -28,14 +36,17 @@
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
-%\SweaveOpts{concordance=TRUE}
 
-%\maketitle
-\SweaveInput{Introduction.Rnw}
+\maketitle
+% \SweaveInput{Introduction.Rnw}
 \SweaveInput{gloss.Rnw}
-\SweaveInput{Description_of_Corpus.Rnw}
-\SweaveInput{intro_MT.Rnw}
+% \SweaveInput{Description_of_Corpus.Rnw}
+% \SweaveInput{intro_MT.Rnw}
 \SweaveInput{RealCake.Rnw}
+% \SweaveInput{RealCake2.Rnw}
+% \SweaveInput{gloss_in_other_languages.Rnw}
+% \SweaveInput{Implications_ling.Rnw}
+% \SweaveInput{Conclusion.Rnw}
 
 
 \bibliographystyle{te}

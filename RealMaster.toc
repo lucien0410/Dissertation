@@ -1,29 +1,45 @@
 \select@language {english}
-\contentsline {chapter}{List of Figures}{7}{Doc-Start}
-\contentsline {chapter}{List of Tables}{8}{Doc-Start}
-\contentsline {chapter}{Abstract}{9}{Doc-Start}
-\contentsline {chapter}{\chapterline {Chapter\ 1}Building Translation Systems using Interlinear Glossed Text}{10}{chapter.1}
-\contentsline {section}{\numberline {1.1}Introduction}{10}{section.1.1}
-\contentsline {section}{\numberline {1.2}Technical Settings of the Machine Translation Experiments}{12}{section.1.2}
-\contentsline {section}{\numberline {1.3}Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{13}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Procedure of the Experiments}{13}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Result}{17}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Summary}{17}{subsection.1.3.3}
-\contentsline {subsection}{\numberline {1.3.4}Discussion}{18}{subsection.1.3.4}
-\contentsline {section}{\numberline {1.4}Combining Gaelic Words with Glosses}{19}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{20}{subsection.1.4.1}
-\contentsline {subsubsection}{Data Preprocessing Using the Parallel-Partial Treatment}{20}{section*.1}
-\contentsline {subsubsection}{Results of the Parallel-Partial Treatment}{21}{section*.2}
-\contentsline {subsection}{\numberline {1.4.2}Other Possible Treatments}{22}{subsection.1.4.2}
-\contentsline {subsubsection}{The Parallel Treatment}{22}{section*.3}
-\contentsline {paragraph}{Method of the Parallel Treatment}{22}{section*.4}
-\contentsline {paragraph}{Results of the Parallel Treatment}{23}{table.1.3}
-\contentsline {subsubsection}{Interleaving Gaelic Words and Gloss Items And Concating them}{23}{section*.6}
-\contentsline {paragraph}{Method of the Interleaving Treatment}{23}{section*.7}
-\contentsline {paragraph}{Method of Concating Gaelic Words and Gloss Words }{25}{section*.8}
-\contentsline {paragraph}{Results of Concating Gaelic Words and Gloss Words}{25}{section*.9}
-\contentsline {subsubsection}{Hybrid: Gaelic or Gloss}{25}{section*.10}
-\contentsline {paragraph}{Method of Hybrid}{26}{section*.11}
-\contentsline {paragraph}{Result of Hybrid}{26}{table.1.7}
-\contentsline {section}{\numberline {1.5}Summary and Conclusion}{26}{section.1.5}
-\contentsline {chapter}{Bibliography}{29}{table.1.9}
+\contentsline {chapter}{List of Figures}{8}{Doc-Start}
+\contentsline {chapter}{List of Tables}{9}{Doc-Start}
+\contentsline {chapter}{Abstract}{10}{Doc-Start}
+\contentsline {chapter}{\chapterline {Chapter\ 1}Introduction}{11}{chapter.1}
+\contentsline {chapter}{\chapterline {Chapter\ 2}What are glosses? Why are them golden representations of meanings?}{12}{chapter.2}
+\contentsline {section}{\numberline {2.1}Key Points of The Chapter}{12}{section.2.1}
+\contentsline {section}{\numberline {2.2}Introduction: What are Glosses}{12}{section.2.2}
+\contentsline {section}{\numberline {2.3}The Golden Properties of Glosses}{13}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Glosses Cluster Different Words with the Same Meanings}{13}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Glosses disambiguates ambiguous words}{14}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Glosses are sensitive to hierarchical structure of natural language sentences}{14}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}What is a Gloss Line}{14}{section.2.4}
+\contentsline {section}{\numberline {2.5}Conclusion}{14}{section.2.5}
+\contentsline {chapter}{\chapterline {Chapter\ 3}Description of the Scottish Gaelic Interlinear Glossed Text Corpus}{15}{chapter.3}
+\contentsline {chapter}{\chapterline {Chapter\ 4}A Gental Introduction of Machine Learning and Machine Translation}{16}{chapter.4}
+\contentsline {chapter}{\chapterline {Chapter\ 5}Building Translation Systems using Interlinear Glossed Text}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{17}{section.5.1}
+\contentsline {section}{\numberline {5.2}Technical Settings of the Machine Translation Experiments}{19}{section.5.2}
+\contentsline {section}{\numberline {5.3}Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{20}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Procedure of the Experiments}{21}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Result}{24}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Summary}{25}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Discussion}{25}{subsection.5.3.4}
+\contentsline {chapter}{\chapterline {Chapter\ 6}Combining Gaelic Words with Glosses}{27}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{27}{section.6.1}
+\contentsline {section}{\numberline {6.2}The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{28}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Data Preprocessing Using the Parallel-Partial Treatment}{28}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Results of the Parallel-Partial Treatment}{29}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Other Possible Treatments}{30}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}The Parallel Treatment}{30}{subsection.6.3.1}
+\contentsline {subsubsection}{Method of the Parallel Treatment}{30}{section*.1}
+\contentsline {subsubsection}{Results of the Parallel Treatment}{31}{table.6.2}
+\contentsline {subsection}{\numberline {6.3.2}Interleaving Gaelic Words and Gloss Items And Concating them}{31}{subsection.6.3.2}
+\contentsline {subsubsection}{Method of the Interleaving Treatment}{31}{section*.3}
+\contentsline {subsubsection}{Method of Concating Gaelic Words and Gloss Words }{33}{section*.4}
+\contentsline {subsubsection}{Results of Concating Gaelic Words and Gloss Words}{33}{section*.5}
+\contentsline {subsection}{\numberline {6.3.3}Hybrid: Gaelic or Gloss}{34}{subsection.6.3.3}
+\contentsline {subsubsection}{Method of Hybrid}{34}{section*.6}
+\contentsline {subsubsection}{Result of Hybrid}{34}{table.6.6}
+\contentsline {section}{\numberline {6.4}Summary and Conclusion}{35}{section.6.4}
+\contentsline {chapter}{\chapterline {Chapter\ 7}Interlinear Glossed Text Data In Other Languages}{37}{chapter.7}
+\contentsline {chapter}{\chapterline {Chapter\ 8}Implications on Theoretical Linguistics}{38}{chapter.8}
+\contentsline {chapter}{\chapterline {Chapter\ 9}Conclusion}{39}{chapter.9}
+\contentsline {chapter}{Bibliography}{40}{chapter.9}

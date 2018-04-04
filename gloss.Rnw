@@ -23,15 +23,23 @@ Interlinear Glossed Text (IGT) is widely used in linguistic studies. (\ref{gloss
     \glt    `His father is older than his mother.'  
 \end{exe}
 
+(summarize and exemplify the Leipzig Glossing Rules)
 
 
 \section{The Golden Properties of Glosses}
 
-The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Theoretically, this claim can be tested empirically. Imagine there is a set of special gold meta-linguistic semantic representations, which has the following property: each concept is mapped to one and one representation and each representation is mapped to one and one concept. Given, theses gold representations, it is expected that each gold representation will map to more natural language words than gloss items, and each natural language word will map to more gold representations than gloss items. However, in practice, this is an impossible experiment to conduct, because there are no such gold representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special gold meta-linguistic semantic representations.}. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information to some degree. 
+The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Theoretically, this claim can be tested empirically. Imagine there is a set of special gold meta-linguistic semantic representations, which has the following property: each concept is mapped to one and one representation and each representation is mapped to one and one concept. Given, theses gold representations, it is expected that each gold representation will map to more natural language words than gloss items, and each natural language word will map to more gold representations than gloss items. However, in practice, this is an impossible experiment to conduct, because there are no such gold representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special golden meta-linguistic semantic representations, and the mappings between the golden representations to natural languages.}. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information to some degree. 
 
 
-\subsection{Glosses cluster different words with the same meanings}
-Gloss collapses words   
+\subsection{Glosses Cluster Different Words with the Same Meanings}
+Gloss collapses words with different forms with the same meanings into a single gloss. In natural languages, the morphology of a word (i.e. the form of a word) may be sensitive to the phonological environments and changing into different forms. Consider the following English example: 
+\begin{exe}  
+\ex \gll John ate \textbf{an} apple.\\
+	John eat.past	\textbf{Det} apple\\
+\ex \gll John ate \textbf{a} banana.\\
+	John eat.past   \textbf{Det} banana\\
+\end{exe}
+In the above example, \textit{an} and \textit{a} have the identical meaning\footnote{Semantically, \textit{an} and \textit{a} are existential quantifiers, which declare that a member of a set exists in the world. In formal semantics, \textit{an} and \textit{a} may be defined as follows: $\exists\lambda P[P(x)]$. In the current example, \textit{apple} and \textit{banana} will instantiate $P$ in the formula, and the meanings will be `an apple exists' and `a banana exists'. \citet{kratzer1998semantics} would be a nice introduction for interested readers to see how linguists, specifically semanticians, define, decompose, and compose meanings of languages formally.}. 
 
 \subsection{Glosses disambiguates ambiguous words}
 Critically glosses provide `redundant' information. Here `redundant' means that  
@@ -41,3 +49,7 @@ Critically glosses provide `redundant' information. Here `redundant' means that
 
 \section{What is a Gloss Line}
 A gloss line is an artificial sentence using the purified `gloss words'. 
+
+\section{Conclusion} 
+
+% section conclusion (end)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  2 APR 2018 22:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  4 APR 2018 13:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -608,6 +608,18 @@ LaTeX Info: Redefining \em on input line 420.
 LaTeX Info: The control sequence `\[' is already robust on input line 471.
 LaTeX Info: The control sequence `\]' is already robust on input line 472.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box44
+\beforetitleunit=\skip59
+\aftertitleunit=\skip60
+\ttl@plus=\dimen164
+\ttl@minus=\dimen165
+\ttl@toksa=\toks42
+\titlewidth=\dimen166
+\titlewidthlast=\dimen167
+\titlewidthfirst=\dimen168
+)
 (/usr/share/R/share/texmf/tex/latex/Sweave.sty
 Package: Sweave 
 
@@ -618,7 +630,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 <2008/02/07> (tvz)
 \FV@CodeLineNo=\count149
 \FV@InFile=\read2
-\FV@TabBox=\box44
+\FV@TabBox=\box45
 \c@FancyVerbLine=\count150
 \FV@StepNumber=\count151
 \FV@OutFile=\write4
@@ -724,33 +736,30 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))) (./fakeMaster.aux
-
-LaTeX Warning: Label `Table:Concating' multiply defined.
-
-)
+)))) (./fakeMaster.aux)
 \openout1 = `fakeMaster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    ... okay on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -758,16 +767,16 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count152
-\scratchdimen=\dimen164
-\scratchbox=\box45
+\scratchdimen=\dimen169
+\scratchbox=\box46
 \nofMPsegments=\count153
 \nofMParguments=\count154
-\everyMPshowfont=\toks42
+\everyMPshowfont=\toks43
 \MPscratchCnt=\count155
-\MPscratchDim=\dimen165
+\MPscratchDim=\dimen170
 \MPnumerator=\count156
 \makeMPintoPDFobject=\count157
-\everyMPtoPDFconversion=\toks43
+\everyMPtoPDFconversion=\toks44
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -784,8 +793,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box46
-Package hyperref Info: Link coloring ON on input line 29.
+\AtBeginShipoutBox=\box47
+Package hyperref Info: Link coloring ON on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -795,188 +804,146 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count158
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 
 (./fakeMaster.out) (./fakeMaster.out)
 \@outlinefile=\write5
 \openout5 = `fakeMaster.out'.
 
- (./fakeMaster-concordance.tex)
+ (./fakeMaster-concordance.tex) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [3]
 Chapter 1
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 34.
+(hyperref)                removing `\advance' on input line 42.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 34.
+(hyperref)                removing `\hangindent' on input line 42.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 34.
+(hyperref)                removing `\@tempdima' on input line 42.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 34.
+(hyperref)                removing `\hbox' on input line 42.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 34.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+(hyperref)                removing `\hfil' on input line 42.
 
 
-]
-Chapter 2
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 48.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 48.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 48.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 48.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 48.
-
-
-Overfull \hbox (4.43768pt too wide) in paragraph at lines 58--59
+Overfull \hbox (4.43768pt too wide) in paragraph at lines 52--53
 \T1/aer/m/n/12 in-for-ma-tion be-cause some glosses are de-ter-mined by struc-t
 ural/constituency
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 77.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 77.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2
-
-] [3]
-Chapter 3
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 91.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 91.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 91.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 91.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 91.
-
 [4
 
-]
-Chapter 4
+] [5] [6]
+Chapter 2
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 100.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 100.
+(hyperref)                removing `\advance' on input line 99.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 100.
+(hyperref)                removing `\hangindent' on input line 99.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 100.
+(hyperref)                removing `\@tempdima' on input line 99.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 100.
-
-[5
-
-]
-Chapter 5
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 108.
+(hyperref)                removing `\hbox' on input line 99.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 108.
+(hyperref)                removing `\hfil' on input line 99.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 108.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 108.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 108.
-
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 115.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 106.
 
 (/usr/share/R/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 115.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 106.
 
-Overfull \hbox (1.69673pt too wide) in paragraph at lines 121--122
+Overfull \hbox (1.69673pt too wide) in paragraph at lines 112--113
 []\T1/aer/m/n/12 potential: pro-vid-ing dis-am-bigua-tion, la-bel-ing im-por-ta
 nt gram-mar mor-
  []
 
-[6
+[7
 
-] [7]
-Overfull \hbox (4.446pt too wide) in paragraph at lines 147--148
+]
+Overfull \hbox (4.446pt too wide) in paragraph at lines 138--139
 []\T1/aer/m/n/12 The ex-per-i-ments re-veal that re-plac-ing Gaelic words with 
 glosses doesn't bo-choiceost
  []
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 156.
+[8]
+
+LaTeX Warning: Reference `gd_plus_gl_to_en' on page 9 undefined on input line 1
+41.
+
+LaTeX Font Info:    Try loading font information for T1+aett on input line 147.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [8]
-Overfull \hbox (10.72798pt too wide) in paragraph at lines 172--172
-[]\T1/aer/bx/n/14.4 Gloss Rep-re-sen-ta-tion Solely Does NOT Out-per-form Gaeli
-c
+) [9]
+Overfull \hbox (10.72798pt too wide) in paragraph at lines 163--163
+ |[]\T1/aer/bx/n/14.4 Gloss Rep-re-sen-ta-tion Solely Does NOT Out-per-form Gae
+lic
  []
 
-[9]
-Overfull \hbox (5.56021pt too wide) in paragraph at lines 190--191
+[10]
+Overfull \hbox (5.56021pt too wide) in paragraph at lines 181--182
 []\T1/aer/m/n/12 <``Tha a athair nas sine na a mhàthair'', ``be.pres 3sm.poss f
 a-ther comp old.cmpr
  []
 
-LaTeX Font Info:    Try loading font information for T1+ccr on input line 193.
+LaTeX Font Info:    Try loading font information for T1+ccr on input line 184.
 (/usr/share/texlive/texmf-dist/tex/latex/ccfonts/t1ccr.fd
 File: t1ccr.fd 1999/11/22 v1.0a (WaS)
-) [10]
+)
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+
+ []
+
+
+Overfull \hbox (11.14421pt too wide) in paragraph at lines 203--204
+[]\T1/aer/m/n/12 Example: <``be.pres 3sm.poss fa-ther comp old.cmpr comp 3sm.po
+ss mother'',
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
@@ -991,141 +958,88 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--212
 
  []
 
-
-Overfull \hbox (11.14421pt too wide) in paragraph at lines 212--213
-[]\T1/aer/m/n/12 Example: <``be.pres 3sm.poss fa-ther comp old.cmpr comp 3sm.po
-ss mother'',
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
-
- []
-
-[11]
-Overfull \hbox (70.05629pt too wide) in paragraph at lines 229--230
-[]\T1/aer/m/n/12 Model$[]$ = Model trained with GLOSStoEN$[]$ in ([][]6a[][]) a
+[12]
+Overfull \hbox (70.05629pt too wide) in paragraph at lines 220--221
+[]\T1/aer/m/n/12 Model$[]$ = Model trained with GLOSStoEN$[]$ in ([][]8a[][]) a
 nd GLOSStoEN$[]$
  []
 
 
-Overfull \hbox (14.12865pt too wide) in paragraph at lines 230--231
-[]\T1/aer/m/n/12 Model$[]$ = Model trained with GDtoEN$[]$ in ([][]7a[][]) and 
+Overfull \hbox (14.12865pt too wide) in paragraph at lines 221--222
+[]\T1/aer/m/n/12 Model$[]$ = Model trained with GDtoEN$[]$ in ([][]9a[][]) and 
 GDtoEN$[]$
  []
 
 
-Overfull \hbox (22.49718pt too wide) in paragraph at lines 233--234
+Overfull \hbox (22.49718pt too wide) in paragraph at lines 224--225
 \T1/aer/m/n/12 source se-quences of the test sets (i.e. gloss-ing lines and Gae
 lic sen-tences for Model$[]$
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
-[13] [14] [15]
-Overfull \hbox (0.39166pt too wide) in paragraph at lines 315--316
-[]\T1/aer/m/n/12 In this sec-tion, I will first de-scribe the most ef-fec-tive 
-treat-ment, termed as `\T1/aer/m/it/12 Parallel-
- []
-
-[16] [17] [18]
-Overfull \hbox (28.06334pt too wide) in paragraph at lines 444--475
-\T1/aer/m/n/12 Partial treat-ment) is still far bet-ter than this Par-al-lel tr
-eat-ment (M$[]$=24.51, SD$[]$=1.84;
- []
-
-[19]
-Overfull \hbox (32.42805pt too wide) in paragraph at lines 491--521
-\T1/aer/m/n/12 It turns out this treat-ment has a sig-nif-i-cant neg-a-tive ef-
-fect (M$[]$=16.59, SD$[]$=0.74;
- []
-
-[20]
-Overfull \hbox (73.8453pt too wide) in paragraph at lines 539--567
-\T1/aer/m/n/12 prov-ing them (M$[]$=16.59, SD$[]$=0.74; M$[]$=15.44, SD$[]$=1.2
-3,;
- []
-
-[21]
-Overfull \hbox (2.16422pt too wide) in paragraph at lines 607--636
-\T1/aer/m/n/12 sightly worse than than the base-line sys-tems, as shown in ta-b
-le ([][]5.8[][]). (M$[]$=16.59,
- []
-
-[22]
-Overfull \hbox (82.78456pt too wide) in paragraph at lines 644--662
- [][] 
- []
-
-[23] (./fakeMaster.bbl [24]
+[14] [15] (./fakeMaster.bbl [16]
 Bibliography
-[25
+[17
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 689.
- [26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 689.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 306.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 306.
  (./fakeMaster.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 689.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 689.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 306.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 306.
 Package rerunfilecheck Info: File `fakeMaster.out' has not changed.
-(rerunfilecheck)             Checksum: C601493CED7679179C6789747257E56F;2060.
+(rerunfilecheck)             Checksum: 129D126775EB7CC0EF548934960C05BF;1441.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 689.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 306.
  ) 
 Here is how much of TeX's memory you used:
- 17207 strings out of 493304
- 295164 string characters out of 6139871
- 386510 words of memory out of 5000000
- 20075 multiletter control sequences out of 15000+600000
- 40490 words of font info for 89 fonts, out of 8000000 for 9000
+ 17387 strings out of 493304
+ 297531 string characters out of 6139871
+ 385234 words of memory out of 5000000
+ 20308 multiletter control sequences out of 15000+600000
+ 50113 words of font info for 106 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,9n,57p,1838b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,9n,57p,1342b,547s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public
-/cm-super/sform10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pf
-b>
-Output written on fakeMaster.pdf (26 pages, 243694 bytes).
+c/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sform10.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on fakeMaster.pdf (18 pages, 252903 bytes).
 PDF statistics:
- 553 PDF objects out of 1000 (max. 8388607)
- 481 compressed objects within 5 object streams
- 166 named destinations out of 1000 (max. 500000)
- 297 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 379 PDF objects out of 1000 (max. 8388607)
+ 330 compressed objects within 4 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
