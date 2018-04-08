@@ -1,0 +1,84 @@
+%
+% File acl2018.tex
+%
+%% Based on the style files for ACL-2017, with some changes, which were, in turn,
+%% Based on the style files for ACL-2015, with some improvements
+%%  taken from the NAACL-2016 style
+%% Based on the style files for ACL-2014, which were, in turn,
+%% based on ACL-2013, ACL-2012, ACL-2011, ACL-2010, ACL-IJCNLP-2009,
+%% EACL-2009, IJCNLP-2008...
+%% Based on the style files for EACL 2006 by 
+%%e.agirre@ehu.es or Sergi.Balari@uab.es
+%% and that of ACL 08 by Joakim Nivre and Noah Smith
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{gb4e}
+\noautomath
+\usepackage[hyperref]{acl2018}
+\usepackage{times}
+\usepackage{latexsym}
+
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{fixltx2e}
+\usepackage{titlesec}
+\usepackage{rotating}
+\usepackage{Sweave}
+
+\newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
+%the newcommand change the selected word into 'ccr' font
+%e.g. \begin{myfont} multi-bleu.perl \end{myfont}
+
+%\aclfinalcopy % Uncomment this line for the final submission
+%\def\aclpaperid{***} %  Enter the acl Paper ID here
+
+%\setlength\titlebox{5cm}
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+\newcommand\BibTeX{B{\sc ib}\TeX}
+
+\title{Building Neural Net Machine Translation Systems Using Interlinear Glossed Texts}
+
+\author{First Author \\
+  Affiliation / Address line 1 \\
+  Affiliation / Address line 2 \\
+  Affiliation / Address line 3 \\
+  {\tt email@domain} \\\And
+  Second Author \\
+  Affiliation / Address line 1 \\
+  Affiliation / Address line 2 \\
+  Affiliation / Address line 3 \\
+  {\tt email@domain} \\}
+
+\date{}
+
+\begin{document}
+\maketitle
+\SweaveOpts{concordance=TRUE}
+
+\begin{abstract}
+  The glossing data that are widely used in theoretical linguistics are hidden treasures for the natural language processing world. 
+  The current paper introduces the gloss data to the natural lagnauge processing world and demonstrates a practical and effective way to incorporate glossing data into the training data for training neural net machine translation systems.   
+\end{abstract}
+
+\SweaveInput{AlcRealCake.Rnw}
+\SweaveInput{AlcRealCake2.Rnw}
+\SweaveInput{AlcRealCake3.Rnw}
+\SweaveInput{related_works.Rnw}
+\SweaveInput{Conclusion.Rnw}
+
+
+\bibliography{acl2018}
+\bibliographystyle{acl_natbib}
+
+\appendix
+\section{Supplemental Material}
+\SweaveInput{alcComplete_table.Rnw}
+
+
+\end{document}

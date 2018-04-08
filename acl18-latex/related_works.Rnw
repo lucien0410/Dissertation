@@ -1,0 +1,4 @@
+\section{Related Works}\label{relate_works}
+Attempts to improve machine translation systems by incorporating explicit linguistic information are reported in the literature. For example, \citet{sennrich2016linguistic} exploit the information of lemmas, part of tags, morphology of words, and dependency parse of sentences to improve MT systems. However, their results are not as effective as the Parallel-Partial treatment. 
+
+The Parallel-Partial treatment actually may be viewed as form of multi-task Sequence to Sequence Learning \citep{luong2015multi}. Specifically, the parallel part of the treatment is very similar to the data manipulation used in building multi-language translation systems \citep{google_zero_shot}.  

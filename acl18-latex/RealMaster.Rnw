@@ -1,0 +1,97 @@
+%\documentclass[draft]{ua-thesis}
+\documentclass[final]{ua-thesis}
+%<my packages>
+%% Language and font encodings
+\usepackage{gb4e}
+\noautomath
+\usepackage{natbib}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{fixltx2e}
+\usepackage{Sweave}
+
+\newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
+%the newcommand change the selected word into 'ccr' font
+%e.g. \begin{myfont} multi-bleu.perl \end{myfont}
+%\<my packages>
+
+
+\usepackage{verbatim}
+%\usepackage{amssymb,amsmath,amsthm}
+%\usepackage[mathscr]{eucal}
+
+\usepackage{makeidx}
+\numberwithin{equation}{section}
+%\numberwithin{equation}{subsection}
+%\input{isomath}
+\input{mathenv}
+\input{syms}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{afterpage}
+\usepackage{subfigure}
+
+\usepackage{hyperref}
+\usepackage{ifpdf}
+
+\director{Mike Hammond and Sandiway Fong}
+\author{Yuan-Lu Chen}
+\title{Developing Linguistically Informed Neural Machine Translation Systems}
+\date{2018}
+\makeindex
+
+\ifpdf
+\pdfinfo{
+/Author (Yuan-Lu Chen)
+/Title  (Developing Linguistically Informed Neural Machine Translation Systems)
+}
+\fi
+
+%% ================================================================
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\maketitle
+
+\chapter*{Dedication}
+\thispagestyle{topright}
+\begin{center}For my mom.\end{center}
+\chapter*{Acknowledgments}
+\input{disack.tex}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\input{disabs.tex}
+%\input{disbody.tex}
+
+\printindex
+
+\SweaveInput{Introduction.Rnw}
+\SweaveInput{gloss.Rnw}
+\SweaveInput{Description_of_Corpus.Rnw}
+\SweaveInput{intro_MT.Rnw}
+\SweaveInput{RealCake.Rnw}
+\SweaveInput{RealCake2.Rnw}
+\SweaveInput{gloss_in_other_languages.Rnw}
+\SweaveInput{Implications_ling.Rnw}
+\SweaveInput{Conclusion.Rnw}
+
+
+\bibliographystyle{te}
+
+\bibliography{ref}
+
+%% ================================================================
+\end{document}

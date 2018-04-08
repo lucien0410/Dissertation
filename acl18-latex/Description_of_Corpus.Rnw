@@ -1,0 +1,10 @@
+\chapter{Description of the Scottish Gaelic Interlinear Glossed Text Corpus}
+\label{chap:Corpus}
+
+	\begin{enumerate}
+    \item Original goal of the corpus: a bank of examples of specific syntactic patterns for syntacticians.  
+	\item Description of UA Celtic Group's Scottish Gaelic documentation project\\
+	The corpus has 8,367 Gaelic sentences, and in term of words, it has 52,778 Gaelic words/glosses. The data of the corpus is from two different sources: fieldwork and data elicitation. 
+    \item Collection of interlinear glossed text data used in syntax paper/dissertations AND language documentation
+    \item Auto-glosser and literature on auto-glosser
+	\end{enumerate}

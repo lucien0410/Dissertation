@@ -1,0 +1,95 @@
+\begin{thebibliography}{13}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Bahdanau et~al.(2014)Bahdanau, Cho, and Bengio}]{bahdanau2014neural}
+Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2014.
+\newblock Neural machine translation by jointly learning to align and
+  translate.
+\newblock \emph{arXiv preprint arXiv:1409.0473}.
+
+\bibitem[{Bickel et~al.(2008)Bickel, Comrie, and
+  Haspelmath}]{bickel2008leipzig}
+Balthasar Bickel, Bernard Comrie, and Martin Haspelmath. 2008.
+\newblock The leipzig glossing rules. conventions for interlinear morpheme by
+  morpheme glosses.
+\newblock \emph{Revised version of February}.
+
+\bibitem[{Chen et~al.(2018)Chen, Carnie, Hammond, and Patton}]{gaelic_igt}
+Yuan-Lu Chen, Andrew Carnie, Michael Hammond, and Colleen Patton. 2018.
+\newblock \href {url link to talk abstract if any} {Developing an auto-glosser
+  for scottish gaelic using a corpus of interlinear glossed text}.
+\newblock The 10th Celtic Linguistics Conference.
+
+\bibitem[{Cho et~al.(2014{\natexlab{a}})Cho, Van~Merri{\"e}nboer, Bahdanau, and
+  Bengio}]{cho2014properties}
+Kyunghyun Cho, Bart Van~Merri{\"e}nboer, Dzmitry Bahdanau, and Yoshua Bengio.
+  2014{\natexlab{a}}.
+\newblock On the properties of neural machine translation: Encoder-decoder
+  approaches.
+\newblock \emph{arXiv preprint arXiv:1409.1259}.
+
+\bibitem[{Cho et~al.(2014{\natexlab{b}})Cho, Van~Merri{\"e}nboer, Gulcehre,
+  Bahdanau, Bougares, Schwenk, and Bengio}]{cho2014learning}
+Kyunghyun Cho, Bart Van~Merri{\"e}nboer, Caglar Gulcehre, Dzmitry Bahdanau,
+  Fethi Bougares, Holger Schwenk, and Yoshua Bengio. 2014{\natexlab{b}}.
+\newblock Learning phrase representations using rnn encoder-decoder for
+  statistical machine translation.
+\newblock \emph{arXiv preprint arXiv:1406.1078}.
+
+\bibitem[{Johnson et~al.(2016)Johnson, Schuster, Le, Krikun, Wu, Chen, Thorat,
+  Vi{\'e}gas, Wattenberg, Corrado et~al.}]{google_zero_shot}
+Melvin Johnson, Mike Schuster, Quoc~V Le, Maxim Krikun, Yonghui Wu, Zhifeng
+  Chen, Nikhil Thorat, Fernanda Vi{\'e}gas, Martin Wattenberg, Greg Corrado,
+  et~al. 2016.
+\newblock Google's multilingual neural machine translation system: enabling
+  zero-shot translation.
+\newblock \emph{arXiv preprint arXiv:1611.04558}.
+
+\bibitem[{Klein et~al.(2017)Klein, Kim, Deng, Senellart, and
+  Rush}]{2017opennmt}
+Guillaume Klein, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander~M. Rush.
+  2017.
+\newblock \href {http://arxiv.org/abs/1701.02810} {Opennmt: Open-source toolkit
+  for neural machine translation}.
+\newblock \emph{CoRR}, abs/1701.02810.
+
+\bibitem[{Koehn et~al.(2007)Koehn, Hoang, Birch, Callison-Burch, Federico,
+  Bertoldi, Cowan, Shen, Moran, Zens et~al.}]{moses}
+Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello
+  Federico, Nicola Bertoldi, Brooke Cowan, Wade Shen, Christine Moran, Richard
+  Zens, et~al. 2007.
+\newblock Moses: Open source toolkit for statistical machine translation.
+\newblock In \emph{Proceedings of the 45th annual meeting of the ACL on
+  interactive poster and demonstration sessions}, pages 177--180. Association
+  for Computational Linguistics.
+
+\bibitem[{Lamb(2001)}]{lamb2001scottish}
+William Lamb. 2001.
+\newblock \emph{Scottish Gaelic}, volume 401.
+\newblock Lincom Europa.
+
+\bibitem[{Luong et~al.(2015)Luong, Le, Sutskever, Vinyals, and
+  Kaiser}]{luong2015multi}
+Minh-Thang Luong, Quoc~V Le, Ilya Sutskever, Oriol Vinyals, and Lukasz Kaiser.
+  2015.
+\newblock Multi-task sequence to sequence learning.
+\newblock \emph{arXiv preprint arXiv:1511.06114}.
+
+\bibitem[{Papineni et~al.(2002)Papineni, Roukos, Ward, and Zhu}]{bleu}
+Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002.
+\newblock Bleu: a method for automatic evaluation of machine translation.
+\newblock In \emph{Proceedings of the 40th annual meeting on association for
+  computational linguistics}, pages 311--318. Association for Computational
+  Linguistics.
+
+\bibitem[{Pater(2017)}]{pater2017generative}
+Joe Pater. 2017.
+\newblock Generative linguistics and neural networks at 60: foundation,
+  friction, and fusion.
+
+\bibitem[{Sennrich and Haddow(2016)}]{sennrich2016linguistic}
+Rico Sennrich and Barry Haddow. 2016.
+\newblock Linguistic input features improve neural machine translation.
+\newblock \emph{arXiv preprint arXiv:1606.02892}.
+
+\end{thebibliography}

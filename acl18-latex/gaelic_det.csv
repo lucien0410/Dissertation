@@ -1,0 +1,11 @@
+Form of DET,Context
+a'L,"Feminine Nom/Acc Singular before ""b, c, g, m, p"""
+a'L,"Feminine Dative Singular before ""b, c, g, m, p"""
+a'L,"Masculine Dative Singular before ""b, c, g, m, p"""
+a'L,"Masculine Genitive Singular before ""b, c, g, m, p"""
+am,"Masculine Nom/Acc Singular before ""f, b, m, p"""
+an,"Feminine Nom/Acc Singular before vowels and d, n, t, l, r, sg, sp, st, sm"
+an,"Feminine Dative Singular before vowels and d, n, t, l, r, sg, sp, st, sm"
+an,"Masculine Dative Singular before vowels and d, n, t, l, r, sg, sp, st, sm"
+an,"Masculine Genitive Singular before vowels and d, n, t, l, r, sg, sp, st, sm"
+an,"Masculine Nom/Acc Singular before anything except vowels and ""b, f, m, p"""

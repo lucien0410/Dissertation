@@ -1,0 +1,21 @@
+% !Rnw root = cake_chapter.Rnw
+<<xtable, label=Table:Concating, echo=FALSE, results=tex>>=
+require(xtable)
+n <- read.csv('complete.csv', sep=',', header = TRUE)
+#column names: 
+#Round	GLOSS	Gaelic	ConcatGLOSSGaelic	interleavingGdGLOSS	ReplacingGaelic	ReplacingGLOSS	Para	ParaPart	ParaPartHalf	ParaPartHalfOver	Over Gaelic	google 
+n<- subset(n, select=c("Round", "Gaelic", "ParaReal","ParaPart"))
+gd<-n['ParaReal'][1:10,1]
+Treatment<-n['ParaPart'][1:10,1]  # [11,1] is MEAN
+m_gd <- format(round(mean(gd), 2), nsmall = 2)
+m_Treatment <- format(round(mean(Treatment), 2), nsmall = 2)
+sd_gd <- format(round(sd(gd), 2), nsmall = 2) 
+sd_Treatment <- format(round(sd(Treatment), 2), nsmall = 2) 
+r <-t.test( Treatment, gd, paired=TRUE)
+t_val=format(round(r$statistic, 2), nsmall = 2)
+p_val=format(round(r$p.value, 2), nsmall = 3)
+xtab<-xtable(n, caption="BLEU scores of Model\\textsubscript{GDtoEN}, Model\\textsubscript{ParatoEN} and Model\\textsubscript{ParaParttoEN} ",  label="Table:Concating", align="llccc")
+names(xtab)<-c('Round', 'Gaelic (Baseline)', 'Para', 'ParaPart' )
+hlines <- c(-1,0,10, nrow(xtab))
+#print(xtab, include.rownames =FALSE, hline.after = hlines)
+@

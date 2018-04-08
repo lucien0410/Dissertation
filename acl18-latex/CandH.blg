@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: CandH.aux
+The style file: acl_natbib.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: acl2018.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty journal in pater2017generative
+You've used 13 entries,
+            3573 wiz_defined-function locations,
+            761 strings with 8282 characters,
+and the built_in function-call counts, 9592 in all, are:
+= -- 756
+> -- 617
+< -- 8
++ -- 199
+- -- 183
+* -- 654
+:= -- 1516
+add.period$ -- 53
+call.type$ -- 13
+change.case$ -- 128
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 630
+empty$ -- 614
+format.name$ -- 220
+if$ -- 2043
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 133
+newline$ -- 68
+num.names$ -- 52
+pop$ -- 304
+preamble$ -- 1
+purify$ -- 111
+quote$ -- 0
+skip$ -- 435
+stack$ -- 0
+substring$ -- 213
+swap$ -- 284
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 114
+warning$ -- 1
+while$ -- 45
+width$ -- 0
+write$ -- 163
+(There was 1 warning)

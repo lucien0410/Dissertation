@@ -1,0 +1,10 @@
+\documentclass{article}
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\section{Overview}
+This is the overview.
+
+\SweaveInput{cake.Rnw}
+
+\end{document}

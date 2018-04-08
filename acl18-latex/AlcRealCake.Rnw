@@ -1,0 +1,192 @@
+\section{Introduction}
+Interlinear Glossed Text (IGT) is widely used in linguistic studies. (1)  is an example of Scottish Gaelic IGT.
+\begin{exe}  
+\ex \gll    Tha a athair nas sine na a mh\`athair.\\  
+            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
+\\  
+    \glt    `His father is older than his mother.'  
+\end{exe}
+
+IGT is essential in linguistic research and analysis of a language's grammar. In a simple form of IGT, the first line is a sentence of the language of interest, the second line is a word-by-word translation, annotated with relevant grammatical information, and the third line is an English translation. \citet{bickel2008leipzig} document the complete formats and options of IGT.  
+
+The Innovation is to incorporate the gloss information of Interlinear Glossed Text data into neural net machine translation systems.
+
+The properties of the gloss data make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons: 1) gloss representations cluster words with different forms into a single representation; 2) gloss representations reserve the semantic difference between homographs; 3) gloss representations are sensitive to hierarchical structures (sentence parsing). 
+
+Consider the definite article in the following Gaelic examples. 
+
+
+\begin{exe}  
+\ex 
+\gll tha mi a' sireadh \textbf{an} leabhair bhig ghuirm.\\
+be-PRES-IND 1S PROG searching-VN \textbf{ART} book-G small-G blue-G\\
+\glt `I am looking for the small blue book.' \citep[p. 29]{lamb2001scottish}
+
+\ex 
+\gll \textbf{am} fear m\`or.\\
+\textbf{ART} man big\\
+\glt `a big man.' \citep[p. 31]{lamb2001scottish}
+
+\ex
+\gll thuit \textbf{a'} chlach air cas mo mhn\`a.\\
+fall-PAST \textbf{ART} stone on foot 1S-POSS wife-G\\
+\glt`the stone fell on my wife's foot.' \citep[p. 30]{lamb2001scottish} 	
+
+\ex
+\gll doras \textbf{na} sgoile(adh). \\
+door-N \textbf{ART} school-G \\
+\glt `the door of the school.' \citep[p. 29]{lamb2001scottish} 	
+
+\ex 
+\gll a chuir air d\`oigh \textbf{nan} \`airidhean a-muigh a rubh' Eubhal agus an oidhche seo. \\
+to put-INF on order \textbf{ART} sheilings out-LOC to point Eaval and ART night this \\
+\glt `the girls big house.' \citep[p. 100]{lamb2001scottish} 
+
+\ex
+\gll f\`eis \textbf{nam} b\`ard.\\
+festival \textbf{ART} poet.PL.GEN\\
+\glt `festival of the poets.' \citep[p. 107]{lamb2001scottish}
+
+\end{exe}
+
+The definite article in Scottish Gaelic may be realized as the following forms: as \textit{an}, \textit{am}, \textit{a'}, \textit{na}, \textit{nan} or \textit{nam}. The alternation is determined by the case, gender and number of noun phrase that it modifies, and additionally the phonological property of the word following it also changes the form of the definite article \citep{lamb2001scottish}. All these different realizations refer to the same concept, the definite article. The gloss representation nicely clusters them together as \textit{ART}.
+
+Also the glosses distinguish different concepts with the form. Consider the word \textit{a'} in the following examples.  
+
+\begin{exe}  
+\ex \label{a_prog}
+\gll tha mi \textbf{a'} sireadh an leabhair bhig ghuirm.\\
+be-PRES-IND 1S \textbf{PROG} searching-VN ART book-G small-G blue-G\\
+\glt `I am looking for the small blue book.' \citep[p. 29]{lamb2001scottish}
+
+\ex \label{a_det}
+\gll thuit \textbf{a'} chlach air cas mo mhn\`a.\\
+fall-PAST \textbf{ART} stone on foot 1S-POSS wife-G\\
+\glt`the stone fell on my wife's foot.' \citep[p. 30]{lamb2001scottish} 	
+\end{exe}
+
+Critically \textit{a'} in (\ref{a_prog}) is a progressive aspect marker while in (\ref{a_det}) the some form denotes to definite article. Again, the semantic difference is reserved in the gloss representations but not in natural language words.  
+The gloss data provides hierarchical (non-linear) syntactic parsing information. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information.
+
+In short, glosses are more purified and transparent than natural language words in terms of representing meanings. Therefore, theoretically the incorporation of the gloss data should improve the translation systems. Specifically, we propose the following hypothesis:
+
+\begin{exe} 
+\ex \textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}\label{hypothesis}
+
+The hypothesis can have two versions, strong and weak:
+	\begin{xlist}
+	\ex \label{strong_hy} Strong version: Gloss may replace the source natural language totally, and the system outperforms the system trained with source natural language to target language sentence pairs (i.e. the baseline systems).  
+	\ex \label{weak_hy} Weak version: Gloss only increases the performance of the baseline systems, but cannot replace the source language.
+	\end{xlist}
+\end{exe}
+
+The experiments reveal that replacing Gaelic words with glosses doesn't improve the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However, it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly. 
+
+The rest of the paper is organized as follows: Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}) and exemplifies an effective way of incorporating the gloss information, section 5 reports other possible ways of blending glosses and Gaelic sentences, section 6 reports related works, and section 7 is the conclusion. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
+The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}.
+The following default hyper-parameter settings of OpenNMT\footnote{See their documentation for the complete default hyper-parameter settings: \url{http://opennmt.net/OpenNMT-py/}.} are used across all models so that the only independent variable is the type of the training data:
+	\begin{itemize}
+	\item Word vector size: 500
+	\item Type of recurrent cell: Long Short Term Memory
+	\item Number of recurrent layers of the encoder and decoder: 2
+	\item Number of epochs: 13
+	\item Size of mini batches: 64\\
+	\end{itemize}
+
+The settings of the hyper-parameters do have effects on the performances of the trained models.
+However, given that finding the optimal settings of the hyper-parameters is not relevant to our current research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and we simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen options, and there are rooms to tune the models for better performance. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.
+
+\section{Gloss Representation Solely Does NOT Outperform Gaelic Sentences} \label{gd_to_gl_to_en}
+This section tests the strong version of Gloss-helps hypothesis in (\ref{strong_hy}).
+Given the assumption that gloss may be better than any natural language in terms of representing meanings, it is expected that for neural net machine translation systems it is easier to learn how to translate from the glosses of Scottish Gaelic to English than to learn how to translate from Scottish Gaelic to English. However, the results show that there is no significance difference between the two types of data (i.e. GLOSS $\rightarrow$ English and Gaelic $\rightarrow$ English).
+
+\subsection{Scottish Gaelic Interlinear Glossed Text Data}
+The Scottish Gaelic IGT corpus developed in \citet{gaelic_igt} is used in our experiments. 
+The corpus has 8,367 Gaelic sentences, and in term of words, it has 52,778 Gaelic words/glosses. The data of the corpus is from two different sources: linguistics fieldwork and data elicitation.
+
+\subsection{Procedure of the Experiments}
+I use repeated random sub-sampling validation to compare the performances of the two type of models.
+Totally we have 8,388 indexed 3-tuples of a Gaelic sentence, a gloss line and an English translation. In the interlinear glossed text example below, each line is an argument of a 3-tuple sample.
+
+\begin{exe} 
+\ex \gll    Tha a athair nas sine na a mh\`athair.\\ 
+           be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
+\\ 
+   \glt    `His father is older than his mother.' 
+\end{exe}
+
+The 3-tuple representation of the above example is:
+\begin{exe}
+\ex <``Tha a athair nas sine na a mh\`athair .'', ``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother .''>
+\end{exe}
+
+First, the samples (i.e. the 3-tuples) are randomly split into three datasets: training set (N=6,388), validation set (N=1,000), and test set (N=1,000)\footnote{Here the random sampling process is achieved by using the \begin{myfont}random.sample(population, k)\end{myfont} function in the standard library of python.}.
+
+For each index, the 3-tuple is split into two pairs: <gloss, English>, <Gaelic, English>, so that later we can compare the different effects of gloss lines and Gaelic sentences. 
+\begin{exe}
+	\ex Gloss to English
+		\begin{xlist}
+		\ex \label{GLOSStoENTrain} GLOSStoEN\textsubscript{Train}   =\\$\{<gloss_i,En_i>  \mid i \in Index\textsubscript{Train} \}$ \\
+		\ex \label{GLOSStoENVal} GLOSStoEN\textsubscript{Validation}   = \\$\{<gloss_i,En_i>  \mid i \in Index\textsubscript{Validation} \}$ \\
+		\ex \label{GLOSStoENTest}GLOSStoEN\textsubscript{Test} = \\$\{<gloss_i,En_i>  \mid i \in Index\textsubscript{Test} \}$ \\
+		\ex  Example: <``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother .''>
+		\end{xlist}
+
+	
+	\ex Gaelic to English
+		\begin{xlist}
+		\ex \label{GDtoENTrain} GDtoEN\textsubscript{Train}   = \\$\{<GD_i,En_i>  \mid i \in Index\textsubscript{Train} \}$ \\
+		\ex \label{GDtoENVal} GDtoEN\textsubscript{Validation}   =\\ $\{<GD_i,En_i>  \mid i \in Index\textsubscript{Validation} \}$ \\
+		\ex \label{GDtoENTest} GDtoEN\textsubscript{Test}    = \\$\{<GD_i,En_i>  \mid i \in Index\textsubscript{Test} \}$ \\
+		\ex Example: <``Tha a athair nas sine na a mh\`athair .'', ``His father is older than his mother .''>
+		\end{xlist}
+\end{exe}
+The models are trained with the training set and validation set. 
+
+\begin{exe}
+\ex Models:
+	\begin{xlist}
+	\ex \label{ModelGlossToEN} Model\textsubscript{GLOSStoEN} =\\ Model trained with GLOSStoEN\textsubscript{Train} in (\ref{GLOSStoENTrain}) and GLOSStoEN\textsubscript{Validation} in (\ref{GLOSStoENVal})
+	\ex \label{ModelGDToEN}Model\textsubscript{GDtoEN} =\\ Model trained with GDtoEN\textsubscript{Train} in (\ref{GDtoENTrain}) and GDtoEN\textsubscript{Validation} in (\ref{GDtoENVal})
+	\end{xlist}	
+\end{exe}
+The two trained models (gloss-to-English and Gaelic-to-English) then take the right source sequences of the test sets (i.e. glossing lines and Gaelic sentences for Model\textsubscript{GLOSStoEN} and Model\textsubscript{GDoEN} respectively) as inputs and then generate the predicted target sequences (i.e. English sentences).
+
+To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard/human-translated English sentences).
+Specifically, the BLEU score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}}
+script, a public implementation of Moses \citep{moses}. 
+\begin{exe}
+\ex Gold-Standard = English sentences in (\ref{GLOSStoENTest}) = English sentences in (\ref{GDtoENTest})
+\end{exe}
+Note that the gold-standard is the same because they are the same English sentences in the 3-tuples samples. Then the two sets of predicted English sentences are evaluated, yielding two BLEU scores.  
+
+\begin{exe}
+\ex Scores: \\
+ \begin{xlist}
+	\ex Score\textsubscript{GLOSStoEN} = BLEU(Gold-Standard, Predictions\textsubscript{GLOSStoEN}) \\
+	\ex Score\textsubscript{GDtoEN} = BLEU(Gold-Standard, Predictions\textsubscript{GDtoEN}) \\
+ \end{xlist}
+\end{exe}
+This procedure of splitting the data into three sub-sets, training the models, and evaluating the models is executed for ten times. Recall that all the sets are randomly chosen samples. In this manner, we will be able to reduce the chance of sampling errors and do a t-test to compare the BLEU scores of the treatments.  
+
+\subsection{Result} \label{gdglen_results}
+After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated. See the appendix for the complete BLEU score for each models.
+\SweaveInput{alcGLOSS_table.Rnw}
+
+The average score of the Models\textsubscript{GLOSStoEN} is only sightly higher than the average score of the Models\textsubscript{GDtoEN}.
+Also, after doing a paired T-test, the difference between the two types of models is not attested
+(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{GLOSStoEN}=\Sexpr{m_Treatment}, SD\textsubscript{GLOSStoEN}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p=\Sexpr{p_val}). 
+
+\subsection{Discussion}
+It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are equally good in terms of representing meanings. The strong version of the Gloss-helps hypothesis does not hold.
+
+There are several remarks that need to make for the current result. First, the result falsifies the point of view about glosses that the gloss line is a golden semantic representation hand-crafted by linguists.
+It turns that this artificial language, the gloss lines, is only marginal better than Gaelic statistically. This can be viewed as an evidence of language evolution.
+The written form of a natural language is actually already optimized for representing semantics to the same degree as the gloss line representations.
+Second, if we want to actually apply the gloss treatment to translate a Gaelic sentence to English, we encounter an immediate problem. The actual source sequence is a Gaelic sentence, while the required source sequence for the gloss treatment is a gloss line. Given this, even if the gloss treatment should work, it is not practical unless we may convert Gaelic sentence to gloss line perfectly.      
+
+We may now combine Gaelic sentences and gloss lines as the training data to test the weak version of the Gloss-helps hypothesis. The experiments and results are reported in the next section.

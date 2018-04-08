@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Right Way of Combining Gaelic Words with Glosses}\label{gd_plus_gl_to_en}
+In the previous section, we attempt to build systems by using the \textit{gloss treatment} to outperform the baseline system. It turns that using gloss line solely is not effective enough to improve the system. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
+\begin{exe}
+	\ex 
+	\begin{xlist}
+		\ex Does adding the gloss data into the Gaelic data will improve the translation system? 
+		\ex If yes, what are the right ways of blending these two types of meaning representations together? 
+	\end{xlist}	
+\end{exe}
+
+This section reports that a specific way of combining Gloss data and Gaelic date (termed as `\textit{Parallel-Partial}' treatment) boosts the performance significantly. The models trained with this specially arranged training data also significantly outperform Google's Gaelic-to-English translation system (see the appendix for the BLEU scores).
+
+\subsection{The Underlying Heuristics}\label{heuristics}
+From a high level point of view, neural net sequence to sequence learning algorithm is to learn how to map a high-dimension space to another high-dimension space. In the settings of machine translation, each dot in the high-dimension space is a meaning representation. Linking one dot to another dot is converting one meaning representation to another, yielding the effect of translation. Given this heuristics, we may just feed the machine with all the available meaning mappings. Given the assumption that the gloss lines are linguistically guided meaning representations, they are suitable training data for building machine translation systems. Specially, with the gloss data, we let the machine to learn the following mappings:
+
+\begin{exe}
+	\ex Mappings Learned in the ParaPart treatment
+	\begin{xlist}
+		\ex Gaelic sentences $\rightarrow$ English sentences
+		\ex Gloss lines $\rightarrow$ English sentences
+		\ex Gloss lines $\rightarrow$ Gaelic sentences
+		\ex Gloss items $\rightarrow$ Gaelic words
+	\end{xlist}	
+\end{exe}    
+
+\subsection{The `Parallel-Partial' Treatment Outperforms the Baseline Significantly}
+
+\subsubsection{Data Preprocessing Using the Parallel-Partial Treatment}
+The Parallel-Partial treatment uses the training and validation data of the baseline system and that of the gloss treatment system.  
+The training and validation data of the baseline system are pairs of a Gaelic sentence and a English sentences (see (\ref{GDtoENTrain}) and (\ref{GDtoENVal}) ), 
+and the data of the gloss treatment are pairs of a gloss line and a English sentences (see (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}). 
+These two groups of data are combined in a parallel manner in the current treatment. Additionally, we also fed the machine with mappings from glossing lines to Gaelic sentences. Now the size of training set and validation set is tripled. In the baseline system and the gloss treatment system, we have 6,388 samples in the training set and 1,000 samples in the validation set. The current treatment has 19,164 (6,388*3) samples in the training set and 3,000 (1,000*3) samples in the validation set. This is the \textit{parallel} part of the treatment. 
+
+Additionally, we utilize the alignment property between the Gaelic word and the gloss to further build pairs of a Gaelic word and a gloss. These pairs are also included into the training set and validation set of the current treatment. This is the \textit{partial} part of the treatment. 
+
+For concreteness, consider the following interlinear glossed text: 
+\begin{exe}  
+\ex \gll    Tha a athair nas sine na a mh\`athair.\\  
+            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother\\  
+    \glt    `His father is older than his mother.'  
+\end{exe}
+
+With the interlinear glossed text, the parallel treatment will generate two pairs of samples:
+
+\begin{exe}
+	\ex \label{21}
+	\begin{xlist}
+		\ex Gaelic to English: \\<``Tha a athair nas sine na a mh\`athair'', ``His father is older than his mother.''>
+		\ex Gloss to English: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother''>
+		\ex Glosses to Gaelic: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``Tha a athair nas sine na a mh\`athair''>
+	\end{xlist}
+\end{exe}
+
+The partial treatment then generates pairs of a Gaelic word and a gloss token: 
+\begin{exe}
+	\ex\label{22}
+	\begin{xlist}
+		\ex <``Tha'', ``be.pres''>
+		\ex <``a'', ``3sm.poss''>
+		\ex <``athair'', ``father''>
+		\ex <``nas'', ``comp''>
+		\ex <``sine'', ``old.cmpr''>
+		\ex <``na'', ``comp''>
+		\ex <``a'', ``3sm.poss''>
+		\ex <``mh\`athair'', ``mother''>
+	\end{xlist}
+\end{exe}
+
+The samples like (\ref{21}) and (\ref{22}) are the training data for the Parallel-Partial treatment. 
+
+\subsubsection{Results of the Parallel-Partial Treatment}
+\SweaveInput{alcParaPart_table.Rnw}
+With the training and validation data ready, now we can train models and evaluate them. Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. 
+The only difference is the training and validation data. The result show that the Parallel-Partial treatment has a tremendous effect in improving the baseline system (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p<0.01). 
+
+\subsubsection{Discussion}
+With the ParaPart treatment, the baseline systems are improved for more than 93 percent. This result suggest the validity of our heuristics in section \ref{heuristics}, and provide strong evidence for the gloss-helps hypothesis in (\ref{hypothesis}).      
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,57 @@
+%\documentclass[a4paper]{article}
+\documentclass[final]{ua-thesis}
+%% Language and font encodings
+\usepackage{gb4e}
+\noautomath
+\usepackage{natbib}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{fixltx2e}
+\usepackage{titlesec}
+\usepackage{rotating}
+
+\setcounter{secnumdepth}{4}
+
+% \titleformat{\paragraph}
+% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+% \titlespacing*{\paragraph}
+% {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\usepackage{Sweave}
+
+\newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
+%the newcommand change the selected word into 'ccr' font
+%e.g. \begin{myfont} multi-bleu.perl \end{myfont}
+
+\title{Develong Linguistically Imformed Neural Net Machine Translation Systems}
+\author{Yuan-Lu Chen}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\maketitle
+\SweaveInput{Introduction.Rnw}
+\SweaveInput{gloss.Rnw}
+\SweaveInput{Description_of_Corpus.Rnw}
+\SweaveInput{intro_MT.Rnw}
+\SweaveInput{RealCake.Rnw}
+\SweaveInput{RealCake2.Rnw}
+\SweaveInput{gloss_in_other_languages.Rnw}
+\SweaveInput{Implications_ling.Rnw}
+\SweaveInput{Conclusion.Rnw}
+
+
+\bibliographystyle{te}
+
+\bibliography{ref}
+
+\end{document}
