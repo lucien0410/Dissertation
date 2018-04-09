@@ -60,12 +60,36 @@ The partial treatment then generates pairs of a Gaelic word and a gloss token:
 
 With the training and validation data ready, now we can train models and evaluate them. Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. The only difference is the training and validation data. As shown in the following table, the Parallel-Partial treatment has a tremendous effect in improving the baseline system.        
 
-\SweaveInput{ParaPart_table.Rnw}
-
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Thu Apr  5 16:52:03 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & ParaPart \\ 
+  \hline
+0 & 17.29 & 32.64 \\ 
+  1 & 16.42 & 32.28 \\ 
+  2 & 15.29 & 29.94 \\ 
+  3 & 15.97 & 31.18 \\ 
+  4 & 17.79 & 32.83 \\ 
+  5 & 16.73 & 31.11 \\ 
+  6 & 17.11 & 32.19 \\ 
+  7 & 16.37 & 33.52 \\ 
+  8 & 15.93 & 30.93 \\ 
+  9 & 16.99 & 34.35 \\ 
+   \hline
+Mean & 16.59 & 32.10 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ParaParttoEn}} 
+\label{Table:ParaPart}
+\end{table}
 The first and the second columns are BLUE scores of the baseline systems and the systems with the Parallel-Partial treatment respectively. The latter is significantly better than the former
-(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p<0.01).
+(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=48.95, p<0.01).
 The comparison of the average BLUE scores of the groups of systems shows that the Parallel-Partial treatment improves the performance of the baseline system for 93 percent.
-%(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p<0.01\Sexpr{p_val}).
+%(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33,; t(9)=48.95, p<0.010.000).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -92,14 +116,62 @@ The Parallel treatment is using the parallel part of the Parallel-Partial treatm
 \end{exe}
 
 \subsubsection{Results of the Parallel Treatment}\label{treatment:Para_result}
-\SweaveInput{Para_table.Rnw}
-The table in (\ref{Table:Para}) compares the performances of this treatment and the baseline. Critically, the Parallel treatment is effective in improving the baseline systems (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{Para}=\Sexpr{m_Treatment}, SD\textsubscript{Para}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p < 0.01). 
-\SweaveInput{GDParaParaPart_null_table.Rnw}
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Thu Apr  5 16:52:04 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & Para \\ 
+  \hline
+0 & 17.29 & 25.42 \\ 
+  1 & 16.42 & 25.32 \\ 
+  2 & 15.29 & 20.72 \\ 
+  3 & 15.97 & 22.22 \\ 
+  4 & 17.79 & 24.27 \\ 
+  5 & 16.73 & 24.55 \\ 
+  6 & 17.11 & 27.03 \\ 
+  7 & 16.37 & 25.34 \\ 
+  8 & 15.93 & 24.24 \\ 
+  9 & 16.99 & 25.96 \\ 
+   \hline
+Mean & 16.59 & 24.51 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ParatoEn}} 
+\label{Table:Para}
+\end{table}The table in (\ref{Table:Para}) compares the performances of this treatment and the baseline. Critically, the Parallel treatment is effective in improving the baseline systems (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{Para}=24.51, SD\textsubscript{Para}=1.84; t(9)=17.50, p < 0.01). 
+% !Rnw root = cake_chapter.Rnw
 %GDParaParaPart1_table.Rnw does NOT print out anything but just load the sexpr variables 
 However, the best treatment (i.e. the Parallel-Partial treatment) is still far better than this Parallel treatment 
-(M\textsubscript{Para}=\Sexpr{m_gd}, SD\textsubscript{Para}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p < 0.01 ).
-\SweaveInput{GDParaParaPart_table.Rnw}
-
+(M\textsubscript{Para}=24.51, SD\textsubscript{Para}=1.84; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=18.73, p < 0.01 ).
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Thu Apr  5 16:52:04 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccc}
+  \hline
+Round & Gaelic (Baseline) & Para & ParaPart \\ 
+  \hline
+0 & 17.29 & 25.42 & 32.64 \\ 
+  1 & 16.42 & 25.32 & 32.28 \\ 
+  2 & 15.29 & 20.72 & 29.94 \\ 
+  3 & 15.97 & 22.22 & 31.18 \\ 
+  4 & 17.79 & 24.27 & 32.83 \\ 
+  5 & 16.73 & 24.55 & 31.11 \\ 
+  6 & 17.11 & 27.03 & 32.19 \\ 
+  7 & 16.37 & 25.34 & 33.52 \\ 
+  8 & 15.93 & 24.24 & 30.93 \\ 
+  9 & 16.99 & 25.96 & 34.35 \\ 
+   \hline
+Mean & 16.59 & 24.51 & 32.10 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN}, Model\textsubscript{ParatoEN} and Model\textsubscript{ParaParttoEN} } 
+\label{Table:Concating}
+\end{table}
 \subsection{Interleaving Gaelic Words and Gloss Items And Concating them}\label{treatment:InterleavingAndConCat}
 \subsubsection{Method of the Interleaving Treatment}
 Instead of putting the pairs of a Gaelic sentence and a English sentences and the pairs of a gloss line and a English sentence in a parallel manner, we may just literally blend a Gaelic sentence and a gloss line by interleaving them. Consider the following example:
@@ -118,10 +190,34 @@ Instead of putting the pairs of a Gaelic sentence and a English sentences and th
 
 Given the chuck of interlinear glossed text data in (\ref{ex_interleave:in}), the Interleaving treatment generates the sample in (\ref{ex_interleave:out}).  
 The results are given in the following table. 
-\SweaveInput{interleavingGdGLOSS_table.Rnw}
-\newline
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Thu Apr  5 16:52:04 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & interleavingGdGLOSS \\ 
+  \hline
+0 & 17.29 & 13.67 \\ 
+  1 & 16.42 & 12.49 \\ 
+  2 & 15.29 & 11.01 \\ 
+  3 & 15.97 & 12.33 \\ 
+  4 & 17.79 & 12.56 \\ 
+  5 & 16.73 & 12.13 \\ 
+  6 & 17.11 & 11.55 \\ 
+  7 & 16.37 & 12.78 \\ 
+  8 & 15.93 & 12.43 \\ 
+  9 & 16.99 & 11.65 \\ 
+   \hline
+Mean & 16.59 & 12.26 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{interleavingGdGLOSStoEn}} 
+\label{Table:interleavingGdGLOSS}
+\end{table}\newline
 It turns out this treatment has a significant negative effect
-(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{interleavingGdGLOSS}=\Sexpr{m_Treatment}, SD\textsubscript{interleavingGdGLOSS}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p=\Sexpr{p_val}). This is not the right way of incorporating gloss line data. 
+(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{interleavingGdGLOSS}=12.26, SD\textsubscript{interleavingGdGLOSS}=0.74,; t(9)=-17.06, p=0.000). This is not the right way of incorporating gloss line data. 
 
 
 \subsubsection{Method of Concating Gaelic Words and Gloss Words }\label{treatment:Concating}
@@ -141,9 +237,33 @@ A quick and close amendment of the Interleaving approach is to concatenate the a
 
 \subsubsection{Results of Concating Gaelic Words and Gloss Words}
 The performances of this treatment is given in the following table.
-\SweaveInput{concat_table.Rnw}
-\newline
-The result shows that this treatment hurts the baseline systems badly instead of improving them (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ConcatGLOSSGaelic}=\Sexpr{m_Treatment}, SD\textsubscript{ConcatGLOSSGaelic}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p=\Sexpr{p_val}).
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Thu Apr  5 16:52:04 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & ConcatGLOSSGaelic \\ 
+  \hline
+0 & 17.29 & 15.42 \\ 
+  1 & 16.42 & 14.31 \\ 
+  2 & 15.29 & 15.38 \\ 
+  3 & 15.97 & 14.18 \\ 
+  4 & 17.79 & 18.63 \\ 
+  5 & 16.73 & 14.89 \\ 
+  6 & 17.11 & 15.16 \\ 
+  7 & 16.37 & 15.20 \\ 
+  8 & 15.93 & 15.50 \\ 
+  9 & 16.99 & 15.72 \\ 
+   \hline
+Mean & 16.59 & 15.44 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ConcatGLOSSGaelictoEn} } 
+\label{Table:Concating}
+\end{table}\newline
+The result shows that this treatment hurts the baseline systems badly instead of improving them (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ConcatGLOSSGaelic}=15.44, SD\textsubscript{ConcatGLOSSGaelic}=1.23,; t(9)=-3.64, p=0.010).
 
 %%%%%%%%%%
 \subsection{Hybrid: Gaelic or Gloss}
@@ -159,34 +279,94 @@ The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic wo
 
 Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. The criterion is which one, the Gaelic word or the gloss item, is less ambiguous. The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic word, then <Gloss\_item, English translation> is chosen; other the other hand if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. However, when the situation is tight (i.e. both the Gaelic word and gloss item are equally ambiguous), a default setting is needed to be chosen. The choices of the default setting split this single treatment into two treatments: default as Gaelic or default as gloss.
 \subsubsection{Result of Hybrid}    
-\SweaveInput{ReplacingGaelic_table.Rnw}
-When the default setting is the Gaelic word, the performances are significantly worse than than the baseline systems, as shown in table (\ref{Table:HybridDefaultAsGaelic}).  
-(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ReplacingGaelic}=\Sexpr{m_Treatment}, SD\textsubscript{ReplacingGaelic}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p < 0.01).
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Thu Apr  5 16:52:04 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & HybridDefaultAsGaelic \\ 
+  \hline
+0 & 17.29 & 9.44 \\ 
+  1 & 16.42 & 9.07 \\ 
+  2 & 15.29 & 7.69 \\ 
+  3 & 15.97 & 9.12 \\ 
+  4 & 17.79 & 9.08 \\ 
+  5 & 16.73 & 10.45 \\ 
+  6 & 17.11 & 8.62 \\ 
+  7 & 16.37 & 10.00 \\ 
+  8 & 15.93 & 10.52 \\ 
+  9 & 16.99 & 8.46 \\ 
+   \hline
+Mean & 16.59 & 9.24 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{HybridDefaultAsGaelictoEn}} 
+\label{Table:HybridDefaultAsGaelic}
+\end{table}When the default setting is the Gaelic word, the performances are significantly worse than than the baseline systems, as shown in table (\ref{Table:HybridDefaultAsGaelic}).  
+(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=9.24, SD\textsubscript{ReplacingGaelic}=0.89,; t(9)=-21.03, p < 0.01).
 
 
 
-\SweaveInput{ReplacingGLOSS_table.Rnw}
-When the default setting is the Gaelic word, the performances are sightly worse than than the baseline systems, as shown in table (\ref{Table:HybridDefaultAsGLOSS}).
-(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ReplacingGaelic}=\Sexpr{m_Treatment}, SD\textsubscript{ReplacingGaelic}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p < 0.01 ).
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Thu Apr  5 16:52:04 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & HybridDefaultAsGLOSS \\ 
+  \hline
+0 & 17.29 & 15.95 \\ 
+  1 & 16.42 & 15.60 \\ 
+  2 & 15.29 & 14.15 \\ 
+  3 & 15.97 & 14.72 \\ 
+  4 & 17.79 & 15.74 \\ 
+  5 & 16.73 & 14.88 \\ 
+  6 & 17.11 & 14.45 \\ 
+  7 & 16.37 & 16.41 \\ 
+  8 & 15.93 & 15.15 \\ 
+  9 & 16.99 & 17.61 \\ 
+   \hline
+Mean & 16.59 & 15.47 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{HybridDefaultAsGLOSS}} 
+\label{Table:HybridDefaultAsGLOSS}
+\end{table}When the default setting is the Gaelic word, the performances are sightly worse than than the baseline systems, as shown in table (\ref{Table:HybridDefaultAsGLOSS}).
+(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=15.47, SD\textsubscript{ReplacingGaelic}=1.03,; t(9)=-3.67, p < 0.01 ).
 
 
 \section{Summary and Conclusion}
 The chapter reports machine translation experiments that aims to find how the gloss line information can improve the performance of the baseline Gaelic-to-English translation systems. It is found that the Parallel-Partial is highly effective. The complete BLEU scores of various treatments are given in the following table.
 
 %\begin{adjustbox}{angle=90} 
-<<xtable, label=table:complete_table, echo=FALSE, results=tex>>=
-require(xtable)
-n <- read.csv('complete.csv', sep=',', header = TRUE)
-n<- subset(n, select=c("Round", "Gaelic", "GLOSS", "ParaPart", "Para", "interleavingGdGLOSS", "ConcatGLOSSGaelic", "ReplacingGaelic","ReplacingGLOSS"))
-#n<- subset(n, select=c("Round", "Gaelic"))
-xtab2<-xtable(n,caption="BLEU scores of the treatments",  label="table:complete_table" )
-#print(xtab2,include.rownames = FALSE, hline.after = c(10))
-hlines <- c(-1,0,10, nrow(xtab2))
-names(xtab2)<-c('Round', 'Baseline', 'GLOSS', 'ParaPart', 'Para', 'Interleaving', 'Concat', 'HybrGaelic', 'HybrGLOSS' )
-xtab2<-xtab2
-print(xtab2,include.rownames =FALSE, hline.after = hlines, rotate.colnames=TRUE)
-@
-%\end{adjustbox}
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Thu Apr  5 16:52:04 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrrrrr}
+  \hline
+\begin{sideways} Round \end{sideways} & \begin{sideways} Baseline \end{sideways} & \begin{sideways} GLOSS \end{sideways} & \begin{sideways} ParaPart \end{sideways} & \begin{sideways} Para \end{sideways} & \begin{sideways} Interleaving \end{sideways} & \begin{sideways} Concat \end{sideways} & \begin{sideways} HybrGaelic \end{sideways} & \begin{sideways} HybrGLOSS \end{sideways} \\ 
+  \hline
+0 & 17.29 & 18.39 & 32.64 & 25.42 & 13.67 & 15.42 & 9.44 & 15.95 \\ 
+  1 & 16.42 & 18.00 & 32.28 & 25.32 & 12.49 & 14.31 & 9.07 & 15.60 \\ 
+  2 & 15.29 & 16.02 & 29.94 & 20.72 & 11.01 & 15.38 & 7.69 & 14.15 \\ 
+  3 & 15.97 & 20.22 & 31.18 & 22.22 & 12.33 & 14.18 & 9.12 & 14.72 \\ 
+  4 & 17.79 & 19.02 & 32.83 & 24.27 & 12.56 & 18.63 & 9.08 & 15.74 \\ 
+  5 & 16.73 & 15.53 & 31.11 & 24.55 & 12.13 & 14.89 & 10.45 & 14.88 \\ 
+  6 & 17.11 & 18.00 & 32.19 & 27.03 & 11.55 & 15.16 & 8.62 & 14.45 \\ 
+  7 & 16.37 & 20.08 & 33.52 & 25.34 & 12.78 & 15.20 & 10.00 & 16.41 \\ 
+  8 & 15.93 & 15.82 & 30.93 & 24.24 & 12.43 & 15.50 & 10.52 & 15.15 \\ 
+  9 & 16.99 & 15.93 & 34.35 & 25.96 & 11.65 & 15.72 & 8.46 & 17.61 \\ 
+   \hline
+Mean & 16.59 & 17.70 & 32.10 & 24.51 & 12.26 & 15.44 & 9.24 & 15.47 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of the treatments} 
+\label{table:complete_table}
+\end{table}%\end{adjustbox}
 
 The aim of chapter is to report and document how the experiments are done and what the results are. This is merely reporting the linguist and non-linguistic facts. The implications and relevant works in the literature will be discussed in the next chapter.   
 

@@ -30,7 +30,7 @@ Interlinear Glossed Text (IGT) is widely used in linguistic studies. (\ref{gloss
 
 A system of meaning representations is decomposed of three components: a) meanings, b) representations, and c) a mapping between meanings and representations. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. On the other hand, gloss provides a mapping that is close to this ideal one-to-one mapping. Thus gloss should a better representation in term of representing meanings. 
 
-Theoretically, the claim that gloss representation is closer to the ideal one-to-one mapping than natural language representation is can be tested empirically. IF there were a set of special golden meta-linguistic semantic representations, which has the following property: each concept is mapped to one and one representation and each representation is mapped to one and one concept, then it is expected that each gold representation will map to more natural language words than gloss items, and each natural language word will map to more gold representations than gloss items. However, in practice, this is an impossible experiment to conduct, because there are no such golden representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special golden meta-linguistic semantic representations, and the mappings between the golden representations to natural languages.}. However, in spite of the impossibility of conducting statistical experiments, we may still use some examples to show the intuition that glosses are better representations than natural languages. The following sections describes how glosses cluster words with different forms but with the same meaning, and how glosses represent words with same form but with different meanings with different representations. 
+Theoretically, the claim that gloss representation is closer to the ideal one-to-one mapping than natural language representation is can be tested empirically. IF there were a set of special golden meta-linguistic semantic representations, which has the following property: each concept is mapped to one and one representation and each representation is mapped to one and one concept, then it is expected that each gold representation will map to more natural language words than gloss items, and each natural language word will map to more gold representations than gloss items. However, in practice, this is an impossible experiment to conduct, because there are no such golden representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special golden meta-linguistic semantic representations, and the mappings between the golden representations to natural languages.}. However, in spite of the impossibility of conducting statistical experiments, we may still use some examples to show the intuition that glosses are better representations than natural languages. The following sections describes how glosses cluster words with different forms but with the same meaning, and how glosses disambiguate words with same form but with different meanings. 
 
 \subsection{Glosses Cluster Different Words with the Same Meanings (Synonyms) Into a Single representation}
 Gloss collapses words with different forms with the same meanings into a single gloss. In natural languages, the morphology of a word (i.e. the form of a word) may be sensitive to the phonological environments and changing into different forms. Consider the following the indefinite article in the English examples: 
@@ -45,59 +45,50 @@ Gloss collapses words with different forms with the same meanings into a single 
 In the above example, \textit{an} and \textit{a} have the identical meaning\footnote{Semantically, \textit{an} and \textit{a} are existential quantifiers, which declare that a member of a set exists in the world. In formal semantics, \textit{an} and \textit{a} may be defined as follows: $\exists\lambda P[P(x)]$. In the current example, \textit{apple} and \textit{banana} will instantiate $P$ in the formula, and the meanings will be `an apple exists' and `a banana exists'. \citet{kratzer1998semantics} would be a nice introduction for interested readers to see how linguists, specifically semanticians, define, decompose, and compose meanings of languages formally.}. 
 In English, the same concept is realized as two representations, \textit{a} or \textit{an}, while in the gloss representation the one concept is neatly represented as \textit{ART}. 
 
-Critically, synonyms like the English \textit{a} and \textit{an} commonly occur in many other natural languages if not in all languages. The definite article in the language of interest, Scottish Gaelic, is another example to show the noisiness of natural language representations. Consider the definite article in the following Gaelic examples. 
+Critically, synonyms like the English \textit{a} and \textit{an} commonly occur in many other natural languages in not in all languages. The definite article in the language of interest, Scottish Gaelic, is another example to show the noisiness of natural language representations. Consider the definite article in the following Gaelic examples from \cite{lamb2001scottish}. 
 
 \begin{exe}  
 \ex 
+\citet[p. 29]{lamb2001scottish}
 \gll tha mi a' sireadh \textbf{an} leabhair bhig ghuirm\\
 be-PRES-IND 1S PROG searching-VN \textbf{ART} book-G small-G blue-G\\
-\glt `I am looking for the small blue book' \citep[p. 29]{lamb2001scottish}
+\glt `I am looking for the small blue book'
 
 \ex 
+\citet[p. 31]{lamb2001scottish}
 \gll \textbf{am} fear m\`or\\
 \textbf{ART} man big\\
-\glt `a big man' \citep[p. 31]{lamb2001scottish}
+\glt `a big man'
 
 \ex
+\citet[p. 30]{lamb2001scottish} 
 \gll thuit \textbf{a'} chlach air cas mo mhn\`a\\
 fall-PAST \textbf{ART} stone on foot 1S-POSS wife-G\\
-\glt`the stone fell on my wife's foot' \citep[p. 30]{lamb2001scottish} 	
+\glt`the stone fell on my wife's foot' 	
 
 \ex
+\citet[p. 29]{lamb2001scottish} 
 \gll doras \textbf{na} sgoile(adh) \\
 door-N \textbf{ART} school-G \\
-\glt `the door of the school' \citep[p. 29]{lamb2001scottish} 	
+\glt `the door of the school'		
 
 \ex 
+
 \gll a chuir air d\`oigh \textbf{nan} \`airidhean a-muigh a rubh' Eubhal agus an oidhche seo \\
 to put-INF on order \textbf{ART} sheilings out-LOC to point Eaval and ART night this \\
-\glt `the girls big house' \citep[p. 100]{lamb2001scottish} 
+\glt `the girls big house'
 
-\ex
-\gll f\`eis \textbf{nam} b\`ard\\
-festival \textbf{ART} poet.PL.GEN\\
-\glt `festival of the poets' \citep[p. 107]{lamb2001scottish}
+
+
 
 \end{exe}
 
-The definite article in Scottish Gaelic may be realized as the following forms: as \textit{an}, \textit{am}, \textit{a'}, \textit{na}, \textit{nan} or \textit{nam}. The alternation is determined by the case, gender and number of noun phrase that it modifies, and additionally the phonological property of the word following it also changes the form of the definite article \citep{lamb2001scottish}. All these different realizations refer to the same concept, the definite article. Again, the gloss notation nicely clusters them together as \textit{ART}.
+The definite article in Gaelic may be realized as the following forms: as \textit{an}, \textit{am}, \textit{a'}, \textit{nam}, \textit{nan} or \textit{na}. The alternation is determined by the case, gender and number of noun phrase that it modifies, and additionally the phonological property of the word following it also changes the form of the definite article \citep{lamb2001scottish}. 
 
-In short, gloss collapses synonyms in natural languages. 
+\subsection{Glosses disambiguates ambiguous words}
+Critically glosses provide `redundant' information. Here `redundant' means that  
 
-\subsection{Glosses Distinguish Homographs' Different Meanings}
-In natural languages, there are cases when a single form denotes to multiple concepts. Words with this properties are termed as homographs. Consider the word \textit{for} in following English examples:
-
-\begin{exe}
-\ex
-	\begin{xlist}
-	\ex \label{for_c}I intended \textbf{for} Jenny to be present.
-	\ex \label{for_p}\textbf{For} Jenny, I intended to be present. \citep[p.306-307]{adger2003core}
-	\end{xlist}
-\end{exe}
-
-\textit{For} in (\ref{for_c}) and (\ref{for_p}) has the same form but different meanings. Specifically, \textit{for} in (\ref{for_c}) is a complementer with its part of speech being \textit{C}, and it heads the non-finite clause \textit{Jenn to be present}; on the other hand \textit{for} (\ref{for_p}) is a preposition, and it marks its DP argument, \textit{Jenny}, as benefactive.    
-
-\subsection{Glosses are Sensitive to Hierarchical Structure of Natural Language Sentences}
+\subsection{Glosses are sensitive to hierarchical structure of natural language sentences}
 Critically glosses provide `redundant' information. Here `redundant' means that  
 
 \section{What is a Gloss Line}

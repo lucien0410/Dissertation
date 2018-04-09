@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex acl2018"] 1523075548 "acl2018.aux" "acl2018.bbl" "acl2018" 1523076931
+["bibtex acl2018"] 1523237079 "acl2018.aux" "acl2018.bbl" "acl2018" 1523237878
   "./acl_natbib.bst" 1519019574 47566 8107573a443aca442602b8e9bbe11c23 ""
   "acl2018.aux" 1523075549 1761 a27b84f3b267c872089896a964ee825c ""
   "acl2018.bcf" 0 -1 0 ""
-  "acl2018.bib" 1523053091 20004 eed0e2d964e46c2bbd1dd63c5f313cb9 ""
+  "acl2018.bib" 1523235053 21090 59e6d7f083fecfe4f551c2d6ca898f47 ""
   (generated)
-  "acl2018.blg"
   "acl2018.bbl"
-["pdflatex"] 1523075549 "acl2018.tex" "acl2018.pdf" "acl2018" 1523076931
+  "acl2018.blg"
+["pdflatex"] 1523075549 "acl2018.tex" "acl2018.pdf" "acl2018" 1523237878
   "/etc/texmf/web2c/texmf.cnf" 1480971610 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/local/share/texmf/tex/latex/gb4e/gb4e.sty" 1480967963 14002 bc6669e401eb3733974d57dc33712d54 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -173,12 +173,12 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1503440224 1346346 7f2b8b715a9ddb095afe3697a6ba02b5 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1503440184 3822874 d1fc655d12d61da626fe6d96cc38d3f3 ""
   "acl2018.aux" 1523075549 1761 a27b84f3b267c872089896a964ee825c ""
-  "acl2018.bbl" 1523075549 121 176ef3ab05ccef1cd7a1f3b4a71ca9dc "bibtex acl2018"
+  "acl2018.bbl" 1523237079 121 176ef3ab05ccef1cd7a1f3b4a71ca9dc "bibtex acl2018"
   "acl2018.out" 1523075549 0 d41d8cd98f00b204e9800998ecf8427e ""
   "acl2018.sty" 1508227086 20983 e8ced22315308b32f270663f589a24b9 ""
   "acl2018.tex" 1522991906 26639 8ec00c34927284664d1eb92a1c62b37b ""
   (generated)
-  "acl2018.out"
   "acl2018.log"
   "acl2018.pdf"
+  "acl2018.out"
   "acl2018.aux"

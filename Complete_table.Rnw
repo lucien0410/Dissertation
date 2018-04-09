@@ -1,0 +1,12 @@
+<<xtable, label=table:complete_table, echo=FALSE, results=tex>>=
+require(xtable)
+n <- read.csv('complete.csv', sep=',', header = TRUE)
+n<- subset(n, select=c("Round", "Gaelic", "GLOSS", "ParaPart", "Para", "interleavingGdGLOSS", "ConcatGLOSSGaelic", "ReplacingGaelic","ReplacingGLOSS"))
+#n<- subset(n, select=c("Round", "Gaelic"))
+xtab2<-xtable(n,caption="BLEU scores of the treatments",  label="table:complete_table" )
+#print(xtab2,include.rownames = FALSE, hline.after = c(10))
+hlines <- c(-1,0,10, nrow(xtab2))
+names(xtab2)<-c('Round', 'Baseline', 'GLOSS', 'ParaPart', 'Para', 'Interleaving', 'Concat', 'HybrGaelic', 'HybrGLOSS' )
+xtab2<-xtab2
+print(xtab2,include.rownames =FALSE, hline.after = hlines, rotate.colnames=FALSE)
+@

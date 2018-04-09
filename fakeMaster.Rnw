@@ -18,6 +18,7 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{fixltx2e}
 \usepackage{titlesec}
+\usepackage{rotating}
 
 \setcounter{secnumdepth}{4}
 
@@ -31,22 +32,22 @@
 %the newcommand change the selected word into 'ccr' font
 %e.g. \begin{myfont} multi-bleu.perl \end{myfont}
 
-\title{Develong Linguistically Imformed Neural Net Machine Translation Systems}
+\title{Developing Linguistically Informed Neural Net Machine Translation Systems}
 \author{Yuan-Lu Chen}
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 
 \maketitle
-% \SweaveInput{Introduction.Rnw}
+\SweaveInput{Introduction.Rnw}
 \SweaveInput{gloss.Rnw}
-% \SweaveInput{Description_of_Corpus.Rnw}
-% \SweaveInput{intro_MT.Rnw}
+\SweaveInput{Description_of_Corpus.Rnw}
+\SweaveInput{intro_MT.Rnw}
 \SweaveInput{RealCake.Rnw}
-% \SweaveInput{RealCake2.Rnw}
-% \SweaveInput{gloss_in_other_languages.Rnw}
-% \SweaveInput{Implications_ling.Rnw}
-% \SweaveInput{Conclusion.Rnw}
+\SweaveInput{RealCake2.Rnw}
+\SweaveInput{gloss_in_other_languages.Rnw}
+\SweaveInput{Implications_ling.Rnw}
+\SweaveInput{Conclusion.Rnw}
 
 
 \bibliographystyle{te}

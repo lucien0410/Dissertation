@@ -18,6 +18,7 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{fixltx2e}
+\usepackage{rotating}
 \usepackage{Sweave}
 
 \newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
@@ -122,23 +123,67 @@ Interlinear Glossed Text (IGT) is widely used in linguistic studies. (\ref{gloss
 
 \section{The Golden Properties of Glosses}
 
-The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Theoretically, this claim can be tested empirically. Imagine there is a set of special gold meta-linguistic semantic representations, which has the following property: each concept is mapped to one and one representation and each representation is mapped to one and one concept. Given, theses gold representations, it is expected that each gold representation will map to more natural language words than gloss items, and each natural language word will map to more gold representations than gloss items. However, in practice, this is an impossible experiment to conduct, because there are no such gold representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special golden meta-linguistic semantic representations, and the mappings between the golden representations to natural languages.}. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information to some degree. 
+A system of meaning representations is decomposed of three components: a) meanings, b) representations, and c) a mapping between meanings and representations. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. On the other hand, gloss provides a mapping that is close to this ideal one-to-one mapping. Thus gloss should a better representation in term of representing meanings. 
 
+Theoretically, the claim that gloss representation is closer to the ideal one-to-one mapping than natural language representation is can be tested empirically. IF there were a set of special golden meta-linguistic semantic representations, which has the following property: each concept is mapped to one and one representation and each representation is mapped to one and one concept, then it is expected that each gold representation will map to more natural language words than gloss items, and each natural language word will map to more gold representations than gloss items. However, in practice, this is an impossible experiment to conduct, because there are no such golden representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special golden meta-linguistic semantic representations, and the mappings between the golden representations to natural languages.}. However, in spite of the impossibility of conducting statistical experiments, we may still use some examples to show the intuition that glosses are better representations than natural languages. The following sections describes how glosses cluster words with different forms but with the same meaning, and how glosses represent words with same form but with different meanings with different representations. 
 
-\subsection{Glosses Cluster Different Words with the Same Meanings}
-Gloss collapses words with different forms with the same meanings into a single gloss. In natural languages, the morphology of a word (i.e. the form of a word) may be sensitive to the phonological environments and changing into different forms. Consider the following English example: 
+\subsection{Glosses Cluster Different Words with the Same Meanings (Synonyms) Into a Single representation}
+Gloss collapses words with different forms with the same meanings into a single gloss. In natural languages, the morphology of a word (i.e. the form of a word) may be sensitive to the phonological environments and changing into different forms. Consider the following the indefinite article in the English examples: 
+
 \begin{exe}  
 \ex \gll John ate \textbf{an} apple.\\
-	John eat.past	\textbf{Det} apple\\
+	John eat.past	\textbf{ART} apple\\
 \ex \gll John ate \textbf{a} banana.\\
-	John eat.past   \textbf{Det} banana\\
+	John eat.past   \textbf{ART} banana\\
 \end{exe}
-In the above example, \textit{an} and \textit{a} have the identical meaning\footnote{Semantically, \textit{an} and \textit{a} are existential quantifiers, which declare that a member of a set exists in the world. In formal semantics, \textit{an} and \textit{a} may be defined as follows: $\exists\lambda P[P(x)]$. In the current example, \textit{apple} and \textit{banana} will instantiate $P$ in the formula, and the meanings will be `an apple exists' and `a banana exists'. \citet{kratzer1998semantics} would be a nice introduction for interested readers to see how linguists, specifically semanticians, define, decompose, and compose meanings of languages formally.}. 
 
-\subsection{Glosses disambiguates ambiguous words}
+In the above example, \textit{an} and \textit{a} have the identical meaning\footnote{Semantically, \textit{an} and \textit{a} are existential quantifiers, which declare that a member of a set exists in the world. In formal semantics, \textit{an} and \textit{a} may be defined as follows: $\exists\lambda P[P(x)]$. In the current example, \textit{apple} and \textit{banana} will instantiate $P$ in the formula, and the meanings will be `an apple exists' and `a banana exists'. \citet{kratzer1998semantics} would be a nice introduction for interested readers to see how linguists, specifically semanticians, define, decompose, and compose meanings of languages formally.}. 
+In English, the same concept is realized as two representations, \textit{a} or \textit{an}, while in the gloss representation the one concept is neatly represented as \textit{ART}. 
+
+Critically, synonyms like the English \textit{a} and \textit{an} commonly occur in many other natural languages if not in all languages. The definite article in the language of interest, Scottish Gaelic, is another example to show the noisiness of natural language representations. Consider the definite article in the following Gaelic examples. 
+
+\begin{exe}  
+\ex 
+\gll tha mi a' sireadh \textbf{an} leabhair bhig ghuirm\\
+be-PRES-IND 1S PROG searching-VN \textbf{ART} book-G small-G blue-G\\
+\glt `I am looking for the small blue book' \citep[p. 29]{lamb2001scottish}
+
+\ex 
+\gll \textbf{am} fear m\`or\\
+\textbf{ART} man big\\
+\glt `a big man' \citep[p. 31]{lamb2001scottish}
+
+\ex
+\gll thuit \textbf{a'} chlach air cas mo mhn\`a\\
+fall-PAST \textbf{ART} stone on foot 1S-POSS wife-G\\
+\glt`the stone fell on my wife's foot' \citep[p. 30]{lamb2001scottish} 	
+
+\ex
+\gll doras \textbf{na} sgoile(adh) \\
+door-N \textbf{ART} school-G \\
+\glt `the door of the school' \citep[p. 29]{lamb2001scottish} 	
+
+\ex 
+\gll a chuir air d\`oigh \textbf{nan} \`airidhean a-muigh a rubh' Eubhal agus an oidhche seo \\
+to put-INF on order \textbf{ART} sheilings out-LOC to point Eaval and ART night this \\
+\glt `the girls big house' \citep[p. 100]{lamb2001scottish} 
+
+\ex
+\gll f\`eis \textbf{nam} b\`ard\\
+festival \textbf{ART} poet.PL.GEN\\
+\glt `festival of the poets' \citep[p. 107]{lamb2001scottish}
+
+\end{exe}
+
+The definite article in Scottish Gaelic may be realized as the following forms: as \textit{an}, \textit{am}, \textit{a'}, \textit{na}, \textit{nan} or \textit{nam}. The alternation is determined by the case, gender and number of noun phrase that it modifies, and additionally the phonological property of the word following it also changes the form of the definite article \citep{lamb2001scottish}. All these different realizations refer to the same concept, the definite article. Again, the gloss notation nicely clusters them together as \textit{ART}.
+
+In short, gloss collapses synonyms in natural languages. 
+
+\subsection{Glosses Distinguish Homographs' Different Meanings}
+AmiHomographs 
 Critically glosses provide `redundant' information. Here `redundant' means that  
 
-\subsection{Glosses are sensitive to hierarchical structure of natural language sentences}
+\subsection{Glosses are Sensitive to Hierarchical Structure of Natural Language Sentences}
 Critically glosses provide `redundant' information. Here `redundant' means that  
 
 \section{What is a Gloss Line}
@@ -152,7 +197,8 @@ A gloss line is an artificial sentence using the purified `gloss words'.
 
 	\begin{enumerate}
     \item Original goal of the corpus: a bank of examples of specific syntactic patterns for syntacticians.  
-	\item Description of UA Celtic Group's Scottish Gaelic documentation project
+	\item Description of UA Celtic Group's Scottish Gaelic documentation project\\
+	The corpus has 8,367 Gaelic sentences, and in term of words, it has 52,778 Gaelic words/glosses. The data of the corpus is from two different sources: fieldwork and data elicitation. 
     \item Collection of interlinear glossed text data used in syntax paper/dissertations AND language documentation
     \item Auto-glosser and literature on auto-glosser
 	\end{enumerate}
@@ -163,7 +209,9 @@ A gloss line is an artificial sentence using the purified `gloss words'.
 	\item General review of supervised Machine learning \citep{kotsiantis2007supervised}: The goal is provide a high level of understanding of what machine learning is. Machine Learning is to learn from EXAMPLES/SAMPLES. For example, to define the meaning of `dog', instead of giving all the definable features of `dog', we feed the machine with as many as possible of information of entities of dogs that we have access. Montague Semantics is actually a variant of ML, within which `dog' is defined as `the set of all the dog that exists in the current world.'. As such, Montague Semantics is Machine Learning, because instead of defining 'dog' with certain arbitrary rules (+/- FEATURE), it says 'all the dog entities in the current world'. Definition by samples/examples not by rules.    
 	\item Literature on machine translation: from statistical machine translation \citep{koehn2009statistical} to neural machine translation \citep{cho2014learning,cho2014properties,bahdanau2014neural,Koehn_NMT2017}. (Target audience: linguists)
 	\end{enumerate}
-    
+ 
+\section{Neural Net Machine Translation}\label{neural_MT}
+Introduction of Neural Net Machine Translation
 \chapter{Building Translation Systems using Interlinear Glossed Text}
 \label{chap:cake}
 
@@ -213,13 +261,20 @@ The rest of the chapter is organized as follows: Section \ref{sec:experimet_sett
 \section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
 The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}.
 The following default hyper-parameter settings of OpenNMT\footnote{See their documentation for the complete default hyper-parameter settings: \url{http://opennmt.net/OpenNMT-py/}.} are used across all models so that the only independent variable is the type of the training data:
-\begin{itemize}
-\item Word vector size: 500
-\item Type of recurrent cell: Long Short Term Memory
-\item Number of recurrent layers of the encoder and decoder: 2
-\item Number of epochs: 13
-\item Size of mini batches: 64
-\end{itemize}
+	\begin{itemize}
+	\item Word vector size: 500\\
+	In neural net machine translation, a word is represented as a vector. This hyper-parameter means that we are going to use vectors with 500 dimensions to represent words.
+	\item Type of recurrent cell: Long Short Term Memory\\
+	Long Short Term Memory recurrent neural net is a type of neural net that is suitable for sequence to sequence tasks.  
+	\item Number of recurrent layers of the encoder and decoder: 2\\
+	This hyper-parameter specifies that we are going to have two recurrent layers of the encoder and decoder. 
+	\item Number of epochs: 13\\
+	The training process of a neural net machine translation systems is done epoch by epoch. Each epoch is an iteration of training. Here 13 means that we are going to have 13 iterations of training and thus have 13 epochs. 
+	\item Size of mini-batches: 64\\
+	Training a neural net is to let the weights of the connections between the neurons fit the samples that the net is fed with. Theoretically, we may ask the net adjust the weights according all the samples we have all together at one time. However, in practice, this is not memory efficient, and causing errors in the process of optimizing the weight parameters. So, instead, the samples are split into smaller mini-batches, and the neural net just updates its weights to make the most accurate predictions for a mini-batch, and repeat one mini-batch at one time. This hyper-parameter specifies the size of a mini-batch.  
+	\end{itemize}
+
+In section \ref{neural_MT}, we brifely  
 
 The settings of the hyper-parameters do have effects on the performances of the trained models.
 A common practice to find the optimal settings of the hyper-parameters is to hold out a subset of the training dataset as the developing dataset, then test the models on the developing data to see what settings are optimal, then merge the developing dataset and training dataset as a new training set, and then train on this new training set using the found optimal hyper-parameters.
@@ -321,7 +376,7 @@ This procedure of splitting the data into three sub-sets, training the models, a
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Apr  4 13:20:48 2018
+% Fri Apr  6 11:34:29 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -425,7 +480,7 @@ With the training and validation data ready, now we can train models and evaluat
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Apr  4 13:20:48 2018
+% Fri Apr  6 11:34:30 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -481,7 +536,7 @@ The Parallel treatment is using the parallel part of the Parallel-Partial treatm
 \subsubsection{Results of the Parallel Treatment}\label{treatment:Para_result}
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Apr  4 13:20:48 2018
+% Fri Apr  6 11:34:30 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -511,7 +566,7 @@ However, the best treatment (i.e. the Parallel-Partial treatment) is still far b
 (M\textsubscript{Para}=24.51, SD\textsubscript{Para}=1.84; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=18.73, p < 0.01 ).
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Apr  4 13:20:48 2018
+% Fri Apr  6 11:34:30 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccc}
@@ -555,7 +610,7 @@ Given the chuck of interlinear glossed text data in (\ref{ex_interleave:in}), th
 The results are given in the following table. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Apr  4 13:20:48 2018
+% Fri Apr  6 11:34:30 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -602,7 +657,7 @@ A quick and close amendment of the Interleaving approach is to concatenate the a
 The performances of this treatment is given in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Apr  4 13:20:48 2018
+% Fri Apr  6 11:34:30 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -644,7 +699,7 @@ Now we aim to build a single sample that is either <Gaelic\_word, English transl
 \subsubsection{Result of Hybrid}    
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Apr  4 13:20:48 2018
+% Fri Apr  6 11:34:30 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -669,9 +724,12 @@ Mean & 16.59 & 9.24 \\
 \label{Table:HybridDefaultAsGaelic}
 \end{table}When the default setting is the Gaelic word, the performances are significantly worse than than the baseline systems, as shown in table (\ref{Table:HybridDefaultAsGaelic}).  
 (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=9.24, SD\textsubscript{ReplacingGaelic}=0.89,; t(9)=-21.03, p < 0.01).
+
+
+
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Apr  4 13:20:48 2018
+% Fri Apr  6 11:34:30 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -699,14 +757,16 @@ Mean & 16.59 & 15.47 \\
 
 
 \section{Summary and Conclusion}
-The chapter reports machine translation experiments that aims to find how the gloss line information can improve the performance of the baseline Gaelic-to-English translation systems. It is found that the Parallel-Partial is highly effective. The complete BLEU scores of various treatments are given in the following table. 
+The chapter reports machine translation experiments that aims to find how the gloss line information can improve the performance of the baseline Gaelic-to-English translation systems. It is found that the Parallel-Partial is highly effective. The complete BLEU scores of various treatments are given in the following table.
+
+%\begin{adjustbox}{angle=90} 
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Wed Apr  4 13:20:48 2018
+% Fri Apr  6 11:34:30 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrrrr}
   \hline
-Round & Baseline & GLOSS & ParaPart & Para & Interleaving & Concat & HybrGaelic & HybrGLOSS \\ 
+\begin{sideways} Round \end{sideways} & \begin{sideways} Baseline \end{sideways} & \begin{sideways} GLOSS \end{sideways} & \begin{sideways} ParaPart \end{sideways} & \begin{sideways} Para \end{sideways} & \begin{sideways} Interleaving \end{sideways} & \begin{sideways} Concat \end{sideways} & \begin{sideways} HybrGaelic \end{sideways} & \begin{sideways} HybrGLOSS \end{sideways} \\ 
   \hline
 0 & 17.29 & 18.39 & 32.64 & 25.42 & 13.67 & 15.42 & 9.44 & 15.95 \\ 
   1 & 16.42 & 18.00 & 32.28 & 25.32 & 12.49 & 14.31 & 9.07 & 15.60 \\ 
@@ -724,7 +784,8 @@ Mean & 16.59 & 17.70 & 32.10 & 24.51 & 12.26 & 15.44 & 9.24 & 15.47 \\
 \end{tabular}
 \caption{BLEU scores of the treatments} 
 \label{table:complete_table}
-\end{table}
+\end{table}%\end{adjustbox}
+
 The aim of chapter is to report and document how the experiments are done and what the results are. This is merely reporting the linguist and non-linguistic facts. The implications and relevant works in the literature will be discussed in the next chapter.   
 
 
@@ -747,8 +808,11 @@ the next chapter I will discuss the why questions, and discuss similar works in 
 \label{chap:gloss_in_other_languages}
 
 To run the same experiments on Online Database of Interlinear Text \citep{ODIN, Xia2016} to show that incorporating gloss information works effectively across different languages.  
-\chapter{Implications on Theoretical Linguistics}
-\label{chap:Implications_ling}
+\chapter{Implications on Theoretical Linguistics and Natural Language Processing}
+\label{chap:Implications}
+
+Cite Pater 
+Pater 2017: Generative linguistics and neural networks at 60: foundation, friction and fusion
 \chapter{Conclusion}
 Conclusion
 

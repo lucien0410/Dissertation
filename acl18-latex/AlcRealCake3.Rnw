@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Other Possible Treatments}
-This section reports other possible ways of blending the Gaelic sentences and gloss lines. However, all of these treatments are not as effective as the Parallel-Partial treatment. Again, the same procedure and the same test datasets are used across all the experiments.    
+There other possible ways of blending the Gaelic sentences and gloss lines. However, all of these treatments are not as effective as the Parallel-Partial treatment. Again, the same procedure and the same test datasets are used across all the experiments.    
 
 \subsection{The Parallel Treatment}\label{treatment:Para}
 \subsubsection{Method of the Parallel Treatment}
-The Parallel treatment is using the parallel part of the Parallel-Partial treatment without exploiting the aglinment properties of gloss lines.
+The Parallel treatment is using the parallel part of the Parallel-Partial treatment without exploiting the alignment properties of gloss lines.
 It is expected that this treatment will improve the baseline systems but will not be as effective as the Parallel-Partial treatment.
 
 With this treatment, a chunk of interlinear glossed text is split into three pairs. For example, the chunk of interlinear glossed text in (\ref{igt}) becomes three samples in (\ref{sample_pair}): 
@@ -35,11 +35,11 @@ However, the best treatment (i.e. the Parallel-Partial treatment) is still far b
 (M\textsubscript{Para}=\Sexpr{m_gd}, SD\textsubscript{Para}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p < 0.01 ).
 \SweaveInput{alcGDParaParaPart_table.Rnw}
 
-Critically, the comparison between the Parallel-Partial treatment and current Parallel-Only treatment shows the effectiveness of the word-gloss alignments. Our conjecture on the effectiveness is that with the pairs of a gloss item and a Gaelic word present in the training data, the burden of the attention algorithm \citep{bahdanau2014neural} is largely alleviated, and thus yielding a better result. 
+Critically, the comparison between the Parallel-Partial treatment and current Parallel-Only treatment shows the effectiveness of the word-gloss alignments. Our conjecture on the effectiveness is that with the pairs of a gloss item and a Gaelic word present in the training data, the burden of the attention algorithm \citep{bahdanau2014neural} is largely alleviated. In other words, instead of asking the attention algorithm to estimate what to attend to, we explicitly teach the machine the alignment between the Gaelic word and the corresponding gloss. 
 
 \subsection{Interleaving Gaelic Words and Gloss Items And Concating them}\label{treatment:InterleavingAndConCat}
 \subsubsection{Method of the Interleaving Treatment}
-Instead of putting the pairs of a Gaelic sentence and a English sentences and the pairs of a gloss line and a English sentence in a parallel manner, we may just literally blend a Gaelic sentence and a gloss line by interleaving them. Consider the following example:
+Instead of putting the pairs of a Gaelic sentence and a English sentences and the pairs of a gloss line and a English sentence in a parallel manner, we may just literally blend a Gaelic sentence and a gloss line by interleaving them\footnote{\citet{ccg_target_seq} incorporate the Categorial grammar parse tags into natural sentences by interleaving the tags and the words.}. Consider the following example:
 
 \begin{exe} 
 \ex 
@@ -78,7 +78,7 @@ A quick and close amendment of the Interleaving approach is to concatenate the a
     \end{xlist}
 \end{exe}
 
-Concating words and glosses does solve the long sequence problem; however, it causes the sparse data problem. In this arrangement, the number of the types of tokens is increased; the number of tokens of each types is decreased. Thus all the samples are put in a larger space. So, the treatment may not effective either. 
+Concating words and glosses does solve the long sequence problem; however, it causes the sparse data problem. In this arrangement, the number of the types of tokens is increased; the number of tokens of each type is decreased. Thus all the samples are put in a larger space. So, the treatment may not be effective either. 
 
 \subsubsection{Results of Concating Gaelic Words and Gloss Words}
 \SweaveInput{alcconcat_table.Rnw}

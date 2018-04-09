@@ -4,16 +4,16 @@
 \addvspace {\medskipamount }
 \addvspace {\medskipamount }
 \addvspace {\medskipamount }
-\contentsline {table}{\numberline {5.1}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {GLOSStoEn}}}{25}{table.5.1}
+\contentsline {table}{\numberline {5.1}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {GLOSStoEn}}}{27}{table.5.1}
 \addvspace {\medskipamount }
-\contentsline {table}{\numberline {6.1}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {ParaParttoEn}}}{30}{table.6.1}
-\contentsline {table}{\numberline {6.2}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {ParatoEn}}}{31}{table.6.2}
-\contentsline {table}{\numberline {6.3}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN}, Model\textsubscript {ParatoEN} and Model\textsubscript {ParaParttoEN} }}{32}{table.6.3}
-\contentsline {table}{\numberline {6.4}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {interleavingGdGLOSStoEn}}}{32}{table.6.4}
-\contentsline {table}{\numberline {6.5}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {ConcatGLOSSGaelictoEn} }}{33}{table.6.5}
-\contentsline {table}{\numberline {6.6}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {HybridDefaultAsGaelictoEn}}}{35}{table.6.6}
-\contentsline {table}{\numberline {6.7}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {HybridDefaultAsGLOSS}}}{35}{table.6.7}
-\contentsline {table}{\numberline {6.8}{\ignorespaces BLEU scores of the treatments}}{36}{table.6.8}
+\contentsline {table}{\numberline {6.1}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {ParaParttoEn}}}{33}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {ParatoEn}}}{34}{table.6.2}
+\contentsline {table}{\numberline {6.3}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN}, Model\textsubscript {ParatoEN} and Model\textsubscript {ParaParttoEN} }}{35}{table.6.3}
+\contentsline {table}{\numberline {6.4}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {interleavingGdGLOSStoEn}}}{35}{table.6.4}
+\contentsline {table}{\numberline {6.5}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {ConcatGLOSSGaelictoEn} }}{36}{table.6.5}
+\contentsline {table}{\numberline {6.6}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {HybridDefaultAsGaelictoEn}}}{38}{table.6.6}
+\contentsline {table}{\numberline {6.7}{\ignorespaces BLEU scores of Model\textsubscript {GDtoEN} and Model\textsubscript {HybridDefaultAsGLOSS}}}{38}{table.6.7}
+\contentsline {table}{\numberline {6.8}{\ignorespaces BLEU scores of the treatments}}{39}{table.6.8}
 \addvspace {\medskipamount }
 \addvspace {\medskipamount }
 \addvspace {\medskipamount }

@@ -7,7 +7,7 @@ Interlinear Glossed Text (IGT) is widely used in linguistic studies. (1)  is an 
     \glt    `His father is older than his mother.'  
 \end{exe}
 
-IGT is essential in linguistic research and analysis of a language's grammar. In a simple form of IGT, the first line is a sentence of the language of interest, the second line is a word-by-word translation, annotated with relevant grammatical information, and the third line is an English translation. \citet{bickel2008leipzig} document the complete formats and options of IGT.  
+In a simple form of IGT, the first line is a sentence of the language of interest, the second line is a word-by-word translation, annotated with relevant grammatical information, and the third line is an English translation (see \citet{bickel2008leipzig} for the complete formats and options of IGT).  
 
 The Innovation is to incorporate the gloss information of Interlinear Glossed Text data into neural net machine translation systems.
 
@@ -49,7 +49,7 @@ festival \textbf{ART} poet.PL.GEN\\
 
 \end{exe}
 
-The definite article in Scottish Gaelic may be realized as the following forms: as \textit{an}, \textit{am}, \textit{a'}, \textit{na}, \textit{nan} or \textit{nam}. The alternation is determined by the case, gender and number of noun phrase that it modifies, and additionally the phonological property of the word following it also changes the form of the definite article \citep{lamb2001scottish}. All these different realizations refer to the same concept, the definite article. The gloss representation nicely clusters them together as \textit{ART}.
+The definite article in Scottish Gaelic may be realized as the following forms: as \textit{an}, \textit{am}, \textit{a'}, \textit{na}, \textit{nan} or \textit{nam}. The alternation is determined by the case, gender and number of noun phrase that it modifies, and additionally phonological property of the word following it also changes the form of the definite article \citep{lamb2001scottish}. All these different realizations refer to the same concept, the definite article. The gloss representation nicely clusters them together as \textit{ART}. Learning the general distribution of the article and all its different forms is a challenge for the MT system, but the glossing information should make this easier.
 
 Also the glosses distinguish different concepts with the form. Consider the word \textit{a'} in the following examples.  
 
@@ -65,8 +65,8 @@ fall-PAST \textbf{ART} stone on foot 1S-POSS wife-G\\
 \glt`the stone fell on my wife's foot.' \citep[p. 30]{lamb2001scottish} 	
 \end{exe}
 
-Critically \textit{a'} in (\ref{a_prog}) is a progressive aspect marker while in (\ref{a_det}) the some form denotes to definite article. Again, the semantic difference is reserved in the gloss representations but not in natural language words.  
-The gloss data provides hierarchical (non-linear) syntactic parsing information. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information.
+Critically \textit{a'} in (\ref{a_prog}) is a progressive aspect marker while in (\ref{a_det}) the some form denotes to definite article. Again, the semantic difference is preserved in the gloss representations but not in natural language words.  
+The gloss data also provides hierarchical (non-linear) syntactic parsing information. Consider the Gaelic word, \textit{a'}, in the above examples again, the gloss of which is decided by the hierarchical structure (i.e. constituency) of the sentences instead of the linear order of the words.    
 
 In short, glosses are more purified and transparent than natural language words in terms of representing meanings. Therefore, theoretically the incorporation of the gloss data should improve the translation systems. Specifically, we propose the following hypothesis:
 
@@ -80,11 +80,18 @@ The hypothesis can have two versions, strong and weak:
 	\end{xlist}
 \end{exe}
 
-The experiments reveal that replacing Gaelic words with glosses doesn't improve the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However, it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly. 
+The experiments reveal that replacing Gaelic words with glosses doesn't improve the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However, it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, we term which as Parallel-Partial treatment (see section \ref{sec:ParaPart}), the performance of the systems is improved significantly. 
 
-The rest of the paper is organized as follows: Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}) and exemplifies an effective way of incorporating the gloss information, section 5 reports other possible ways of blending glosses and Gaelic sentences, section 6 reports related works, and section 7 is the conclusion. 
+The rest of the paper is organized as follows: Section 2 discusses relevant literature, Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}) and exemplifies an effective way of incorporating the gloss information, section 6 reports other possible ways of blending glosses and Gaelic sentences, and section 7 is the conclusion. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Related Work}\label{relate_work}
+Attempts to improve machine translation systems by incorporating explicit linguistic information are reported in the literature. Syntax information is known to be effective in improving statistical machine translation (SMT). The efforts of using syntax information even derive a special type of SMT, termed as syntax-based SMT \citep{williams2016syntax}. The same trend is also found in neural net machine translation. For example, \citet{sennrich2016linguistic} exploit the information of lemmas, part of tags, morphology of words, and dependency parses of sentences to improve MT systems. \citet{ccg_target_seq} incorporate the Categorial grammar parse tags of the target sequences.
+
+The Parallel-Partial treatment section \ref{sec:ParaPart} may be viewed as a form of multi-task Sequence to Sequence Learning \citep{luong2015multi}. Specifically, the parallel part of the treatment is very similar to the data manipulation used in building multi-language translation systems \citep{google_zero_shot}.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
 
 \section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
 The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}.
@@ -98,18 +105,17 @@ The following default hyper-parameter settings of OpenNMT\footnote{See their doc
 	\end{itemize}
 
 The settings of the hyper-parameters do have effects on the performances of the trained models.
-However, given that finding the optimal settings of the hyper-parameters is not relevant to our current research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and we simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen options, and there are rooms to tune the models for better performance. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.
+However, given that finding the optimal settings of the hyper-parameters is not relevant to our current research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and we simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen options, and there are rooms to tune the models for better performance. We will leave the question of what hyper-parameters are optimal for our data for future research. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.
 
 \section{Gloss Representation Solely Does NOT Outperform Gaelic Sentences} \label{gd_to_gl_to_en}
 This section tests the strong version of Gloss-helps hypothesis in (\ref{strong_hy}).
 Given the assumption that gloss may be better than any natural language in terms of representing meanings, it is expected that for neural net machine translation systems it is easier to learn how to translate from the glosses of Scottish Gaelic to English than to learn how to translate from Scottish Gaelic to English. However, the results show that there is no significance difference between the two types of data (i.e. GLOSS $\rightarrow$ English and Gaelic $\rightarrow$ English).
 
 \subsection{Scottish Gaelic Interlinear Glossed Text Data}
-The Scottish Gaelic IGT corpus developed in \citet{gaelic_igt} is used in our experiments. 
-The corpus has 8,367 Gaelic sentences, and in term of words, it has 52,778 Gaelic words/glosses. The data of the corpus is from two different sources: linguistics fieldwork and data elicitation.
+We use the same Scottish Gaelic IGT corpus\footnote{Full citation cannot be given without compromising anonymity.} for all experiments. The corpus has 8,367 Gaelic sentences, and in term of words, it has 52,778 Gaelic words/glosses. The data of the corpus is from two different sources: linguistics fieldwork and data elicitation.
 
 \subsection{Procedure of the Experiments}
-I use repeated random sub-sampling validation to compare the performances of the two type of models.
+We use repeated random sub-sampling validation to compare the performances of the two type of models.
 Totally we have 8,388 indexed 3-tuples of a Gaelic sentence, a gloss line and an English translation. In the interlinear glossed text example below, each line is an argument of a 3-tuple sample.
 
 \begin{exe} 
@@ -178,15 +184,16 @@ After ten rounds of repeated random sub-sampling validation, ten pairs of scores
 \SweaveInput{alcGLOSS_table.Rnw}
 
 The average score of the Models\textsubscript{GLOSStoEN} is only sightly higher than the average score of the Models\textsubscript{GDtoEN}.
-Also, after doing a paired T-test, the difference between the two types of models is not attested
+Also, a paired t-test shows that the difference between the two types of models is NOT statistically significant
 (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{GLOSStoEN}=\Sexpr{m_Treatment}, SD\textsubscript{GLOSStoEN}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p=\Sexpr{p_val}). 
 
 \subsection{Discussion}
-It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are equally good in terms of representing meanings. The strong version of the Gloss-helps hypothesis does not hold.
+It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. 
+Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are equally good in terms of representing meanings. The strong version of the Gloss-helps hypothesis does not hold.
 
 There are several remarks that need to make for the current result. First, the result falsifies the point of view about glosses that the gloss line is a golden semantic representation hand-crafted by linguists.
 It turns that this artificial language, the gloss lines, is only marginal better than Gaelic statistically. This can be viewed as an evidence of language evolution.
 The written form of a natural language is actually already optimized for representing semantics to the same degree as the gloss line representations.
-Second, if we want to actually apply the gloss treatment to translate a Gaelic sentence to English, we encounter an immediate problem. The actual source sequence is a Gaelic sentence, while the required source sequence for the gloss treatment is a gloss line. Given this, even if the gloss treatment should work, it is not practical unless we may convert Gaelic sentence to gloss line perfectly.      
+Second, if we want to actually apply the gloss treatment to translate a Gaelic sentence to English, we encounter an immediate problem. The actual source sequence is a Gaelic sentence, while the required source sequence for the gloss treatment is a gloss line. Given this, even if the gloss treatment should work, it is not practical unless we may convert Gaelic sentences to gloss lines perfectly.      
 
 We may now combine Gaelic sentences and gloss lines as the training data to test the weak version of the Gloss-helps hypothesis. The experiments and results are reported in the next section.

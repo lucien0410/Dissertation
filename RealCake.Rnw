@@ -24,7 +24,7 @@
 \section{Introduction}
 The Innovation is to incorporate the gloss information of Interlinear Glossed Text data into machine translation.
 
-In supervised machine learning models, two factors effects the performance of the trained systems \citep{kotsiantis2007supervised}: a.) the quality of the training data and b.) the choice of the features. The properties of the gloss data as described in *CHAPTERXYZ* make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons. First, glosses are more purified that natural language words. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information. See chapter \ref{chap:gloss} for the discussion on the golden properties of glosses.  
+In supervised machine learning models, two factors effects the performance of the trained systems \citep{kotsiantis2007supervised}: a.) the quality of the training data and b.) the choice of the features. The properties of the gloss data as described in chapter \ref{chap:gloss} make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons. First, glosses are more purified than natural language words. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information. See chapter \ref{chap:gloss} for the discussion on the golden properties of glosses.  
 
 Therefore, theoretically incorporation of the gloss data should improve the translation systems. Specifically, I propose the following hypothesis:
 \begin{exe} 
@@ -47,13 +47,20 @@ The rest of the chapter is organized as follows: Section \ref{sec:experimet_sett
 \section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
 The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}.
 The following default hyper-parameter settings of OpenNMT\footnote{See their documentation for the complete default hyper-parameter settings: \url{http://opennmt.net/OpenNMT-py/}.} are used across all models so that the only independent variable is the type of the training data:
-\begin{itemize}
-\item Word vector size: 500
-\item Type of recurrent cell: Long Short Term Memory
-\item Number of recurrent layers of the encoder and decoder: 2
-\item Number of epochs: 13
-\item Size of mini batches: 64
-\end{itemize}
+	\begin{itemize}
+	\item Word vector size: 500\\
+	In neural net machine translation, a word is represented as a vector. This hyper-parameter means that we are going to use vectors with 500 dimensions to represent words.
+	\item Type of recurrent cell: Long Short Term Memory\\
+	Long Short Term Memory recurrent neural net is a type of neural net that is suitable for sequence to sequence tasks.  
+	\item Number of recurrent layers of the encoder and decoder: 2\\
+	This hyper-parameter specifies that we are going to have two recurrent layers of the encoder and decoder. 
+	\item Number of epochs: 13\\
+	The training process of a neural net machine translation systems is done epoch by epoch. Each epoch is an iteration of training. Here 13 means that we are going to have 13 iterations of training and thus have 13 epochs. 
+	\item Size of mini-batches: 64\\
+	Training a neural net is to let the weights of the connections between the neurons fit the samples that the net is fed with. Theoretically, we may ask the net adjust the weights according all the samples we have all together at one time. However, in practice, this is not memory efficient, and causing errors in the process of optimizing the weight parameters. So, instead, the samples are split into smaller mini-batches, and the neural net just updates its weights to make the most accurate predictions for a mini-batch, and repeat one mini-batch at one time. This hyper-parameter specifies the size of a mini-batch.  
+	\end{itemize}
+
+In section \ref{neural_MT}, we brifely  
 
 The settings of the hyper-parameters do have effects on the performances of the trained models.
 A common practice to find the optimal settings of the hyper-parameters is to hold out a subset of the training dataset as the developing dataset, then test the models on the developing data to see what settings are optimal, then merge the developing dataset and training dataset as a new training set, and then train on this new training set using the found optimal hyper-parameters.

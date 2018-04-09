@@ -1,18 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Right Way of Combining Gaelic Words with Glosses}\label{gd_plus_gl_to_en}
+\section{The Right Way of Combining Gaelic Words with Glosses: Parallel-Partial Treatment}\label{gd_plus_gl_to_en}
 In the previous section, we attempt to build systems by using the \textit{gloss treatment} to outperform the baseline system. It turns that using gloss line solely is not effective enough to improve the system. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
 \begin{exe}
 	\ex 
 	\begin{xlist}
-		\ex Does adding the gloss data into the Gaelic data will improve the translation system? 
+		\ex Will adding the gloss data into the Gaelic data improve the translation system? 
 		\ex If yes, what are the right ways of blending these two types of meaning representations together? 
 	\end{xlist}	
 \end{exe}
 
-This section reports that a specific way of combining Gloss data and Gaelic date (termed as `\textit{Parallel-Partial}' treatment) boosts the performance significantly. The models trained with this specially arranged training data also significantly outperform Google's Gaelic-to-English translation system (see the appendix for the BLEU scores).
+This section reports that a specific way of combining Gloss data and Gaelic date (termed as `\textit{Parallel-Partial}' treatment) boosts the performance significantly. The models trained with this specially arranged training data also significantly outperform Google's Gaelic-to-English translation system\footnote{ We used a free Google translation API \citep{google_api} to translate the Gaelic sentences in our test set. Then we calculate the BLEU scores of with the target sequences of our test set as the gold standard.} (see the appendix for the BLEU scores).
 
 \subsection{The Underlying Heuristics}\label{heuristics}
-From a high level point of view, neural net sequence to sequence learning algorithm is to learn how to map a high-dimension space to another high-dimension space. In the settings of machine translation, each dot in the high-dimension space is a meaning representation. Linking one dot to another dot is converting one meaning representation to another, yielding the effect of translation. Given this heuristics, we may just feed the machine with all the available meaning mappings. Given the assumption that the gloss lines are linguistically guided meaning representations, they are suitable training data for building machine translation systems. Specially, with the gloss data, we let the machine to learn the following mappings:
+At a high level, neural net sequence to sequence learning algorithm is to learn how to map a high-dimension space to another high-dimension space. In the settings of machine translation, each dot in the high-dimension space is a meaning representation. Linking one dot to another dot is converting one meaning representation to another, yielding the effect of translation. Given this heuristics, we may just feed the machine with all the available meaning mappings. Given the assumption that the gloss lines are linguistically guided meaning representations, they are suitable training data for building machine translation systems. Specially, with the gloss data, we let the machine to learn the following mappings:
 
 \begin{exe}
 	\ex Mappings Learned in the ParaPart treatment
@@ -24,7 +24,7 @@ From a high level point of view, neural net sequence to sequence learning algori
 	\end{xlist}	
 \end{exe}    
 
-\subsection{The `Parallel-Partial' Treatment Outperforms the Baseline Significantly}
+\subsection{The `Parallel-Partial' Treatment Outperforms the Baseline Significantly}\label{sec:ParaPart}
 
 \subsubsection{Data Preprocessing Using the Parallel-Partial Treatment}
 The Parallel-Partial treatment uses the training and validation data of the baseline system and that of the gloss treatment system.  
@@ -71,7 +71,7 @@ The samples like (\ref{21}) and (\ref{22}) are the training data for the Paralle
 
 \subsubsection{Results of the Parallel-Partial Treatment}
 \SweaveInput{alcParaPart_table.Rnw}
-With the training and validation data ready, now we can train models and evaluate them. Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. 
+The same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. 
 The only difference is the training and validation data. The result show that the Parallel-Partial treatment has a tremendous effect in improving the baseline system (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p<0.01). 
 
 \subsubsection{Discussion}

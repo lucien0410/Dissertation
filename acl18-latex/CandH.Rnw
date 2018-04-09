@@ -62,14 +62,13 @@
 \SweaveOpts{concordance=TRUE}
 
 \begin{abstract}
-  The glossing data that are widely used in theoretical linguistics are hidden treasures for the natural language processing world. 
-  The current paper introduces the gloss data to the natural lagnauge processing world and demonstrates a practical and effective way to incorporate glossing data into the training data for training neural net machine translation systems.   
+  The gloss data that are widely used in theoretical linguistics are hidden treasures for machine translation. 
+  The current paper introduces the gloss data to the natural language processing world and demonstrates a practical and effective way to incorporate gloss data into the training data for training neural net machine translation systems.   
 \end{abstract}
 
 \SweaveInput{AlcRealCake.Rnw}
 \SweaveInput{AlcRealCake2.Rnw}
 \SweaveInput{AlcRealCake3.Rnw}
-\SweaveInput{related_works.Rnw}
 \SweaveInput{Conclusion.Rnw}
 
 
@@ -77,6 +76,7 @@
 \bibliographystyle{acl_natbib}
 
 \appendix
+\newpage
 \section{Supplemental Material}
 \SweaveInput{alcComplete_table.Rnw}
 

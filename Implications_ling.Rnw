@@ -1,2 +1,5 @@
-\chapter{Implications on Theoretical Linguistics}
-\label{chap:Implications_ling}
+\chapter{Implications on Theoretical Linguistics and Natural Language Processing}
+\label{chap:Implications}
+
+Cite Pater 
+Pater 2017: Generative linguistics and neural networks at 60: foundation, friction and fusion

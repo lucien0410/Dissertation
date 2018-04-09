@@ -9,45 +9,45 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: acl2018.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in pater2017generative
-You've used 13 entries,
+You've used 15 entries,
             3573 wiz_defined-function locations,
-            761 strings with 8282 characters,
-and the built_in function-call counts, 9592 in all, are:
-= -- 756
-> -- 617
-< -- 8
-+ -- 199
-- -- 183
-* -- 654
-:= -- 1516
-add.period$ -- 53
-call.type$ -- 13
-change.case$ -- 128
-chr.to.int$ -- 14
-cite$ -- 14
-duplicate$ -- 630
-empty$ -- 614
-format.name$ -- 220
-if$ -- 2043
+            774 strings with 8645 characters,
+and the built_in function-call counts, 11155 in all, are:
+= -- 889
+> -- 698
+< -- 10
++ -- 225
+- -- 207
+* -- 751
+:= -- 1742
+add.period$ -- 61
+call.type$ -- 15
+change.case$ -- 147
+chr.to.int$ -- 16
+cite$ -- 16
+duplicate$ -- 739
+empty$ -- 726
+format.name$ -- 248
+if$ -- 2383
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 133
-newline$ -- 68
-num.names$ -- 52
-pop$ -- 304
+missing$ -- 156
+newline$ -- 78
+num.names$ -- 60
+pop$ -- 354
 preamble$ -- 1
-purify$ -- 111
+purify$ -- 127
 quote$ -- 0
-skip$ -- 435
+skip$ -- 506
 stack$ -- 0
-substring$ -- 213
-swap$ -- 284
-text.length$ -- 3
+substring$ -- 276
+swap$ -- 339
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 114
+type$ -- 132
 warning$ -- 1
-while$ -- 45
+while$ -- 56
 width$ -- 0
-write$ -- 163
+write$ -- 189
 (There was 1 warning)
