@@ -63,7 +63,7 @@
 
 \begin{abstract}
   The gloss data that are widely used in theoretical linguistics are hidden treasures for machine translation. 
-  The current paper introduces the gloss data to the natural language processing world and demonstrates a practical and effective way to incorporate gloss data into the training data for training neural net machine translation systems.   
+  The current paper introduces the gloss data to the natural language processing world and demonstrates a practical and effective way to incorporate gloss data into the training data for training neural net machine translation systems. 
 \end{abstract}
 
 \section{Introduction}
@@ -471,15 +471,14 @@ In the current paper, we introduce an very effective way of incorporating the gl
 \bibliography{acl2018}
 \bibliographystyle{acl_natbib}
 
-%\newpage
 \appendix
+\newpage
 \section{Supplemental Material}
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sun Apr  8 22:26:40 2018
-\begin{sidewaystable}[ht]
+% Mon Apr  9 11:38:23 2018
+\begin{table}[ht]
 \centering
-\begin{tabular}{lccccccc}
-%\begin{tabular}{lrrrrrrr}
+\begin{tabular}{lrrrrrrr}
   \hline
 Round & Baseline & GLOSS & ParaPart & Para & Interleaving & Concat & Google Translation \\ 
   \hline
@@ -499,6 +498,19 @@ Mean & 16.59 & 17.70 & 32.10 & 24.51 & 12.26 & 15.44 & 23.65 \\
 \end{tabular}
 \caption{BLEU scores of the treatments: Ten rounds of repeated random sub-sampling validation are conducted. For each round, the same sets of IGTs are used. Each column is a treatment, and each row is a single round of repeated random sub-sampling validation. The last column is the scores of Google Translation. We used a free Google translation API \citep{google_api} to translate the same set of test Gaelic sentences into English.} 
 \label{table:complete_table}
-\end{sidewaystable}
-
+\end{table}% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Mon Apr  9 11:38:23 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{llll}
+  \hline
+input & con1 & con2 & con3 \\ 
+  \hline
+can1 & *! &  &  \\ 
+  can2 &  & * &  \\ 
+  \$$\backslash$HandRight\$ can3 &  &  & * \\ 
+   \hline
+\end{tabular}
+\caption{OT table} 
+\end{table}
 \end{document}

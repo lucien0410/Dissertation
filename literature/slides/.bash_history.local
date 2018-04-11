@@ -1,0 +1,46 @@
+2014-04-18:13:34:52 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   506  cd slides
+2014-04-18:13:34:52 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   507  ls
+2014-04-18:13:35:01 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   508  ls *tex
+2014-04-18:13:35:06 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   509  open 04-word-based-models.tex
+2014-04-18:13:36:32 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   510  ls ../../*/foils*
+2014-04-18:13:36:42 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   511  cp ../../wmt12/foil* .
+2014-04-18:13:36:47 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   512  cp ../../wmt12/fltfonts.def .
+2014-04-18:13:36:57 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   513  ls ../../*/eclt*
+2014-04-18:13:37:02 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   514  cp ../../scotnet-talk14/ecltree.sty .
+2014-04-18:13:37:13 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   515  ls ../../*/bar.*
+2014-04-18:13:37:40 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   516  ls ../../*/algo*
+2014-04-18:13:37:43 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   517  ls ../../*/alg*
+2014-04-18:13:38:15 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   518  ls ../../*/ecl*
+2014-04-18:13:38:26 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   519  cp ../../tutorial-amta10/eclbip.sty .
+2014-04-18:13:41:58 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   520  latex algorithms.ins
+2014-04-18:13:43:38 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   528  cd ~/LaTex/smt-book/slides
+2015-01-30:18:59:42 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   544  cd slides
+2015-01-30:18:59:42 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   545  ls
+2015-01-30:18:59:51 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   546  ls *0?-*tex
+2015-01-30:18:59:56 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   547  open 07-language-models.tex 
+2015-09-11:15:12:38 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   565  cd LaTex/smt-book/slides/
+2015-09-11:15:12:38 Philipps-MacBook-Pro.local /Users/pkoehn/LaTex/smt-book/slides   566  ls -l
+2018-04-05:19:01:55 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   575  cd slides/
+2018-04-05:19:01:55 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   576  ls
+2018-04-05:19:02:02 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   577  open 06-decoding.tex 
+2018-04-05:19:02:49 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   578  ls -l recombination-example1*
+2018-04-05:19:02:52 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   579  ls -l recombination-example*
+2018-04-05:19:03:11 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   580  ls ~/*/recombination-example*
+2018-04-05:19:03:21 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   581  ls ~/LaTex/*/recombination-example*
+2018-04-05:19:03:32 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   582  ls ~/LaTex/*/*/recombination-example*
+2018-04-05:19:03:42 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   583  open /Users/pkoehn/LaTex/smt-book/1st-edition-draft/recombination-example1.graffle
+2018-04-05:19:03:57 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   584  open /Users/pkoehn/LaTex/smt-book/1st-edition-draft/recombination-example3.graffle
+2018-04-05:19:04:05 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   585  open /Users/pkoehn/LaTex/smt-book/1st-edition-draft/recombination-example3b.graffle
+2018-04-05:19:04:16 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   586  open /Users/pkoehn/LaTex/smt-book/1st-edition-draft/recombination-example3b.graffle
+2018-04-05:19:04:40 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   587  ls ~/LaTex/*/*/recombination-example3*
+2018-04-05:19:04:46 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   588  ls ~/LaTex/*/*/recombination-example3*.pdf
+2018-04-05:19:05:01 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   589  open /Users/pkoehn/LaTex/mt-class/slides/recombination-example3b.pdf
+2018-04-05:19:05:22 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   590  cp /Users/pkoehn/LaTex/mt-class/slides/recombination-example3b.pdf /Users/pkoehn/LaTex/ai/slides
+2018-04-05:19:05:37 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   591  cp /Users/pkoehn/LaTex/mt-class/slides/recombination-example3b.pdf /Users/pkoehn/LaTex/smt-book/slides
+2018-04-05:19:05:51 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   592  cp /Users/pkoehn/LaTex/mt-class/slides/recombination-example3b.pdf /Users/pkoehn/LaTex/smt-book/1st-edition-draft/
+2018-04-05:19:05:57 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   593  cp /Users/pkoehn/LaTex/mt-class/slides/recombination-example4b.pdf /Users/pkoehn/LaTex/smt-book/1st-edition-draft/
+2018-04-05:19:06:03 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   594  cp /Users/pkoehn/LaTex/mt-class/slides/recombination-example4b.pdf /Users/pkoehn/LaTex/smt-book/slides
+2018-04-05:19:06:11 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   595  cp /Users/pkoehn/LaTex/mt-class/slides/recombination-example4b.pdf /Users/pkoehn/LaTex/ai/slides
+2018-04-05:19:06:35 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   596  grep scp .bash_history.local | tail
+2018-04-05:19:06:47 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   600  cd slides/
+2018-04-05:19:08:49 MacBook-Pro-5.local /Users/pkoehn/LaTex/smt-book/slides   601  scp 06-decoding.pdf phi@masters2.cs.jhu.edu:.

@@ -19,6 +19,32 @@
 \usepackage{fixltx2e}
 \usepackage{titlesec}
 \usepackage{rotating}
+\usepackage{qtree}
+\usepackage{fixltx2e}
+
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{epic,ecltree}
+\usepackage{eclbip}
+\usepackage{multicol}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmiccomment}[1]{// {\em #1}}
+
+\definecolor{darkblue}{rgb}{0,0,0.8}
+\definecolor{darkgreen}{rgb}{0,0.8,0}
+\definecolor{reddishgreen}{rgb}{0.4,0.6,0}
+\definecolor{purple}{rgb}{0.6,0,0.6}
+\definecolor{red}{rgb}{1,0,0}
+
+\newcommand{\example}[1]{\textcolor{darkblue}{\rm #1}}
+\newcommand{\maths}[1]{\textcolor{purple}{#1}}
+\newcommand{\reference}[1]{\vspace{-2mm}\begin{flushright}\textcolor{purple}{\tiny [from #1]}\end{flushright}\vspace{-7mm}}
+
 
 \setcounter{secnumdepth}{4}
 
@@ -39,6 +65,7 @@
 \input{fakeMaster-concordance}
 
 \maketitle
+
 \chapter{Introduction}
 \label{chap:Introduction}
 
@@ -70,7 +97,7 @@ Key information to be included:
 
 \section{Introduction: What are Glosses}
 
-Interlinear Glossed Text (IGT) is widely used in linguistic studies. (\ref{gloss_eg})  is an example of Scottish Gaelic IGT.
+Interlinear Glossed Text (IGT) is widely used in linguistic studies. (\ref{gloss_eg}) is an example of Scottish Gaelic IGT.
 \begin{exe}  
 \ex\label{gloss_eg} \gll    Tha a athair nas sine na a mh\`athair.\\  
             be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
@@ -135,30 +162,127 @@ festival \textbf{ART} poet.PL.GEN\\
 
 \end{exe}
 
-The definite article in Scottish Gaelic may be realized as the following forms: as \textit{an}, \textit{am}, \textit{a'}, \textit{na}, \textit{nan} or \textit{nam}. The alternation is determined by the case, gender and number of noun phrase that it modifies, and additionally the phonological property of the word following it also changes the form of the definite article \citep{lamb2001scottish}. All these different realizations refer to the same concept, the definite article. Again, the gloss notation nicely clusters them together as \textit{ART}.
+The definite article in Scottish Gaelic may be realized as the following forms: as \textit{an}, \textit{am}, \textit{a'}, \textit{na}, \textit{nan} or \textit{nam}. The alternation is determined by the case, gender and number of noun phrase that it modifies, and additionally the phonological property of the word following it also changes the form of the definite article \citep{lamb2001scottish}. All these different realizations refer to the same concept, the definite article. Again, the gloss notation nicely clusters them together as \textit{ART}. 
 
-In short, gloss collapses synonyms in natural languages. 
-
-\subsection{Glosses Distinguish Homographs' Different Meanings}
-In natural languages, there are cases when a single form denotes to multiple concepts. Words with this properties are termed as homographs. Consider the word \textit{for} in following English examples:
+In Mandarin Chinese, similar patterns are found. Consider classifiers in the following examples:
 
 \begin{exe}
-\ex
+\ex \label{chinese_cl_eg}
+\gll Yani mai-le \{\textbf{pi}/\textbf{*tou}\} ma , Lulu mai-le \{\textbf{*pi}/\textbf{tou}\} zhu.\\ 
+Yani buy-PRF CL/CL horse , Lulu buy-PRF CL/CL\\
+\glt `Yani bought a horse and Lulu bought a pig.' \citep[p. 136]{zhang2013classifier}
+\end{exe}
+
+In \citet{zhang2013classifier}, the classifier like \textit{pi} and \textit{tou} is a type of \textit{indivual classifier} which co-occurs with countable nouns, like \textit{ma}, `horse', and \textit{zhu}, `pig', and this type of classifier is the head of \textit{UNIT Phrase}. 
+\textit{Pi} and \textit{tou} actually have the same semantics and the syntactic function; however, they are realized in different forms, specifically the form of which has to agree with the noun following it (i.e. \textit{pi} goes with \textit{ma}; \textit{tou} goes with \textit{zhu}). Here the gloss, \textit{CL}, unifies the two forms of the same meaning.    
+
+In short, gloss collapses synonyms in natural languages. Learning the general distribution of the article and all its different forms is a challenge for the MT system, but the glossing information should make this easier.
+
+\subsection{Glosses Distinguish Homographs' Different Meanings}
+
+In natural languages, there are cases when a single form denotes to distinct concepts. Words with this properties are termed as homographs. Consider the word \textit{for} in following English examples:
+
+\begin{exe}
+\ex \label{for_eng}
 	\begin{xlist}
 	\ex \label{for_c}I intended \textbf{for} Jenny to be present.
 	\ex \label{for_p}\textbf{For} Jenny, I intended to be present. \citep[p.306-307]{adger2003core}
 	\end{xlist}
 \end{exe}
 
-\textit{For} in (\ref{for_c}) and (\ref{for_p}) has the same form but different meanings. Specifically, \textit{for} in (\ref{for_c}) is a complementer with its part of speech being \textit{C}, and it heads the non-finite clause \textit{Jenn to be present}; on the other hand \textit{for} (\ref{for_p}) is a preposition, and it marks its DP argument, \textit{Jenny}, as benefactive.    
+\textit{For} in (\ref{for_c}) and (\ref{for_p}) has the same form but different meanings. Specifically, \textit{for} in (\ref{for_c}) is a complementizer with its part of speech being \textit{C}, and it heads the non-finite clause \textit{Jenn to be present}; on the other hand \textit{for} (\ref{for_p}) is a preposition, which takes the Determiner Phrase, \textit{Jenny}, as its benefactive argument.   
 
-\subsection{Glosses are Sensitive to Hierarchical Structure of Natural Language Sentences}
-Critically glosses provide `redundant' information. Here `redundant' means that  
+The Scottish Gaelic word \textit{a'} in the following examples also has different meanings.  
 
-\section{What is a Gloss Line}
-A gloss line is an artificial sentence using the purified `gloss words'. 
+\begin{exe}  
+\ex \label{a_prog}
+\gll tha mi \textbf{a'} sireadh an leabhair bhig ghuirm.\\
+be-PRES-IND 1S \textbf{PROG} searching-VN ART book-G small-G blue-G\\
+\glt `I am looking for the small blue book.' \citep[p. 29]{lamb2001scottish}
 
-\section{Conclusion} 
+\ex \label{a_det}
+\gll thuit \textbf{a'} chlach air cas mo mhn\`a.\\
+fall-PAST \textbf{ART} stone on foot 1S-POSS wife-G\\
+\glt`the stone fell on my wife's foot.' \citep[p. 30]{lamb2001scottish} 	
+\end{exe}
+
+Critically \textit{a'} in (\ref{a_prog}) is a progressive aspect marker while in (\ref{a_det}) the some form denotes to definite article. Again, the semantic difference is preserved in the gloss representations but not in natural language words.  
+The gloss data also provides hierarchical (non-linear) syntactic parsing information. 
+
+\subsection{Glosses are Sensitive to Hierarchical Structures in Natural Language Sentences}
+
+Before I introduce how gloss information is linked to hierarchical structures, it is necessary to emphasize the importance of hierarchical structures in natural languages. In this section, I will first review some linguistic arguments for why and how semantics and syntax of languages\footnote{When it turns to the sound aspect of languages, Phonetics is more about linear order, but Phonology is still sensitive to hierarchical structures just like syntax and semantics. } are all about hierarchical structures instead of linear word orders. Then I will link gloss to hierarchical structures.
+
+It is well-argued in linguistics that the syntax and semantics of natural languages are determined by hierarchical structures instead of linear orders of words, and essentially it is the sensitivity of hierarchical structures that distinguishes human natural languages from other animal communications \citep{berwick2015only}.     
+
+Semantics is determined by hierarchical structures instead of linear orders. \citet[p. 117]{berwick2015only} use the following simple example to demonstrate this property of natural languages:
+
+\begin{exe}
+\ex Instinctively birds that fly swim. 
+\end{exe}
+
+In the example above, \textit{instinctively} is linearly close to \textit{fly} than \textit{swim}; however, it unambiguously modifies \textit{swim} instead of \textit{fly}. The reason for this is the hierarchical structures \citep[p. 117]{berwick2015only}:
+
+\begin{exe}
+\ex \label{tree}
+\Tree [Instinctively [ [  birds   [  that   fly  ]  ]  swim  ] ]
+\end{exe}
+
+In (\ref{tree}) it is shown that \textit{fly} is more embedded than \textit{swim}, and thus it is hierarchically further away from \textit{instinctively}. So, \textit{instinctively} can only modify \textit{swim} instead of \textit{fly}.
+
+Syntax is also all about hierarchical structures. Consider the following sentence:
+
+\begin{exe}
+\ex 
+	\begin{xlist}
+	\ex \label{aux_inver1} Birds that can\textsubscript{1} fly can\textsubscript{2} swim. 
+	\ex \label{aux_inver2} *Can\textsubscript{1} birds that  fly can\textsubscript{2} swim? 
+	\ex \label{aux_inver3} Can\textsubscript{2} birds that can\textsubscript{1} fly  swim? 
+	\end{xlist}
+\end{exe}
+
+(\ref{aux_inver1}) is a declarative sentence. To derive an interrogative sentence from it, the auxiliary needs to be moved; however only \textit{can\textsubscript{2}} can be moved but not \textit{can\textsubscript{1}} even \textit{can\textsubscript{1}} is linearly close to the sentence initial position. Again, it is all because of the hierarchical structures. \textit{can\textsubscript{2}} is in the matrix clause while \textit{can\textsubscript{1}} is in the embedded relative clause.  
+
+Word order and linearizion are just epiphenomena from the perspective of theoretical syntax and semantics. They are inevitable externalization of language because we are living in a world of linear time and space. To put this argument in another way, if externalization should be the primary nature of language, we should expect that some natural human languages should have manipulated the linear order of words in a sentence to express different meanings, because linear order is the externalization of language. However, this is not the case. No language exploits linear order, and instead universally language uses hierarchical structures, which is more difficult to be externalized than linear order. \citet{chomsky2006language} uses the following examples to illustrate this point.
+
+\begin{exe}
+\ex
+	\begin{xlist}
+	\ex\label{c1} Smart eagles can swim.
+	\ex\label{c2} *Eagles smart can swim?
+	\ex\label{c3} Can smart eagles swim?
+	\end{xlist}
+\end{exe}
+
+(\ref{c1}) is a declarative sentence. (\ref{c2}) tries to swap the first two words to derive an interrogative sentence, and fails. (\ref{c3}) is the real interrogative sentence in natural languages. If externalization and communication are the primary nature of language, it is expected (\ref{c2}) to be a common pattern in languages, because (\ref{c2}) exploits linear order, which is the externalization of language and the linear order serves the communication purpose just fine given that humans' cognition system is able to tell the difference between (\ref{c1}) and (\ref{c2}). However, the pattern in (\ref{c2}) is not found in any human language; instead, (\ref{c3}) is used, which uses hierarchical structure relations. In term of externalization, (\ref{c2}) is more economical than (\ref{c3}) given that (\ref{c2}) only moves two positions of words while (\ref{c3}) moves three positions of words. Again, if externalization and communication are the primary nature of language, language should have evolved the pattern of (\ref{c2}). Based on the fact that no language exploits linear order, it is argued that language externalization and communication in particular are accessory.   
+
+Glosses are also sensitive to the internal hierarchical structures or constituency of sentences. Consider the following examples, modified from \ref{for_eng}:
+
+\begin{exe}
+\ex
+For as \textit{complementizer}
+	\begin{xlist}
+	\ex I intended \textbf{for} [Jenny] to be present.
+	\ex I intended \textbf{for} [the girl] to be present.
+	\ex I intended \textbf{for} [the little girl] to be present.
+	\ex I intended \textbf{for} [the little girl who wants to eat some ice scream] to be present. 
+	\end{xlist}
+\ex
+For as \textit{preposition}
+	\begin{xlist}
+	\ex \textbf{For} [Jenny], I intended to be present. 
+	\ex \textbf{For} [the girl], I intended to be present. 
+	\ex \textbf{For} [the little girl], I intended to be present. 
+	\ex \textbf{For} [the little girl who wants to eat some ice scream], I intended to be present. 
+	\end{xlist}
+\end{exe}
+
+Linear length of the argument of \textit{for} (i.e. the sequences in the square brackets) does not have any effect in determining what the gloss is, and instead it is the hierarchical structures that determines what the gloss is. 
+
+
+\section{Conclusion: What is a Gloss Line?}  
+A gloss line is an artificial sentence using the purified `gloss words', a meaning representation with which one meaning is mapped to one and only one representation. It is a useful and widely used annotation algorithm that requires linguistic knowledge. Given the properties of gloss data, it can be a very useful data for machine translation. Moreover, gloss data is widely used in linguistics literature, so data is already out there and all we need is to clean the data.  
+In chapter \ref{chap:cake} and \ref{chap:cake2} I will report machine translation experiments using gloss data.  
 
 % section conclusion (end)
 \chapter{Description of the Scottish Gaelic Interlinear Glossed Text Corpus}
@@ -207,7 +331,7 @@ Introduction of Neural Net Machine Translation
 \section{Introduction}
 The Innovation is to incorporate the gloss information of Interlinear Glossed Text data into machine translation.
 
-In supervised machine learning models, two factors effects the performance of the trained systems \citep{kotsiantis2007supervised}: a.) the quality of the training data and b.) the choice of the features. The properties of the gloss data as described in *CHAPTERXYZ* make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons. First, glosses are more purified that natural language words. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information. See chapter \ref{chap:gloss} for the discussion on the golden properties of glosses.  
+In supervised machine learning models, two factors effects the performance of the trained systems \citep{kotsiantis2007supervised}: a.) the quality of the training data and b.) the choice of the features. The properties of the gloss data as described in chapter \ref{chap:gloss} make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons. First, glosses are more purified than natural language words. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information. See chapter \ref{chap:gloss} for the discussion on the golden properties of glosses.  
 
 Therefore, theoretically incorporation of the gloss data should improve the translation systems. Specifically, I propose the following hypothesis:
 \begin{exe} 
@@ -220,12 +344,16 @@ The hypothesis can have two versions, strong and weak:
 	\end{xlist}
 \end{exe}
 
-The experiments reveal that replacing Gaelic words with glosses doesn't bochoiceost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However, it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly. 
+The experiments reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However, it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly. 
 
 This chapter describes the experiments conducted to test the Gloss-helps hypothesis and the results attest the weak version.
-The rest of the chapter is organized as follows: Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}),and section 5 concludes the chapter. 
+The rest of the chapter is organized as follows: Section \ref{relate_work} describes related works in the literature, Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}),and section 5 concludes the chapter. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Related Work}\label{relate_work}
+Attempts to improve machine translation systems by incorporating explicit linguistic information are reported in the literature. Syntax information is known to be effective in improving statistical machine translation (SMT). The efforts of using syntax information even derive a special type of SMT, termed as syntax-based SMT \citep{williams2016syntax}. The same trend is also found in neural net machine translation. For example, \citet{sennrich2016linguistic} exploit the information of lemmas, part of tags, morphology of words, and dependency parses of sentences to improve MT systems. \citet{ccg_target_seq} incorporate the Categorial grammar parse tags of the target sequences.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 \section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
 The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}.
@@ -240,15 +368,13 @@ The following default hyper-parameter settings of OpenNMT\footnote{See their doc
 	\item Number of epochs: 13\\
 	The training process of a neural net machine translation systems is done epoch by epoch. Each epoch is an iteration of training. Here 13 means that we are going to have 13 iterations of training and thus have 13 epochs. 
 	\item Size of mini-batches: 64\\
-	Training a neural net is to let the weights of the connections between the neurons fit the samples that the net is fed with. Theoretically, we may ask the net adjust the weights according all the samples we have all together at one time. However, in practice, this is not memory efficient, and causing errors in the process of optimizing the weight parameters. So, instead, the samples are split into smaller mini-batches, and the neural net just updates its weights to make the most accurate predictions for a mini-batch, and repeat one mini-batch at one time. This hyper-parameter specifies the size of a mini-batch.  
+	Training a neural net is to let the weights of the connections between the neurons fit the training samples. Theoretically, we may ask the net adjust the weights according all the samples all together at one time. However, in practice, this is not memory efficient, and will cause errors in the process of optimizing the weight parameters. So, instead, the samples are split into smaller mini-batches, and the neural net just updates its weights to make the most accurate predictions for a mini-batch at one time. This hyper-parameter specifies the size of a mini-batch. Actually finding the right mini-batch size is not a trivial but an important question in Deep Learning. See \citet{DBLP:journals/corr/KeskarMNST16} and \citet{DBLP:journals/corr/abs-1711-00489} for the experiments and discussions on the effects of the size of mini-batches. 
 	\end{itemize}
-
-In section \ref{neural_MT}, we brifely  
 
 The settings of the hyper-parameters do have effects on the performances of the trained models.
 A common practice to find the optimal settings of the hyper-parameters is to hold out a subset of the training dataset as the developing dataset, then test the models on the developing data to see what settings are optimal, then merge the developing dataset and training dataset as a new training set, and then train on this new training set using the found optimal hyper-parameters.
 
-However, given that finding the optimal settings of the hyper-parameters is not relevant to our research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and I simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen, and there are room to tune the models for better performance. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.
+However, given that finding the optimal settings of the hyper-parameters is not relevant to our research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and I simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen, and there are room to tune the models for better performance. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.  We will leave the question of what hyper-parameters are optimal for our data for future research.
 
 The data and the scripts will be accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.  
 
@@ -266,7 +392,7 @@ Totally we have 8,388 indexed 3-tuples of Gaelic sentence, a gloss line and an E
            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
 \\ 
    \glt    `His father is older than his mother.' 
-\end{exe}
+\end{exe}We will leave the question of what hyper-parameters are optimal for our data for future research. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source seq
 
 The 3-tuple representation of the above example is:
 \begin{exe}
@@ -325,7 +451,52 @@ The two trained models (gloss-to-English and Gaelic-to-English) then take the ri
 
 To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard/human-translated English sentences).
 Specifically, the BLEU (bilingual evaluation understudy)\footnote{There are other automatic machine translation evaluation algorithms available, such as translation edit rate \citep{Snover06astudy} and Damerau-Levenshtein edit distance \citep{damerau1964technique, levenshtein1966binary}. BLEU is chosen for the current experiments because it is the most widely used evaluation algorithm, and the correlation between the BLUE score evaluation and human judgment evaluation is also well-acknowledged.} score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}}
-script, a public implementation of Moses \citep{moses}. The BLEU score calculation is an automatic evaluation of how similar two copora are. In the current experiments we are comparing the predicted target sequences with the gold standard. The BLEU score of 100 means the two copora are identical, and the BLEU score of 0 means the two copora are completely distinct from each other.
+script, a public implementation of Moses \citep{moses}. 
+
+
+The BLEU assumes that a sentence is a bag of n-grams (n is from 1 to 4). It measures how different the two bags of n-grams (the predicted sentence and the gold standard sentence) are. A bag of words means that the order is not important, and the difference is measured by modified precision. For concreteness, consider the following toy examples:
+
+\begin{exe}
+\ex 
+	\begin{xlist}
+	\ex \label{gold1} Gold reference: `one two three four five'
+	\ex \label{can1} predicted sentence 1: `one one two two two'
+	\ex \label{can2} predicted sentence 2: `two two two one one'
+	\end{xlist}
+\end{exe}
+
+For simplicity, let's consider uni-gram precision first. With the bag of words assumption, (\ref{can1}) and (\ref{can2}) are identical in terms uni-gram because they have the same set of uni-grams:   
+
+\begin{exe}
+\ex 
+	\begin{xlist}
+	\ex predicted sentence 1: `one one two two two' =\\ \{`one',`one',`two',`two',`two'\}  =\\ \{`two',`two', `two', `one', `one'\} =\\ predicted sentence 2: `two two two one one'
+	\end{xlist}
+\end{exe}
+
+
+\maths{\begin{equation}
+\text{\sc bleu} = \min \left( 1,\frac{\text{\em output-length}}{\text{\em reference-length}} \right) \; \big( \prod_{i=1}^4 \text{\em precision}_i \big)^\frac{1}{4}
+\end{equation}}
+
+\begin{figure}[t]
+\caption{The BLEU score is based on n-gram matches with the reference translation \citep[p. 226-227]{koehn2009statistical}}
+\begin{center}
+\includegraphics[scale=1.5]{bleu-example.pdf}
+\begin{tabular}{c|c|c}
+{\bf Metric} & \bf System A & \bf System B \\ \hline
+precision (1gram) & 3/6 & 6/6 \\ \hline
+precision (2gram) & 1/5 & 4/5 \\ \hline
+precision (3gram) & 0/4 & 2/4 \\ \hline
+precision (4gram) & 0/3 & 1/3  \\ \hline
+brevity penalty   & 6/7 & 6/7  \\ \hline 
+{\sc bleu} &  0\% & 52\%  \\ \hline
+\end{tabular}
+\end{center}
+\end{figure}
+
+
+In short, the BLEU score calculation is an automatic evaluation of how similar two copora are. In the current experiments we are comparing the predicted target sequences with the gold standard. The BLEU score of 100 means the two copora are identical, and the BLEU score of 0 means the two copora are completely distinct from each other.
 
 \begin{exe}
 \ex Gold-Standard = English sentences in (\ref{GLOSStoENTest}) = English sentences in (\ref{GDtoENTest})
@@ -345,7 +516,7 @@ This procedure of splitting the data into three sub-sets, training the models, a
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Apr  6 12:40:14 2018
+% Tue Apr 10 20:51:14 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -386,9 +557,9 @@ Second, if we want to actually apply the gloss treatment to translate a Gaelic s
 
 We may now combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-helps hypothesis. The experiments and results are reported in the next chapter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Combining Gaelic Words with Glosses}\label{gd_plus_gl_to_en}
+\chapter{Combining Gaelic Words with Glosses}\label{chap:cake2}
 \section{Introduction}
-In the previous section, we attempt to build a system by using the \textit{gloss treatment} to outperform the baseline system. It turns that using gloss line solely is not effective enough to improve the system. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
+In the previous chapter, we attempt to build a system by using the \textit{gloss treatment} to outperform the baseline system. It turns that using gloss line solely is not effective enough to improve the system. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
 \begin{exe}
 	\ex 
 	\begin{xlist}
@@ -401,7 +572,23 @@ This section reports various ways of combining the gloss line data and the Gaeli
 
 In this section, I will first describe the most effective treatment, termed as `\textit{Parallel-Partial}' treatment, and the results, and then I will report the experiments done with other relevant logical treatments (i.e. other ways of combining glossing data and Gaelic data). 
 
+\subsection{The Underlying Heuristics}\label{heuristics}
+At a high level, neural net sequence to sequence learning algorithm is to learn how to map a high-dimension space to another high-dimension space. In the settings of machine translation, each dot in the high-dimension space is a meaning representation. Linking one dot to another dot is converting one meaning representation to another, yielding the effect of translation. Given this heuristics, we may just feed the machine with all the available meaning mappings. Given the assumption that the gloss lines are linguistically guided meaning representations, they are suitable training data for building machine translation systems. Specially, with the gloss data, we let the machine to learn the following mappings:
+
+\begin{exe}
+	\ex Mappings Learned in the ParaPart treatment
+	\begin{xlist}
+		\ex Gaelic sentences $\rightarrow$ English sentences
+		\ex Gloss lines $\rightarrow$ English sentences
+		\ex Gloss lines $\rightarrow$ Gaelic sentences
+		\ex Gloss items $\rightarrow$ Gaelic words
+	\end{xlist}	
+\end{exe}    
+
 \section{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}
+
+\subsection{Related work}
+The Parallel-Partial treatment section may be viewed as a form of multi-task Sequence to Sequence Learning \citep{luong2015multi}. Specifically, the parallel part of the treatment is very similar to the data manipulation used in building multi-language translation systems \citep{google_zero_shot}.  
 
 \subsection{Data Preprocessing Using the Parallel-Partial Treatment}
 The Parallel-Partial treatment uses the training and validation data of the baseline system and that of the gloss treatment system.  
@@ -445,11 +632,11 @@ The partial treatment then generates pairs of a Gaelic word and a gloss token:
 
 \subsection{Results of the Parallel-Partial Treatment}
 
-With the training and validation data ready, now we can train models and evaluate them. Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. The only difference is the training and validation data. As shown in the following table, the Parallel-Partial treatment has a tremendous effect in improving the baseline system.        
+Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. The same split of the original IGTs is used, so as long as it is the same round, the training, validation and test are the same set of IGTs. The only difference is that now the training and validation IGT data are treated with the Parallel-Partial treatment. The result show that the Parallel-Partial treatment has a tremendous effect in improving the baseline system. 
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Apr  6 12:40:15 2018
+% Tue Apr 10 20:51:14 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -477,6 +664,8 @@ The first and the second columns are BLUE scores of the baseline systems and the
 (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=48.95, p<0.01).
 The comparison of the average BLUE scores of the groups of systems shows that the Parallel-Partial treatment improves the performance of the baseline system for 93 percent.
 %(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33,; t(9)=48.95, p<0.010.000).
+\subsubsection{Discussion}
+With the ParaPart treatment, the baseline systems are improved for more than 93 percent. This result suggest the validity of our heuristics in section \ref{heuristics}, and provide strong evidence for the gloss-helps hypothesis in (\ref{hypothesis}).     
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -485,7 +674,10 @@ This section reports other possible ways of blending the Gaelic sentences and gl
 
 \subsection{The Parallel Treatment}\label{treatment:Para}
 \subsubsection{Method of the Parallel Treatment}
-The Parallel treatment is using the parallel part of the Parallel-Partial treatment. With this treatment, a chunk of interlinear glossed text is split into two pairs. For example, the chunk of interlinear glossed text in (\ref{igt}) becomes two samples in (\ref{sample_pair}): 
+The Parallel treatment is using the parallel part of the Parallel-Partial treatment without exploiting the alignment properties of gloss lines.
+It is expected that this treatment will improve the baseline systems but will not be as effective as the Parallel-Partial treatment.
+
+With this treatment, a chunk of interlinear glossed text is split into two pairs. For example, the chunk of interlinear glossed text in (\ref{igt}) becomes two samples in (\ref{sample_pair}): 
 \begin{exe} 
 \ex \label{igt}
 	\gll    Tha a athair nas sine na a mh\`athair.\\  
@@ -503,9 +695,10 @@ The Parallel treatment is using the parallel part of the Parallel-Partial treatm
 \end{exe}
 
 \subsubsection{Results of the Parallel Treatment}\label{treatment:Para_result}
+The experiments had our expected results. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Apr  6 12:40:15 2018
+% Tue Apr 10 20:51:14 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -535,7 +728,7 @@ However, the best treatment (i.e. the Parallel-Partial treatment) is still far b
 (M\textsubscript{Para}=24.51, SD\textsubscript{Para}=1.84; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=18.73, p < 0.01 ).
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Apr  6 12:40:15 2018
+% Tue Apr 10 20:51:14 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccc}
@@ -559,9 +752,11 @@ Mean & 16.59 & 24.51 & 32.10 \\
 \caption{BLEU scores of Model\textsubscript{GDtoEN}, Model\textsubscript{ParatoEN} and Model\textsubscript{ParaParttoEN} } 
 \label{Table:Concating}
 \end{table}
+Critically, the comparison between the Parallel-Partial treatment and current Parallel-Only treatment shows the effectiveness of the word-gloss alignments. Our conjecture on the effectiveness is that with the pairs of a gloss item and a Gaelic word present in the training data, the burden of the attention algorithm \citep{bahdanau2014neural} is largely alleviated. In other words, instead of asking the attention algorithm to estimate what to attend to, we explicitly teach the machine the alignment between the Gaelic word and the corresponding gloss. 
+
 \subsection{Interleaving Gaelic Words and Gloss Items And Concating them}\label{treatment:InterleavingAndConCat}
 \subsubsection{Method of the Interleaving Treatment}
-Instead of putting the pairs of a Gaelic sentence and a English sentences and the pairs of a gloss line and a English sentence in a parallel manner, we may just literally blend a Gaelic sentence and a gloss line by interleaving them. Consider the following example:
+Instead of putting the pairs of a Gaelic sentence and a English sentences and the pairs of a gloss line and a English sentence in a parallel manner, we may just literally blend a Gaelic sentence and a gloss line by interleaving them\footnote{\citet{ccg_target_seq} incorporate the Categorial grammar parse tags into natural sentences by interleaving the tags and the words.}. Consider the following example:
 
 \begin{exe} 
 \ex 
@@ -576,10 +771,14 @@ Instead of putting the pairs of a Gaelic sentence and a English sentences and th
 \end{exe}
 
 Given the chuck of interlinear glossed text data in (\ref{ex_interleave:in}), the Interleaving treatment generates the sample in (\ref{ex_interleave:out}).  
+
+This way of blending gloss lines and Gaelic sentences may add useful information into the training data; however, the downside of this method is to increase the length our samples on the source sequence side. In neural net machine learning, the longer the sequences are, the harder it is to preserve all the information. So, this treatment may not be effective. 
+
+
 The results are given in the following table. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Apr  6 12:40:15 2018
+% Tue Apr 10 20:51:14 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -622,11 +821,13 @@ A quick and close amendment of the Interleaving approach is to concatenate the a
     \end{xlist}
 \end{exe}
 
+Concating words and glosses does solve the long sequence problem; however, it causes the sparse data problem. In this arrangement, the number of the types of tokens is increased; the number of tokens of each type is decreased. Thus all the samples are put in a larger space. So, the treatment may not be effective either. 
+
 \subsubsection{Results of Concating Gaelic Words and Gloss Words}
 The performances of this treatment is given in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Apr  6 12:40:15 2018
+% Tue Apr 10 20:51:14 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -650,7 +851,7 @@ Mean & 16.59 & 15.44 \\
 \caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ConcatGLOSSGaelictoEn} } 
 \label{Table:Concating}
 \end{table}\newline
-The result shows that this treatment hurts the baseline systems badly instead of improving them (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ConcatGLOSSGaelic}=15.44, SD\textsubscript{ConcatGLOSSGaelic}=1.23,; t(9)=-3.64, p=0.010).
+The result shows that this treatment hurts the baseline systems instead of improving them (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ConcatGLOSSGaelic}=15.44, SD\textsubscript{ConcatGLOSSGaelic}=1.23,; t(9)=-3.64, p=0.010).
 
 %%%%%%%%%%
 \subsection{Hybrid: Gaelic or Gloss}
@@ -664,11 +865,23 @@ The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic wo
     \glt    English translation  
 \end{exe} 
 
-Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. The criterion is which one, the Gaelic word or the gloss item, is less ambiguous. The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic word, then <Gloss\_item, English translation> is chosen; other the other hand if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. However, when the situation is tight (i.e. both the Gaelic word and gloss item are equally ambiguous), a default setting is needed to be chosen. The choices of the default setting split this single treatment into two treatments: default as Gaelic or default as gloss.
+Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. The criterion is which one, the Gaelic word or the gloss item, is less ambiguous. 
+The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic word, then <Gloss\_item, English translation> is chosen; other the other hand if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. 
+However, when the situation is tight (i.e. both the Gaelic word and gloss item are equally ambiguous), a default setting is needed to be chosen. The choices of the default setting split this single treatment into two treatments: default as Gaelic or default as gloss.
+
+The following is an example of the hybrid treatment:
+
+\begin{exe}
+\ex
+	\gll tha nathairichean a`chuir an t-eagal orm\\
+		 be.pres snake.vn put det fear on.1s\\
+	\glt `Snakes frighten me' 
+\end{exe} 
+
 \subsubsection{Result of Hybrid}    
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Apr  6 12:40:15 2018
+% Tue Apr 10 20:51:14 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -698,7 +911,7 @@ Mean & 16.59 & 9.24 \\
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Apr  6 12:40:15 2018
+% Tue Apr 10 20:51:14 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -730,7 +943,7 @@ The chapter reports machine translation experiments that aims to find how the gl
 
 %\begin{adjustbox}{angle=90} 
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Fri Apr  6 12:40:15 2018
+% Tue Apr 10 20:51:14 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrrrr}

@@ -1,0 +1,8 @@
+<<xtable, label=table:ot, echo=FALSE, results=tex>>=
+require(xtable)
+n <- read.csv('ot.csv', sep=',', header = TRUE)
+#n<- subset(n, select=c("Round", "Gaelic"))
+xtab2<-xtable(n,caption="OT table")
+#print(xtab2,include.rownames = FALSE, hline.after = c(10))
+print(xtab2,include.rownames =FALSE, rotate.colnames=FALSE)
+@

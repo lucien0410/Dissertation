@@ -44,6 +44,8 @@
 
 \usepackage{hyperref}
 \usepackage{ifpdf}
+\usepackage{qtree}
+\usepackage{fixltx2e}
 
 \director{Mike Hammond and Sandiway Fong}
 \author{Yuan-Lu Chen}
@@ -88,7 +90,6 @@
 \SweaveInput{gloss_in_other_languages.Rnw}
 \SweaveInput{Implications_ling.Rnw}
 \SweaveInput{Conclusion.Rnw}
-
 
 \bibliographystyle{te}
 

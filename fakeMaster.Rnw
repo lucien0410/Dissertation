@@ -19,6 +19,32 @@
 \usepackage{fixltx2e}
 \usepackage{titlesec}
 \usepackage{rotating}
+\usepackage{qtree}
+\usepackage{fixltx2e}
+
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{epic,ecltree}
+\usepackage{eclbip}
+\usepackage{multicol}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmiccomment}[1]{// {\em #1}}
+
+\definecolor{darkblue}{rgb}{0,0,0.8}
+\definecolor{darkgreen}{rgb}{0,0.8,0}
+\definecolor{reddishgreen}{rgb}{0.4,0.6,0}
+\definecolor{purple}{rgb}{0.6,0,0.6}
+\definecolor{red}{rgb}{1,0,0}
+
+\newcommand{\example}[1]{\textcolor{darkblue}{\rm #1}}
+\newcommand{\maths}[1]{\textcolor{purple}{#1}}
+\newcommand{\reference}[1]{\vspace{-2mm}\begin{flushright}\textcolor{purple}{\tiny [from #1]}\end{flushright}\vspace{-7mm}}
+
 
 \setcounter{secnumdepth}{4}
 
@@ -39,6 +65,7 @@
 \SweaveOpts{concordance=TRUE}
 
 \maketitle
+
 \SweaveInput{Introduction.Rnw}
 \SweaveInput{gloss.Rnw}
 \SweaveInput{Description_of_Corpus.Rnw}

@@ -37,12 +37,16 @@ The hypothesis can have two versions, strong and weak:
 	\end{xlist}
 \end{exe}
 
-The experiments reveal that replacing Gaelic words with glosses doesn't bochoiceost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However, it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly. 
+The experiments reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However, it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly. 
 
 This chapter describes the experiments conducted to test the Gloss-helps hypothesis and the results attest the weak version.
-The rest of the chapter is organized as follows: Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}),and section 5 concludes the chapter. 
+The rest of the chapter is organized as follows: Section \ref{relate_work} describes related works in the literature, Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}),and section 5 concludes the chapter. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Related Work}\label{relate_work}
+Attempts to improve machine translation systems by incorporating explicit linguistic information are reported in the literature. Syntax information is known to be effective in improving statistical machine translation (SMT). The efforts of using syntax information even derive a special type of SMT, termed as syntax-based SMT \citep{williams2016syntax}. The same trend is also found in neural net machine translation. For example, \citet{sennrich2016linguistic} exploit the information of lemmas, part of tags, morphology of words, and dependency parses of sentences to improve MT systems. \citet{ccg_target_seq} incorporate the Categorial grammar parse tags of the target sequences.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 \section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
 The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}.
@@ -57,15 +61,13 @@ The following default hyper-parameter settings of OpenNMT\footnote{See their doc
 	\item Number of epochs: 13\\
 	The training process of a neural net machine translation systems is done epoch by epoch. Each epoch is an iteration of training. Here 13 means that we are going to have 13 iterations of training and thus have 13 epochs. 
 	\item Size of mini-batches: 64\\
-	Training a neural net is to let the weights of the connections between the neurons fit the samples that the net is fed with. Theoretically, we may ask the net adjust the weights according all the samples we have all together at one time. However, in practice, this is not memory efficient, and causing errors in the process of optimizing the weight parameters. So, instead, the samples are split into smaller mini-batches, and the neural net just updates its weights to make the most accurate predictions for a mini-batch, and repeat one mini-batch at one time. This hyper-parameter specifies the size of a mini-batch.  
+	Training a neural net is to let the weights of the connections between the neurons fit the training samples. Theoretically, we may ask the net adjust the weights according all the samples all together at one time. However, in practice, this is not memory efficient, and will cause errors in the process of optimizing the weight parameters. So, instead, the samples are split into smaller mini-batches, and the neural net just updates its weights to make the most accurate predictions for a mini-batch at one time. This hyper-parameter specifies the size of a mini-batch. Actually finding the right mini-batch size is not a trivial but an important question in Deep Learning. See \citet{DBLP:journals/corr/KeskarMNST16} and \citet{DBLP:journals/corr/abs-1711-00489} for the experiments and discussions on the effects of the size of mini-batches. 
 	\end{itemize}
-
-In section \ref{neural_MT}, we brifely  
 
 The settings of the hyper-parameters do have effects on the performances of the trained models.
 A common practice to find the optimal settings of the hyper-parameters is to hold out a subset of the training dataset as the developing dataset, then test the models on the developing data to see what settings are optimal, then merge the developing dataset and training dataset as a new training set, and then train on this new training set using the found optimal hyper-parameters.
 
-However, given that finding the optimal settings of the hyper-parameters is not relevant to our research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and I simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen, and there are room to tune the models for better performance. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.
+However, given that finding the optimal settings of the hyper-parameters is not relevant to our research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and I simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen, and there are room to tune the models for better performance. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.  We will leave the question of what hyper-parameters are optimal for our data for future research.
 
 The data and the scripts will be accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.  
 
@@ -83,7 +85,7 @@ Totally we have 8,388 indexed 3-tuples of Gaelic sentence, a gloss line and an E
            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
 \\ 
    \glt    `His father is older than his mother.' 
-\end{exe}
+\end{exe}We will leave the question of what hyper-parameters are optimal for our data for future research. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source seq
 
 The 3-tuple representation of the above example is:
 \begin{exe}
@@ -142,7 +144,52 @@ The two trained models (gloss-to-English and Gaelic-to-English) then take the ri
 
 To evaluate the model, the predicted target sequences are checked against the target sequences of the test set (i.e. the gold standard/human-translated English sentences).
 Specifically, the BLEU (bilingual evaluation understudy)\footnote{There are other automatic machine translation evaluation algorithms available, such as translation edit rate \citep{Snover06astudy} and Damerau-Levenshtein edit distance \citep{damerau1964technique, levenshtein1966binary}. BLEU is chosen for the current experiments because it is the most widely used evaluation algorithm, and the correlation between the BLUE score evaluation and human judgment evaluation is also well-acknowledged.} score metric \citep{bleu} of each prediction is calculated using the \begin{myfont} multi-bleu.perl\end{myfont}\footnote{The script can be downloaded from: \url{https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl}}
-script, a public implementation of Moses \citep{moses}. The BLEU score calculation is an automatic evaluation of how similar two copora are. In the current experiments we are comparing the predicted target sequences with the gold standard. The BLEU score of 100 means the two copora are identical, and the BLEU score of 0 means the two copora are completely distinct from each other.
+script, a public implementation of Moses \citep{moses}. 
+
+
+The BLEU assumes that a sentence is a bag of n-grams (n is from 1 to 4). It measures how different the two bags of n-grams (the predicted sentence and the gold standard sentence) are. A bag of words means that the order is not important, and the difference is measured by modified precision. For concreteness, consider the following toy examples:
+
+\begin{exe}
+\ex 
+	\begin{xlist}
+	\ex \label{gold1} Gold reference: `one two three four five'
+	\ex \label{can1} predicted sentence 1: `one one two two two'
+	\ex \label{can2} predicted sentence 2: `two two two one one'
+	\end{xlist}
+\end{exe}
+
+For simplicity, let's consider uni-gram precision first. With the bag of words assumption, (\ref{can1}) and (\ref{can2}) are identical in terms uni-gram because they have the same set of uni-grams:   
+
+\begin{exe}
+\ex 
+	\begin{xlist}
+	\ex predicted sentence 1: `one one two two two' =\\ \{`one',`one',`two',`two',`two'\}  =\\ \{`two',`two', `two', `one', `one'\} =\\ predicted sentence 2: `two two two one one'
+	\end{xlist}
+\end{exe}
+
+
+\maths{\begin{equation}
+\text{\sc bleu} = \min \left( 1,\frac{\text{\em output-length}}{\text{\em reference-length}} \right) \; \big( \prod_{i=1}^4 \text{\em precision}_i \big)^\frac{1}{4}
+\end{equation}}
+
+\begin{figure}[t]
+\caption{The BLEU score is based on n-gram matches with the reference translation \citep[p. 226-227]{koehn2009statistical}}
+\begin{center}
+\includegraphics[scale=1.5]{bleu-example.pdf}
+\begin{tabular}{c|c|c}
+{\bf Metric} & \bf System A & \bf System B \\ \hline
+precision (1gram) & 3/6 & 6/6 \\ \hline
+precision (2gram) & 1/5 & 4/5 \\ \hline
+precision (3gram) & 0/4 & 2/4 \\ \hline
+precision (4gram) & 0/3 & 1/3  \\ \hline
+brevity penalty   & 6/7 & 6/7  \\ \hline 
+{\sc bleu} &  0\% & 52\%  \\ \hline
+\end{tabular}
+\end{center}
+\end{figure}
+
+
+In short, the BLEU score calculation is an automatic evaluation of how similar two copora are. In the current experiments we are comparing the predicted target sequences with the gold standard. The BLEU score of 100 means the two copora are identical, and the BLEU score of 0 means the two copora are completely distinct from each other.
 
 \begin{exe}
 \ex Gold-Standard = English sentences in (\ref{GLOSStoENTest}) = English sentences in (\ref{GDtoENTest})

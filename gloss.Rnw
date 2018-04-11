@@ -15,7 +15,7 @@
 
 \section{Introduction: What are Glosses}
 
-Interlinear Glossed Text (IGT) is widely used in linguistic studies. (\ref{gloss_eg})  is an example of Scottish Gaelic IGT.
+Interlinear Glossed Text (IGT) is widely used in linguistic studies. (\ref{gloss_eg}) is an example of Scottish Gaelic IGT.
 \begin{exe}  
 \ex\label{gloss_eg} \gll    Tha a athair nas sine na a mh\`athair.\\  
             be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
@@ -80,29 +80,126 @@ festival \textbf{ART} poet.PL.GEN\\
 
 \end{exe}
 
-The definite article in Scottish Gaelic may be realized as the following forms: as \textit{an}, \textit{am}, \textit{a'}, \textit{na}, \textit{nan} or \textit{nam}. The alternation is determined by the case, gender and number of noun phrase that it modifies, and additionally the phonological property of the word following it also changes the form of the definite article \citep{lamb2001scottish}. All these different realizations refer to the same concept, the definite article. Again, the gloss notation nicely clusters them together as \textit{ART}.
+The definite article in Scottish Gaelic may be realized as the following forms: as \textit{an}, \textit{am}, \textit{a'}, \textit{na}, \textit{nan} or \textit{nam}. The alternation is determined by the case, gender and number of noun phrase that it modifies, and additionally the phonological property of the word following it also changes the form of the definite article \citep{lamb2001scottish}. All these different realizations refer to the same concept, the definite article. Again, the gloss notation nicely clusters them together as \textit{ART}. 
 
-In short, gloss collapses synonyms in natural languages. 
-
-\subsection{Glosses Distinguish Homographs' Different Meanings}
-In natural languages, there are cases when a single form denotes to multiple concepts. Words with this properties are termed as homographs. Consider the word \textit{for} in following English examples:
+In Mandarin Chinese, similar patterns are found. Consider classifiers in the following examples:
 
 \begin{exe}
-\ex
+\ex \label{chinese_cl_eg}
+\gll Yani mai-le \{\textbf{pi}/\textbf{*tou}\} ma , Lulu mai-le \{\textbf{*pi}/\textbf{tou}\} zhu.\\ 
+Yani buy-PRF CL/CL horse , Lulu buy-PRF CL/CL\\
+\glt `Yani bought a horse and Lulu bought a pig.' \citep[p. 136]{zhang2013classifier}
+\end{exe}
+
+In \citet{zhang2013classifier}, the classifier like \textit{pi} and \textit{tou} is a type of \textit{indivual classifier} which co-occurs with countable nouns, like \textit{ma}, `horse', and \textit{zhu}, `pig', and this type of classifier is the head of \textit{UNIT Phrase}. 
+\textit{Pi} and \textit{tou} actually have the same semantics and the syntactic function; however, they are realized in different forms, specifically the form of which has to agree with the noun following it (i.e. \textit{pi} goes with \textit{ma}; \textit{tou} goes with \textit{zhu}). Here the gloss, \textit{CL}, unifies the two forms of the same meaning.    
+
+In short, gloss collapses synonyms in natural languages. Learning the general distribution of the article and all its different forms is a challenge for the MT system, but the glossing information should make this easier.
+
+\subsection{Glosses Distinguish Homographs' Different Meanings}
+
+In natural languages, there are cases when a single form denotes to distinct concepts. Words with this properties are termed as homographs. Consider the word \textit{for} in following English examples:
+
+\begin{exe}
+\ex \label{for_eng}
 	\begin{xlist}
 	\ex \label{for_c}I intended \textbf{for} Jenny to be present.
 	\ex \label{for_p}\textbf{For} Jenny, I intended to be present. \citep[p.306-307]{adger2003core}
 	\end{xlist}
 \end{exe}
 
-\textit{For} in (\ref{for_c}) and (\ref{for_p}) has the same form but different meanings. Specifically, \textit{for} in (\ref{for_c}) is a complementer with its part of speech being \textit{C}, and it heads the non-finite clause \textit{Jenn to be present}; on the other hand \textit{for} (\ref{for_p}) is a preposition, and it marks its DP argument, \textit{Jenny}, as benefactive.    
+\textit{For} in (\ref{for_c}) and (\ref{for_p}) has the same form but different meanings. Specifically, \textit{for} in (\ref{for_c}) is a complementizer with its part of speech being \textit{C}, and it heads the non-finite clause \textit{Jenn to be present}; on the other hand \textit{for} (\ref{for_p}) is a preposition, which takes the Determiner Phrase, \textit{Jenny}, as its benefactive argument.   
 
-\subsection{Glosses are Sensitive to Hierarchical Structure of Natural Language Sentences}
-Critically glosses provide `redundant' information. Here `redundant' means that  
+The Scottish Gaelic word \textit{a'} in the following examples also has different meanings.  
 
-\section{What is a Gloss Line}
-A gloss line is an artificial sentence using the purified `gloss words'. 
+\begin{exe}  
+\ex \label{a_prog}
+\gll tha mi \textbf{a'} sireadh an leabhair bhig ghuirm.\\
+be-PRES-IND 1S \textbf{PROG} searching-VN ART book-G small-G blue-G\\
+\glt `I am looking for the small blue book.' \citep[p. 29]{lamb2001scottish}
 
-\section{Conclusion} 
+\ex \label{a_det}
+\gll thuit \textbf{a'} chlach air cas mo mhn\`a.\\
+fall-PAST \textbf{ART} stone on foot 1S-POSS wife-G\\
+\glt`the stone fell on my wife's foot.' \citep[p. 30]{lamb2001scottish} 	
+\end{exe}
+
+Critically \textit{a'} in (\ref{a_prog}) is a progressive aspect marker while in (\ref{a_det}) the some form denotes to definite article. Again, the semantic difference is preserved in the gloss representations but not in natural language words.  
+The gloss data also provides hierarchical (non-linear) syntactic parsing information. 
+
+\subsection{Glosses are Sensitive to Hierarchical Structures in Natural Language Sentences}
+
+Before I introduce how gloss information is linked to hierarchical structures, it is necessary to emphasize the importance of hierarchical structures in natural languages. In this section, I will first review some linguistic arguments for why and how semantics and syntax of languages\footnote{When it turns to the sound aspect of languages, Phonetics is more about linear order, but Phonology is still sensitive to hierarchical structures just like syntax and semantics. } are all about hierarchical structures instead of linear word orders. Then I will link gloss to hierarchical structures.
+
+It is well-argued in linguistics that the syntax and semantics of natural languages are determined by hierarchical structures instead of linear orders of words, and essentially it is the sensitivity of hierarchical structures that distinguishes human natural languages from other animal communications \citep{berwick2015only}.     
+
+Semantics is determined by hierarchical structures instead of linear orders. \citet[p. 117]{berwick2015only} use the following simple example to demonstrate this property of natural languages:
+
+\begin{exe}
+\ex Instinctively birds that fly swim. 
+\end{exe}
+
+In the example above, \textit{instinctively} is linearly close to \textit{fly} than \textit{swim}; however, it unambiguously modifies \textit{swim} instead of \textit{fly}. The reason for this is the hierarchical structures \citep[p. 117]{berwick2015only}:
+
+\begin{exe}
+\ex \label{tree}
+\Tree [Instinctively [ [  birds   [  that   fly  ]  ]  swim  ] ]
+\end{exe}
+
+In (\ref{tree}) it is shown that \textit{fly} is more embedded than \textit{swim}, and thus it is hierarchically further away from \textit{instinctively}. So, \textit{instinctively} can only modify \textit{swim} instead of \textit{fly}.
+
+Syntax is also all about hierarchical structures. Consider the following sentence:
+
+\begin{exe}
+\ex 
+	\begin{xlist}
+	\ex \label{aux_inver1} Birds that can\textsubscript{1} fly can\textsubscript{2} swim. 
+	\ex \label{aux_inver2} *Can\textsubscript{1} birds that  fly can\textsubscript{2} swim? 
+	\ex \label{aux_inver3} Can\textsubscript{2} birds that can\textsubscript{1} fly  swim? 
+	\end{xlist}
+\end{exe}
+
+(\ref{aux_inver1}) is a declarative sentence. To derive an interrogative sentence from it, the auxiliary needs to be moved; however only \textit{can\textsubscript{2}} can be moved but not \textit{can\textsubscript{1}} even \textit{can\textsubscript{1}} is linearly close to the sentence initial position. Again, it is all because of the hierarchical structures. \textit{can\textsubscript{2}} is in the matrix clause while \textit{can\textsubscript{1}} is in the embedded relative clause.  
+
+Word order and linearizion are just epiphenomena from the perspective of theoretical syntax and semantics. They are inevitable externalization of language because we are living in a world of linear time and space. To put this argument in another way, if externalization should be the primary nature of language, we should expect that some natural human languages should have manipulated the linear order of words in a sentence to express different meanings, because linear order is the externalization of language. However, this is not the case. No language exploits linear order, and instead universally language uses hierarchical structures, which is more difficult to be externalized than linear order. \citet{chomsky2006language} uses the following examples to illustrate this point.
+
+\begin{exe}
+\ex
+	\begin{xlist}
+	\ex\label{c1} Smart eagles can swim.
+	\ex\label{c2} *Eagles smart can swim?
+	\ex\label{c3} Can smart eagles swim?
+	\end{xlist}
+\end{exe}
+
+(\ref{c1}) is a declarative sentence. (\ref{c2}) tries to swap the first two words to derive an interrogative sentence, and fails. (\ref{c3}) is the real interrogative sentence in natural languages. If externalization and communication are the primary nature of language, it is expected (\ref{c2}) to be a common pattern in languages, because (\ref{c2}) exploits linear order, which is the externalization of language and the linear order serves the communication purpose just fine given that humans' cognition system is able to tell the difference between (\ref{c1}) and (\ref{c2}). However, the pattern in (\ref{c2}) is not found in any human language; instead, (\ref{c3}) is used, which uses hierarchical structure relations. In term of externalization, (\ref{c2}) is more economical than (\ref{c3}) given that (\ref{c2}) only moves two positions of words while (\ref{c3}) moves three positions of words. Again, if externalization and communication are the primary nature of language, language should have evolved the pattern of (\ref{c2}). Based on the fact that no language exploits linear order, it is argued that language externalization and communication in particular are accessory.   
+
+Glosses are also sensitive to the internal hierarchical structures or constituency of sentences. Consider the following examples, modified from \ref{for_eng}:
+
+\begin{exe}
+\ex
+For as \textit{complementizer}
+	\begin{xlist}
+	\ex I intended \textbf{for} [Jenny] to be present.
+	\ex I intended \textbf{for} [the girl] to be present.
+	\ex I intended \textbf{for} [the little girl] to be present.
+	\ex I intended \textbf{for} [the little girl who wants to eat some ice scream] to be present. 
+	\end{xlist}
+\ex
+For as \textit{preposition}
+	\begin{xlist}
+	\ex \textbf{For} [Jenny], I intended to be present. 
+	\ex \textbf{For} [the girl], I intended to be present. 
+	\ex \textbf{For} [the little girl], I intended to be present. 
+	\ex \textbf{For} [the little girl who wants to eat some ice scream], I intended to be present. 
+	\end{xlist}
+\end{exe}
+
+Linear length of the argument of \textit{for} (i.e. the sequences in the square brackets) does not have any effect in determining what the gloss is, and instead it is the hierarchical structures that determines what the gloss is. 
+
+
+\section{Conclusion: What is a Gloss Line?}  
+A gloss line is an artificial sentence using the purified `gloss words', a meaning representation with which one meaning is mapped to one and only one representation. It is a useful and widely used annotation algorithm that requires linguistic knowledge. Given the properties of gloss data, it can be a very useful data for machine translation. Moreover, gloss data is widely used in linguistics literature, so data is already out there and all we need is to clean the data.  
+In chapter \ref{chap:cake} and \ref{chap:cake2} I will report machine translation experiments using gloss data.  
 
 % section conclusion (end)

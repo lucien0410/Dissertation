@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{28}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -20,6 +20,11 @@ Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio (2014), \enquote{Neural
   machine translation by jointly learning to align and translate.} \emph{arXiv
   preprint arXiv:1409.0473}.
 \bibAnnoteFile{bahdanau2014neural}
+
+\bibitem[{Berwick and Chomsky(2015)}]{berwick2015only}
+Berwick, Robert~C and Noam Chomsky (2015), \emph{Why only us: Language and
+  evolution}. MIT press.
+\bibAnnoteFile{berwick2015only}
 
 \bibitem[{Bickel et~al.(2008)Bickel, Comrie, and
   Haspelmath}]{bickel2008leipzig}
@@ -44,11 +49,32 @@ Cho, Kyunghyun, Bart Van~Merri{\"e}nboer, Caglar Gulcehre, Dzmitry Bahdanau,
   statistical machine translation.} \emph{arXiv preprint arXiv:1406.1078}.
 \bibAnnoteFile{cho2014learning}
 
+\bibitem[{Chomsky(2006)}]{chomsky2006language}
+Chomsky, Noam (2006), \emph{Language and mind}. Cambridge University Press.
+\bibAnnoteFile{chomsky2006language}
+
 \bibitem[{Damerau(1964)}]{damerau1964technique}
 Damerau, Fred~J (1964), \enquote{A technique for computer detection and
   correction of spelling errors.} \emph{Communications of the ACM}, 7,
   171--176.
 \bibAnnoteFile{damerau1964technique}
+
+\bibitem[{Johnson et~al.(2016)Johnson, Schuster, Le, Krikun, Wu, Chen, Thorat,
+  Vi{\'e}gas, Wattenberg, Corrado et~al.}]{google_zero_shot}
+Johnson, Melvin, Mike Schuster, Quoc~V Le, Maxim Krikun, Yonghui Wu, Zhifeng
+  Chen, Nikhil Thorat, Fernanda Vi{\'e}gas, Martin Wattenberg, Greg Corrado,
+  et~al. (2016), \enquote{Google's multilingual neural machine translation
+  system: enabling zero-shot translation.} \emph{arXiv preprint
+  arXiv:1611.04558}.
+\bibAnnoteFile{google_zero_shot}
+
+\bibitem[{Keskar et~al.(2016)Keskar, Mudigere, Nocedal, Smelyanskiy, and
+  Tang}]{DBLP:journals/corr/KeskarMNST16}
+Keskar, Nitish~Shirish, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy,
+  and Ping Tak~Peter Tang (2016), \enquote{On large-batch training for deep
+  learning: Generalization gap and sharp minima.} \emph{CoRR}, abs/1609.04836,
+  \urlprefix\url{http://arxiv.org/abs/1609.04836}.
+\bibAnnoteFile{DBLP:journals/corr/KeskarMNST16}
 
 \bibitem[{Klein et~al.(2017)Klein, Kim, Deng, Senellart, and
   Rush}]{2017opennmt}
@@ -107,12 +133,40 @@ Lewis, William~D. and Fei Xia (2010), \enquote{Developing odin: A multilingual
   http://dx.doi.org/10.1093/llc/fqq006}.
 \bibAnnoteFile{ODIN}
 
+\bibitem[{Luong et~al.(2015)Luong, Le, Sutskever, Vinyals, and
+  Kaiser}]{luong2015multi}
+Luong, Minh-Thang, Quoc~V Le, Ilya Sutskever, Oriol Vinyals, and Lukasz Kaiser
+  (2015), \enquote{Multi-task sequence to sequence learning.} \emph{arXiv
+  preprint arXiv:1511.06114}.
+\bibAnnoteFile{luong2015multi}
+
+\bibitem[{Nadejde et~al.(2017)Nadejde, Reddy, Sennrich, Dwojak,
+  Junczys-Dowmunt, Koehn, and Birch}]{ccg_target_seq}
+Nadejde, Maria, Siva Reddy, Rico Sennrich, Tomasz Dwojak, Marcin
+  Junczys-Dowmunt, Philipp Koehn, and Alexandra Birch (2017),
+  \enquote{Predicting target language ccg supertags improves neural machine
+  translation.} In \emph{Proceedings of the Second Conference on Machine
+  Translation}, 68--79.
+\bibAnnoteFile{ccg_target_seq}
+
 \bibitem[{Papineni et~al.(2002)Papineni, Roukos, Ward, and Zhu}]{bleu}
 Papineni, Kishore, Salim Roukos, Todd Ward, and Wei-Jing Zhu (2002),
   \enquote{Bleu: a method for automatic evaluation of machine translation.} In
   \emph{Proceedings of the 40th annual meeting on association for computational
   linguistics}, 311--318, Association for Computational Linguistics.
 \bibAnnoteFile{bleu}
+
+\bibitem[{Sennrich and Haddow(2016)}]{sennrich2016linguistic}
+Sennrich, Rico and Barry Haddow (2016), \enquote{Linguistic input features
+  improve neural machine translation.} \emph{arXiv preprint arXiv:1606.02892}.
+\bibAnnoteFile{sennrich2016linguistic}
+
+\bibitem[{Smith et~al.(2017)Smith, Kindermans, and
+  Le}]{DBLP:journals/corr/abs-1711-00489}
+Smith, Samuel~L., Pieter{-}Jan Kindermans, and Quoc~V. Le (2017),
+  \enquote{Don't decay the learning rate, increase the batch size.}
+  \emph{CoRR}, abs/1711.00489, \urlprefix\url{http://arxiv.org/abs/1711.00489}.
+\bibAnnoteFile{DBLP:journals/corr/abs-1711-00489}
 
 \bibitem[{Snover et~al.(2006)Snover, Dorr, Schwartz, Micciulla, and
   Makhoul}]{Snover06astudy}
@@ -122,6 +176,13 @@ Snover, Matthew, Bonnie Dorr, Richard Schwartz, Linnea Micciulla, and John
   in the Americas}, 223--231.
 \bibAnnoteFile{Snover06astudy}
 
+\bibitem[{Williams et~al.(2016)Williams, Sennrich, Post, and
+  Koehn}]{williams2016syntax}
+Williams, Philip, Rico Sennrich, Matt Post, and Philipp Koehn (2016),
+  \enquote{Syntax-based statistical machine translation.} \emph{Synthesis
+  Lectures on Human Language Technologies}, 9, 1--208.
+\bibAnnoteFile{williams2016syntax}
+
 \bibitem[{Xia et~al.(2016)Xia, Lewis, Goodman, Slayden, Georgi, Crowgey, and
   Bender}]{Xia2016}
 Xia, Fei, William~D. Lewis, Michael~Wayne Goodman, Glenn Slayden, Ryan Georgi,
@@ -130,5 +191,10 @@ Xia, Fei, William~D. Lewis, Michael~Wayne Goodman, Glenn Slayden, Ryan Georgi,
   and Evaluation}, 50, 321--349,
   \urlprefix\url{https://doi.org/10.1007/s10579-015-9325-4}.
 \bibAnnoteFile{Xia2016}
+
+\bibitem[{Zhang(2013)}]{zhang2013classifier}
+Zhang, Niina~Ning (2013), \emph{Classifier Structures in Mandarin Chinese},
+  volume 263. Walter de Gruyter.
+\bibAnnoteFile{zhang2013classifier}
 
 \end{thebibliography}
