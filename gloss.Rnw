@@ -1,30 +1,44 @@
 \chapter{What are glosses? Why are them golden representations of meanings?}
 \label{chap:gloss}
 
-\section{Key Points of The Chapter}
-	\begin{enumerate}
-	\item Target Audience: CS people
-	\item main points:
-		\begin{enumerate}
-    	\item summary of the Leipzig Glossing Rules \citep{bickel2008leipzig}.  
-		\item glossing is the initial processing of the data guided by some specific syntax theory. 
-    	\item Glosses contain morphology information (with examples); glosses disambiguate homographs (with many examples); gloss also provide some parsing information because some glosses are determined by structural/constituency context (with examples).       
-		\end{enumerate}
- 
-	\end{enumerate}
-
 \section{Introduction: What are Glosses}
 
-Interlinear Glossed Text (IGT) is widely used in linguistic studies. (\ref{gloss_eg}) is an example of Scottish Gaelic IGT.
+Interlinear Glossed Text (IGT) is widely used in linguistic studies. The following is an example of IGT.
 \begin{exe}  
-\ex\label{gloss_eg} \gll    Tha a athair nas sine na a mh\`athair.\\  
-            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
-\\  
-    \glt    `His father is older than his mother.'  
+\ex\label{gloss_eg} Indonesian \citep[p. 237]{sneddon2012indonesian}
+	\gll   Mereka di Jakarta sekarang. (\textit{sentence of interest})\\
+     	   they in Jakarta now (\textit{gloss line: word-by-word gloss translation})\\
+    \glt   `The are in Jakarta now.' (\textit{English translation})  
 \end{exe}
 
-(summarize and exemplify the Leipzig Glossing Rules)
+A chunk of an interlinear glossed text has three lines. The first line is the sentence of interest. The second line is the gloss line, which is a word-by-word translation of the first line. And the third line a free English translation of the first line.
 
+The conventional way to show the word-by-word translation from the first line to the gloss line is to use vertical alignment. In (\ref{gloss_eg}), `\textit{Mereka}' is glossed as `\textit{they}', `\textit{di}' is glossed as `\textit{in}', `\textit{Jakarta}' is glossed as `\textit{Jakarta}', and `\textit{sekarang}' is glossed as `\textit{now}'. These pairs are vertically aligned. 
+
+The gloss line also provides morphological information. Consider the following example:
+
+\begin{exe}  
+\ex French
+	\gll   aux chevaux\\
+     	   to.ART.PL horse.PL \\
+    \glt   `to the horses'  
+\end{exe}
+
+The morphemes of a single word is linked by a `.'. The French word `aux' is actually a combination of three separate morphemes\footnote{A morpheme is a smallest unit of meaning. For example, `\textit{boys}' has two morphemes in it: `\textit{boy}' and `\textit{-s}', where `\textit{-s}' is a plural marker. Sometimes, the morpheme boundary is not visible. For example `\textit{went}' is composed of `\textit{go}' and `\textit{-ed}'.}: `\textit{to}', `\textit{ART}', and `\textit{PL}' and \textit{`chevaux'} is decomposed into \textit{`horse'} and \textit{`PL'}.   
+\citet{bickel2008leipzig} compile a set of widely used conventions of IGT called the Leipzig Glossing Rules. Note that they are not prescriptive rules of what IGTs should be like, but they are just guidelines with which the formats of IGTs can be more standardized.  
+
+The underlying intuition of IGT is that it provide an access to look into the subparts of a sentence. We may imagine the situation without the gloss line; then all we have is just the sentence and the English translation of that sentence. This will prevent us from discussing the internal structure of the sentence.
+
+A final note of the gloss line is that it is NOT raw linguistic data and is already being processed. A linguist has already committed to some theory or some analysis on the sentence of interest when he or she transcribes the sentence into a gloss line, even if he or she tries to be as neutral as possible. So, the question of what the gloss of a word is not trivial at all. Actually, sometimes a whole linguistic paper or thesis is to discuss and argue what the right gloss for a word is.  
+
+\begin{exe}  
+\ex Mandarin Chinese
+	\gll   Zhangsan \textbf{hen} gao\\
+     	   Zhangsan HEN tall\\
+    \glt   `Zhangsan is tall.'  
+\end{exe}  
+
+For example, the nature of the Mandarin Chinese word `\textit{hen}' in the above example and what the right gloss should be is a topic of \citet{grano2008mandarin}, \citet{Chen2010}, and \citet{liu2010positive}
 
 \section{The Golden Properties of Glosses}
 
@@ -87,7 +101,7 @@ In Mandarin Chinese, similar patterns are found. Consider classifiers in the fol
 \begin{exe}
 \ex \label{chinese_cl_eg}
 \gll Yani mai-le \{\textbf{pi}/\textbf{*tou}\} ma , Lulu mai-le \{\textbf{*pi}/\textbf{tou}\} zhu.\\ 
-Yani buy-PRF CL/CL horse , Lulu buy-PRF CL/CL\\
+Yani buy-PRF CL/CL horse , Lulu buy-PRF CL/CL pig\\
 \glt `Yani bought a horse and Lulu bought a pig.' \citep[p. 136]{zhang2013classifier}
 \end{exe}
 
@@ -108,7 +122,7 @@ In natural languages, there are cases when a single form denotes to distinct con
 	\end{xlist}
 \end{exe}
 
-\textit{For} in (\ref{for_c}) and (\ref{for_p}) has the same form but different meanings. Specifically, \textit{for} in (\ref{for_c}) is a complementizer with its part of speech being \textit{C}, and it heads the non-finite clause \textit{Jenn to be present}; on the other hand \textit{for} (\ref{for_p}) is a preposition, which takes the Determiner Phrase, \textit{Jenny}, as its benefactive argument.   
+\textit{For} in (\ref{for_c}) and (\ref{for_p}) has the same form but different meanings. Specifically, \textit{for} in (\ref{for_c}) is a complementizer with its part of speech being \textit{C}, and it heads the non-finite clause \textit{Jenn to be present}; on the other hand \textit{for} (\ref{for_p}) is a preposition, which takes a Determiner Phrase, \textit{Jenny}, as its benefactive argument.   
 
 The Scottish Gaelic word \textit{a'} in the following examples also has different meanings.  
 
@@ -198,8 +212,9 @@ For as \textit{preposition}
 Linear length of the argument of \textit{for} (i.e. the sequences in the square brackets) does not have any effect in determining what the gloss is, and instead it is the hierarchical structures that determines what the gloss is. 
 
 
-\section{Conclusion: What is a Gloss Line?}  
-A gloss line is an artificial sentence using the purified `gloss words', a meaning representation with which one meaning is mapped to one and only one representation. It is a useful and widely used annotation algorithm that requires linguistic knowledge. Given the properties of gloss data, it can be a very useful data for machine translation. Moreover, gloss data is widely used in linguistics literature, so data is already out there and all we need is to clean the data.  
+\section{Conclusion: What is a Gloss Line?} 
+The gloss line is like a linguistic version of `word embedding'. A natural language word is first converted to a gloss, which is readable for linguists. 
+Also we may view a gloss line as an artificial sentence using the purified `gloss words', a meaning representation with which one meaning is mapped to one and only one representation. It is a useful and widely used annotation algorithm that requires linguistic knowledge. Given the properties of gloss data, it can be a very useful data for machine translation. Moreover, gloss data is widely used in linguistics literature, so data is already out there and all we need is to clean the data. 
 In chapter \ref{chap:cake} and \ref{chap:cake2} I will report machine translation experiments using gloss data.  
 
 % section conclusion (end)
