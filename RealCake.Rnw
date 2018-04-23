@@ -1,24 +1,5 @@
-\chapter{Building Translation Systems using Interlinear Glossed Text}
+\chapter{Building Translation Systems using Interlinear Glossed Text: First Attempt}
 \label{chap:cake}
-
-(
-
-\textbf{Assuming that in the previous chapters the following points are addressed already:}
-\begin{itemize}
-\item The nature of glosses has been well-explained  (Target audience: CS people without any formal linguistics background):
-	\begin{itemize}
-	\item What glosses are: A basic intro of interlinear gloss for non-linguists
-   \item The golden nature of glosses (encodes NON-LINEAR syntax (i.e. structure parse) and semantics information)
-   \item The potential of gloss:	
-		\begin{itemize}
-		\item potential: providing disambiguation, labeling important grammar morphemes in the source language, providing morphological analysis, providing one-to-many and many-to-one relations of source tokens and target tokens. 
-		\end{itemize}
-	\end{itemize}
-\item A history of machine translation, and a non-mathy description of the methods of doing machine translation. (Target reader: theoretical linguists)
-\end{itemize}
-
-               
-)
 
 
 \section{Introduction}
@@ -37,10 +18,10 @@ The hypothesis can have two versions, strong and weak:
 	\end{xlist}
 \end{exe}
 
-The experiments reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not attested. However, it is found that if the Gaelic data and the gloss data are combined in a specific way as the training data, the performance of the systems is improved significantly. 
+The experiments in the current chapter will reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not empirally supported. 
 
-This chapter describes the experiments conducted to test the Gloss-helps hypothesis and the results attest the weak version.
-The rest of the chapter is organized as follows: Section \ref{relate_work} describes related works in the literature, Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), section \ref{gd_plus_gl_to_en} tests the hypothesis in (\ref{weak_hy}),and section 5 concludes the chapter. 
+This chapter describes the experiments conducted to test the strong version of the Gloss-helps hypothesis.
+The rest of the chapter is organized as follows: Section \ref{relate_work} describes related works in the literature, Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, Section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), Section \ref{section:cake1_Discussion} discusses the results and conclude this chapter.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work}\label{relate_work}
@@ -49,7 +30,7 @@ Attempts to improve machine translation systems by incorporating explicit lingui
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 \section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
-The experiments are conduced by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}.
+The experiments are conducted by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}.
 The following default hyper-parameter settings of OpenNMT\footnote{See their documentation for the complete default hyper-parameter settings: \url{http://opennmt.net/OpenNMT-py/}.} are used across all models so that the only independent variable is the type of the training data:
 	\begin{itemize}
 	\item Word vector size: 500\\
@@ -69,7 +50,7 @@ A common practice to find the optimal settings of the hyper-parameters is to hol
 
 However, given that finding the optimal settings of the hyper-parameters is not relevant to our research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and I simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen, and there are room to tune the models for better performance. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.  We will leave the question of what hyper-parameters are optimal for our data for future research.
 
-The data and the scripts will be accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.  
+The data and the scripts are accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.  
 
 \section{Gloss Representation Solely Does NOT Outperform Gaelic Sentences} \label{gd_to_gl_to_en}
 This section tests the strong version of Gloss-helps hypothesis in (\ref{strong_hy}).
@@ -78,14 +59,14 @@ Given the assumption that gloss may be better than any natural language in terms
 \subsection{Procedure of the Experiments}
 I use repeated random sub-sampling validation to compare the performances of the two type of models.
 
-Totally we have 8,388 indexed 3-tuples of Gaelic sentence, a gloss line and an English translation. In the interlinear glossed text example below, each line is an argument of a 3-tuple sample.
+Totally we have 8,388 indexed 3-tuples of a Gaelic sentence, a gloss line and an English translation. Each line in the interlinear glossed text example below is an argument of a 3-tuple sample.
 
 \begin{exe} 
 \ex \gll    Tha a athair nas sine na a mh\`athair.\\ 
            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
 \\ 
    \glt    `His father is older than his mother.' 
-\end{exe}We will leave the question of what hyper-parameters are optimal for our data for future research. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source seq
+\end{exe}
 
 The 3-tuple representation of the above example is:
 \begin{exe}
@@ -123,7 +104,7 @@ The step above just randomly splits the indexes of the 3-tuples into three disti
 		\ex Example: <``Tha a athair nas sine na a mh\`athair.'', ``His father is older than his mother.''>
 		\end{xlist}
 \end{exe}
-The models are trained with the training set and validation set (i.e. the model learns how to map the source sequence to the target sequence). Both training set and validation set are known information for the models\footnote{Technically speaking, the validation set is part of the training data in terms of machine learning. The presence of the validation set is a special requirement of neural net machine learning, which uses the validation set to evaluate the convergence of the training.}. Specifically, the neural net system learns how to maps gloss lines to English sentences from samples in (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}), and another neural net system learns how to maps Gaelic sentences to English sentences from from samples in (\ref{GDtoENTrain}) and (\ref{GDtoENVal}).
+The models are trained with the training set and validation set (i.e. the model learns how to map the source sequence to the target sequence). Both training set and validation set are known information for the models\footnote{Technically speaking, the validation set is part of the training data in terms of machine learning. The presence of the validation set is a special requirement of neural net machine learning, which uses the validation set to evaluate the convergence of the training.}. Specifically, the neural net system learns how to map gloss lines to English sentences from samples in (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}), and another neural net system learns how to maps Gaelic sentences to English sentences from from samples in (\ref{GDtoENTrain}) and (\ref{GDtoENVal}).
 
 \begin{exe}
 \ex Models:
@@ -158,22 +139,54 @@ The BLEU assumes that a sentence is a bag of n-grams (n is from 1 to 4). It meas
 	\end{xlist}
 \end{exe}
 
-For simplicity, let's consider uni-gram precision first. With the bag of words assumption, (\ref{can1}) and (\ref{can2}) are identical in terms uni-gram because they have the same set of uni-grams:   
+For simplicity, let's consider unigram precision first. With the bag of words assumption, (\ref{can1}) and (\ref{can2}) are identical in terms unigram because they have the same set\footnote{Here set does not mean the mathematical set but just unordered list.} of unigrams:   
 
 \begin{exe}
 \ex 
 	\begin{xlist}
-	\ex predicted sentence 1: `one one two two two' =\\ \{`one',`one',`two',`two',`two'\}  =\\ \{`two',`two', `two', `one', `one'\} =\\ predicted sentence 2: `two two two one one'
+	\ex predicted sentence 1: `one one two two two' =\\
+	 \{`one',`one',`two',`two',`two'\}  =\\
+	 \{`two',`two', `two', `one', `one'\} =\\
+	  predicted sentence 2: `two two two one one'
 	\end{xlist}
 \end{exe}
 
+The unigram bag of word format of the gold-standard of our example is:
 
-\maths{\begin{equation}
+\begin{exe}
+\ex gold-standard unigram bag of words
+	\begin{xlist}
+	\ex \{`one',`two',`three',`four',`five'\}
+	\end{xlist}
+\end{exe}
+
+Now to calculate of the proportional similarity between the predicted bag of words and the gold-standard bags of words, BLEU uses `modified precision rate'. The technical meaning of `precision' is whether the predicted items is actually present in the gold-standard. Now the size of the bag of unigrams of the candidate is 5, the denominator of the precision rate is 5, and the nominator is how many items in the candidate set are present in the gold-standard. In the current example, \textit{one} and \textit{two} are both present in the gold-standard, so the nominator of (\ref{can1}) or (\ref{can2}) is 5. Now we have a wrongly inflated rate, 5 out of 5, 100$\%$ matched, meaning (\ref{can1}) or (\ref{can2}) is 100$\%$ similar to the gold-standard. To counter the effect of this inflation, BLEU uses `modified' precision rate. When the item in the gold-standard is matched it is crossed-out, and invisible to the predicted bag of words\footnote{This is very similar to the feature checking mechanism in the Minimalist Program: one interpretable feature normally can only check out one uninterpretable feature.}. With this modified precision measurement, the two \textit{one}s only get one score and the three \textit{two}s only get one score. Now the modified precision rate is 2 out of 5, instead of 5 out of 5. 
+
+In terms of bigrams, the same examples will be:
+
+\begin{exe}
+\ex 
+	\begin{xlist}
+	\ex \label{bi_gold1} Gold reference: \{`one\_two',  `two\_three', `three\_four', `four\_five'\}
+	\ex \label{bi_can1} predicted sentence 1: \{`one\_one',  `one\_two', `two\_two', `two\_two'\}
+	\ex \label{bi_can2} predicted sentence 2: \{`two\_two', `two\_two', `two\_one', `one\_one'\}
+	\end{xlist}
+\end{exe}
+
+The denominator of the precision rate is 4 because the length of the predicted bag of words is 4; predicted sentence 1 in (\ref{bi_can1}) get 1 score because `one\_two' is matched, yielding a rate of 1 out of 4, while for predicted sentence 2 in (\ref{bi_can2}) no bigram is matched, yielding a rate of 0 out of 4. 
+
+A loose end of the current measurement is that it will wrongly give a shorter predicted sentence a higher precision rate because the shorter the smaller the denominator is. To counter this, the final version of BLUE penalize short predicted sentence by multiplying the ratio between the length of the predicted sequence and the length of the gold-standard sentence. For N from 1 to 4, each N-gram comparison yields a BLEU score; the multi-bleu score is just the average of the 4 BLEU scores (unigram to four-gram). 
+
+Put all together, a concise way of describing the calculation of BLUE is the following equation.  
+
+\maths{\begin{equation} 
 \text{\sc bleu} = \min \left( 1,\frac{\text{\em output-length}}{\text{\em reference-length}} \right) \; \big( \prod_{i=1}^4 \text{\em precision}_i \big)^\frac{1}{4}
 \end{equation}}
 
-\begin{figure}[t]
-\caption{The BLEU score is based on n-gram matches with the reference translation \citep[p. 226-227]{koehn2009statistical}}
+For a little bit more complicated example of calculating the multi-bleu score, consider the following example in figure \ref{bleu_koeh} from \citet[p. 226-227]{koehn2009statistical}.
+
+\begin{figure}[t] \label{bleu_koeh}
+\caption{The BLEU score is based on n-gram matches with the reference translation \citep[p. 226-227]{koehn2009statistical}} \label{bleu_koeh}
 \begin{center}
 \includegraphics[scale=1.5]{bleu-example.pdf}
 \begin{tabular}{c|c|c}
@@ -209,14 +222,14 @@ This procedure of splitting the data into three sub-sets, training the models, a
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table.
 \SweaveInput{GLOSS_table.Rnw}
 
-The average score of the Models\textsubscript{GLOSStoEN} is only sightly higher than the average score of the Models\textsubscript{GDtoEN}.
+The average score of the Models\textsubscript{GLOSStoEN} is only slightly higher than the average score of the Models\textsubscript{GDtoEN}.
 Also, after doing a paired T-test, the difference between the two types of models is not attested
 (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{GLOSStoEN}=\Sexpr{m_Treatment}, SD\textsubscript{GLOSStoEN}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p=\Sexpr{p_val})
 
 \subsection{Summary}
 The ultimate practical goal of the dissertation is to use glossing data to develop better machine translation systems. Here \textit{better} means to be better than a baseline system, which is the machine translation system trained with Gaelic-to-English translation samples. The models in (\ref{ModelGDToEN}) are the baseline systems, and their scores are in the Gaelic column of table (\ref{Table:GLOSS}). These are the target scores that we aims to outperform. The experiment above is the first attempt to improve that scores by using the \textit{gloss treatment}, in which the Gaelic sentences are replaced with gloss lines.  However, the result shows that this \textit{gloss treatment} is not effective as the scores of the gloss models are not statistically higher than the baseline Gaelic-to-English models. 
 
-\subsection{Discussion}
+\section{Discussion and Conclusion}\label{section:cake1_Discussion}
 It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are equally good in terms of representing meanings. The strong version of the Gloss-helps hypothesis does not hold.
 
 There are several remarks that need to make for the current result. First, the result falsifies the point of view about glosses in chapter (\ref{chap:gloss}) that the gloss line is a golden semantic representation hand-crafted by linguists.

@@ -1,0 +1,99 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage{gb4e}
+\noautomath
+\usepackage{natbib}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{fixltx2e}
+\usepackage{Sweave}
+
+\newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
+%the newcommand change the selected word into 'ccr' font
+%e.g. \begin{myfont} multi-bleu.perl \end{myfont}
+
+\title{Building Neural Net Machine Translation Systems Using Interlinear Glossed Texts}
+
+\date{}
+
+\begin{document}
+\maketitle
+\SweaveOpts{concordance=TRUE}
+
+\begin{exe}
+\ex 
+\begin{xlist}  
+\ex Training Data:
+	\gll    Tha a athair nas sine na a mh\`athair.\\  
+            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
+\\  
+    \glt    `His father is older than his mother.' 
+\ex Test Data:
+\gll Tha mi a' sireadh an leabhair bhig ghuirm.\\
+be-PRES-IND 1S PROG searching-VN ART book-G small-G blue-G\\
+\glt `I am looking for the small blue book.' 
+\end{xlist}
+\end{exe}
+
+
+
+\begin{exe}  
+\ex Baseline: 
+\begin{xlist}
+	\ex Trained with:\\
+	 Gaelic sentence $\rightarrow$ English Sentence 
+	\begin{xlist}
+		\ex e.g. \\
+			Tha a athair nas sine na a mh\`athair. \\
+			$\rightarrow$ \\
+			His father is older than his mother.
+	\end{xlist}
+	\ex Test with:\\
+		Tha mi a' sireadh an leabhair bhig ghuirm.\\
+		$\rightarrow$ \\
+		Predicted\_English\_Translation\textsubscript{j}
+	\ex Evaluation of the model:\\
+		compare\\ Predicted\_English\_Translation\textsubscript{j}\\ with\\
+		`I am looking for the small blue book.'  
+\end{xlist}
+\end{exe}
+
+
+\begin{exe}  
+\ex Gloss Treatment: 
+\begin{xlist}
+	\ex Trained with:\\
+	 Gloss line $\rightarrow$ English Sentence 
+	\begin{xlist}
+		\ex e.g. \\
+			be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother \\
+			$\rightarrow$ \\
+			His father is older than his mother.
+	\end{xlist}
+	\ex Test with:\\
+		be-PRES-IND 1S PROG searching-VN ART book-G small-G blue-G\\
+		$\rightarrow$ \\
+		Predicted\_English\_Translation\textsubscript{j}
+\end{xlist}
+\end{exe}
+
+
+
+
+\appendix
+\newpage
+\section{Supplemental Material}
+\SweaveInput{alcComplete_table.Rnw}
+itemize
+\end{document}

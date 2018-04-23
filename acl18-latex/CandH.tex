@@ -14,16 +14,16 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage{gb4e}
 \noautomath
-\usepackage[hyperref]{acl2018}
+%\usepackage[hyperref]{acl2018}
 \usepackage{times}
-\usepackage{latexsym}
+%\usepackage{latexsym}
 
 \usepackage{url}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{fixltx2e}
-\usepackage{titlesec}
+%\usepackage{titlesec}
 \usepackage{rotating}
 \usepackage{Sweave}
 
@@ -44,16 +44,16 @@
 
 \title{Building Neural Net Machine Translation Systems Using Interlinear Glossed Texts}
 
-\author{First Author \\
-  Affiliation / Address line 1 \\
-  Affiliation / Address line 2 \\
-  Affiliation / Address line 3 \\
-  {\tt email@domain} \\\And
-  Second Author \\
-  Affiliation / Address line 1 \\
-  Affiliation / Address line 2 \\
-  Affiliation / Address line 3 \\
-  {\tt email@domain} \\}
+% \author{First Author \\
+%   Affiliation / Address line 1 \\
+%   Affiliation / Address line 2 \\
+%   Affiliation / Address line 3 \\
+%   {\tt email@domain} \\\And
+%   Second Author \\
+%   Affiliation / Address line 1 \\
+%   Affiliation / Address line 2 \\
+%   Affiliation / Address line 3 \\
+%   {\tt email@domain} \\}
 
 \date{}
 
@@ -475,7 +475,7 @@ In the current paper, we introduce an very effective way of incorporating the gl
 \newpage
 \section{Supplemental Material}
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr  9 11:38:23 2018
+% Mon Apr 16 10:39:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrrr}
@@ -498,19 +498,5 @@ Mean & 16.59 & 17.70 & 32.10 & 24.51 & 12.26 & 15.44 & 23.65 \\
 \end{tabular}
 \caption{BLEU scores of the treatments: Ten rounds of repeated random sub-sampling validation are conducted. For each round, the same sets of IGTs are used. Each column is a treatment, and each row is a single round of repeated random sub-sampling validation. The last column is the scores of Google Translation. We used a free Google translation API \citep{google_api} to translate the same set of test Gaelic sentences into English.} 
 \label{table:complete_table}
-\end{table}% latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr  9 11:38:23 2018
-\begin{table}[ht]
-\centering
-\begin{tabular}{llll}
-  \hline
-input & con1 & con2 & con3 \\ 
-  \hline
-can1 & *! &  &  \\ 
-  can2 &  & * &  \\ 
-  \$$\backslash$HandRight\$ can3 &  &  & * \\ 
-   \hline
-\end{tabular}
-\caption{OT table} 
 \end{table}
 \end{document}

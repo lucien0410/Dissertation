@@ -22,9 +22,8 @@
 \usepackage{qtree}
 \usepackage{fixltx2e}
 
+%packages used by Koeh
 \usepackage{url}
-\usepackage{amsmath}
-\usepackage{graphicx}
 \usepackage{color}
 \usepackage{epic,ecltree}
 \usepackage{eclbip}
@@ -44,7 +43,7 @@
 \newcommand{\example}[1]{\textcolor{darkblue}{\rm #1}}
 \newcommand{\maths}[1]{\textcolor{purple}{#1}}
 \newcommand{\reference}[1]{\vspace{-2mm}\begin{flushright}\textcolor{purple}{\tiny [from #1]}\end{flushright}\vspace{-7mm}}
-
+%End packages used by Koeh
 
 \setcounter{secnumdepth}{4}
 
@@ -66,15 +65,15 @@
 
 \maketitle
 
-\SweaveInput{Introduction.Rnw}
+% \SweaveInput{Introduction.Rnw}
 \SweaveInput{gloss.Rnw}
-\SweaveInput{Description_of_Corpus.Rnw}
-\SweaveInput{intro_MT.Rnw}
-\SweaveInput{RealCake.Rnw}
-\SweaveInput{RealCake2.Rnw}
-\SweaveInput{gloss_in_other_languages.Rnw}
-\SweaveInput{Implications_ling.Rnw}
-\SweaveInput{Conclusion.Rnw}
+% \SweaveInput{Description_of_Corpus.Rnw}
+% \SweaveInput{intro_MT.Rnw}
+% \SweaveInput{RealCake.Rnw}
+% \SweaveInput{RealCake2.Rnw}
+% \SweaveInput{Implications_ling.Rnw}
+% \SweaveInput{gloss_in_other_languages.Rnw}
+% \SweaveInput{Conclusion.Rnw}
 
 
 \bibliographystyle{te}

@@ -1,9 +1,9 @@
-\chapter{What are glosses? Why are them golden representations of meanings?}
+\chapter{What are glosses? Why are they golden representations of meanings?}
 \label{chap:gloss}
 
-\section{Introduction: What are Glosses}
+\section{Introduction: What are Glosses?}
 
-Interlinear Glossed Text (IGT) is widely used in linguistic studies. The following is an example of IGT.
+Interlinear Glossed Text is widely used in linguistic studies. The following is an example of Interlinear Glossed Text.
 \begin{exe}  
 \ex\label{gloss_eg} Indonesian \citep[p. 237]{sneddon2012indonesian}
 	\gll   Mereka di Jakarta sekarang. (\textit{sentence of interest})\\
@@ -25,11 +25,12 @@ The gloss line also provides morphological information. Consider the following e
 \end{exe}
 
 The morphemes of a single word is linked by a `.'. The French word `aux' is actually a combination of three separate morphemes\footnote{A morpheme is a smallest unit of meaning. For example, `\textit{boys}' has two morphemes in it: `\textit{boy}' and `\textit{-s}', where `\textit{-s}' is a plural marker. Sometimes, the morpheme boundary is not visible. For example `\textit{went}' is composed of `\textit{go}' and `\textit{-ed}'.}: `\textit{to}', `\textit{ART}', and `\textit{PL}' and \textit{`chevaux'} is decomposed into \textit{`horse'} and \textit{`PL'}.   
-\citet{bickel2008leipzig} compile a set of widely used conventions of IGT called the Leipzig Glossing Rules. Note that they are not prescriptive rules of what IGTs should be like, but they are just guidelines with which the formats of IGTs can be more standardized.  
+\citet{bickel2008leipzig} compile a set of widely used conventions of IGT called the Leipzig Glossing Rules.
+Note that they are just guidelines of the formats of Interlinear Glossed Texts, so that Interlinear Glossed Texts can be more standardized. 
 
-The underlying intuition of IGT is that it provide an access to look into the subparts of a sentence. We may imagine the situation without the gloss line; then all we have is just the sentence and the English translation of that sentence. This will prevent us from discussing the internal structure of the sentence.
-
-A final note of the gloss line is that it is NOT raw linguistic data and is already being processed. A linguist has already committed to some theory or some analysis on the sentence of interest when he or she transcribes the sentence into a gloss line, even if he or she tries to be as neutral as possible. So, the question of what the gloss of a word is not trivial at all. Actually, sometimes a whole linguistic paper or thesis is to discuss and argue what the right gloss for a word is.  
+The underlying intuition of Interlinear Glossed Text is that it provides an access to look into the subparts of a sentence. We may imagine the situation without the gloss line; then all we have is just the sentence and the English translation of that sentence. This will make it really hard to discuss the internal structure of the sentence. On the other hand, with the presence of the gloss line, with which each word is glossed and annotated, we then have a meta-representation in hand to discuss the grammatical properties of the sentence of interest.  
+ 
+An important note of the gloss line is that it is NOT raw linguistic data, and it is already processed. A linguist has already committed to some theory or some analysis on the sentence of interest when he or she transcribes the sentence into a gloss line, even if he or she tries to be as neutral as possible. As such, the question of what the gloss of a word is not trivial at all. Actually, sometimes a whole linguistic paper or thesis is to discuss and argue what the right gloss for a word is.  
 
 \begin{exe}  
 \ex Mandarin Chinese
@@ -38,26 +39,56 @@ A final note of the gloss line is that it is NOT raw linguistic data and is alre
     \glt   `Zhangsan is tall.'  
 \end{exe}  
 
-For example, the nature of the Mandarin Chinese word `\textit{hen}' in the above example and what the right gloss should be is a topic of \citet{grano2008mandarin}, \citet{Chen2010}, and \citet{liu2010positive}
+For example, \citet{grano2008mandarin}, \citet{Chen2010}, and \citet{liu2010positive} discuss the nature of the Mandarin Chinese word `\textit{hen}' in the above example and what the right gloss should be `\textit{hen}'. In cases like this, how one glosses a word is not trivial at all, but determining what the gloss of word is requires a set of evidence and arguments. 
 
 \section{The Golden Properties of Glosses}
 
 A system of meaning representations is decomposed of three components: a) meanings, b) representations, and c) a mapping between meanings and representations. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. On the other hand, gloss provides a mapping that is close to this ideal one-to-one mapping. Thus gloss should a better representation in term of representing meanings. 
 
-Theoretically, the claim that gloss representation is closer to the ideal one-to-one mapping than natural language representation is can be tested empirically. IF there were a set of special golden meta-linguistic semantic representations, which has the following property: each concept is mapped to one and one representation and each representation is mapped to one and one concept, then it is expected that each gold representation will map to more natural language words than gloss items, and each natural language word will map to more gold representations than gloss items. However, in practice, this is an impossible experiment to conduct, because there are no such golden representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special golden meta-linguistic semantic representations, and the mappings between the golden representations to natural languages.}. However, in spite of the impossibility of conducting statistical experiments, we may still use some examples to show the intuition that glosses are better representations than natural languages. The following sections describes how glosses cluster words with different forms but with the same meaning, and how glosses represent words with same form but with different meanings with different representations. 
+Theoretically, the claim that gloss representation is closer to the ideal one-to-one mapping than natural language representation is can be tested empirically. 
+Let's imagine a set of special golden meta-linguistic semantic representations, which has the following property: each concept is mapped to one and one representation and each representation is mapped to one and one concept. With this imaginary golden semantic representation system, we may now compare Gaelic words and glosses. First, it is expected that each golden representation token will map to more natural language words than gloss items do.
 
-\subsection{Glosses Cluster Different Words with the Same Meanings (Synonyms) Into a Single representation}
+\begin{exe}
+\ex
+	\begin{xlist}
+	\ex \label{gold_to_gd} $golden_i \rightarrow \{Gaelic\_word_1, Gaelic\_word_2, \ldots\}_{golden_i}$
+	\ex\label{gold_to_gl} $golden_i \rightarrow \{gloss_1, gloss_2, \ldots\}_{golden_i}$
+	\ex\label{gd_gl_comp1}$ |\{Gaelic\_word_1, Gaelic\_word_2, \ldots\}_{gold_i}| \geq |\{gloss_1, gloss_2, \ldots\}_{gold_i}|$
+	\end{xlist}
+\end{exe}
+
+(\ref{gold_to_gd}) and (\ref{gold_to_gl}) represent a singe golden token may maps to multiple Gaelic words and glosses respectively. If we compare the size of them, it is expected that the set of Gaelic words is bigger than that of glosses, meaning that Gaelic words are more likely to be homographs than glosses are. Section \ref{sec:cluster} will provide concrete examples to exemplify this property of glosses. 
+
+For the other direction, we may determine which one, Gaelic words or glosses, is more likely to be ambiguous.   
+
+\begin{exe}
+\ex
+	\begin{xlist}
+	\ex \label{gd_to_gold} $Gaelic\_word_i \rightarrow \{golden_1, golden_2, \ldots\}_{Gaelic\_word_i}$
+	\ex \label{gl_to_gold} $gloss_i \rightarrow \{golden_1, golden_2, \ldots\}_{gloss_i}$
+	\ex\label{gd_gl_comp2}$ |\{golden_1, golden_2, \ldots\}_{Gaelic\_word_i}| \geq |\{golden_1, golden_2, \ldots\}_{gloss_i}|$
+	\end{xlist}
+\end{exe}
+
+(\ref{gd_to_gold}) and (\ref{gl_to_gold}) show the mappings from a Gaelic word to different concepts and the mappings from a gloss to different concepts respectively. 
+(\ref{gd_gl_comp2}) is the expectation that Gaelic words are more likely to be ambiguous than glosses are. Section \ref{sec:disa} will report concrete examples to show that glosses are less likely to be ambiguous.
+
+To run statistical experiments to confirm the truth of (\ref{gd_gl_comp1}) and (\ref{gd_gl_comp2}) is the way to empirically support the claim that glosses closer to the golden representations than Gaelic words are. 
+However, in reality, this is an impossible experiment to conduct, because there are no such golden representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special golden meta-linguistic semantic representations, and the mappings between the golden representations to natural languages.}.
+In spite of the impossibility of conducting statistical experiments, we may still use some examples to show the intuition that glosses are better representations than natural languages are. The following sections describes how glosses cluster words with different forms but with the same meaning, and how glosses represent words with same form but with different meanings with different representations. 
+
+\subsection{Glosses Cluster Different Words with the Same Meanings (Synonyms) Into a Single representation}\label{sec:cluster}
 Gloss collapses words with different forms with the same meanings into a single gloss. In natural languages, the morphology of a word (i.e. the form of a word) may be sensitive to the phonological environments and changing into different forms. Consider the following the indefinite article in the English examples: 
 
 \begin{exe}  
 \ex \gll John ate \textbf{an} apple.\\
-	John eat.past	\textbf{ART} apple\\
+	John eat.past	\textbf{INDF\_ART} apple\\
 \ex \gll John ate \textbf{a} banana.\\
-	John eat.past   \textbf{ART} banana\\
+	John eat.past   \textbf{INDF\_ART} banana\\
 \end{exe}
 
 In the above example, \textit{an} and \textit{a} have the identical meaning\footnote{Semantically, \textit{an} and \textit{a} are existential quantifiers, which declare that a member of a set exists in the world. In formal semantics, \textit{an} and \textit{a} may be defined as follows: $\exists\lambda P[P(x)]$. In the current example, \textit{apple} and \textit{banana} will instantiate $P$ in the formula, and the meanings will be `an apple exists' and `a banana exists'. \citet{kratzer1998semantics} would be a nice introduction for interested readers to see how linguists, specifically semanticians, define, decompose, and compose meanings of languages formally.}. 
-In English, the same concept is realized as two representations, \textit{a} or \textit{an}, while in the gloss representation the one concept is neatly represented as \textit{ART}. 
+In English, the same concept is realized as two representations, \textit{a} or \textit{an}, while in the gloss representation the one concept is neatly represented as \textit{INDF\_ART} (indefinite article). 
 
 Critically, synonyms like the English \textit{a} and \textit{an} commonly occur in many other natural languages if not in all languages. The definite article in the language of interest, Scottish Gaelic, is another example to show the noisiness of natural language representations. Consider the definite article in the following Gaelic examples. 
 
@@ -108,11 +139,11 @@ Yani buy-PRF CL/CL horse , Lulu buy-PRF CL/CL pig\\
 In \citet{zhang2013classifier}, the classifier like \textit{pi} and \textit{tou} is a type of \textit{indivual classifier} which co-occurs with countable nouns, like \textit{ma}, `horse', and \textit{zhu}, `pig', and this type of classifier is the head of \textit{UNIT Phrase}. 
 \textit{Pi} and \textit{tou} actually have the same semantics and the syntactic function; however, they are realized in different forms, specifically the form of which has to agree with the noun following it (i.e. \textit{pi} goes with \textit{ma}; \textit{tou} goes with \textit{zhu}). Here the gloss, \textit{CL}, unifies the two forms of the same meaning.    
 
-In short, gloss collapses synonyms in natural languages. Learning the general distribution of the article and all its different forms is a challenge for the MT system, but the glossing information should make this easier.
+Gloss collapses synonyms in natural languages. Learning the general distribution of the article and all its different forms is a challenge for the MT system, but the glossing information should make this easier.
 
-\subsection{Glosses Distinguish Homographs' Different Meanings}
+\subsection{Glosses Distinguish Homographs' Different Meanings}\label{sec:disa}
 
-In natural languages, there are cases when a single form denotes to distinct concepts. Words with this properties are termed as homographs. Consider the word \textit{for} in following English examples:
+In natural languages, there are cases when a single form denotes distinct concepts. Words with this property are termed as homographs. Consider the word \textit{for} in following English examples:
 
 \begin{exe}
 \ex \label{for_eng}
@@ -173,26 +204,27 @@ Syntax is also all about hierarchical structures. Consider the following sentenc
 	\end{xlist}
 \end{exe}
 
-(\ref{aux_inver1}) is a declarative sentence. To derive an interrogative sentence from it, the auxiliary needs to be moved; however only \textit{can\textsubscript{2}} can be moved but not \textit{can\textsubscript{1}} even \textit{can\textsubscript{1}} is linearly close to the sentence initial position. Again, it is all because of the hierarchical structures. \textit{can\textsubscript{2}} is in the matrix clause while \textit{can\textsubscript{1}} is in the embedded relative clause.  
+(\ref{aux_inver1}) is a declarative sentence. To derive an interrogative sentence from it, the auxiliary needs to be moved; however only \textit{can\textsubscript{2}} can be moved but not \textit{can\textsubscript{1}} even \textit{can\textsubscript{1}} is linearly close to the sentence initial position. Again, it is all because of the hierarchical structures. \textit{Can\textsubscript{2}} is in the matrix clause while \textit{can\textsubscript{1}} is in the embedded relative clause.
 
-Word order and linearizion are just epiphenomena from the perspective of theoretical syntax and semantics. They are inevitable externalization of language because we are living in a world of linear time and space. To put this argument in another way, if externalization should be the primary nature of language, we should expect that some natural human languages should have manipulated the linear order of words in a sentence to express different meanings, because linear order is the externalization of language. However, this is not the case. No language exploits linear order, and instead universally language uses hierarchical structures, which is more difficult to be externalized than linear order. \citet{chomsky2006language} uses the following examples to illustrate this point.
+%Word order and linearizion are just epiphenomena from the perspective of theoretical syntax and semantics. They are inevitable externalization of language because we are living in a world of linear time and space. To put this argument in another way, if externalization should be the primary nature of language, we should expect that some natural human languages should have manipulated the linear order of words in a sentence to express different meanings, because linear order is the externalization of language. However, this is not the case. No language exploits linear order, and instead universally language uses hierarchical structures, which is more difficult to be externalized than linear order. \citet{chomsky2006language} uses the following examples to illustrate this point.
+
+% \begin{exe}
+% \ex
+% 	\begin{xlist}
+% 	\ex\label{c1} Smart eagles can swim.
+% 	\ex\label{c2} *Eagles smart can swim?
+% 	\ex\label{c3} Can smart eagles swim?
+% 	\end{xlist}
+% \end{exe}
+
+% (\ref{c1}) is a declarative sentence. (\ref{c2}) tries to swap the first two words to derive an interrogative sentence, and fails. (\ref{c3}) is the real interrogative sentence in natural languages. If externalization are the primary nature of language, it is expected (\ref{c2}) to be a common pattern in languages, because (\ref{c2}) exploits linear order, which is the externalization of language and the linear order serves the communication purpose just fine given that humans' cognition system is able to tell the difference between (\ref{c1}) and (\ref{c2}). 
+%However, the pattern in (\ref{c2}) is not found in any human language; instead, (\ref{c3}) is used, which uses hierarchical structure relations. In term of externalization, (\ref{c2}) is more economical than (\ref{c3}) given that (\ref{c2}) only moves two positions of words while (\ref{c3}) moves three positions of words. Again, if externalization are the primary nature of language, language should have evolved the pattern of (\ref{c2}). Based on the fact that no language exploits linear order, it is argued that language externalization in particular are accessory.}.   
+
+Glosses, on the other hand, are sensitive to the internal hierarchical structures or constituency of sentences. They provide more clues of the internal hierarchical structures or constituency of sentences than natural language words. Consider the following examples, modified from (\ref{for_eng}):
 
 \begin{exe}
 \ex
-	\begin{xlist}
-	\ex\label{c1} Smart eagles can swim.
-	\ex\label{c2} *Eagles smart can swim?
-	\ex\label{c3} Can smart eagles swim?
-	\end{xlist}
-\end{exe}
-
-(\ref{c1}) is a declarative sentence. (\ref{c2}) tries to swap the first two words to derive an interrogative sentence, and fails. (\ref{c3}) is the real interrogative sentence in natural languages. If externalization and communication are the primary nature of language, it is expected (\ref{c2}) to be a common pattern in languages, because (\ref{c2}) exploits linear order, which is the externalization of language and the linear order serves the communication purpose just fine given that humans' cognition system is able to tell the difference between (\ref{c1}) and (\ref{c2}). However, the pattern in (\ref{c2}) is not found in any human language; instead, (\ref{c3}) is used, which uses hierarchical structure relations. In term of externalization, (\ref{c2}) is more economical than (\ref{c3}) given that (\ref{c2}) only moves two positions of words while (\ref{c3}) moves three positions of words. Again, if externalization and communication are the primary nature of language, language should have evolved the pattern of (\ref{c2}). Based on the fact that no language exploits linear order, it is argued that language externalization and communication in particular are accessory.   
-
-Glosses are also sensitive to the internal hierarchical structures or constituency of sentences. Consider the following examples, modified from \ref{for_eng}:
-
-\begin{exe}
-\ex
-For as \textit{complementizer}
+For as \textit{complementizer} (glossed as \textit{complementizer})
 	\begin{xlist}
 	\ex I intended \textbf{for} [Jenny] to be present.
 	\ex I intended \textbf{for} [the girl] to be present.
@@ -200,7 +232,7 @@ For as \textit{complementizer}
 	\ex I intended \textbf{for} [the little girl who wants to eat some ice scream] to be present. 
 	\end{xlist}
 \ex
-For as \textit{preposition}
+For as \textit{preposition} (glossed as \textit{preposition})
 	\begin{xlist}
 	\ex \textbf{For} [Jenny], I intended to be present. 
 	\ex \textbf{For} [the girl], I intended to be present. 
@@ -209,12 +241,38 @@ For as \textit{preposition}
 	\end{xlist}
 \end{exe}
 
-Linear length of the argument of \textit{for} (i.e. the sequences in the square brackets) does not have any effect in determining what the gloss is, and instead it is the hierarchical structures that determines what the gloss is. 
+Linear length of the argument of \textit{for} (i.e. the sequences in the square brackets) does not have any effect in determining what the gloss is, and instead it is the hierarchical structures that determines what the gloss is. Then the form of gloss hints to the internal structures of the sentence. 
+
+A even more dramatic example comes from Mandarin Chinese. A single sequences of words may have distinctive meanings because of different parses, and the difference of parses is marked by the differences of glosses. In the following examples, the sentence `\textit{Lao3Li3 mai3 hao3 jiu3}'\footnote{These specific examples are extensively discussed in Mandarin Chinese Tone Sandhi literature (e.g. \citet{cheng1973synchronic, mei1991tone, shih1997mandarin, wang2011variation}). Critically, the constituency plays a role in Mandarin Chinese Tone Sandhi.} may have two distinct meanings depending on the status of `\textit{hao3}'.    
+
+\begin{exe}
+\ex\label{hao1}
+	\begin{xlist}  
+		\ex 
+		\gll   Lao3Li3 mai3 hao3 jiu3\\
+     	   Laoli buy \textbf{Perf} wine \\
+   		\glt   `Laoli bought a wine'
+   		\ex \Tree [ Laoli [ [ buy \textbf{perf} ] wine ] ]
+	\end{xlist}    
+\end{exe}
+
+\begin{exe}
+\ex\label{hao2}
+	\begin{xlist}  
+		\ex 
+		\gll   Lao3Li3 mai3 hao3 jiu3\\
+     	   Laoli buy \textbf{good} wine \\
+   		\glt   `Laoli buys a good wine'
+   		\ex \Tree [ Laoli [ buy [ \textbf{good} wine ] ] ]
+	\end{xlist}    
+\end{exe}
+
+In sentence (\ref{hao1}), `\textit{hao3}' goes with the verb `\textit{mai3}'; as such `\textit{hao3}' is interpreted as a Perfective marker and glossed as `\textit{Perf}'; on the other hand, in (\ref{hao2}), `\textit{hao3}' goes with the noun `\textit{jiu3}' and works as an adjective modifying `\textit{jiu3}', and it is glossed as `\textit{good}'. 
+
+With all the examples above, we have showed that gloss lines provide more clues of the the internal structures of the sentences are than natural language words do.  
 
 
-\section{Conclusion: What is a Gloss Line?} 
+\section{Conclusion: What Is a Gloss Line and Why Do They Matter?} 
 The gloss line is like a linguistic version of `word embedding'. A natural language word is first converted to a gloss, which is readable for linguists. 
-Also we may view a gloss line as an artificial sentence using the purified `gloss words', a meaning representation with which one meaning is mapped to one and only one representation. It is a useful and widely used annotation algorithm that requires linguistic knowledge. Given the properties of gloss data, it can be a very useful data for machine translation. Moreover, gloss data is widely used in linguistics literature, so data is already out there and all we need is to clean the data. 
-In chapter \ref{chap:cake} and \ref{chap:cake2} I will report machine translation experiments using gloss data.  
-
-% section conclusion (end)
+Also we may view a gloss line as an artificial sentence using the purified `gloss words', a meaning representation with which one meaning is mapped to one and only one representation. It is a useful and widely used annotation algorithm that requires linguistic knowledge. Given the properties of gloss data, it can be a very useful data for machine translation. Moreover, gloss data is widely used in linguistics literature, so data is already out there and all we need to do to clean the data.
+A loose end here is that, even if all the arguments should be sound, we still have no statistical evidence to show the usefulness of the gloss data. Chapter \ref{chap:cake} and \ref{chap:cake2} close this loose end, in which I will report machine translation experiments using gloss data.  

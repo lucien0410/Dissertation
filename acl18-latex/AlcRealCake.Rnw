@@ -18,7 +18,7 @@ Consider the definite article in the following Gaelic examples.
 
 \begin{exe}  
 \ex 
-\gll tha mi a' sireadh \textbf{an} leabhair bhig ghuirm.\\
+\gll Tha mi a' sireadh \textbf{an} leabhair bhig ghuirm.\\
 be-PRES-IND 1S PROG searching-VN \textbf{ART} book-G small-G blue-G\\
 \glt `I am looking for the small blue book.' \citep[p. 29]{lamb2001scottish}
 

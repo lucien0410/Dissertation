@@ -8,5 +8,5 @@ xtab2<-xtable(n,caption="BLEU scores of the treatments: Ten rounds of repeated r
 hlines <- c(-1,0,10, nrow(xtab2))
 names(xtab2)<-c('Round', 'Baseline', 'GLOSS', 'ParaPart', 'Para', 'Interleaving', 'Concat', 'Google Translation')
 xtab2<-xtab2
-print(xtab2,include.rownames =FALSE, hline.after = hlines, rotate.colnames=FALSE)
+print(xtab2,include.rownames =FALSE, hline.after = hlines, rotate.colnames=TRUE)
 @

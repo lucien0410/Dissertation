@@ -25,7 +25,28 @@
 %the newcommand change the selected word into 'ccr' font
 %e.g. \begin{myfont} multi-bleu.perl \end{myfont}
 %\<my packages>
+%packages used by Koeh
+\usepackage{url}
+\usepackage{color}
+\usepackage{epic,ecltree}
+\usepackage{eclbip}
+\usepackage{multicol}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmiccomment}[1]{// {\em #1}}
 
+\definecolor{darkblue}{rgb}{0,0,0.8}
+\definecolor{darkgreen}{rgb}{0,0.8,0}
+\definecolor{reddishgreen}{rgb}{0.4,0.6,0}
+\definecolor{purple}{rgb}{0.6,0,0.6}
+\definecolor{red}{rgb}{1,0,0}
+
+\newcommand{\example}[1]{\textcolor{darkblue}{\rm #1}}
+\newcommand{\maths}[1]{\textcolor{purple}{#1}}
+\newcommand{\reference}[1]{\vspace{-2mm}\begin{flushright}\textcolor{purple}{\tiny [from #1]}\end{flushright}\vspace{-7mm}}
+%End packages used by Koeh
 
 \usepackage{verbatim}
 %\usepackage{amssymb,amsmath,amsthm}
@@ -47,7 +68,10 @@
 \usepackage{qtree}
 \usepackage{fixltx2e}
 
-\director{Mike Hammond and Sandiway Fong}
+
+\director{Mike Hammond}
+
+
 \author{Yuan-Lu Chen}
 \title{Developing Linguistically Informed Neural Machine Translation Systems}
 \date{2018}
@@ -68,7 +92,7 @@
 
 \chapter*{Dedication}
 \thispagestyle{topright}
-\begin{center}For my mom.\end{center}
+\begin{center}For Eva, the best linguist in my world.\end{center}
 \chapter*{Acknowledgments}
 \input{disack.tex}
 
@@ -90,7 +114,6 @@
 \SweaveInput{gloss_in_other_languages.Rnw}
 \SweaveInput{Implications_ling.Rnw}
 \SweaveInput{Conclusion.Rnw}
-
 \bibliographystyle{te}
 
 \bibliography{ref}

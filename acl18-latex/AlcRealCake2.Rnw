@@ -20,7 +20,7 @@ At a high level, neural net sequence to sequence learning algorithm is to learn 
 		\ex Gaelic sentences $\rightarrow$ English sentences
 		\ex Gloss lines $\rightarrow$ English sentences
 		\ex Gloss lines $\rightarrow$ Gaelic sentences
-		\ex Gloss items $\rightarrow$ Gaelic words
+		\ex Gaelic words $\rightarrow$ Gloss items
 	\end{xlist}	
 \end{exe}    
 

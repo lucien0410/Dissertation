@@ -1,0 +1,153 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage{gb4e}
+\noautomath
+\usepackage{natbib}
+\usepackage{rotating}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{fixltx2e}
+\usepackage{Sweave}
+
+\newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
+%the newcommand change the selected word into 'ccr' font
+%e.g. \begin{myfont} multi-bleu.perl \end{myfont}
+
+\title{Building Neural Net Machine Translation Systems Using Interlinear Glossed Texts}
+\author{Yuan-Lu Chen}
+
+
+\begin{document}
+\maketitle
+\SweaveOpts{concordance=TRUE}
+
+\begin{exe}
+\ex 
+\begin{xlist}  
+\ex Training Data:
+	\gll    Tha a athair nas sine na a mh\`athair.\\  
+            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
+\\  
+    \glt    `His father is older than his mother.' 
+\ex Test Data:
+\gll Tha mi a' sireadh an leabhair bhig ghuirm.\\
+be-PRES-IND 1S PROG searching-VN ART book-G small-G blue-G\\
+\glt `I am looking for the small blue book.' 
+\end{xlist}
+\end{exe}
+
+\begin{exe} 
+\ex \textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
+
+The hypothesis can have two versions, strong and weak:
+	\begin{xlist}
+	\ex \label{strong_hy} Strong version: Gloss may replace the source natural language totally, and the system outperforms the system trained with source natural language to target language sentence pairs (i.e. the baseline systems).  
+	\ex \label{weak_hy} Weak version: Gloss only increases the performance of the baseline systems, but cannot replace the source language.
+	\end{xlist}
+\end{exe}
+
+
+\begin{exe}  
+\ex Baseline: 
+\begin{xlist}
+	\ex Trained with:\\
+	 Gaelic sentence $\rightarrow$ English Sentence 
+	\begin{xlist}
+		\ex e.g. \\
+			Tha a athair nas sine na a mh\`athair. \\
+			$\rightarrow$ \\
+			His father is older than his mother.
+	\end{xlist}
+	\ex Test with:\\
+		Tha mi a' sireadh an leabhair bhig ghuirm.\\
+		$\rightarrow$ \\
+		Predicted\_English\_Translation\textsubscript{j}
+	\ex Evaluation of the model:\\
+		compare\\ Predicted\_English\_Translation\textsubscript{j}\\ with\\
+		`I am looking for the small blue book.'  
+\end{xlist}
+\end{exe}
+
+
+\begin{exe}  
+\ex Gloss Treatment: 
+\begin{xlist}
+	\ex Trained with:\\
+	 Gloss line $\rightarrow$ English Sentence 
+	\begin{xlist}
+		\ex e.g. \\
+			be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother \\
+			$\rightarrow$ \\
+			His father is older than his mother.
+	\end{xlist}
+	\ex Test with:\\
+		be-PRES-IND 1S PROG searching-VN ART book-G small-G blue-G\\
+		$\rightarrow$ \\
+		Predicted\_English\_Translation\textsubscript{j}
+\end{xlist}
+\end{exe}
+
+\SweaveInput{GLOSS_table.Rnw}
+
+The average score of the Models\textsubscript{GLOSStoEN} is only slightly higher than the average score of the Models\textsubscript{GDtoEN}.
+Also, after doing a paired T-test, the difference between the two types of models is not attested
+(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{GLOSStoEN}=\Sexpr{m_Treatment}, SD\textsubscript{GLOSStoEN}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p=\Sexpr{p_val})
+
+\begin{exe}  
+\ex Parallel-Partial Treatment: 
+\begin{xlist}
+	\ex Trained with:\\
+	 Gaelic sentence $\rightarrow$ English Sentence\\ 
+	 Gloss line $\rightarrow$ English Sentence \\
+	 Gloss line $\rightarrow$ Gaelic sentence\\
+	 Gaelic word $\rightarrow$ Gloss 
+	 \ex Parallel
+	\begin{xlist}
+		\ex Gaelic to English: \\<``Tha a athair nas sine na a mh\`athair'', ``His father is older than his mother.''>
+		\ex Gloss to English: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother''>
+		\ex Gloss to Gaelic: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``Tha a athair nas sine na a mh\`athair''>
+	\end{xlist}
+	\ex Partial
+	\begin{xlist}
+		\ex <``Tha'', ``be.pres''>
+		\ex <``a'', ``3sm.poss''>
+		\ex <``athair'', ``father''>
+		\ex <``nas'', ``comp''>
+		\ex <``sine'', ``old.cmpr''>
+		\ex <``na'', ``comp''>
+		\ex <``a'', ``3sm.poss''>
+		\ex <``mh\`athair'', ``mother''>
+	\end{xlist}
+	\ex Test with:\\
+		Tha mi a' sireadh an leabhair bhig ghuirm.\\
+		$\rightarrow$ \\
+		Predicted\_English\_Translation\textsubscript{j}
+\end{xlist}
+\end{exe}
+
+\SweaveInput{ParaPart_table.Rnw}
+
+M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p<0.01.
+
+\newpage
+\begin{exe}
+\ex Many other possible ways to blend Gaelic and gloss:
+\SweaveInput{acl18-latex/alcComplete_table.Rnw}
+\end{exe}
+
+\bibliographystyle{te}
+
+\bibliography{ref}
+
+\end{document}

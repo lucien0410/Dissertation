@@ -2,37 +2,42 @@
 \BOOKMARK [0][-]{Doc-Start}{\1}{}% 2
 \BOOKMARK [0][-]{Doc-Start}{\1}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Chapter 1. \040Introduction}{}% 4
-\BOOKMARK [0][-]{chapter.2}{Chapter 2. \040What are glosses? Why are them golden representations of meanings?}{}% 5
-\BOOKMARK [1][-]{section.2.1}{Key Points of The Chapter}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.2}{Introduction: What are Glosses}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.3}{The Golden Properties of Glosses}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.3.1}{Glosses Cluster Different Words with the Same Meanings \(Synonyms\) Into a Single representation}{section.2.3}% 9
-\BOOKMARK [2][-]{subsection.2.3.2}{Glosses Distinguish Homographs' Different Meanings}{section.2.3}% 10
-\BOOKMARK [2][-]{subsection.2.3.3}{Glosses are Sensitive to Hierarchical Structures in Natural Language Sentences}{section.2.3}% 11
-\BOOKMARK [1][-]{section.2.4}{Conclusion: What is a Gloss Line?}{chapter.2}% 12
-\BOOKMARK [0][-]{chapter.3}{Chapter 3. \040Description of the Scottish Gaelic Interlinear Glossed Text Corpus}{}% 13
-\BOOKMARK [0][-]{chapter.4}{Chapter 4. \040A Gental Introduction of Machine Learning and Machine Translation}{}% 14
-\BOOKMARK [1][-]{section.4.1}{Neural Net Machine Translation}{chapter.4}% 15
-\BOOKMARK [0][-]{chapter.5}{Chapter 5. \040Building Translation Systems using Interlinear Glossed Text}{}% 16
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 17
-\BOOKMARK [1][-]{section.5.2}{Related Work}{chapter.5}% 18
-\BOOKMARK [1][-]{section.5.3}{Technical Settings of the Machine Translation Experiments}{chapter.5}% 19
-\BOOKMARK [1][-]{section.5.4}{Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{chapter.5}% 20
-\BOOKMARK [2][-]{subsection.5.4.1}{Procedure of the Experiments}{section.5.4}% 21
-\BOOKMARK [2][-]{subsection.5.4.2}{Result}{section.5.4}% 22
-\BOOKMARK [2][-]{subsection.5.4.3}{Summary}{section.5.4}% 23
-\BOOKMARK [2][-]{subsection.5.4.4}{Discussion}{section.5.4}% 24
-\BOOKMARK [0][-]{chapter.6}{Chapter 6. \040Combining Gaelic Words with Glosses}{}% 25
-\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 26
-\BOOKMARK [1][-]{section.6.2}{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{chapter.6}% 27
-\BOOKMARK [2][-]{subsection.6.2.1}{Data Preprocessing Using the Parallel-Partial Treatment}{section.6.2}% 28
-\BOOKMARK [2][-]{subsection.6.2.2}{Results of the Parallel-Partial Treatment}{section.6.2}% 29
-\BOOKMARK [1][-]{section.6.3}{Other Possible Treatments}{chapter.6}% 30
-\BOOKMARK [2][-]{subsection.6.3.1}{The Parallel Treatment}{section.6.3}% 31
-\BOOKMARK [2][-]{subsection.6.3.2}{Interleaving Gaelic Words and Gloss Items And Concating them}{section.6.3}% 32
-\BOOKMARK [2][-]{subsection.6.3.3}{Hybrid: Gaelic or Gloss}{section.6.3}% 33
-\BOOKMARK [1][-]{section.6.4}{Summary and Conclusion}{chapter.6}% 34
-\BOOKMARK [0][-]{chapter.7}{Chapter 7. \040Interlinear Glossed Text Data In Other Languages}{}% 35
-\BOOKMARK [0][-]{chapter.8}{Chapter 8. \040Implications on Theoretical Linguistics and Natural Language Processing}{}% 36
-\BOOKMARK [0][-]{chapter.9}{Chapter 9. \040Conclusion}{}% 37
-\BOOKMARK [0][-]{chapter.9}{\1}{}% 38
+\BOOKMARK [0][-]{chapter.2}{Chapter 2. \040What are glosses? Why are they golden representations of meanings?}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Introduction: What are Glosses?}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{The Golden Properties of Glosses}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.1}{Glosses Cluster Different Words with the Same Meanings \(Synonyms\) Into a Single representation}{section.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.2}{Glosses Distinguish Homographs' Different Meanings}{section.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.3}{Glosses are Sensitive to Hierarchical Structures in Natural Language Sentences}{section.2.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Conclusion: What Is a Gloss Line and Why Do They Matter?}{chapter.2}% 11
+\BOOKMARK [0][-]{chapter.3}{Chapter 3. \040Description of the Scottish Gaelic Interlinear Glossed Text Corpus}{}% 12
+\BOOKMARK [0][-]{chapter.4}{Chapter 4. \040A Gental Introduction of Machine Learning and Machine Translation}{}% 13
+\BOOKMARK [1][-]{section.4.1}{What is Machine Learning?}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.2}{History of Machine Translation}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.3}{Statistical Machine Translation}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.4}{Neural Net Machine Translation}{chapter.4}% 17
+\BOOKMARK [2][-]{subsection.4.4.1}{What is neural nets? Why can neural net learn?}{section.4.4}% 18
+\BOOKMARK [0][-]{chapter.5}{Chapter 5. \040Building Translation Systems using Interlinear Glossed Text: First Attempt}{}% 19
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 20
+\BOOKMARK [1][-]{section.5.2}{Related Work}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.3}{Technical Settings of the Machine Translation Experiments}{chapter.5}% 22
+\BOOKMARK [1][-]{section.5.4}{Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{chapter.5}% 23
+\BOOKMARK [2][-]{subsection.5.4.1}{Procedure of the Experiments}{section.5.4}% 24
+\BOOKMARK [2][-]{subsection.5.4.2}{Result}{section.5.4}% 25
+\BOOKMARK [2][-]{subsection.5.4.3}{Summary}{section.5.4}% 26
+\BOOKMARK [1][-]{section.5.5}{Discussion and Conclusion}{chapter.5}% 27
+\BOOKMARK [0][-]{chapter.6}{Chapter 6. \040Combining Gaelic Words with Glosses}{}% 28
+\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 29
+\BOOKMARK [2][-]{subsection.6.1.1}{The Underlying Heuristics}{section.6.1}% 30
+\BOOKMARK [1][-]{section.6.2}{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{chapter.6}% 31
+\BOOKMARK [2][-]{subsection.6.2.1}{Related work}{section.6.2}% 32
+\BOOKMARK [2][-]{subsection.6.2.2}{Data Preprocessing Using the Parallel-Partial Treatment}{section.6.2}% 33
+\BOOKMARK [2][-]{subsection.6.2.3}{Results of the Parallel-Partial Treatment}{section.6.2}% 34
+\BOOKMARK [1][-]{section.6.3}{Other Possible Treatments}{chapter.6}% 35
+\BOOKMARK [2][-]{subsection.6.3.1}{The Parallel Treatment}{section.6.3}% 36
+\BOOKMARK [2][-]{subsection.6.3.2}{Interleaving Gaelic Words and Gloss Items And Concating them}{section.6.3}% 37
+\BOOKMARK [2][-]{subsection.6.3.3}{Hybrid: Gaelic or Gloss}{section.6.3}% 38
+\BOOKMARK [1][-]{section.6.4}{Summary and Conclusion}{chapter.6}% 39
+\BOOKMARK [0][-]{chapter.7}{Chapter 7. \040Interlinear Glossed Text Data In Other Languages}{}% 40
+\BOOKMARK [0][-]{chapter.8}{Chapter 8. \040Implications on Theoretical Linguistics and Natural Language Processing}{}% 41
+\BOOKMARK [0][-]{chapter.9}{Chapter 9. \040Conclusion}{}% 42
+\BOOKMARK [0][-]{chapter.9}{\1}{}% 43

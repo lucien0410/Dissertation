@@ -2,9 +2,31 @@
 \label{chap:MT}
 
 	\begin{enumerate}
-	\item General review of supervised Machine learning \citep{kotsiantis2007supervised}: The goal is provide a high level of understanding of what machine learning is. Machine Learning is to learn from EXAMPLES/SAMPLES. For example, to define the meaning of `dog', instead of giving all the definable features of `dog', we feed the machine with as many as possible of information of entities of dogs that we have access. Montague Semantics is actually a variant of ML, within which `dog' is defined as `the set of all the dog that exists in the current world.'. As such, Montague Semantics is Machine Learning, because instead of defining 'dog' with certain arbitrary rules (+/- FEATURE), it says 'all the dog entities in the current world'. Definition by samples/examples not by rules.    
+	\item General review of supervised Machine learning \citep{kotsiantis2007supervised}: The goal is provide a high level of understanding of what machine learning is. Machine Learning is to learn from EXAMPLES/SAMPLES. For example, to define the meaning of `dog', instead of giving all the definable features of `dog', we feed the machine with as many as possible of information of entities of dogs that we have access. Montague Semantics is actually a variant of ML, within which `dog' is defined as `the set of all the dog that exists in the current world.'. As such, Montague Semantics is Machine Learning, because instead of defining 'dog' with certain arbitrary rules (+/- FEATURE), it says 'all the dogs entities in the current world'. Definition by samples/examples not by rules.    
 	\item Literature on machine translation: from statistical machine translation \citep{koehn2009statistical} to neural machine translation \citep{cho2014learning,cho2014properties,bahdanau2014neural,Koehn_NMT2017}. (Target audience: linguists)
 	\end{enumerate}
- 
+
+\section{What is Machine Learning?}
+
+UG is a type of machine learning. Instead of teaching a set of rules, the children is giving a set of grammatical selectness and then they are able to learn grammar, and produce grammatical sentences. 
+
+
+
+\citet{chom2005_three_factors} actually is a precise description of machine learning. UG is the learning algorithm. Experience is the training data. Cognitive mechanisms are all the other hardware specification of a machine (the human fresh).  
+
+Why UG is better than language-specific rules == why sample-based learning is better than rule-based learning
+
+\section{History of Machine Translation}\label{hist_MT}
+
+\section{Statistical Machine Translation}
+
 \section{Neural Net Machine Translation}\label{neural_MT}
+
+\subsection{What is neural nets? Why can neural net learn?}
 Introduction of Neural Net Machine Translation
+
+\subsection{Machine Learning and UG}
+Experience is the samples. \citet{chom2005_three_factors} three factors: 1) UG 2) Experience. 3) other cognitive mechanisms/limitations. 
+when the Experience is language X, a child learns language X.  
+
+\subsection{UG only get partial training data}

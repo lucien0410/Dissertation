@@ -23,7 +23,7 @@ At a high level, neural net sequence to sequence learning algorithm is to learn 
 		\ex Gaelic sentences $\rightarrow$ English sentences
 		\ex Gloss lines $\rightarrow$ English sentences
 		\ex Gloss lines $\rightarrow$ Gaelic sentences
-		\ex Gloss items $\rightarrow$ Gaelic words
+		\ex Gaelic words $\rightarrow$ Gloss items
 	\end{xlist}	
 \end{exe}    
 
@@ -47,13 +47,14 @@ For concreteness, consider the following interlinear glossed text:
     \glt    `His father is older than his mother.'  
 \end{exe}
 
-With the interlinear glossed text, the parallel treatment will generate two pairs of samples:
+With the interlinear glossed text, the parallel treatment will generate three pairs of samples:
 
 \begin{exe}
 	\ex
 	\begin{xlist}
 		\ex Gaelic to English: \\<``Tha a athair nas sine na a mh\`athair'', ``His father is older than his mother.''>
 		\ex Gloss to English: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother''>
+		\ex Gloss to Gaelic: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``Tha a athair nas sine na a mh\`athair''>
 	\end{xlist}
 \end{exe}
 
@@ -88,7 +89,9 @@ With the ParaPart treatment, the baseline systems are improved for more than 93 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Other Possible Treatments}
-This section reports other possible ways of blending the Gaelic sentences and gloss lines. However, all of these treatments are not as effective as the Parallel-Partial treatment. Again, the same procedure and the same test datasets are used across all the experiments.    
+This section reports other possible ways of blending the Gaelic sentences and gloss lines\footnote{There must be other possible and logical ways to blend in gloss that are beyond my imagination. It seems me to that by simply attempting to incorporate gloss information we open many other doors to the possible ways of improving machine translation systems. This is another merit of combining theoretical linguists to natural language processing.}.
+However, all of these treatments are not as effective as the Parallel-Partial treatment. Again, the same procedure and the same test datasets are used across all the experiments. 
+
 
 \subsection{The Parallel Treatment}\label{treatment:Para}
 \subsubsection{Method of the Parallel Treatment}
@@ -124,6 +127,7 @@ However, the best treatment (i.e. the Parallel-Partial treatment) is still far b
 
 Critically, the comparison between the Parallel-Partial treatment and current Parallel-Only treatment shows the effectiveness of the word-gloss alignments. Our conjecture on the effectiveness is that with the pairs of a gloss item and a Gaelic word present in the training data, the burden of the attention algorithm \citep{bahdanau2014neural} is largely alleviated. In other words, instead of asking the attention algorithm to estimate what to attend to, we explicitly teach the machine the alignment between the Gaelic word and the corresponding gloss. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Interleaving Gaelic Words and Gloss Items And Concating them}\label{treatment:InterleavingAndConCat}
 \subsubsection{Method of the Interleaving Treatment}
 Instead of putting the pairs of a Gaelic sentence and a English sentences and the pairs of a gloss line and a English sentence in a parallel manner, we may just literally blend a Gaelic sentence and a gloss line by interleaving them\footnote{\citet{ccg_target_seq} incorporate the Categorial grammar parse tags into natural sentences by interleaving the tags and the words.}. Consider the following example:
@@ -151,7 +155,7 @@ The results are given in the following table.
 It turns out this treatment has a significant negative effect
 (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{interleavingGdGLOSS}=\Sexpr{m_Treatment}, SD\textsubscript{interleavingGdGLOSS}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p=\Sexpr{p_val}). This is not the right way of incorporating gloss line data. 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Method of Concating Gaelic Words and Gloss Words }\label{treatment:Concating}
 A quick and close amendment of the Interleaving approach is to concatenate the aligned Gaelic word and gloss item as a single token. Given the same chunk of interlinear glossed text data, this treatment generates the following sample:
 
@@ -175,10 +179,10 @@ The performances of this treatment is given in the following table.
 \newline
 The result shows that this treatment hurts the baseline systems instead of improving them (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ConcatGLOSSGaelic}=\Sexpr{m_Treatment}, SD\textsubscript{ConcatGLOSSGaelic}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p=\Sexpr{p_val}).
 
-%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hybrid: Gaelic or Gloss}
 \subsubsection{Method of Hybrid}
-The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic word may maps to multiple gloss, and a glosses may maps to multiple Gaelic words. Let's assume a toy chunk of interlinear glossed text data (a one-word sentence): 
+The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic word may maps to multiple glosses, and a glosses may maps to multiple Gaelic words. Let's assume a toy chunk of interlinear glossed text data (a one-word sentence): 
 
 \begin{exe} 
 \ex 
@@ -187,33 +191,42 @@ The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic wo
     \glt    English translation  
 \end{exe} 
 
-Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. The criterion is which one, the Gaelic word or the gloss item, is less ambiguous. 
-The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic word, then <Gloss\_item, English translation> is chosen; other the other hand if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. 
+Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. To decied, we need to know which one, the Gaelic word or the gloss item, is less ambiguous. 
+The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic words, then <Gloss\_item, English translation> is chosen; on the other hand if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. 
 However, when the situation is tight (i.e. both the Gaelic word and gloss item are equally ambiguous), a default setting is needed to be chosen. The choices of the default setting split this single treatment into two treatments: default as Gaelic or default as gloss.
 
 The following is an example of the hybrid treatment:
 
 \begin{exe}
 \ex
-	\gll tha nathairichean a`chuir an t-eagal orm\\
+	\gll tha nathairichean a'chuir an t-eagal orm\\
 		 be.pres snake.vn put det fear on.1s\\
 	\glt `Snakes frighten me' 
 \end{exe} 
 
+The length of the Gaelic sentence and the gloss line in the above IGT is 6. This means 6 ambiguity comparisons need to be made to decide which one, Gaelic word or gloss, should take the position. The final production of this hybrid treatment on the above IGT is shown as follows:
+
+\begin{exe}
+\ex <``be.pres nathairichean a'chuir det t-eagal on.1s'' ,``Snakes frighten me'' >
+\end{exe} 
+
+This treatment has the same potential downside as the Concat treatment: sparsity. In this treatment, the size of the lexicon is the size of the lexicon of Gaelic word plus that of gloss, but what are really visible to the neural net is only about half size of the whole potential lexicon, because for each position it is either a Gaelic word or a gloss.
+
 \subsubsection{Result of Hybrid}    
 \SweaveInput{ReplacingGaelic_table.Rnw}
-When the default setting is the Gaelic word, the performances are significantly worse than than the baseline systems, as shown in table (\ref{Table:HybridDefaultAsGaelic}).  
-(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ReplacingGaelic}=\Sexpr{m_Treatment}, SD\textsubscript{ReplacingGaelic}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p < 0.01).
-
-
+When the default setting is the Gaelic word, the performances are significantly worse than than the baseline systems
+(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ReplacingGaelic}=\Sexpr{m_Treatment}, SD\textsubscript{ReplacingGaelic}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p < 0.01), 
+as shown in table (\ref{Table:HybridDefaultAsGaelic}).
 
 \SweaveInput{ReplacingGLOSS_table.Rnw}
-When the default setting is the Gaelic word, the performances are sightly worse than than the baseline systems, as shown in table (\ref{Table:HybridDefaultAsGLOSS}).
-(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ReplacingGaelic}=\Sexpr{m_Treatment}, SD\textsubscript{ReplacingGaelic}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p < 0.01 ).
+When the default setting is the Gaelic word, the performances are sightly worse than than the baseline systems 
+(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ReplacingGaelic}=\Sexpr{m_Treatment}, SD\textsubscript{ReplacingGaelic}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p < 0.01 ), as shown in table (\ref{Table:HybridDefaultAsGLOSS}).
 
+The results show that this hybrid treatment indeed suffers from the sparsity problem. 
 
 \section{Summary and Conclusion}
-The chapter reports machine translation experiments that aims to find how the gloss line information can improve the performance of the baseline Gaelic-to-English translation systems. It is found that the Parallel-Partial is highly effective. The complete BLEU scores of various treatments are given in the following table.
+Chapter \ref{chap:gloss} argues that the gloss representation is a golden representation of meanings, and thus theoretically with the gloss information incorporated, the performance of machine translation systems should improve. The experiments reported in this chapter reveal an effective way of combining gloss data and Gaelic sentences. It is found that the Parallel-Partial is highly effective, and the Gloss-helps hypothesis is empirically supported by the results. 
+The complete BLEU scores of various treatments are given in the following table.
 
 %\begin{adjustbox}{angle=90} 
 <<xtable, label=table:complete_table, echo=FALSE, results=tex>>=
@@ -221,24 +234,17 @@ require(xtable)
 n <- read.csv('complete.csv', sep=',', header = TRUE)
 n<- subset(n, select=c("Round", "Gaelic", "GLOSS", "ParaPart", "Para", "interleavingGdGLOSS", "ConcatGLOSSGaelic", "ReplacingGaelic","ReplacingGLOSS"))
 #n<- subset(n, select=c("Round", "Gaelic"))
-xtab2<-xtable(n,caption="BLEU scores of the treatments",  label="table:complete_table" )
+xtab2<-xtable(n,caption="BLEU scores of the all treatments",  label="table:complete_table" )
 #print(xtab2,include.rownames = FALSE, hline.after = c(10))
 hlines <- c(-1,0,10, nrow(xtab2))
-names(xtab2)<-c('Round', 'Baseline', 'GLOSS', 'ParaPart', 'Para', 'Interleaving', 'Concat', 'HybrGaelic', 'HybrGLOSS' )
+names(xtab2)<-c('Round', 'Baseline', 'GLOSS', 'ParaPart', 'Para', 'Interleaving', 'Concat', 'HybrGaelic', 'HybrGLOSS')
 xtab2<-xtab2
 print(xtab2,include.rownames =FALSE, hline.after = hlines, rotate.colnames=TRUE)
 @
-%\end{adjustbox}
 
-The aim of chapter is to report and document how the experiments are done and what the results are. This is merely reporting the linguist and non-linguistic facts. The implications and relevant works in the literature will be discussed in the next chapter.   
+In the next chapter, I will discuss the implications the experiments have for theoretical linguistics and natural language processing. 
 
 
-(
-Hi Mike: 
-The current chapter reports the what are done and how (i.e. the fact);
-the next chapter I will discuss the why questions, and discuss similar works in the literature.  
-
-)
 % \subsection{literature}
 
 % what about \ref{Table:interleavingGdGLOSS} \ref{table:complete_table}

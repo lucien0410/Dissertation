@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{37}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -33,6 +33,16 @@ Bickel, Balthasar, Bernard Comrie, and Martin Haspelmath (2008), \enquote{The
   glosses.} \emph{Revised version of February}.
 \bibAnnoteFile{bickel2008leipzig}
 
+\bibitem[{Chen(2010)}]{Chen2010}
+Chen, Yuan-Lu (2010), \emph{Degree Modification and Time Anchoring in
+  Mandarin}. Ph.D. thesis.
+\bibAnnoteFile{Chen2010}
+
+\bibitem[{Cheng(1973)}]{cheng1973synchronic}
+Cheng, Chin-Chuan (1973), \emph{A synchronic phonology of Mandarin Chinese},
+  volume~4. Walter de Gruyter.
+\bibAnnoteFile{cheng1973synchronic}
+
 \bibitem[{Cho et~al.(2014{\natexlab{a}})Cho, Van~Merri{\"e}nboer, Bahdanau, and
   Bengio}]{cho2014properties}
 Cho, Kyunghyun, Bart Van~Merri{\"e}nboer, Dzmitry Bahdanau, and Yoshua Bengio
@@ -49,6 +59,12 @@ Cho, Kyunghyun, Bart Van~Merri{\"e}nboer, Caglar Gulcehre, Dzmitry Bahdanau,
   statistical machine translation.} \emph{arXiv preprint arXiv:1406.1078}.
 \bibAnnoteFile{cho2014learning}
 
+\bibitem[{Chomsky(2005)}]{chom2005_three_factors}
+Chomsky, Noam (2005), \enquote{Three factors in language design.}
+  \emph{Linguistic Inquiry}, 36, 1--22,
+  \urlprefix\url{https://doi.org/10.1162/0024389052993655}.
+\bibAnnoteFile{chom2005_three_factors}
+
 \bibitem[{Chomsky(2006)}]{chomsky2006language}
 Chomsky, Noam (2006), \emph{Language and mind}. Cambridge University Press.
 \bibAnnoteFile{chomsky2006language}
@@ -58,6 +74,12 @@ Damerau, Fred~J (1964), \enquote{A technique for computer detection and
   correction of spelling errors.} \emph{Communications of the ACM}, 7,
   171--176.
 \bibAnnoteFile{damerau1964technique}
+
+\bibitem[{Grano(2008)}]{grano2008mandarin}
+Grano, Thomas (2008), \enquote{Mandarin hen and the syntax of declarative
+  clause typing.} \emph{Unpublished manuscript. Accessed online:< http://home.
+  uchicago. edu/\~{} tgrano/grano\_hen. pdf>. First accessed}, 4.
+\bibAnnoteFile{grano2008mandarin}
 
 \bibitem[{Johnson et~al.(2016)Johnson, Schuster, Le, Krikun, Wu, Chen, Thorat,
   Vi{\'e}gas, Wattenberg, Corrado et~al.}]{google_zero_shot}
@@ -133,12 +155,22 @@ Lewis, William~D. and Fei Xia (2010), \enquote{Developing odin: A multilingual
   http://dx.doi.org/10.1093/llc/fqq006}.
 \bibAnnoteFile{ODIN}
 
+\bibitem[{Liu(2010)}]{liu2010positive}
+Liu, Chen-Sheng~Luther (2010), \enquote{The positive morpheme in chinese and
+  the adjectival structure.} \emph{Lingua}, 120, 1010--1056.
+\bibAnnoteFile{liu2010positive}
+
 \bibitem[{Luong et~al.(2015)Luong, Le, Sutskever, Vinyals, and
   Kaiser}]{luong2015multi}
 Luong, Minh-Thang, Quoc~V Le, Ilya Sutskever, Oriol Vinyals, and Lukasz Kaiser
   (2015), \enquote{Multi-task sequence to sequence learning.} \emph{arXiv
   preprint arXiv:1511.06114}.
 \bibAnnoteFile{luong2015multi}
+
+\bibitem[{Mei(1991)}]{mei1991tone}
+Mei, Tsu-Lin (1991), \enquote{Tone sandhi and morphological relics.}
+  \emph{Journal of Chinese Linguistics Monograph Series}, 454--471.
+\bibAnnoteFile{mei1991tone}
 
 \bibitem[{Nadejde et~al.(2017)Nadejde, Reddy, Sennrich, Dwojak,
   Junczys-Dowmunt, Koehn, and Birch}]{ccg_target_seq}
@@ -161,12 +193,23 @@ Sennrich, Rico and Barry Haddow (2016), \enquote{Linguistic input features
   improve neural machine translation.} \emph{arXiv preprint arXiv:1606.02892}.
 \bibAnnoteFile{sennrich2016linguistic}
 
+\bibitem[{Shih(1997)}]{shih1997mandarin}
+Shih, Chilin (1997), \enquote{Mandarin third tone sandhi and prosodic
+  structure.} \emph{Linguistic Models}, 20, 81--124.
+\bibAnnoteFile{shih1997mandarin}
+
 \bibitem[{Smith et~al.(2017)Smith, Kindermans, and
   Le}]{DBLP:journals/corr/abs-1711-00489}
 Smith, Samuel~L., Pieter{-}Jan Kindermans, and Quoc~V. Le (2017),
   \enquote{Don't decay the learning rate, increase the batch size.}
   \emph{CoRR}, abs/1711.00489, \urlprefix\url{http://arxiv.org/abs/1711.00489}.
 \bibAnnoteFile{DBLP:journals/corr/abs-1711-00489}
+
+\bibitem[{Sneddon et~al.(2012)Sneddon, Adelaar, Djenar, and
+  Ewing}]{sneddon2012indonesian}
+Sneddon, James~Neil, K~Alexander Adelaar, Dwi~N Djenar, and Michael Ewing
+  (2012), \emph{Indonesian: A comprehensive grammar}. Routledge.
+\bibAnnoteFile{sneddon2012indonesian}
 
 \bibitem[{Snover et~al.(2006)Snover, Dorr, Schwartz, Micciulla, and
   Makhoul}]{Snover06astudy}
@@ -175,6 +218,12 @@ Snover, Matthew, Bonnie Dorr, Richard Schwartz, Linnea Micciulla, and John
   annotation.} In \emph{In Proceedings of Association for Machine Translation
   in the Americas}, 223--231.
 \bibAnnoteFile{Snover06astudy}
+
+\bibitem[{Wang and Lin(2011)}]{wang2011variation}
+Wang, Chiung-Yao and Yen-Hwei Lin (2011), \enquote{Variation in tone 3 sandhi:
+  The case of prepositions and pronouns.} In \emph{Proceedings of the 23rd
+  North American Conference on Chinese Linguistics (NACCL-23)}, 138--155.
+\bibAnnoteFile{wang2011variation}
 
 \bibitem[{Williams et~al.(2016)Williams, Sennrich, Post, and
   Koehn}]{williams2016syntax}

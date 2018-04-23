@@ -1,0 +1,8 @@
+% !Rnw root = cake_chapter.Rnw
+<<xtable, label=Table:Other_LG_BLEU, echo=FALSE, results=tex>>=
+require(xtable)
+n <- read.csv('Other_LG_BLEU.csv', sep=',', header = TRUE)
+xtab<-xtable(n, caption="BLEU scores of other languages",  label="Table:Other_LG_BLEU", align="lccccc")
+names(xtab)<-c('Language Names', 'Language (Baseline)', 'GLOSS', 'ParaPart', 'Sample size'  )
+print(xtab, include.rownames =FALSE)
+@

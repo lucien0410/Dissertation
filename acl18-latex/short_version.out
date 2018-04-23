@@ -1,0 +1,24 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related Work}{}% 2
+\BOOKMARK [1][-]{section.3}{Technical Settings of the Machine Translation Experiments}{}% 3
+\BOOKMARK [1][-]{section.4}{Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Scottish Gaelic Interlinear Glossed Text Data}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Procedure of the Experiments}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Result}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.4}{Discussion}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{The Right Way of Combining Gaelic Words with Glosses: Parallel-Partial Treatment}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{The Underlying Heuristics}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{The `Parallel-Partial' Treatment Outperforms the Baseline Significantly}{section.5}% 11
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Data Preprocessing Using the Parallel-Partial Treatment}{subsection.5.2}% 12
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Results of the Parallel-Partial Treatment}{subsection.5.2}% 13
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Discussion}{subsection.5.2}% 14
+\BOOKMARK [1][-]{section.6}{Other Possible Treatments}{}% 15
+\BOOKMARK [2][-]{subsection.6.1}{The Parallel Treatment}{section.6}% 16
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Method of the Parallel Treatment}{subsection.6.1}% 17
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Results of the Parallel Treatment}{subsection.6.1}% 18
+\BOOKMARK [2][-]{subsection.6.2}{Interleaving Gaelic Words and Gloss Items And Concating them}{section.6}% 19
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Method of the Interleaving Treatment}{subsection.6.2}% 20
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Method of Concating Gaelic Words and Gloss Words }{subsection.6.2}% 21
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Results of Concating Gaelic Words and Gloss Words}{subsection.6.2}% 22
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 23
+\BOOKMARK [1][-]{appendix.A}{Supplemental Material}{}% 24

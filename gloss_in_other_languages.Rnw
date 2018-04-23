@@ -2,3 +2,5 @@
 \label{chap:gloss_in_other_languages}
 
 To run the same experiments on Online Database of Interlinear Text \citep{ODIN, Xia2016} to show that incorporating gloss information works effectively across different languages.  
+
+\SweaveInput{Other_language_table.Rnw}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  9 APR 2018 11:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  16 APR 2018 10:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -43,181 +43,17 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \c@rxnumiii=\count96
 \c@rxnumiv=\count97
 \lcommentsep=\skip44
-) (./acl2018.sty
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
-
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
-Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
-)
-Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
-Package: xcolor-patch 2011/01/30 xcolor patch
-Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
-Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks14
-)
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-)
-\@linkdim=\dimen103
-\Hy@linkcounter=\count98
-\Hy@pagecounter=\count99
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
-)
-\Hy@SavedSpaceFactor=\count100
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
-)
-Package hyperref Info: Hyper figures OFF on input line 4443.
-Package hyperref Info: Link nesting OFF on input line 4448.
-Package hyperref Info: Hyper index ON on input line 4451.
-Package hyperref Info: Plain pages OFF on input line 4458.
-Package hyperref Info: Backreferencing OFF on input line 4463.
-Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count101
-
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen104
-\Fld@menulength=\count102
-\Field@Width=\dimen105
-\Fld@charsize=\dimen106
-Package hyperref Info: Hyper figures OFF on input line 6295.
-Package hyperref Info: Link nesting OFF on input line 6300.
-Package hyperref Info: Hyper index ON on input line 6303.
-Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring OFF on input line 6315.
-Package hyperref Info: Link coloring with OCG OFF on input line 6320.
-Package hyperref Info: PDF/A mode OFF on input line 6325.
-LaTeX Info: Redefining \ref on input line 6365.
-LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count103
-\c@Item=\count104
-\c@Hfootnote=\count105
-)
-
-Package hyperref Message: Driver (autodetected): hpdftex.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count106
-\c@bookmark@seq@number=\count107
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
-)
-\Hy@SectionHShift=\skip45
-)
-(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count108
-)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-)
-Package hyperref Info: Option `colorlinks' set `true' on input line 104.
-
-Conference Style for ACL 2018
-\titlebox=\skip46
-\aclrulerbox=\box33
-\aclrulercount=\count109
-\aclruleroffset=\dimen107
-\cv@lineheight=\dimen108
-\cv@boxheight=\dimen109
-\cv@tmpbox=\box34
-\cv@refno=\count110
-\cv@tot=\count111
-\cv@tmpc@=\count112
-\cv@tmpc=\count113
-(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip47
-\bibsep=\skip48
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count114
-))
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
-Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
-Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
-\symlasy=\mathgroup4
-LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
-(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
-)
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip49
+\@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -225,57 +61,61 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks15
-\ex@=\dimen110
+\@emptytoks=\toks14
+\ex@=\dimen103
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen111
+\pmbraise@=\dimen104
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count115
+\inf@bad=\count98
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count116
-\leftroot@=\count117
+\uproot@=\count99
+\leftroot@=\count100
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count118
-\DOTSCASE@=\count119
+\classnum@=\count101
+\DOTSCASE@=\count102
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box35
-\strutbox@=\box36
-\big@size=\dimen112
+\Mathstrutbox@=\box33
+\strutbox@=\box34
+\big@size=\dimen105
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count120
-\c@MaxMatrixCols=\count121
+\macc@depth=\count103
+\c@MaxMatrixCols=\count104
 \dotsspace@=\muskip11
-\c@parentequation=\count122
-\dspbrk@lvl=\count123
-\tag@help=\toks16
-\row@=\count124
-\column@=\count125
-\maxfields@=\count126
-\andhelp@=\toks17
-\eqnshift@=\dimen113
-\alignsep@=\dimen114
-\tagshift@=\dimen115
-\tagwidth@=\dimen116
-\totwidth@=\dimen117
-\lineht@=\dimen118
-\@envbody=\toks18
-\multlinegap=\skip50
-\multlinetaggap=\skip51
-\mathdisplay@stack=\toks19
+\c@parentequation=\count105
+\dspbrk@lvl=\count106
+\tag@help=\toks15
+\row@=\count107
+\column@=\count108
+\maxfields@=\count109
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks18
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks19
+)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
@@ -286,9 +126,20 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-\Gin@req@height=\dimen119
-\Gin@req@width=\dimen120
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count110
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
 )
 (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
 Package: todonotes 2012/07/25 .dtx Todonotes source and documentation.
@@ -303,9 +154,26 @@ Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 \XKV@toks=\toks20
 \XKV@tempa@toks=\toks21
-\XKV@depth=\count127
+\XKV@depth=\count111
 File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 ))
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
 (/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
@@ -313,7 +181,7 @@ File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 \pgfutil@everybye=\toks22
 )
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box37
+\pgfutil@abb=\box35
 
 (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
@@ -335,20 +203,20 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks25
 ))
-\pgf@x=\dimen121
-\pgf@y=\dimen122
-\pgf@xa=\dimen123
-\pgf@ya=\dimen124
-\pgf@xb=\dimen125
-\pgf@yb=\dimen126
-\pgf@xc=\dimen127
-\pgf@yc=\dimen128
+\pgf@x=\dimen114
+\pgf@y=\dimen115
+\pgf@xa=\dimen116
+\pgf@ya=\dimen117
+\pgf@xb=\dimen118
+\pgf@yb=\dimen119
+\pgf@xc=\dimen120
+\pgf@yc=\dimen121
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count128
-\c@pgf@countb=\count129
-\c@pgf@countc=\count130
-\c@pgf@countd=\count131
+\c@pgf@counta=\count112
+\c@pgf@countb=\count113
+\c@pgf@countc=\count114
+\c@pgf@countd=\count115
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -363,8 +231,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count132
-\pgfsyssoftpath@bigbuffer@items=\count133
+\pgfsyssoftpath@smallbuffer@items=\count116
+\pgfsyssoftpath@bigbuffer@items=\count117
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -376,9 +244,9 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen129
-\pgfmath@count=\count134
-\pgfmath@box=\box38
+\pgfmath@dimen=\dimen122
+\pgfmath@count=\count118
+\pgfmath@box=\box36
 \pgfmath@toks=\toks26
 \pgfmath@stack@operand=\toks27
 \pgfmath@stack@operation=\toks28
@@ -392,51 +260,51 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count135
+\c@pgfmathroundto@lastzeros=\count119
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen130
-\pgf@picmaxx=\dimen131
-\pgf@picminy=\dimen132
-\pgf@picmaxy=\dimen133
-\pgf@pathminx=\dimen134
-\pgf@pathmaxx=\dimen135
-\pgf@pathminy=\dimen136
-\pgf@pathmaxy=\dimen137
-\pgf@xx=\dimen138
-\pgf@xy=\dimen139
-\pgf@yx=\dimen140
-\pgf@yy=\dimen141
-\pgf@zx=\dimen142
-\pgf@zy=\dimen143
+\pgf@picminx=\dimen123
+\pgf@picmaxx=\dimen124
+\pgf@picminy=\dimen125
+\pgf@picmaxy=\dimen126
+\pgf@pathminx=\dimen127
+\pgf@pathmaxx=\dimen128
+\pgf@pathminy=\dimen129
+\pgf@pathmaxy=\dimen130
+\pgf@xx=\dimen131
+\pgf@xy=\dimen132
+\pgf@yx=\dimen133
+\pgf@yy=\dimen134
+\pgf@zx=\dimen135
+\pgf@zy=\dimen136
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen144
-\pgf@path@lasty=\dimen145
+\pgf@path@lastx=\dimen137
+\pgf@path@lasty=\dimen138
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen146
-\pgf@shorten@start@additional=\dimen147
+\pgf@shorten@end@additional=\dimen139
+\pgf@shorten@start@additional=\dimen140
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
-\pgfpic=\box39
-\pgf@hbox=\box40
-\pgf@layerbox@main=\box41
-\pgf@picture@serial@count=\count136
+\pgfpic=\box37
+\pgf@hbox=\box38
+\pgf@layerbox@main=\box39
+\pgf@picture@serial@count=\count120
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen148
+\pgflinewidth=\dimen141
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen149
-\pgf@pt@y=\dimen150
-\pgf@pt@temp=\dimen151
+\pgf@pt@x=\dimen142
+\pgf@pt@y=\dimen143
+\pgf@pt@temp=\dimen144
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -452,15 +320,15 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen152
-\pgf@sys@shading@range@num=\count137
+\pgf@max=\dimen145
+\pgf@sys@shading@range@num=\count121
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
 
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
-\pgfexternal@startupbox=\box42
+\pgfexternal@startupbox=\box40
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
@@ -473,15 +341,15 @@ File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
 )))
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
-\pgfnodeparttextbox=\box43
+\pgfnodeparttextbox=\box41
 )
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen153
-\pgf@nodesepend=\dimen154
+\pgf@nodesepstart=\dimen146
+\pgf@nodesepend=\dimen147
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
@@ -491,8 +359,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
 (/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen155
-\pgffor@skip=\dimen156
+\pgffor@iter=\dimen148
+\pgffor@skip=\dimen149
 \pgffor@stack=\toks29
 \pgffor@toks=\toks30
 ))
@@ -501,29 +369,29 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count138
-\pgfplotmarksize=\dimen157
+\pgf@plot@mark@count=\count122
+\pgfplotmarksize=\dimen150
 )
-\tikz@lastx=\dimen158
-\tikz@lasty=\dimen159
-\tikz@lastxsaved=\dimen160
-\tikz@lastysaved=\dimen161
-\tikzleveldistance=\dimen162
-\tikzsiblingdistance=\dimen163
-\tikz@figbox=\box44
-\tikz@tempbox=\box45
-\tikztreelevel=\count139
-\tikznumberofchildren=\count140
-\tikznumberofcurrentchild=\count141
-\tikz@fig@count=\count142
+\tikz@lastx=\dimen151
+\tikz@lasty=\dimen152
+\tikz@lastxsaved=\dimen153
+\tikz@lastysaved=\dimen154
+\tikzleveldistance=\dimen155
+\tikzsiblingdistance=\dimen156
+\tikz@figbox=\box42
+\tikz@tempbox=\box43
+\tikztreelevel=\count123
+\tikznumberofchildren=\count124
+\tikznumberofcurrentchild=\count125
+\tikz@fig@count=\count126
 
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count143
-\pgfmatrixcurrentcolumn=\count144
-\pgf@matrix@numberofcolumns=\count145
+\pgfmatrixcurrentrow=\count127
+\pgfmatrixcurrentcolumn=\count128
+\pgf@matrix@numberofcolumns=\count129
 )
-\tikz@expandcount=\count146
+\tikz@expandcount=\count130
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
@@ -534,18 +402,18 @@ ioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count147
-\calc@Bcount=\count148
-\calc@Adimen=\dimen164
-\calc@Bdimen=\dimen165
-\calc@Askip=\skip52
-\calc@Bskip=\skip53
+\calc@Acount=\count131
+\calc@Bcount=\count132
+\calc@Adimen=\dimen157
+\calc@Bdimen=\dimen158
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count149
-\calc@Cskip=\skip54
+\calc@Ccount=\count133
+\calc@Cskip=\skip50
 )
-\c@@todonotes@numberoftodonotes=\count150
+\c@@todonotes@numberoftodonotes=\count134
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
 Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
@@ -553,25 +421,13 @@ LaTeX Info: Redefining \em on input line 420.
 LaTeX Info: The control sequence `\[' is already robust on input line 471.
 LaTeX Info: The control sequence `\]' is already robust on input line 472.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
-\ttl@box=\box46
-\beforetitleunit=\skip55
-\aftertitleunit=\skip56
-\ttl@plus=\dimen166
-\ttl@minus=\dimen167
-\ttl@toksa=\toks31
-\titlewidth=\dimen168
-\titlewidthlast=\dimen169
-\titlewidthfirst=\dimen170
-)
 (/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
 Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
-\c@r@tfl@t=\count151
-\rotFPtop=\skip57
-\rotFPbot=\skip58
-\rot@float@box=\box47
-\rot@mess@toks=\toks32
+\c@r@tfl@t=\count135
+\rotFPtop=\skip51
+\rotFPbot=\skip52
+\rot@float@box=\box44
+\rot@mess@toks=\toks31
 )
 (/usr/share/R/share/texmf/tex/latex/Sweave.sty
 Package: Sweave 
@@ -581,11 +437,11 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count152
+\FV@CodeLineNo=\count136
 \FV@InFile=\read2
-\FV@TabBox=\box48
-\c@FancyVerbLine=\count153
-\FV@StepNumber=\count154
+\FV@TabBox=\box45
+\c@FancyVerbLine=\count137
+\FV@StepNumber=\count138
 \FV@OutFile=\write4
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
@@ -704,8 +560,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 60.
 
@@ -713,46 +567,59 @@ LaTeX Font Info:    Try loading font information for TS1+cmr on input line 60.
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 60.
-\AtBeginShipoutBox=\box49
-Package hyperref Info: Link coloring ON on input line 60.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
-)
-\c@section@level=\count155
-)
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
-LaTeX Info: Redefining \nameref on input line 60.
-
-(./CandH.out) (./CandH.out)
-\@outlinefile=\write5
-\openout5 = `CandH.out'.
-
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count156
-\scratchdimen=\dimen171
-\scratchbox=\box50
-\nofMPsegments=\count157
-\nofMParguments=\count158
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count159
-\MPscratchDim=\dimen172
-\MPnumerator=\count160
-\makeMPintoPDFobject=\count161
-\everyMPtoPDFconversion=\toks34
-) ABD: EveryShipout initializing macros
+\scratchcounter=\count139
+\scratchdimen=\dimen159
+\scratchbox=\box46
+\nofMPsegments=\count140
+\nofMParguments=\count141
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count142
+\MPscratchDim=\dimen160
+\MPnumerator=\count143
+\makeMPintoPDFobject=\count144
+\everyMPtoPDFconversion=\toks33
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
@@ -763,54 +630,233 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+lasy on input line 61.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
+LaTeX Warning: No \author given.
+
 (./CandH-concordance.tex)
-Underfull \hbox (badness 1406) in paragraph at lines 101--102
-[]\T1/aer/m/n/10.95 `the stone fell on my wife's foot.'
- []
+! Undefined control sequence.
+l.78 ...line is an English translation (see \citet
+                                                  {bickel2008leipzig} for th...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+! Undefined control sequence.
+l.91 ...m looking for the small blue book.' \citep
+                                                  [p. 29]{lamb2001scottish}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+[1
 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+! Undefined control sequence.
+l.96 \glt `a big man.' \citep
+                             [p. 31]{lamb2001scottish}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-]
-Underfull \hbox (badness 1406) in paragraph at lines 133--134
-[]\T1/aer/m/n/10.95 `the stone fell on my wife's foot.'
- []
+! Undefined control sequence.
+l.101 ...the stone fell on my wife's foot.' \citep
+                                                  [p. 30]{lamb2001scottish}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+! Undefined control sequence.
+l.106 \glt `the door of the school.' \citep
+                                           [p. 29]{lamb2001scottish}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
-[]\T1/aer/bx/n/10.95 Gloss-helps hy-poth-e-sis: the
- []
+! Undefined control sequence.
+l.111 \glt `the girls big house.' \citep
+                                        [p. 100]{lamb2001scottish}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+! Undefined control sequence.
+l.116 \glt `festival of the poets.' \citep
+                                          [p. 107]{lamb2001scottish}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
-\T1/aer/bx/n/10.95 the gloss data in-cor-po-rated
- []
+! Undefined control sequence.
+l.120 ...s the form of the definite article \citep
+                                                  {lamb2001scottish}. All th...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+! Undefined control sequence.
+l.128 ... looking for the small blue book.' \citep
+                                                  [p. 29]{lamb2001scottish}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Underfull \hbox (badness 1215) in paragraph at lines 146--147
-\T1/aer/m/n/10.95 the sys-tem trained with source
- []
-
-
-Underfull \hbox (badness 1178) in paragraph at lines 146--147
-\T1/aer/m/n/10.95 nat-u-ral lan-guage to tar-get lan-
- []
-
-
-Underfull \hbox (badness 4556) in paragraph at lines 151--152
-[]\T1/aer/m/n/10.95 The ex-per-i-ments re-veal that re-plac-ing
- []
+! Undefined control sequence.
+l.133 ...the stone fell on my wife's foot.' \citep
+                                                  [p. 30]{lamb2001scottish}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 [2]
+Overfull \hbox (1.84314pt too wide) in paragraph at lines 142--143
+[]\T1/aer/bx/n/10.95 Gloss-helps hy-poth-e-sis: the trans-la-tion sys-tems trai
+ned with
+ []
+
+! Undefined control sequence.
+l.157 ...of SMT, termed as syntax-based SMT \citep
+                                                  {williams2016syntax}. The ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.157 ... machine translation. For example, \citet
+                                                  {sennrich2016linguistic} e...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.157 ...f sentences to improve MT systems. \citet
+                                                  {ccg_target_seq} incorpora...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.157 ...tences to improve MT systems. \citet{ccg_
+                                                  target_seq} incorporate th...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.157 ...mprove MT systems. \citet{ccg_target_seq}
+                                                   incorporate the Categoria...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.158 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (291.69759pt too wide) in paragraph at lines 157--158
+\T1/aer/m/n/10.95 de-pen-dency parses of sen-tences to im-prove MT sys-tems. cc
+g$[]\OML/cmm/m/it/10.95 arget[]eqincorporatetheCategorialgrammarparsetagsofthet
+argetsequences:$ 
+ []
+
+[3]
+! Undefined control sequence.
+l.159 ...task Sequence to Sequence Learning \citep
+                                                  {luong2015multi}. Specific...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.159 ...multi-language translation systems \citep
+                                                  {google_zero_shot}.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.159 ...nguage translation systems \citep{google_
+                                                  zero_shot}.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.159 ...nslation systems \citep{google_zero_shot}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.160 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Undefined control sequence.
+l.165 ...ents are conduced by using OpenNMT \citep
+                                                  {2017opennmt}, which imple...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.165 ...net machine translation algorithms \citep
+                                                  {cho2014properties, cho201...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 LaTeX Font Info:    Try loading font information for T1+aett on input line 166.
 
- (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
+(/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 168.
@@ -826,12 +872,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
-
-Underfull \hbox (badness 3108) in paragraph at lines 198--199
-\T1/aer/m/n/10.95 .'', ``be.pres 3sm.poss fa-ther comp
- []
-
-[3]
+[4]
 LaTeX Font Info:    Try loading font information for T1+ccr on input line 201.
  (/usr/share/texlive/texmf-dist/tex/latex/ccfonts/t1ccr.fd
 File: t1ccr.fd 1999/11/22 v1.0a (WaS)
@@ -840,13 +881,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
-\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 < gloss[]; En[] >\OMS/cmsy/m/n/10.95 j
- \OML/cmm/m/it/10.95 i \OMS/cmsy/m/n/10.95 2
- []
-
-
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
@@ -857,24 +892,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 209--210
  []
 
 
-Underfull \hbox (badness 6691) in paragraph at lines 210--211
-[]\T1/aer/m/n/10.95 Example: <``be.pres 3sm.poss
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
-\T1/aer/m/n/10.95 fa-ther comp old.cmpr comp
+Overfull \hbox (10.99702pt too wide) in paragraph at lines 210--211
+[]\T1/aer/m/n/10.95 Example: <``be.pres 3sm.poss fa-ther comp old.cmpr comp 3sm
+.poss
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 < GD[]; En[] >\OMS/cmsy/m/n/10.95 j \O
-ML/cmm/m/it/10.95 i \OMS/cmsy/m/n/10.95 2
  []
 
 
@@ -888,38 +913,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--219
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
-\T1/aer/m/n/10.95 Model trained with
+Overfull \hbox (30.78018pt too wide) in paragraph at lines 227--228
+\T1/aer/m/n/10.95 Model trained with GLOSStoEN$[]$ in (13a[]) and GLOSStoEN$[]$
+
  []
 
+! Undefined control sequence.
+l.234 Specifically, the BLEU score metric \citep
+                                                {bleu} of each prediction is...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Underfull \hbox (badness 4686) in paragraph at lines 227--228
-\T1/aer/m/n/10.95 GLOSStoEN$[]$ in ([][]13a[][]) and
- []
+! Undefined control sequence.
+l.235 ..., a public implementation of Moses \citep
+                                                  {moses}.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--234
-[][][]\T1/aer/m/n/9 The script can be down-loaded from:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--234
-[][]$\T1/aett/m/n/9 https : / / github . com / moses-[]smt / mosesdecoder /
- []
-
-
-Underfull \hbox (badness 1845) in paragraph at lines 233--237
-\T1/aer/m/n/10.95 get se-quences of the test set (i.e. the
- []
-
-
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 242--244
 
- []
-
-
-Underfull \hbox (badness 5036) in paragraph at lines 244--245
-[]\T1/aer/m/n/10.95 Score$[]$ = BLEU(Gold-
  []
 
 
@@ -929,250 +948,404 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 245--246
-[]\T1/aer/m/n/10.95 Score$[]$ = BLEU(Gold-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
-[4]
-Underfull \hbox (badness 1418) in paragraph at lines 254--257
-\T1/aer/m/n/10.95 types of mod-els is NOT sta-tis-ti-cally sig-
- []
 
-
-Underfull \hbox (badness 2781) in paragraph at lines 254--257
-\T1/aer/m/n/10.95 nif-i-cant (M$[]$=16.59, SD$[]$=0.74;
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 254--257
-\T1/aer/m/n/10.95 M$[]$=17.70, SD$[]$=1.78;
- []
-
-
-Underfull \hbox (badness 1014) in paragraph at lines 285--287
-[]\T1/aer/m/n/10.95 Mappings Learned in the Para-Part
- []
-
-[5]
-Underfull \hbox (badness 1221) in paragraph at lines 316--317
-\T1/aer/m/n/10.95 <``Tha a athair nas sine na a
- []
-
-
-Underfull \hbox (badness 4254) in paragraph at lines 317--318
-\T1/aer/m/n/10.95 ``His fa-ther is older than his
- []
-
-
-Underfull \hbox (badness 2922) in paragraph at lines 318--319
-\T1/aer/m/n/10.95 ``Tha a athair nas sine na a
- []
-
-
-Underfull \hbox (badness 1789) in paragraph at lines 341--343
-\T1/aer/m/n/10.95 The re-sult show that the Parallel-Partial
- []
-
-
-Underfull \hbox (badness 2012) in paragraph at lines 341--343
-\T1/aer/m/n/10.95 ing the base-line sys-tem (M$[]$=16.59,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 341--343
-\T1/aer/m/n/10.95 SD$[]$=0.74; M$[]$=32.10,
- []
-
-[6]
-Underfull \hbox (badness 1221) in paragraph at lines 373--374
-\T1/aer/m/n/10.95 <``Tha a athair nas sine na a
- []
-
-
-Underfull \hbox (badness 4254) in paragraph at lines 374--375
-\T1/aer/m/n/10.95 ``His fa-ther is older than his
- []
-
-
-Underfull \hbox (badness 2922) in paragraph at lines 375--376
-\T1/aer/m/n/10.95 ``Tha a athair nas sine na a
- []
-
-
-Underfull \hbox (badness 2837) in paragraph at lines 389--390
-[]\T1/aer/m/n/10.95 Critically, the com-par-i-son be-tween the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
-\T1/aer/m/n/10.95 Parallel-Partial treat-ment and cur-rent
- []
-
-
-Underfull \hbox (badness 4779) in paragraph at lines 389--390
-\T1/aer/m/n/10.95 Parallel-Only treat-ment shows the ef-fec-
- []
-
-
-Underfull \hbox (badness 4699) in paragraph at lines 401--402
-[]\T1/aer/m/n/10.95 `His fa-ther is older than his
- []
-
-
-Underfull \hbox (badness 2012) in paragraph at lines 403--404
-\T1/aer/m/n/10.95 fa-ther nas comp sine old.cmpr
- []
-
-
-Underfull \hbox (badness 2393) in paragraph at lines 403--404
-\T1/aer/m/n/10.95 na comp a 3sm.poss mhàthair
- []
-
-
-Underfull \hbox (badness 1442) in paragraph at lines 413--415
-[]\T1/aer/m/n/10.95 It turns out this treat-ment has a sig-
- []
-
-
-Underfull \hbox (badness 7777) in paragraph at lines 413--415
-\T1/aer/m/n/10.95 nif-i-cant neg-a-tive ef-fect (M$[]$=16.59,
- []
-
-
-Underfull \hbox (badness 1400) in paragraph at lines 413--415
-\T1/aer/m/n/10.95 SD$[]$=0.74; M$[]$=12.26,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--415
-\T1/aer/m/n/10.95 SD$[]$=0.74,; t(9)=-17.06,
- []
-
-
-Underfull \hbox (badness 1033) in paragraph at lines 413--415
-\T1/aer/m/n/10.95 p=0.000). This is not the right way of
+Overfull \hbox (0.36475pt too wide) in paragraph at lines 254--257
+\T1/aer/m/n/10.95 (M$[]$=16.59, SD$[]$=0.74; M$[]$=17.70, SD$[]$=1.78;
  []
 
 [7]
-Underfull \hbox (badness 4699) in paragraph at lines 426--427
-[]\T1/aer/m/n/10.95 `His fa-ther is older than his
+! Undefined control sequence.
+<argument> ... free Google translation API \citep 
+                                                  {google_api} to translate ...
+l.279 ...es of our test set as the gold standard.}
+                                                   (see the appendix for the...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.279 ...es of our test set as the gold standard.}
+                                                   (see the appendix for the...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<argument> ... translation API \citep {google_api}
+                                                   to translate the Gaelic s...
+l.279 ...es of our test set as the gold standard.}
+                                                   (see the appendix for the...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.279 ...es of our test set as the gold standard.}
+                                                   (see the appendix for the...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (399.77039pt too wide) in paragraph at lines 279--279
+[][]\T1/aer/m/n/9 We used a free Google trans-la-tion API google$[]\OML/cmm/m/i
+t/9 pitotranslatetheGaelicsentencesinourtestset:ThenwecalculatetheBLEUscoresofw
+iththetargetsequencesofourtestsetasthegoldstandard:|$ 
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.279 ...es of our test set as the gold standard.}
+                                                   (see the appendix for the...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[8] [9]
+Overfull \hbox (5.56044pt too wide) in paragraph at lines 317--318
+\T1/aer/m/n/10.95 <``be.pres 3sm.poss fa-ther comp old.cmpr comp 3sm.poss mothe
+r'',
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--429
-[]\T1/aer/m/n/10.95 <``Tha_be.pres a_3sm.poss
+Overfull \hbox (5.56044pt too wide) in paragraph at lines 318--319
+\T1/aer/m/n/10.95 <``be.pres 3sm.poss fa-ther comp old.cmpr comp 3sm.poss mothe
+r'',
+ []
+
+[10]
+Overfull \hbox (5.56044pt too wide) in paragraph at lines 374--375
+\T1/aer/m/n/10.95 <``be.pres 3sm.poss fa-ther comp old.cmpr comp 3sm.poss mothe
+r'',
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--429
-\T1/aer/m/n/10.95 athair_father nas_comp
+Overfull \hbox (5.56044pt too wide) in paragraph at lines 375--376
+\T1/aer/m/n/10.95 <``be.pres 3sm.poss fa-ther comp old.cmpr comp 3sm.poss mothe
+r'',
+ []
+
+! Undefined control sequence.
+l.389 ... burden of the attention algorithm \citep
+                                                  {bahdanau2014neural} is la...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...@ \footnotesep \ignorespaces \citet 
+                                                  {ccg_target_seq} incorpora...
+l.393 ... by interleaving the tags and the words.}
+                                                  . Consider the following e...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.393 ... by interleaving the tags and the words.}
+                                                  . Consider the following e...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<argument> ...ignorespaces \citet {ccg_target_seq}
+                                                   incorporate the Categoria...
+l.393 ... by interleaving the tags and the words.}
+                                                  . Consider the following e...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.393 ... by interleaving the tags and the words.}
+                                                  . Consider the following e...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (125.95483pt too wide) in paragraph at lines 393--393
+[][]\T1/aer/m/n/9 ccg$[]\OML/cmm/m/it/9 arget[]eqincorporatetheCategorialgramma
+rparsetagsintonaturalsentencesbyinterleavingthetagsandthewords:|$ 
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.393 ... by interleaving the tags and the words.}
+                                                  . Consider the following e...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[11]
+Overfull \hbox (14.13245pt too wide) in paragraph at lines 413--415
+[]\T1/aer/m/n/10.95 It turns out this treat-ment has a sig-nif-i-cant neg-a-tiv
+e ef-fect (M$[]$=16.59,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
-\T1/aer/m/n/10.95 The re-sult shows that this treat-ment
+Overfull \hbox (19.14554pt too wide) in paragraph at lines 413--415
+\T1/aer/m/n/10.95 SD$[]$=0.74; M$[]$=12.26, SD$[]$=0.74,; t(9)=-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
-\T1/aer/m/n/10.95 hurts the base-line sys-tems in-stead
+[12]
+Overfull \hbox (11.20222pt too wide) in paragraph at lines 437--438
+\T1/aer/m/n/10.95 im-prov-ing them (M$[]$=16.59, SD$[]$=0.74; M$[]$=15.44,
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
-\T1/aer/m/n/10.95 of im-prov-ing them (M$[]$=16.59,
- []
-
-
-Underfull \hbox (badness 7576) in paragraph at lines 437--438
-\T1/aer/m/n/10.95 SD$[]$=0.74; M$[]$=15.44,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
-\T1/aer/m/n/10.95 SD$[]$=1.23,; t(9)=-3.64,
- []
+! Undefined control sequence.
+l.468 ...tant questions in both fields (see \citet
+                                                  {pater2017generative} for ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 (./CandH.bbl
-Underfull \hbox (badness 4832) in paragraph at lines 27--32
-\T1/aer/m/n/10 Learn-ing phrase rep-re-sen-ta-tions us-ing rnn
+Underfull \hbox (badness 10000) in paragraph at lines 5--9
+[]\T1/aer/m/n/10.95 Dzmitry Bah-danau,
  []
 
 
-Underfull \hbox (badness 1546) in paragraph at lines 34--37
-[]\T1/aer/m/n/10 SuHun Han. 2018.  Google-trans.  [][]$\T1/aett/m/n/10 https : 
-/ /
+Underfull \hbox (badness 10000) in paragraph at lines 12--16
+[]\T1/aer/m/n/10.95 Balthasar Bickel,
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 40--46
-[]\T1/aer/m/n/10 Melvin John-son, Mike Schus-ter, Quoc V Le,
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+[]
  []
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 72--76
-\T1/aer/m/n/10 task se-quence to se-quence learn-ing.  \T1/aer/m/it/10 arXiv
+Overfull \hbox (105.40182pt too wide) in paragraph at lines 27--32
+[]
  []
 
-[8]
-Underfull \hbox (badness 3657) in paragraph at lines 79--85
-[]\T1/aer/m/n/10 Maria Nade-jde, Siva Reddy, Rico Sen-nrich,
+[13]
+Overfull \hbox (162.90953pt too wide) in paragraph at lines 40--46
+[]
+ []
+
+! Undefined control sequence.
+l.51 \newblock \href
+                     {http://arxiv.org/abs/1701.02810} {Opennmt: Open-source...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--54
+[]\T1/aer/m/n/10.95 Guillaume
  []
 
 
-Underfull \hbox (badness 2245) in paragraph at lines 79--85
-\T1/aer/m/n/10 Tomasz Dwo-jak, Marcin Junczys-Dowmunt,
+Overfull \hbox (174.76837pt too wide) in paragraph at lines 57--64
+[]
  []
 
-)
-Overfull \hbox (234.58069pt too wide) in paragraph at lines 481--499
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--76
+[]\T1/aer/m/n/10.95 Minh-
+ []
+
+
+Overfull \hbox (101.2624pt too wide) in paragraph at lines 79--85
+[]
+ []
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 79--85
+\T1/aer/m/n/10.95 Junczys-Dowmunt, Philipp Koehn, and Alexan-dra Birch. 2017.
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 105--109
+[]\T1/aer/m/n/10.95 Philip
+ []
+
+
+Underfull \hbox (badness 1320) in paragraph at lines 105--109
+\T1/aer/m/n/10.95 Williams, Rico Sen-nrich, Matt Post, and Philipp Koehn. 2016.
+
+ []
+
+) [15]
+Overfull \hbox (93.66681pt too wide) in paragraph at lines 481--499
  [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 516.
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 516.
- (./CandH.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 516.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 516.
-Package rerunfilecheck Info: File `CandH.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 516.
- )
-(\end occurred when \iffalse on line 349 was incomplete) 
+! Undefined control sequence.
+<argument> ... free Google translation API \citep 
+                                                  {google_api} to translate ...
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ... free Google translation API \citep 
+                                                  {google_api} to translate ...
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<argument> ... translation API \citep {google_api}
+                                                   to translate the same set...
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Undefined control sequence.
+<argument> ... free Google translation API \citep 
+                                                  {google_api} to translate ...
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<argument> ... translation API \citep {google_api}
+                                                   to translate the same set...
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.499 ...t of test Gaelic sentences into English.}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[16] (./CandH.aux) )
+(\end occurred inside a group at level 2)
+
+### simple group (level 2) entered at line 159 ({)
+### simple group (level 1) entered at line 157 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 16768 strings out of 493304
- 287690 string characters out of 6139871
- 368058 words of memory out of 5000000
- 19727 multiletter control sequences out of 15000+600000
- 44786 words of font info for 97 fonts, out of 8000000 for 9000
+ 12543 strings out of 493304
+ 225059 string characters out of 6139871
+ 271398 words of memory out of 5000000
+ 15649 multiletter control sequences out of 15000+600000
+ 45733 words of font info for 95 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,10n,57p,847b,533s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts
-/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/
-cm-super-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sform10.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sform9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-rm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on CandH.pdf (9 pages, 259588 bytes).
+ 63i,8n,57p,847b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/us
+r/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sform10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sform9.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on CandH.pdf (16 pages, 271618 bytes).
 PDF statistics:
- 378 PDF objects out of 1000 (max. 8388607)
- 322 compressed objects within 4 object streams
- 121 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 155 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,224 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage{gb4e}
+\noautomath
+\usepackage{natbib}
+\usepackage{rotating}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{fixltx2e}
+\usepackage{Sweave}
+
+\newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
+%the newcommand change the selected word into 'ccr' font
+%e.g. \begin{myfont} multi-bleu.perl \end{myfont}
+
+\title{Building Neural Net Machine Translation Systems Using Interlinear Glossed Texts}
+\author{Yuan-Lu Chen}
+
+
+\begin{document}
+\maketitle
+\input{presentation-concordance}
+
+\begin{exe}
+\ex 
+\begin{xlist}  
+\ex Training Data:
+	\gll    Tha a athair nas sine na a mh\`athair.\\  
+            be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother
+\\  
+    \glt    `His father is older than his mother.' 
+\ex Test Data:
+\gll Tha mi a' sireadh an leabhair bhig ghuirm.\\
+be-PRES-IND 1S PROG searching-VN ART book-G small-G blue-G\\
+\glt `I am looking for the small blue book.' 
+\end{xlist}
+\end{exe}
+
+\begin{exe} 
+\ex \textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
+
+The hypothesis can have two versions, strong and weak:
+	\begin{xlist}
+	\ex \label{strong_hy} Strong version: Gloss may replace the source natural language totally, and the system outperforms the system trained with source natural language to target language sentence pairs (i.e. the baseline systems).  
+	\ex \label{weak_hy} Weak version: Gloss only increases the performance of the baseline systems, but cannot replace the source language.
+	\end{xlist}
+\end{exe}
+
+
+\begin{exe}  
+\ex Baseline: 
+\begin{xlist}
+	\ex Trained with:\\
+	 Gaelic sentence $\rightarrow$ English Sentence 
+	\begin{xlist}
+		\ex e.g. \\
+			Tha a athair nas sine na a mh\`athair. \\
+			$\rightarrow$ \\
+			His father is older than his mother.
+	\end{xlist}
+	\ex Test with:\\
+		Tha mi a' sireadh an leabhair bhig ghuirm.\\
+		$\rightarrow$ \\
+		Predicted\_English\_Translation\textsubscript{j}
+	\ex Evaluation of the model:\\
+		compare\\ Predicted\_English\_Translation\textsubscript{j}\\ with\\
+		`I am looking for the small blue book.'  
+\end{xlist}
+\end{exe}
+
+
+\begin{exe}  
+\ex Gloss Treatment: 
+\begin{xlist}
+	\ex Trained with:\\
+	 Gloss line $\rightarrow$ English Sentence 
+	\begin{xlist}
+		\ex e.g. \\
+			be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother \\
+			$\rightarrow$ \\
+			His father is older than his mother.
+	\end{xlist}
+	\ex Test with:\\
+		be-PRES-IND 1S PROG searching-VN ART book-G small-G blue-G\\
+		$\rightarrow$ \\
+		Predicted\_English\_Translation\textsubscript{j}
+\end{xlist}
+\end{exe}
+
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Wed Apr 18 13:56:55 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & GLOSS \\ 
+  \hline
+0 & 17.29 & 18.39 \\ 
+  1 & 16.42 & 18.00 \\ 
+  2 & 15.29 & 16.02 \\ 
+  3 & 15.97 & 20.22 \\ 
+  4 & 17.79 & 19.02 \\ 
+  5 & 16.73 & 15.53 \\ 
+  6 & 17.11 & 18.00 \\ 
+  7 & 16.37 & 20.08 \\ 
+  8 & 15.93 & 15.82 \\ 
+  9 & 16.99 & 15.93 \\ 
+   \hline
+Mean & 16.59 & 17.70 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{GLOSStoEn}} 
+\label{Table:GLOSS}
+\end{table}
+The average score of the Models\textsubscript{GLOSStoEN} is only slightly higher than the average score of the Models\textsubscript{GDtoEN}.
+Also, after doing a paired T-test, the difference between the two types of models is not attested
+(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{GLOSStoEN}=17.70, SD\textsubscript{GLOSStoEN}=1.78; t(9)=1.97, p=0.080)
+
+\begin{exe}  
+\ex Parallel-Partial Treatment: 
+\begin{xlist}
+	\ex Trained with:\\
+	 Gaelic sentence $\rightarrow$ English Sentence\\ 
+	 Gloss line $\rightarrow$ English Sentence \\
+	 Gloss line $\rightarrow$ Gaelic sentence\\
+	 Gaelic word $\rightarrow$ Gloss 
+	 \ex Parallel
+	\begin{xlist}
+		\ex Gaelic to English: \\<``Tha a athair nas sine na a mh\`athair'', ``His father is older than his mother.''>
+		\ex Gloss to English: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother''>
+		\ex Gloss to Gaelic: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``Tha a athair nas sine na a mh\`athair''>
+	\end{xlist}
+	\ex Partial
+	\begin{xlist}
+		\ex <``Tha'', ``be.pres''>
+		\ex <``a'', ``3sm.poss''>
+		\ex <``athair'', ``father''>
+		\ex <``nas'', ``comp''>
+		\ex <``sine'', ``old.cmpr''>
+		\ex <``na'', ``comp''>
+		\ex <``a'', ``3sm.poss''>
+		\ex <``mh\`athair'', ``mother''>
+	\end{xlist}
+	\ex Test with:\\
+		Tha mi a' sireadh an leabhair bhig ghuirm.\\
+		$\rightarrow$ \\
+		Predicted\_English\_Translation\textsubscript{j}
+\end{xlist}
+\end{exe}
+
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Wed Apr 18 13:56:55 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Gaelic (Baseline) & ParaPart \\ 
+  \hline
+0 & 17.29 & 32.64 \\ 
+  1 & 16.42 & 32.28 \\ 
+  2 & 15.29 & 29.94 \\ 
+  3 & 15.97 & 31.18 \\ 
+  4 & 17.79 & 32.83 \\ 
+  5 & 16.73 & 31.11 \\ 
+  6 & 17.11 & 32.19 \\ 
+  7 & 16.37 & 33.52 \\ 
+  8 & 15.93 & 30.93 \\ 
+  9 & 16.99 & 34.35 \\ 
+   \hline
+Mean & 16.59 & 32.10 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ParaParttoEn}} 
+\label{Table:ParaPart}
+\end{table}
+M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=48.95, p<0.01.
+
+\newpage
+\begin{exe}
+\ex Many other possible ways to blend Gaelic and gloss:
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Wed Apr 18 13:56:55 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrrrr}
+  \hline
+\begin{sideways} Round \end{sideways} & \begin{sideways} Baseline \end{sideways} & \begin{sideways} GLOSS \end{sideways} & \begin{sideways} ParaPart \end{sideways} & \begin{sideways} Para \end{sideways} & \begin{sideways} Interleaving \end{sideways} & \begin{sideways} Concat \end{sideways} & \begin{sideways} Google Translation \end{sideways} \\ 
+  \hline
+0 & 17.29 & 18.39 & 32.64 & 25.42 & 13.67 & 15.42 & 22.09 \\ 
+  1 & 16.42 & 18.00 & 32.28 & 25.32 & 12.49 & 14.31 & 25.38 \\ 
+  2 & 15.29 & 16.02 & 29.94 & 20.72 & 11.01 & 15.38 & 23.72 \\ 
+  3 & 15.97 & 20.22 & 31.18 & 22.22 & 12.33 & 14.18 & 23.21 \\ 
+  4 & 17.79 & 19.02 & 32.83 & 24.27 & 12.56 & 18.63 & 22.31 \\ 
+  5 & 16.73 & 15.53 & 31.11 & 24.55 & 12.13 & 14.89 & 23.41 \\ 
+  6 & 17.11 & 18.00 & 32.19 & 27.03 & 11.55 & 15.16 & 24.53 \\ 
+  7 & 16.37 & 20.08 & 33.52 & 25.34 & 12.78 & 15.20 & 22.78 \\ 
+  8 & 15.93 & 15.82 & 30.93 & 24.24 & 12.43 & 15.50 & 25.67 \\ 
+  9 & 16.99 & 15.93 & 34.35 & 25.96 & 11.65 & 15.72 & 23.42 \\ 
+   \hline
+Mean & 16.59 & 17.70 & 32.10 & 24.51 & 12.26 & 15.44 & 23.65 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of the treatments: Ten rounds of repeated random sub-sampling validation are conducted. For each round, the same sets of IGTs are used. Each column is a treatment, and each row is a single round of repeated random sub-sampling validation. The last column is the scores of Google Translation. We used a free Google translation API \citep{google_api} to translate the same set of test Gaelic sentences into English.} 
+\label{table:complete_table}
+\end{table}\end{exe}
+
+\bibliographystyle{te}
+
+\bibliography{ref}
+
+\end{document}

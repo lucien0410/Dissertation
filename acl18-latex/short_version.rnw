@@ -1,0 +1,53 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage{gb4e}
+\noautomath
+\usepackage{natbib}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{fixltx2e}
+\usepackage{Sweave}
+
+\newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
+%the newcommand change the selected word into 'ccr' font
+%e.g. \begin{myfont} multi-bleu.perl \end{myfont}
+
+\title{Building Neural Net Machine Translation Systems Using Interlinear Glossed Texts}
+
+\date{}
+
+\begin{document}
+\maketitle
+\SweaveOpts{concordance=TRUE}
+
+\begin{abstract}
+  The gloss data that are widely used in theoretical linguistics are hidden treasures for machine translation. 
+  The current paper introduces the gloss data to the natural language processing world and demonstrates a practical and effective way to incorporate gloss data into the training data for training neural net machine translation systems. 
+\end{abstract}
+
+\SweaveInput{AlcRealCake.Rnw}
+\SweaveInput{AlcRealCake2.Rnw}
+\SweaveInput{AlcRealCake3.Rnw}
+\SweaveInput{Conclusion.Rnw}
+
+
+\bibliography{acl2018}
+\bibliographystyle{acl_natbib}
+
+\appendix
+\newpage
+\section{Supplemental Material}
+\SweaveInput{alcComplete_table.Rnw}
+
+\end{document}
