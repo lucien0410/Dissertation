@@ -9,35 +9,45 @@
 \BOOKMARK [2][-]{subsection.2.2.2}{Glosses Distinguish Homographs' Different Meanings}{section.2.2}% 9
 \BOOKMARK [2][-]{subsection.2.2.3}{Glosses are Sensitive to Hierarchical Structures in Natural Language Sentences}{section.2.2}% 10
 \BOOKMARK [1][-]{section.2.3}{Conclusion: What Is a Gloss Line and Why Do They Matter?}{chapter.2}% 11
-\BOOKMARK [0][-]{chapter.3}{Chapter 3. \040Description of the Scottish Gaelic Interlinear Glossed Text Corpus}{}% 12
-\BOOKMARK [0][-]{chapter.4}{Chapter 4. \040A Gental Introduction of Machine Learning and Machine Translation}{}% 13
-\BOOKMARK [1][-]{section.4.1}{What is Machine Learning?}{chapter.4}% 14
-\BOOKMARK [1][-]{section.4.2}{History of Machine Translation}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.3}{Statistical Machine Translation}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.4}{Neural Net Machine Translation}{chapter.4}% 17
-\BOOKMARK [2][-]{subsection.4.4.1}{What is neural nets? Why can neural net learn?}{section.4.4}% 18
-\BOOKMARK [0][-]{chapter.5}{Chapter 5. \040Building Translation Systems using Interlinear Glossed Text: First Attempt}{}% 19
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 20
-\BOOKMARK [1][-]{section.5.2}{Related Work}{chapter.5}% 21
-\BOOKMARK [1][-]{section.5.3}{Technical Settings of the Machine Translation Experiments}{chapter.5}% 22
-\BOOKMARK [1][-]{section.5.4}{Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{chapter.5}% 23
-\BOOKMARK [2][-]{subsection.5.4.1}{Procedure of the Experiments}{section.5.4}% 24
-\BOOKMARK [2][-]{subsection.5.4.2}{Result}{section.5.4}% 25
-\BOOKMARK [2][-]{subsection.5.4.3}{Summary}{section.5.4}% 26
-\BOOKMARK [1][-]{section.5.5}{Discussion and Conclusion}{chapter.5}% 27
-\BOOKMARK [0][-]{chapter.6}{Chapter 6. \040Combining Gaelic Words with Glosses}{}% 28
-\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 29
-\BOOKMARK [2][-]{subsection.6.1.1}{The Underlying Heuristics}{section.6.1}% 30
-\BOOKMARK [1][-]{section.6.2}{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{chapter.6}% 31
-\BOOKMARK [2][-]{subsection.6.2.1}{Related work}{section.6.2}% 32
-\BOOKMARK [2][-]{subsection.6.2.2}{Data Preprocessing Using the Parallel-Partial Treatment}{section.6.2}% 33
-\BOOKMARK [2][-]{subsection.6.2.3}{Results of the Parallel-Partial Treatment}{section.6.2}% 34
-\BOOKMARK [1][-]{section.6.3}{Other Possible Treatments}{chapter.6}% 35
-\BOOKMARK [2][-]{subsection.6.3.1}{The Parallel Treatment}{section.6.3}% 36
-\BOOKMARK [2][-]{subsection.6.3.2}{Interleaving Gaelic Words and Gloss Items And Concating them}{section.6.3}% 37
-\BOOKMARK [2][-]{subsection.6.3.3}{Hybrid: Gaelic or Gloss}{section.6.3}% 38
-\BOOKMARK [1][-]{section.6.4}{Summary and Conclusion}{chapter.6}% 39
-\BOOKMARK [0][-]{chapter.7}{Chapter 7. \040Interlinear Glossed Text Data In Other Languages}{}% 40
-\BOOKMARK [0][-]{chapter.8}{Chapter 8. \040Implications on Theoretical Linguistics and Natural Language Processing}{}% 41
-\BOOKMARK [0][-]{chapter.9}{Chapter 9. \040Conclusion}{}% 42
-\BOOKMARK [0][-]{chapter.9}{\1}{}% 43
+\BOOKMARK [0][-]{chapter.3}{Chapter 3. \040A General Introduction of Machine Learning and Machine Translation}{}% 12
+\BOOKMARK [1][-]{section.3.1}{What is Machine Learning?}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.1.1}{What is a Function and What is a Model?}{section.3.1}% 14
+\BOOKMARK [2][-]{subsection.3.1.2}{Two Different Paradigms of Building a Model}{section.3.1}% 15
+\BOOKMARK [1][-]{section.3.2}{Statistical Machine Translation}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.3}{Neural Net Machine Translation}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.3.1}{What Is a Artificial Neural Network?}{section.3.3}% 18
+\BOOKMARK [2][-]{subsection.3.3.2}{Recurrent Neural Network}{section.3.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Introduction to Neural Net Machine Translation}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.5}{A Quick Historical Overview of Machine Translation and Conclusion}{chapter.3}% 21
+\BOOKMARK [0][-]{chapter.4}{Chapter 4. \040Building Translation Systems using Interlinear Glossed Text: First Attempt}{}% 22
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.2}{Related Work}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.3}{Technical Settings of the Machine Translation Experiments and Experimental Data of Scottish Gaelic Interlinear Glossed Text Corpus}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.3.1}{Technical Settings}{section.4.3}% 26
+\BOOKMARK [2][-]{subsection.4.3.2}{Experimental Data: a corpus of Scottish Gaelic Interlinear Glossed Texts}{section.4.3}% 27
+\BOOKMARK [1][-]{section.4.4}{Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.1}{Procedure of the Experiments}{section.4.4}% 29
+\BOOKMARK [2][-]{subsection.4.4.2}{Result}{section.4.4}% 30
+\BOOKMARK [2][-]{subsection.4.4.3}{Summary}{section.4.4}% 31
+\BOOKMARK [1][-]{section.4.5}{Discussion and Conclusion}{chapter.4}% 32
+\BOOKMARK [0][-]{chapter.5}{Chapter 5. \040Combining Gaelic Words with Glosses}{}% 33
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 34
+\BOOKMARK [2][-]{subsection.5.1.1}{The Underlying Heuristics}{section.5.1}% 35
+\BOOKMARK [1][-]{section.5.2}{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.2.1}{Related work}{section.5.2}% 37
+\BOOKMARK [2][-]{subsection.5.2.2}{Data Preprocessing Using the Parallel-Partial Treatment}{section.5.2}% 38
+\BOOKMARK [2][-]{subsection.5.2.3}{Results of the Parallel-Partial Treatment}{section.5.2}% 39
+\BOOKMARK [1][-]{section.5.3}{Other Possible Treatments}{chapter.5}% 40
+\BOOKMARK [2][-]{subsection.5.3.1}{The Parallel Treatment}{section.5.3}% 41
+\BOOKMARK [2][-]{subsection.5.3.2}{Interleaving Gaelic Words and Gloss Items And Concating them}{section.5.3}% 42
+\BOOKMARK [2][-]{subsection.5.3.3}{Hybrid: Gaelic or Gloss}{section.5.3}% 43
+\BOOKMARK [1][-]{section.5.4}{Summary and Conclusion}{chapter.5}% 44
+\BOOKMARK [0][-]{chapter.6}{Chapter 6. \040Tying Up Some Loose Ends}{}% 45
+\BOOKMARK [1][-]{section.6.1}{Oversampling}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.2}{Comparsion with Google Translation}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.3}{Other Hyper-Paremeters}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.4}{Interlinear Glossed Text Data In Other Languages}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.5}{Conclusion}{chapter.6}% 50
+\BOOKMARK [0][-]{chapter.7}{Chapter 7. \040Implications on Theoretical Linguistics and Natural Language Processing}{}% 51
+\BOOKMARK [0][-]{chapter.8}{Chapter 8. \040Conclusion}{}% 52
+\BOOKMARK [0][-]{chapter.8}{\1}{}% 53

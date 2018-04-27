@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{54}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -33,10 +33,40 @@ Bickel, Balthasar, Bernard Comrie, and Martin Haspelmath (2008), \enquote{The
   glosses.} \emph{Revised version of February}.
 \bibAnnoteFile{bickel2008leipzig}
 
+\bibitem[{Brown et~al.(1988)Brown, Cocke, Pietra, Pietra, Jelinek, Mercer, and
+  Roossin}]{brown1988statistical}
+Brown, Peter, John Cocke, S~Della Pietra, V~Della Pietra, Frederick Jelinek,
+  Robert Mercer, and Paul Roossin (1988), \enquote{A statistical approach to
+  language translation.} In \emph{Proceedings of the 12th conference on
+  Computational linguistics-Volume 1}, 71--76, Association for Computational
+  Linguistics.
+\bibAnnoteFile{brown1988statistical}
+
+\bibitem[{Brown et~al.(1990)Brown, Cocke, Pietra, Pietra, Jelinek, Lafferty,
+  Mercer, and Roossin}]{brown1990statistical}
+Brown, Peter~F, John Cocke, Stephen A~Della Pietra, Vincent J~Della Pietra,
+  Fredrick Jelinek, John~D Lafferty, Robert~L Mercer, and Paul~S Roossin
+  (1990), \enquote{A statistical approach to machine translation.}
+  \emph{Computational linguistics}, 16, 79--85.
+\bibAnnoteFile{brown1990statistical}
+
+\bibitem[{Brown et~al.(1993)Brown, Pietra, Pietra, and
+  Mercer}]{brown1993mathematics}
+Brown, Peter~F, Vincent J~Della Pietra, Stephen A~Della Pietra, and Robert~L
+  Mercer (1993), \enquote{The mathematics of statistical machine translation:
+  Parameter estimation.} \emph{Computational linguistics}, 19, 263--311.
+\bibAnnoteFile{brown1993mathematics}
+
 \bibitem[{Chen(2010)}]{Chen2010}
 Chen, Yuan-Lu (2010), \emph{Degree Modification and Time Anchoring in
-  Mandarin}. Ph.D. thesis.
+  Mandarin}. Master's thesis.
 \bibAnnoteFile{Chen2010}
+
+\bibitem[{Chen et~al.(2018)Chen, Carnie, Hammond, and Patton}]{gaelic_igt}
+Chen, Yuan-Lu, Andrew Carnie, Michael Hammond, and Colleen Patton (2018),
+  \enquote{Developing an auto-glosser for scottish gaelic using a corpus of
+  interlinear glossed text.} The 10th Celtic Linguistics Conference.
+\bibAnnoteFile{gaelic_igt}
 
 \bibitem[{Cheng(1973)}]{cheng1973synchronic}
 Cheng, Chin-Chuan (1973), \emph{A synchronic phonology of Mandarin Chinese},
@@ -65,9 +95,12 @@ Chomsky, Noam (2005), \enquote{Three factors in language design.}
   \urlprefix\url{https://doi.org/10.1162/0024389052993655}.
 \bibAnnoteFile{chom2005_three_factors}
 
-\bibitem[{Chomsky(2006)}]{chomsky2006language}
-Chomsky, Noam (2006), \emph{Language and mind}. Cambridge University Press.
-\bibAnnoteFile{chomsky2006language}
+\bibitem[{Chomsky(2007)}]{chomsky2007}
+Chomsky, Noam (2007), \enquote{Approaching ug from below.} In \emph{Interfaces
+  + Recursion = Language?: Chomsky's Minimalism and the View from
+  Syntax-Semantics} (U.~Sauerland and H.M. Gartner, eds.), Studies in
+  Generative Grammar [SGG], 1--29, De Gruyter.
+\bibAnnoteFile{chomsky2007}
 
 \bibitem[{Damerau(1964)}]{damerau1964technique}
 Damerau, Fred~J (1964), \enquote{A technique for computer detection and
@@ -75,11 +108,21 @@ Damerau, Fred~J (1964), \enquote{A technique for computer detection and
   171--176.
 \bibAnnoteFile{damerau1964technique}
 
+\bibitem[{Domingos(2012)}]{domingos2012few}
+Domingos, Pedro (2012), \enquote{A few useful things to know about machine
+  learning.} \emph{Communications of the ACM}, 55, 78--87.
+\bibAnnoteFile{domingos2012few}
+
 \bibitem[{Grano(2008)}]{grano2008mandarin}
 Grano, Thomas (2008), \enquote{Mandarin hen and the syntax of declarative
   clause typing.} \emph{Unpublished manuscript. Accessed online:< http://home.
   uchicago. edu/\~{} tgrano/grano\_hen. pdf>. First accessed}, 4.
 \bibAnnoteFile{grano2008mandarin}
+
+\bibitem[{Graves et~al.(2014)Graves, Wayne, and Danihelka}]{graves2014neural}
+Graves, Alex, Greg Wayne, and Ivo Danihelka (2014), \enquote{Neural turing
+  machines.} \emph{arXiv preprint arXiv:1410.5401}.
+\bibAnnoteFile{graves2014neural}
 
 \bibitem[{Johnson et~al.(2016)Johnson, Schuster, Le, Krikun, Wu, Chen, Thorat,
   Vi{\'e}gas, Wattenberg, Corrado et~al.}]{google_zero_shot}
@@ -97,6 +140,11 @@ Keskar, Nitish~Shirish, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy,
   learning: Generalization gap and sharp minima.} \emph{CoRR}, abs/1609.04836,
   \urlprefix\url{http://arxiv.org/abs/1609.04836}.
 \bibAnnoteFile{DBLP:journals/corr/KeskarMNST16}
+
+\bibitem[{{Kiperwasser} and {Ballesteros}(2018)}]{Syntax_to_Translation}
+{Kiperwasser}, E. and M.~{Ballesteros} (2018), \enquote{Scheduled multi-task
+  learning: From syntax to translation.} \emph{ArXiv e-prints}.
+\bibAnnoteFile{Syntax_to_Translation}
 
 \bibitem[{Klein et~al.(2017)Klein, Kim, Deng, Senellart, and
   Rush}]{2017opennmt}
@@ -160,6 +208,12 @@ Liu, Chen-Sheng~Luther (2010), \enquote{The positive morpheme in chinese and
   the adjectival structure.} \emph{Lingua}, 120, 1010--1056.
 \bibAnnoteFile{liu2010positive}
 
+\bibitem[{Luong et~al.(2017)Luong, Brevdo, and Zhao}]{luong17GitHub}
+Luong, Minh{-}Thang, Eugene Brevdo, and Rui Zhao (2017), \enquote{Neural
+  machine translation (seq2seq) tutorial.}
+  \emph{https://github.com/tensorflow/nmt}.
+\bibAnnoteFile{luong17GitHub}
+
 \bibitem[{Luong et~al.(2015)Luong, Le, Sutskever, Vinyals, and
   Kaiser}]{luong2015multi}
 Luong, Minh-Thang, Quoc~V Le, Ilya Sutskever, Oriol Vinyals, and Lukasz Kaiser
@@ -167,10 +221,22 @@ Luong, Minh-Thang, Quoc~V Le, Ilya Sutskever, Oriol Vinyals, and Lukasz Kaiser
   preprint arXiv:1511.06114}.
 \bibAnnoteFile{luong2015multi}
 
+\bibitem[{Luong et~al.(2014)Luong, Pham, and Manning}]{luong2015effective}
+Luong, Minh-Thang, Hieu Pham, and Christopher~D Manning (2014),
+  \enquote{Effective approaches to attention-based neural machine translation.}
+  \emph{arXiv preprint arXiv:1410.5401}.
+\bibAnnoteFile{luong2015effective}
+
 \bibitem[{Mei(1991)}]{mei1991tone}
 Mei, Tsu-Lin (1991), \enquote{Tone sandhi and morphological relics.}
   \emph{Journal of Chinese Linguistics Monograph Series}, 454--471.
 \bibAnnoteFile{mei1991tone}
+
+\bibitem[{Mitchell(2006)}]{mitchell2006discipline}
+Mitchell, Tom~Michael (2006), \emph{The discipline of machine learning},
+  volume~9. Carnegie Mellon University, School of Computer Science, Machine
+  Learning Department.
+\bibAnnoteFile{mitchell2006discipline}
 
 \bibitem[{Nadejde et~al.(2017)Nadejde, Reddy, Sennrich, Dwojak,
   Junczys-Dowmunt, Koehn, and Birch}]{ccg_target_seq}
@@ -188,6 +254,22 @@ Papineni, Kishore, Salim Roukos, Todd Ward, and Wei-Jing Zhu (2002),
   linguistics}, 311--318, Association for Computational Linguistics.
 \bibAnnoteFile{bleu}
 
+\bibitem[{Pierce and Carroll(1966)}]{pierce1966language}
+Pierce, John~R and John~B Carroll (1966), \enquote{Language and machines:
+  Computers in translation and linguistics.}
+\bibAnnoteFile{pierce1966language}
+
+\bibitem[{Pyle and San~Jose(2015)}]{pyle2015executive}
+Pyle, Dorian and Christina San~Jose (2015), \enquote{An executive’s guide to
+  machine learning.} \emph{Mckinsey Quarterly,(3)}, 44--53.
+\bibAnnoteFile{pyle2015executive}
+
+\bibitem[{Rosenblatt(1958)}]{rosenblatt}
+Rosenblatt, Frank (1958), \enquote{The perceptron: a probabilistic model for
+  information storage and organization in the brain.} \emph{Psychological
+  review}, 65, 386.
+\bibAnnoteFile{rosenblatt}
+
 \bibitem[{Sennrich and Haddow(2016)}]{sennrich2016linguistic}
 Sennrich, Rico and Barry Haddow (2016), \enquote{Linguistic input features
   improve neural machine translation.} \emph{arXiv preprint arXiv:1606.02892}.
@@ -197,6 +279,21 @@ Sennrich, Rico and Barry Haddow (2016), \enquote{Linguistic input features
 Shih, Chilin (1997), \enquote{Mandarin third tone sandhi and prosodic
   structure.} \emph{Linguistic Models}, 20, 81--124.
 \bibAnnoteFile{shih1997mandarin}
+
+\bibitem[{Siegelmann(2003)}]{siegelmann2003neural}
+Siegelmann, Hava~T (2003), \enquote{Neural and super-turing computing.}
+  \emph{Minds and Machines}, 13, 103--114.
+\bibAnnoteFile{siegelmann2003neural}
+
+\bibitem[{Siegelmann(2012)}]{siegelmann2012neural}
+Siegelmann, Hava~T (2012), \emph{Neural networks and analog computation: beyond
+  the Turing limit}. Springer Science \& Business Media.
+\bibAnnoteFile{siegelmann2012neural}
+
+\bibitem[{Siegelmann and Sontag(1991)}]{siegelmann1991turing}
+Siegelmann, Hava~T and Eduardo~D Sontag (1991), \enquote{Turing computability
+  with neural nets.} \emph{Applied Mathematics Letters}, 4, 77--80.
+\bibAnnoteFile{siegelmann1991turing}
 
 \bibitem[{Smith et~al.(2017)Smith, Kindermans, and
   Le}]{DBLP:journals/corr/abs-1711-00489}
@@ -218,6 +315,13 @@ Snover, Matthew, Bonnie Dorr, Richard Schwartz, Linnea Micciulla, and John
   annotation.} In \emph{In Proceedings of Association for Machine Translation
   in the Americas}, 223--231.
 \bibAnnoteFile{Snover06astudy}
+
+\bibitem[{{Strubell} et~al.(2018){Strubell}, {Verga}, {Andor}, {Weiss}, and
+  {McCallum}}]{Semantic_Role_Labeling}
+{Strubell}, E., P.~{Verga}, D.~{Andor}, D.~{Weiss}, and A.~{McCallum} (2018),
+  \enquote{Linguistically-informed self-attention for semantic role labeling.}
+  \emph{ArXiv e-prints}.
+\bibAnnoteFile{Semantic_Role_Labeling}
 
 \bibitem[{Wang and Lin(2011)}]{wang2011variation}
 Wang, Chiung-Yao and Yen-Hwei Lin (2011), \enquote{Variation in tone 3 sandhi:

@@ -62,25 +62,31 @@
 \usepackage{psfrag}
 \usepackage{afterpage}
 \usepackage{subfigure}
-
 \usepackage{hyperref}
 \usepackage{ifpdf}
 \usepackage{qtree}
 \usepackage{fixltx2e}
+\graphicspath{ {figures/} }
+\DeclareMathOperator*{\argmax}{argmax} 
+\usepackage{tikz}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
+\usetikzlibrary {positioning}
+
+
 
 
 \director{Mike Hammond}
 
 
 \author{Yuan-Lu Chen}
-\title{Developing Linguistically Informed Neural Machine Translation Systems}
+\title{Improving Neural Net Machine Translation Systems with Linguistic Information}
 \date{2018}
 \makeindex
 
 \ifpdf
 \pdfinfo{
 /Author (Yuan-Lu Chen)
-/Title  (Developing Linguistically Informed Neural Machine Translation Systems)
+/Title  (Improving Neural Net Machine Translation Systems with Linguistic Information)
 }
 \fi
 
@@ -107,16 +113,18 @@
 
 \SweaveInput{Introduction.Rnw}
 \SweaveInput{gloss.Rnw}
-\SweaveInput{Description_of_Corpus.Rnw}
+%\SweaveInput{Description_of_Corpus.Rnw}
 \SweaveInput{intro_MT.Rnw}
 \SweaveInput{RealCake.Rnw}
 \SweaveInput{RealCake2.Rnw}
-\SweaveInput{gloss_in_other_languages.Rnw}
+\SweaveInput{Tying_loose_ends.Rnw}
 \SweaveInput{Implications_ling.Rnw}
 \SweaveInput{Conclusion.Rnw}
+
 \bibliographystyle{te}
 
 \bibliography{ref}
 
 %% ================================================================
 \end{document}
+activation_function.png

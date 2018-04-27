@@ -72,7 +72,7 @@
 % \SweaveInput{RealCake.Rnw}
 % \SweaveInput{RealCake2.Rnw}
 % \SweaveInput{Implications_ling.Rnw}
-% \SweaveInput{gloss_in_other_languages.Rnw}
+% \SweaveInput{Tying_loose_ends.Rnw}
 % \SweaveInput{Conclusion.Rnw}
 
 

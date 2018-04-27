@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Combining Gaelic Words with Glosses}\label{chap:cake2}
 \section{Introduction}
-In the previous chapter, we attempt to build a system by using the \textit{gloss treatment} to outperform the baseline system. It turns that using gloss line solely is not effective enough to improve the system. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
+In the previous chapter, we attempt to build a system by using the \textit{gloss treatment} to outperform the baseline system. It turns that solely using gloss line is not effective enough to improve the system. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
 \begin{exe}
 	\ex 
 	\begin{xlist}
@@ -15,7 +15,7 @@ This section reports various ways of combining the gloss line data and the Gaeli
 In this section, I will first describe the most effective treatment, termed as `\textit{Parallel-Partial}' treatment, and the results, and then I will report the experiments done with other relevant logical treatments (i.e. other ways of combining glossing data and Gaelic data). 
 
 \subsection{The Underlying Heuristics}\label{heuristics}
-At a high level, neural net sequence to sequence learning algorithm is to learn how to map a high-dimension space to another high-dimension space. In the settings of machine translation, each dot in the high-dimension space is a meaning representation. Linking one dot to another dot is converting one meaning representation to another, yielding the effect of translation. Given this heuristics, we may just feed the machine with all the available meaning mappings. Given the assumption that the gloss lines are linguistically guided meaning representations, they are suitable training data for building machine translation systems. Specially, with the gloss data, we let the machine to learn the following mappings:
+At a high level, neural net sequence to sequence learning algorithm is learning how to map a high-dimension space to another high-dimension space. In the settings of machine translation, each dot in the high-dimension space is a meaning representation. Linking one dot to another dot is converting one representation of meaning to another, yielding the effect of translation. Given this heuristics, we may just feed the machine with all the available meaning mappings. Given the assumption that the gloss lines are linguistically guided representations of meaning, they are suitable training data for building machine translation systems. Specially, with the gloss data, we let the machine to learn the following mappings:
 
 \begin{exe}
 	\ex Mappings Learned in the ParaPart treatment
@@ -50,7 +50,7 @@ For concreteness, consider the following interlinear glossed text:
 With the interlinear glossed text, the parallel treatment will generate three pairs of samples:
 
 \begin{exe}
-	\ex
+	\ex\label{sample_para}
 	\begin{xlist}
 		\ex Gaelic to English: \\<``Tha a athair nas sine na a mh\`athair'', ``His father is older than his mother.''>
 		\ex Gloss to English: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother''>
@@ -60,7 +60,7 @@ With the interlinear glossed text, the parallel treatment will generate three pa
 
 The partial treatment then generates pairs of a Gaelic word and a gloss token: 
 \begin{exe}
-	\ex
+	\ex\label{sample_partial}
 	\begin{xlist}
 		\ex <``Tha'', ``be.pres''>
 		\ex <``a'', ``3sm.poss''>
@@ -73,18 +73,20 @@ The partial treatment then generates pairs of a Gaelic word and a gloss token:
 	\end{xlist}
 \end{exe}
 
+The samples in (\ref{sample_para}) and (\ref{sample_partial}) are the training data for this Parallel-Partial treatment. 
+
 \subsection{Results of the Parallel-Partial Treatment}
 
-Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. The same split of the original IGTs is used, so as long as it is the same round, the training, validation and test are the same set of IGTs. The only difference is that now the training and validation IGT data are treated with the Parallel-Partial treatment. The result show that the Parallel-Partial treatment has a tremendous effect in improving the baseline system. 
+Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. The same split of the original IGTs is used, so as long as it is the same round, the training, validation and test are the same set of IGTs. The only difference is that now the training and validation IGT data are treated with the Parallel-Partial treatment. The results show that the Parallel-Partial treatment has a tremendous effect in improving the baseline system. 
 
 \SweaveInput{ParaPart_table.Rnw}
 
 The first and the second columns are BLUE scores of the baseline systems and the systems with the Parallel-Partial treatment respectively. The latter is significantly better than the former
 (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p<0.01).
-The comparison of the average BLUE scores of the groups of systems shows that the Parallel-Partial treatment improves the performance of the baseline system for 93 percent.
+The comparison of the average BLUE scores of the groups of systems shows that the Parallel-Partial treatment improves the performance of the baseline system by 93 percent.
 %(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p<0.01\Sexpr{p_val}).
 \subsubsection{Discussion}
-With the ParaPart treatment, the baseline systems are improved for more than 93 percent. This result suggest the validity of our heuristics in section \ref{heuristics}, and provide strong evidence for the gloss-helps hypothesis in (\ref{hypothesis}).     
+With the ParaPart treatment, the baseline systems are improved for more than 93 percent. This result suggest the validity of our heuristics in section \ref{heuristics} that gloss lines can be viewed as an artifical language, and provide strong evidence for the gloss-helps hypothesis in (\ref{gloss_helps_hypothesis}).     
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,7 +118,7 @@ With this treatment, a chunk of interlinear glossed text is split into two pairs
 \end{exe}
 
 \subsubsection{Results of the Parallel Treatment}\label{treatment:Para_result}
-The experiments had our expected results. 
+The experiments gave us the expected results. 
 \SweaveInput{Para_table.Rnw}
 The table in (\ref{Table:Para}) compares the performances of this treatment and the baseline. Critically, the Parallel treatment is effective in improving the baseline systems (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{Para}=\Sexpr{m_Treatment}, SD\textsubscript{Para}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p < 0.01). 
 \SweaveInput{GDParaParaPart_null_table.Rnw}
@@ -193,7 +195,7 @@ The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic wo
 
 Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. To decied, we need to know which one, the Gaelic word or the gloss item, is less ambiguous. 
 The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic words, then <Gloss\_item, English translation> is chosen; on the other hand if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. 
-However, when the situation is tight (i.e. both the Gaelic word and gloss item are equally ambiguous), a default setting is needed to be chosen. The choices of the default setting split this single treatment into two treatments: default as Gaelic or default as gloss.
+However, when the situation is tight (i.e. both the Gaelic word and gloss item are equally ambiguous), a default setting needs to be chosen. The choices of the default setting split this single treatment into two treatments: default as Gaelic or default as gloss.
 
 The following is an example of the hybrid treatment:
 
@@ -214,7 +216,7 @@ This treatment has the same potential downside as the Concat treatment: sparsity
 
 \subsubsection{Result of Hybrid}    
 \SweaveInput{ReplacingGaelic_table.Rnw}
-When the default setting is the Gaelic word, the performances are significantly worse than than the baseline systems
+When the default setting is the Gaelic word, the performances are significantly worse than the baseline systems
 (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ReplacingGaelic}=\Sexpr{m_Treatment}, SD\textsubscript{ReplacingGaelic}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p < 0.01), 
 as shown in table (\ref{Table:HybridDefaultAsGaelic}).
 

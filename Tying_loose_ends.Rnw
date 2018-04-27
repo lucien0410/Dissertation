@@ -1,0 +1,17 @@
+\chapter{Tying Up Some Loose Ends}
+\label{chap:Tying_Up}
+
+\section{Oversampling}
+
+\section{Comparsion with Google Translation}
+
+\section{Other Hyper-Paremeters}
+
+\SweaveInput{HyPara_table.Rnw}
+
+\section{Interlinear Glossed Text Data In Other Languages}
+To run the same experiments on Online Database of Interlinear Text \citep{ODIN, Xia2016} to show that incorporating gloss information works effectively across different languages.  
+
+\SweaveInput{Other_language_table.Rnw}
+
+\section{Conclusion}

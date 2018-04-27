@@ -9,7 +9,7 @@ In supervised machine learning models, two factors effects the performance of th
 
 Therefore, theoretically incorporation of the gloss data should improve the translation systems. Specifically, I propose the following hypothesis:
 \begin{exe} 
-\ex \textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
+\ex \label{gloss_helps_hypothesis}\textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
 
 The hypothesis can have two versions, strong and weak:
 	\begin{xlist}
@@ -18,18 +18,19 @@ The hypothesis can have two versions, strong and weak:
 	\end{xlist}
 \end{exe}
 
-The experiments in the current chapter will reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not empirally supported. 
+The experiments in the current chapter will reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not empirically supported. 
 
 This chapter describes the experiments conducted to test the strong version of the Gloss-helps hypothesis.
-The rest of the chapter is organized as follows: Section \ref{relate_work} describes related works in the literature, Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments, Section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), Section \ref{section:cake1_Discussion} discusses the results and conclude this chapter.
-
+The rest of the chapter is organized as follows: Section \ref{relate_work} describes related works in the literature, Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments and the corpus used in the experiments, Section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), Section \ref{section:cake1_Discussion} discusses the results and conclude this chapter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work}\label{relate_work}
-Attempts to improve machine translation systems by incorporating explicit linguistic information are reported in the literature. Syntax information is known to be effective in improving statistical machine translation (SMT). The efforts of using syntax information even derive a special type of SMT, termed as syntax-based SMT \citep{williams2016syntax}. The same trend is also found in neural net machine translation. For example, \citet{sennrich2016linguistic} exploit the information of lemmas, part of tags, morphology of words, and dependency parses of sentences to improve MT systems. \citet{ccg_target_seq} incorporate the Categorial grammar parse tags of the target sequences.
+Attempts to improve machine translation systems by incorporating explicit linguistic information are reported in the literature. Syntax information is known to be effective in improving statistical machine translation (SMT). The efforts of using syntax information even derive a special type of SMT, termed as syntax-based SMT \citep{williams2016syntax}. The same trend is also found in neural net machine translation. For example, \citet{sennrich2016linguistic} exploit the information of lemmas, part of speech tags, morphology of words, and dependency parses of sentences to improve MT systems. \citet{ccg_target_seq} incorporate the Categorial grammar parse tags of the target sequences.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
-\section{Technical Settings of the Machine Translation Experiments}\label{sec:experimet_setting}
+\section{Technical Settings of the Machine Translation Experiments and Experimental Data of Scottish Gaelic Interlinear Glossed Text Corpus}\label{sec:experimet_setting}
+
+\subsection{Technical Settings}
 The experiments are conducted by using OpenNMT \citep{2017opennmt}, which implements the state-of-the-art neural net machine translation algorithms \citep{cho2014properties, cho2014learning, bahdanau2014neural}.
 The following default hyper-parameter settings of OpenNMT\footnote{See their documentation for the complete default hyper-parameter settings: \url{http://opennmt.net/OpenNMT-py/}.} are used across all models so that the only independent variable is the type of the training data:
 	\begin{itemize}
@@ -50,7 +51,12 @@ A common practice to find the optimal settings of the hyper-parameters is to hol
 
 However, given that finding the optimal settings of the hyper-parameters is not relevant to our research and causing unnecessary complications, the process of optimizing the settings of the hyper-parameters is not implemented, and I simply adopt OpenNMT's default settings. The employed settings of the hyper-parameters should be viewed as arbitrarily chosen, and there are room to tune the models for better performance. Critically, these settings are viewed as constants, so that we can focus on the effects of different treatments on the source sequences in the translation experiments.  We will leave the question of what hyper-parameters are optimal for our data for future research.
 
-The data and the scripts are accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.  
+\subsection{Experimental Data: a corpus of Scottish Gaelic Interlinear Glossed Texts}
+
+We use the same Scottish Gaelic Interlinear Glossed Text corpus \citep{gaelic_igt} for all the experiments in chapter \ref{chap:cake} and chapter \ref{chap:cake2}. 
+This corpus has 8,367 Gaelic sentences, and in term of words, it has 52,778 Gaelic words/glosses. The data of the corpus is from two different sources: linguistics fieldwork and data elicitation.
+
+%The data and the scripts are accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.  
 
 \section{Gloss Representation Solely Does NOT Outperform Gaelic Sentences} \label{gd_to_gl_to_en}
 This section tests the strong version of Gloss-helps hypothesis in (\ref{strong_hy}).
@@ -160,7 +166,7 @@ The unigram bag of word format of the gold-standard of our example is:
 	\end{xlist}
 \end{exe}
 
-Now to calculate of the proportional similarity between the predicted bag of words and the gold-standard bags of words, BLEU uses `modified precision rate'. The technical meaning of `precision' is whether the predicted items is actually present in the gold-standard. Now the size of the bag of unigrams of the candidate is 5, the denominator of the precision rate is 5, and the nominator is how many items in the candidate set are present in the gold-standard. In the current example, \textit{one} and \textit{two} are both present in the gold-standard, so the nominator of (\ref{can1}) or (\ref{can2}) is 5. Now we have a wrongly inflated rate, 5 out of 5, 100$\%$ matched, meaning (\ref{can1}) or (\ref{can2}) is 100$\%$ similar to the gold-standard. To counter the effect of this inflation, BLEU uses `modified' precision rate. When the item in the gold-standard is matched it is crossed-out, and invisible to the predicted bag of words\footnote{This is very similar to the feature checking mechanism in the Minimalist Program: one interpretable feature normally can only check out one uninterpretable feature.}. With this modified precision measurement, the two \textit{one}s only get one score and the three \textit{two}s only get one score. Now the modified precision rate is 2 out of 5, instead of 5 out of 5. 
+Now to calculate of the proportional similarity between the predicted bag of words and the gold-standard bags of words, BLEU uses `modified precision rate'. The technical meaning of `precision' is whether the predicted items is actually present in the gold-standard. Now the size of the bag of unigrams of the candidate is 5, the denominator of the precision rate is 5, and the denominator is how many items in the candidate set are present in the gold-standard. In the current example, \textit{one} and \textit{two} are both present in the gold-standard, so the denominator of (\ref{can1}) or (\ref{can2}) is 5. Now we have a wrongly inflated rate, 5 out of 5, 100$\%$ matched, meaning (\ref{can1}) or (\ref{can2}) is 100$\%$ similar to the gold-standard. To counter the effect of this inflation, BLEU uses `modified' precision rate. When the item in the gold-standard is matched it is crossed-out, and invisible to the predicted bag of words\footnote{This is very similar to the feature checking mechanism in the Minimalist Program: one interpretable feature normally can only check out one uninterpretable feature.}. With this modified precision measurement, the two \textit{one}s only get one score and the three \textit{two}s only get one score. Now the modified precision rate is 2 out of 5, instead of 5 out of 5. 
 
 In terms of bigrams, the same examples will be:
 
@@ -216,7 +222,7 @@ Note that the gold-standard is the same because they are the same English senten
 	\ex Score\textsubscript{GDtoEN} = BLEU(Gold-Standard, Predictions\textsubscript{GDtoEN}) \\
  \end{xlist}
 \end{exe}
-This procedure of splitting the data into three sub-sets, training the models, and evaluating the models is executed for ten times.
+This procedure of splitting the data into three sub-sets, training the models, and evaluating the models is executed ten times.
 
 \subsection{Result} \label{gdglen_results}
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table.
@@ -227,14 +233,17 @@ Also, after doing a paired T-test, the difference between the two types of model
 (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{GLOSStoEN}=\Sexpr{m_Treatment}, SD\textsubscript{GLOSStoEN}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p=\Sexpr{p_val})
 
 \subsection{Summary}
-The ultimate practical goal of the dissertation is to use glossing data to develop better machine translation systems. Here \textit{better} means to be better than a baseline system, which is the machine translation system trained with Gaelic-to-English translation samples. The models in (\ref{ModelGDToEN}) are the baseline systems, and their scores are in the Gaelic column of table (\ref{Table:GLOSS}). These are the target scores that we aims to outperform. The experiment above is the first attempt to improve that scores by using the \textit{gloss treatment}, in which the Gaelic sentences are replaced with gloss lines.  However, the result shows that this \textit{gloss treatment} is not effective as the scores of the gloss models are not statistically higher than the baseline Gaelic-to-English models. 
+The ultimate practical goal of the dissertation is to use glossing data to develop better machine translation systems. Here \textit{better} means to be better than a baseline system, which is the machine translation system trained with Gaelic-to-English translation samples. The models in (\ref{ModelGDToEN}) are the baseline systems, and their scores are in the Gaelic column of table (\ref{Table:GLOSS}). These are the target scores that we aims to outperform. The experiment above is the first attempt to improve the scores by using the \textit{gloss treatment}, in which the Gaelic sentences are replaced with gloss lines.  However, the result shows that this \textit{gloss treatment} is not effective as the scores of the gloss models are not statistically higher than the baseline Gaelic-to-English models. 
 
 \section{Discussion and Conclusion}\label{section:cake1_Discussion}
 It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are equally good in terms of representing meanings. The strong version of the Gloss-helps hypothesis does not hold.
 
-There are several remarks that need to make for the current result. First, the result falsifies the point of view about glosses in chapter (\ref{chap:gloss}) that the gloss line is a golden semantic representation hand-crafted by linguists.
+There are several remarks that need to be addressed for the current result. 
+
+First, the result falsifies the point of view about glosses in chapter (\ref{chap:gloss}) that the gloss line is a golden semantic representation hand-crafted by linguists.
 It turns that this artificial language, the gloss lines, is only marginal better than Gaelic, as the mean BLEU score of the gloss treatment is slightly higher than that of the baseline systems. This can be viewed as an evidence of language evolution.
 The written form of a natural language is actually already optimized for representing semantics to the same degree of gloss line representations.
+
 Second, if we want to actually apply the gloss treatment to translate a Gaelic sentence to English, we encounter an immediate problem. The actual source sequence is a Gaelic sentence, while the required source sequence for the gloss treatment is a gloss line. The auto-glosser described in chapter (\ref{chap:gloss}) may convert the Gaelic sentence to a gloss line, but the conversion is not perfect at all. Given this, even if the gloss treatment should work, it is not practical unless we may convert Gaelic sentence to gloss line perfectly.      
 
 We may now combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-helps hypothesis. The experiments and results are reported in the next chapter.
