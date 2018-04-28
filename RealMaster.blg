@@ -4,51 +4,51 @@ The top-level auxiliary file: RealMaster.aux
 The style file: te.bst
 Database file #1: ref.bib
 Warning--I'm ignoring luong2015effective's extra "title" field
---line 40 of file ref.bib
+--line 74 of file ref.bib
 Warning--I'm ignoring luong2015effective's extra "author" field
---line 41 of file ref.bib
+--line 75 of file ref.bib
 Warning--missing school in Chen2010
 Warning--can't use both volume and number fields in levenshtein1966binary
 Warning--empty journal in pierce1966language
-You've used 54 entries,
+You've used 58 entries,
             2904 wiz_defined-function locations,
-            907 strings with 14494 characters,
-and the built_in function-call counts, 32222 in all, are:
-= -- 2497
-> -- 1676
-< -- 35
-+ -- 579
-- -- 500
-* -- 2548
-:= -- 4939
-add.period$ -- 150
-call.type$ -- 54
-change.case$ -- 440
-chr.to.int$ -- 53
-cite$ -- 111
-duplicate$ -- 2424
-empty$ -- 2306
-format.name$ -- 641
-if$ -- 6424
-int.to.chr$ -- 2
+            930 strings with 15217 characters,
+and the built_in function-call counts, 34736 in all, are:
+= -- 2702
+> -- 1798
+< -- 37
++ -- 620
+- -- 536
+* -- 2749
+:= -- 5313
+add.period$ -- 162
+call.type$ -- 58
+change.case$ -- 474
+chr.to.int$ -- 56
+cite$ -- 119
+duplicate$ -- 2612
+empty$ -- 2487
+format.name$ -- 689
+if$ -- 6932
+int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 510
-newline$ -- 229
-num.names$ -- 218
-pop$ -- 985
+missing$ -- 547
+newline$ -- 245
+num.names$ -- 234
+pop$ -- 1058
 preamble$ -- 1
-purify$ -- 380
+purify$ -- 408
 quote$ -- 0
-skip$ -- 877
+skip$ -- 947
 stack$ -- 0
-substring$ -- 1186
-swap$ -- 1122
+substring$ -- 1301
+swap$ -- 1213
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 456
+type$ -- 492
 warning$ -- 3
-while$ -- 217
+while$ -- 234
 width$ -- 0
-write$ -- 652
+write$ -- 699
 (There were 5 warnings)

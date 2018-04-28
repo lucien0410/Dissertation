@@ -1,8 +1,7 @@
 \chapter{A General Introduction of Machine Learning and Machine Translation}
 \label{chap:MT}
 
-	\begin{enumerate}
-	\item General review of supervised Machine learning \citep{kotsiantis2007supervised}: The goal is provide a high level of understanding of what machine learning is. Machine Learning is to learn from EXAMPLES/SAMPLES. For example, to define the meaning of `dog', instead of giving all the definable features of `dog', we feed the machine with as many as possible of information of entities of dogs that we have access. Montague Semantics is actually a variant of ML, within which `dog' is defined as `the set of all the dog that exists in the current world.'. As such, Montague Semantics is Machine Learning, because instead of defining 'dog' with certain arbitrary rules (+/- FEATURE), it says 'all the dogs entities in the current world'. Definition by samples/examples not by rules.    
+	\begin{enumerate}   
 	\item Literature on machine translation: from statistical machine translation \citep{koehn2009statistical} to neural machine translation \citep{cho2014learning,cho2014properties,bahdanau2014neural, Koehn_NMT2017}. (Target audience: linguists)
 	\end{enumerate}
 
@@ -178,7 +177,7 @@ as \citet{rosenblatt} described the design and structure of a perceptron, which 
 In a perceptron, we have input nodes, which carry numerical values. These input nodes are connected to another node via weighted connection arrows. The newly linked node will have first has a raw numerical value. This raw value is simply the summation of the product of the numerical value of the input node and the weight of the linking arrow plus the bias value. In the example above, we will have:
 
 \begin{exe}
-\ex Raw numerical value= $x_{1}w_{1}+x_{2}w_{2}+x_{3}w_{3}+b$
+\ex $Raw\ numerical\ value= x_{1}w_{1}+x_{2}w_{2}+x_{3}w_{3}+b$
 \end{exe}
 
 Then an activation function will further normalize the raw numerical value by mapping it to another value. 
@@ -187,9 +186,9 @@ Then an activation function will further normalize the raw numerical value by ma
 \ex $y=f(Raw\ numerical\ value)$
 \end{exe}
 
-The most commonly used activation functions in artificial neural nets are Hyperbolic tangent, Logistic, and ReLU.
+Here $y$ is the final output, which is another numerical value. 
 
-Here $y$ is the final output,which is another numerical value. A perceptron is the central building blocks of neural network computation. 
+The most commonly used activation functions in artificial neural nets are Hyperbolic tangent, Logistic, and ReLU.
 
 \begin{figure}
 \caption{Activation functions}
@@ -197,37 +196,79 @@ Here $y$ is the final output,which is another numerical value. A perceptron is t
 \includegraphics[width=0.9\textwidth]{activation_function.png}
 \end{figure} 
 
-Note that the output of a perceptron can the the input of another perceptron. 
+A perceptron is the basic building blocks of neural network computation. Note that the output of a perceptron can the the input of another perceptron. 
 In this manner, the perceptron can interconnected to one and other yielding complicated networks. 
-
-\SweaveInput{neural_network_hidden_fig.Rnw}
 
 
 The following figure depicts a neural net with a hidden layer in the middle between the input and output nodes. When there are more than one hidden layer, the neural net is called deep neural net. However, the building blocks are still a simple perceptron. So, actually neural networks are simple and elegant computation operation\footnote{It seems to me that linking the perceptron is just like the simple Merge operation in the Minimalist Program.}; 
 however, they extremely powerful. They are Turing-Complete machines \citep{siegelmann1991turing, graves2014neural}. \citet{siegelmann2003neural, siegelmann2012neural} even argues that neural networks are computations beyond the Turing limit. 
 
+\SweaveInput{neural_network_hidden_fig.Rnw}
+
 \subsection{Recurrent Neural Network}
 
+Before we start to describe how a neural machine accomplishes the translation task, it is necessary to introduce a specific type of neural networks: Recurrent Neural networks. 
 
+Recall that the output of a perceptron can be the input of another perceptron. A interesting manipulation is to let the perceptron connect back to itself. with this manipulation, we have the Recurrent Neural Networks. As shown in the following figures, the hidden note is connected back to itself at each time step. As such, at each time step, there are two input sources of the hidden node: 1) the information from the past hidden node and 2) the information from a new input node.       
 
+\SweaveInput{rnn_figure.Rnw}
 
+Is this manipulation useful? And if yes, why? Yes, it turns out Recurrent Neural Networks are really useful when we are interested in modeling a sequencing phenomenon and we believe that a fraction of the sequence will effect the next fraction. The looping configuration opens the door to the history of the hidden neuron, and leads it to its future. 
+
+Recurrent neural networks are widely used. Critically, the main theme of the dissertation, Neural Net Machine Translation, is also implemented with it. The coming section provides an overview of how neural networks translate languages. 
+
+%\newpage
 \section{Introduction to Neural Net Machine Translation}
 
+My 3-year old daughter, Trina, is growing up in Tucson, Arizona, The languages that she encounters are English, Spanish and Mandarin Chinese, and thus she picks up English and Mandarin, and some Spanish. She is able to count the quantity of some objects in the three languages. When I told her \textbf{in  Mandarin} that `we can bring two candies for Alice' on the way to her preschool, and she is able to tell her best friend, Alice, in her preschool \textbf{in English} that she will give her one candy (not two because Trina has to save one candy for herself).         
+
+It is certain that a multilingual person can access the meaning of a sequence of string in a language when he or she hears it, and then produces another sequence of string in another different language with the same meaning. Given that a human brain is a neural networks machine and artificial networks networks is similar to human neural networks, it fits our intuition that artificial networks networks can translate languages, of course. Actually, this is roughly how a neural net machine translation is implemented. Consider the following figure from \citet{luong17GitHub}.
+
 \begin{figure}[h]
-\caption{Encoder-decoder architecture - example of a general approach for NMT. An encoder converts a source sentence into a "meaning" vector which is passed through a decoder to produce a translation. \citep{luong17GitHub}}
+\caption{Encoder-decoder architecture - example of a general approach for NMT. An encoder converts a source sentence into a "meaning" vector which is passed through a decoder to produce a translation. (figure from \citet{luong17GitHub})}
 \centering
 \includegraphics[width=0.9\textwidth]{encdec.jpg}
 \end{figure} 
 
+The figure outlines the heuristic of how neural networks computation may translate Languages. When the neural net is fed with a source sentence, ``I am a student'', it will convert the sentence into a meaning representation or a thought vector \citep{devlin2015google}. This is the encoding process. Based on this meaning representation, the machine then derives another sequence of words in the target Language. Now we may take a close look of how the encoding and decoding process works. 
+
+\subsection{Word Embedding}
+The neural machine can only process numeral representations, so the first step is to convert words into numerical representations. Specifically each word will be represented as a vector. The central idea is to map each word into a location in ``a meaning space'', and each vector is the geographical coordinates of the word. 
+This process is called word embedding. The ideal word embedding system would have the properties that words with similar meanings will be neighbors in the meaning space. 
+The most commonly used technique of building word embeddings is invented and described in \citet{mikolov2013efficient, mikolov2013distributed}. Critically, this word embedding implementation follows the distributional semantics philosophy: the meaning of a word is defined by its distribution in a corpus. So, to build a word embedding model all we need is a corpus. The training data for machine translation is a parallel corpus, which gives us two corpora: the source language corpus and target language corpus. So, the training data is sufficient for building word embedding models\footnote{It is also a common practice to build the word embedding separately using a bigger corpus when the parallel corpus is too small.}. The following figure depicts how it is like when the word embeddings are mapped to a 2D space.   
+
+\begin{figure}
+\caption{Word Embeddings (figure from \citet{roweis2000nonlinear})}
+\centering
+\includegraphics[width=0.9\textwidth]{word_emb.png}
+\end{figure} 
+
+
+\subsection{Encoding and Decoding}
+
+A simple preprocessing on the data is to add tags that marks the boundary of the sentences. Each word in the source sentence is sent to recurrent network machine incrementally. 
+Note the looping configuration makes the machine to accumulate the information of all the words. When the tag that marks the end of the source sentence is fed into the machine, the encoding process is completed, and the value of the hidden neurons at this time is the meaning representation of the source sentence.  
+
+Given the meaning representation, now the machine starts to decode. At each time step, it emits a word in the target language. The emitted word in the target language is copied and serving as input in the next time step of encoding. So that the output sentence can have the context information of the previous word; this trick ensures the fluency of the output sentence. 
+
+Consider the following figure from \citet{luong17GitHub} for a concrete example of how the encoding-decoding process works.  
 
 \begin{figure}[h]
-\caption{Neural machine translation - example of a deep recurrent architecture proposed by for translating a source sentence ``I am a student'' into a target sentence ``Je suis \'{e}tudiant''. Here, ``<s>'' marks the start of the decoding process while ``</s>'' tells the decoder to stop. \citep{luong17GitHub}}
+\caption{Neural machine translation (figure from \citet{luong17GitHub}).}
 \centering
 \includegraphics[width=0.9\textwidth]{seq2seq.jpg}
 \end{figure} 
 
+In the current example, we are trying to translate a source sentence ``I am a student'' into a target sentence ``Je suis \'{e}tudiant''. Here, ``<s>'' marks the end of the source sentences and the start of the decoding process. 
+So, at the time step of  ``<s>'', the vectors in the hidden neurons is the meaning representation. In the decoding process, the first emitted word is ``Je''. Note that ``Je'' is sent back as the input in the next time step. At this time step, ``suis'' is emitted. Now we may pay attention to what the given information are when the machine is emitting ``suis''. Specifically, the given information are 1) thought vectors plus ``je'' in the hidden layers and 2) ``je'' from the input node. When the machine emitted the tag, ``</s>'', the decoding process is completed. 
+
+This is the basic structure of a neural machine translation system proposed in \citet{cho2014learning,cho2014properties}. 
+
+
+
+\subsection{Adding Attention}
 \begin{figure}[h]
-\caption{Attention mechanism - example of an attention-based NMT system as described in \citet{luong2015effective}. Figure \citep{luong17GitHub}.}
+\caption{Attention mechanism - example of an attention-based NMT system as described in \citet{luong2015effective} (figure from \citet{luong17GitHub}).}
 \centering
 \includegraphics[width=0.9\textwidth]{attention_mechanism.jpg}
 \end{figure} 

@@ -1,0 +1,44 @@
+\begin{figure}
+\caption{A recurrent neural network with a hidden layer (clasped depiction). The hidden neuron ($h_{t}$) is connected to itself.}
+\centering
+\begin{tikzpicture}
+
+  \node[neuron] (ht1) {$h_{t}$};
+  \node[io,above=2em of ht1]  (yt1) {$y_t$};
+  \node[io,below=2em of ht1]  (xt1) {$x_t$};
+  \draw[conn] (ht1) -- (yt1);
+  \draw[conn] (xt1) -- (ht1);
+  \draw[thick,->,shorten >=1pt] (ht1.east) to [out=500,in=200,loop,looseness=4.8] (ht1.west);
+
+\end{tikzpicture}
+\end{figure}
+
+\begin{figure}
+\caption{A recurrent neural network with a hidden layer (unfolded depiction)}
+\centering
+\begin{tikzpicture}
+\centering
+  \node[neuron] (ht0)         {$h_{t-1}$};
+  \node[io,above=2em of ht0] (yt)   {$y_{t-1}$};
+  \node[io,below=2em of ht0] (xt)   {$x_{t-1}$};
+  \draw[conn] (ht0) -- (yt);
+  \draw[conn] (xt) -- (ht0);
+  \node [left=of ht0] {\ldots};
+
+  \node[neuron, right=of ht0] (ht1) {$h_{t}$};
+  \node[io,above=2em of ht1]  (yt1) {$y_t$};
+  \node[io,below=2em of ht1]  (xt1) {$x_t$};
+  \draw[conn] (ht1) -- (yt1);
+  \draw[conn] (xt1) -- (ht1);
+  \draw [->] (ht0) -- (ht1);
+
+  \node[neuron, right=of ht1] (ht2) {$h_{t+1}$};
+  \node[io,above=2em of ht2]  (yt2) {$y_{t+1}$};
+  \node[io,below=2em of ht2]  (xt2) {$x_{t+1}$};
+  \draw[conn] (ht2) -- (yt2);
+  \draw[conn] (xt2) -- (ht2);
+  \draw [->] (ht1) -- (ht2);
+
+  \node [right=of ht2] {\ldots};
+\end{tikzpicture}
+\end{figure}

@@ -18,36 +18,39 @@
 \BOOKMARK [2][-]{subsection.3.3.1}{What Is a Artificial Neural Network?}{section.3.3}% 18
 \BOOKMARK [2][-]{subsection.3.3.2}{Recurrent Neural Network}{section.3.3}% 19
 \BOOKMARK [1][-]{section.3.4}{Introduction to Neural Net Machine Translation}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.5}{A Quick Historical Overview of Machine Translation and Conclusion}{chapter.3}% 21
-\BOOKMARK [0][-]{chapter.4}{Chapter 4. \040Building Translation Systems using Interlinear Glossed Text: First Attempt}{}% 22
-\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.2}{Related Work}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.3}{Technical Settings of the Machine Translation Experiments and Experimental Data of Scottish Gaelic Interlinear Glossed Text Corpus}{chapter.4}% 25
-\BOOKMARK [2][-]{subsection.4.3.1}{Technical Settings}{section.4.3}% 26
-\BOOKMARK [2][-]{subsection.4.3.2}{Experimental Data: a corpus of Scottish Gaelic Interlinear Glossed Texts}{section.4.3}% 27
-\BOOKMARK [1][-]{section.4.4}{Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{chapter.4}% 28
-\BOOKMARK [2][-]{subsection.4.4.1}{Procedure of the Experiments}{section.4.4}% 29
-\BOOKMARK [2][-]{subsection.4.4.2}{Result}{section.4.4}% 30
-\BOOKMARK [2][-]{subsection.4.4.3}{Summary}{section.4.4}% 31
-\BOOKMARK [1][-]{section.4.5}{Discussion and Conclusion}{chapter.4}% 32
-\BOOKMARK [0][-]{chapter.5}{Chapter 5. \040Combining Gaelic Words with Glosses}{}% 33
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 34
-\BOOKMARK [2][-]{subsection.5.1.1}{The Underlying Heuristics}{section.5.1}% 35
-\BOOKMARK [1][-]{section.5.2}{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{chapter.5}% 36
-\BOOKMARK [2][-]{subsection.5.2.1}{Related work}{section.5.2}% 37
-\BOOKMARK [2][-]{subsection.5.2.2}{Data Preprocessing Using the Parallel-Partial Treatment}{section.5.2}% 38
-\BOOKMARK [2][-]{subsection.5.2.3}{Results of the Parallel-Partial Treatment}{section.5.2}% 39
-\BOOKMARK [1][-]{section.5.3}{Other Possible Treatments}{chapter.5}% 40
-\BOOKMARK [2][-]{subsection.5.3.1}{The Parallel Treatment}{section.5.3}% 41
-\BOOKMARK [2][-]{subsection.5.3.2}{Interleaving Gaelic Words and Gloss Items And Concating them}{section.5.3}% 42
-\BOOKMARK [2][-]{subsection.5.3.3}{Hybrid: Gaelic or Gloss}{section.5.3}% 43
-\BOOKMARK [1][-]{section.5.4}{Summary and Conclusion}{chapter.5}% 44
-\BOOKMARK [0][-]{chapter.6}{Chapter 6. \040Tying Up Some Loose Ends}{}% 45
-\BOOKMARK [1][-]{section.6.1}{Oversampling}{chapter.6}% 46
-\BOOKMARK [1][-]{section.6.2}{Comparsion with Google Translation}{chapter.6}% 47
-\BOOKMARK [1][-]{section.6.3}{Other Hyper-Paremeters}{chapter.6}% 48
-\BOOKMARK [1][-]{section.6.4}{Interlinear Glossed Text Data In Other Languages}{chapter.6}% 49
-\BOOKMARK [1][-]{section.6.5}{Conclusion}{chapter.6}% 50
-\BOOKMARK [0][-]{chapter.7}{Chapter 7. \040Implications on Theoretical Linguistics and Natural Language Processing}{}% 51
-\BOOKMARK [0][-]{chapter.8}{Chapter 8. \040Conclusion}{}% 52
-\BOOKMARK [0][-]{chapter.8}{\1}{}% 53
+\BOOKMARK [2][-]{subsection.3.4.1}{Word Embedding}{section.3.4}% 21
+\BOOKMARK [2][-]{subsection.3.4.2}{Encoding and Decoding}{section.3.4}% 22
+\BOOKMARK [2][-]{subsection.3.4.3}{Adding Attention}{section.3.4}% 23
+\BOOKMARK [1][-]{section.3.5}{A Quick Historical Overview of Machine Translation and Conclusion}{chapter.3}% 24
+\BOOKMARK [0][-]{chapter.4}{Chapter 4. \040Building Translation Systems using Interlinear Glossed Text: First Attempt}{}% 25
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.2}{Related Work}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.3}{Technical Settings of the Machine Translation Experiments and Experimental Data of Scottish Gaelic Interlinear Glossed Text Corpus}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.3.1}{Technical Settings}{section.4.3}% 29
+\BOOKMARK [2][-]{subsection.4.3.2}{Experimental Data: a corpus of Scottish Gaelic Interlinear Glossed Texts}{section.4.3}% 30
+\BOOKMARK [1][-]{section.4.4}{Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.4.1}{Procedure of the Experiments}{section.4.4}% 32
+\BOOKMARK [2][-]{subsection.4.4.2}{Result}{section.4.4}% 33
+\BOOKMARK [2][-]{subsection.4.4.3}{Summary}{section.4.4}% 34
+\BOOKMARK [1][-]{section.4.5}{Discussion and Conclusion}{chapter.4}% 35
+\BOOKMARK [0][-]{chapter.5}{Chapter 5. \040Combining Gaelic Words with Glosses}{}% 36
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 37
+\BOOKMARK [2][-]{subsection.5.1.1}{The Underlying Heuristics}{section.5.1}% 38
+\BOOKMARK [1][-]{section.5.2}{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.2.1}{Related work}{section.5.2}% 40
+\BOOKMARK [2][-]{subsection.5.2.2}{Data Preprocessing Using the Parallel-Partial Treatment}{section.5.2}% 41
+\BOOKMARK [2][-]{subsection.5.2.3}{Results of the Parallel-Partial Treatment}{section.5.2}% 42
+\BOOKMARK [1][-]{section.5.3}{Other Possible Treatments}{chapter.5}% 43
+\BOOKMARK [2][-]{subsection.5.3.1}{The Parallel Treatment}{section.5.3}% 44
+\BOOKMARK [2][-]{subsection.5.3.2}{Interleaving Gaelic Words and Gloss Items And Concating them}{section.5.3}% 45
+\BOOKMARK [2][-]{subsection.5.3.3}{Hybrid: Gaelic or Gloss}{section.5.3}% 46
+\BOOKMARK [1][-]{section.5.4}{Summary and Conclusion}{chapter.5}% 47
+\BOOKMARK [0][-]{chapter.6}{Chapter 6. \040Tying Up Some Loose Ends}{}% 48
+\BOOKMARK [1][-]{section.6.1}{Oversampling}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.2}{Comparsion with Google Translation}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.3}{Other Hyper-Paremeters}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.4}{Interlinear Glossed Text Data In Other Languages}{chapter.6}% 52
+\BOOKMARK [1][-]{section.6.5}{Conclusion}{chapter.6}% 53
+\BOOKMARK [0][-]{chapter.7}{Chapter 7. \040Implications on Theoretical Linguistics and Natural Language Processing}{}% 54
+\BOOKMARK [0][-]{chapter.8}{Chapter 8. \040Conclusion}{}% 55
+\BOOKMARK [0][-]{chapter.8}{\1}{}% 56

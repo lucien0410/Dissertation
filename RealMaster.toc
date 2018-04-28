@@ -11,52 +11,55 @@
 \contentsline {subsection}{\numberline {2.2.3}Glosses are Sensitive to Hierarchical Structures in Natural Language Sentences}{18}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Conclusion: What Is a Gloss Line and Why Do They Matter?}{22}{section.2.3}
 \contentsline {chapter}{\chapterline {Chapter\ 3}A General Introduction of Machine Learning and Machine Translation}{23}{chapter.3}
-\contentsline {section}{\numberline {3.1}What is Machine Learning?}{24}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}What is a Function and What is a Model?}{24}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.1}What is Machine Learning?}{23}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}What is a Function and What is a Model?}{23}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Two Different Paradigms of Building a Model}{26}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Statistical Machine Translation}{28}{section.3.2}
-\contentsline {section}{\numberline {3.3}Neural Net Machine Translation}{30}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}What Is a Artificial Neural Network?}{30}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.2}Statistical Machine Translation}{27}{section.3.2}
+\contentsline {section}{\numberline {3.3}Neural Net Machine Translation}{29}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}What Is a Artificial Neural Network?}{29}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Recurrent Neural Network}{32}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Introduction to Neural Net Machine Translation}{32}{section.3.4}
-\contentsline {section}{\numberline {3.5}A Quick Historical Overview of Machine Translation and Conclusion}{32}{section.3.5}
-\contentsline {chapter}{\chapterline {Chapter\ 4}Building Translation Systems using Interlinear Glossed Text: First Attempt}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{35}{section.4.1}
-\contentsline {section}{\numberline {4.2}Related Work}{36}{section.4.2}
-\contentsline {section}{\numberline {4.3}Technical Settings of the Machine Translation Experiments and Experimental Data of Scottish Gaelic Interlinear Glossed Text Corpus}{37}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Technical Settings}{37}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Experimental Data: a corpus of Scottish Gaelic Interlinear Glossed Texts}{39}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{39}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Procedure of the Experiments}{39}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Result}{46}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Summary}{46}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Discussion and Conclusion}{47}{section.4.5}
-\contentsline {chapter}{\chapterline {Chapter\ 5}Combining Gaelic Words with Glosses}{49}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{49}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}The Underlying Heuristics}{50}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{50}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Related work}{50}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Data Preprocessing Using the Parallel-Partial Treatment}{51}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Results of the Parallel-Partial Treatment}{52}{subsection.5.2.3}
-\contentsline {subsubsection}{Discussion}{53}{section*.1}
-\contentsline {section}{\numberline {5.3}Other Possible Treatments}{53}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}The Parallel Treatment}{54}{subsection.5.3.1}
-\contentsline {subsubsection}{Method of the Parallel Treatment}{54}{section*.2}
-\contentsline {subsubsection}{Results of the Parallel Treatment}{54}{section*.3}
-\contentsline {subsection}{\numberline {5.3.2}Interleaving Gaelic Words and Gloss Items And Concating them}{55}{subsection.5.3.2}
-\contentsline {subsubsection}{Method of the Interleaving Treatment}{55}{section*.4}
-\contentsline {subsubsection}{Method of Concating Gaelic Words and Gloss Words }{57}{section*.5}
-\contentsline {subsubsection}{Results of Concating Gaelic Words and Gloss Words}{57}{section*.6}
-\contentsline {subsection}{\numberline {5.3.3}Hybrid: Gaelic or Gloss}{57}{subsection.5.3.3}
-\contentsline {subsubsection}{Method of Hybrid}{57}{section*.7}
-\contentsline {subsubsection}{Result of Hybrid}{59}{table.5.6}
-\contentsline {section}{\numberline {5.4}Summary and Conclusion}{60}{section.5.4}
-\contentsline {chapter}{\chapterline {Chapter\ 6}Tying Up Some Loose Ends}{62}{chapter.6}
-\contentsline {section}{\numberline {6.1}Oversampling}{62}{section.6.1}
-\contentsline {section}{\numberline {6.2}Comparsion with Google Translation}{62}{section.6.2}
-\contentsline {section}{\numberline {6.3}Other Hyper-Paremeters}{62}{section.6.3}
-\contentsline {section}{\numberline {6.4}Interlinear Glossed Text Data In Other Languages}{63}{section.6.4}
-\contentsline {section}{\numberline {6.5}Conclusion}{63}{section.6.5}
-\contentsline {chapter}{\chapterline {Chapter\ 7}Implications on Theoretical Linguistics and Natural Language Processing}{64}{chapter.7}
-\contentsline {chapter}{\chapterline {Chapter\ 8}Conclusion}{65}{chapter.8}
-\contentsline {chapter}{Bibliography}{66}{chapter.8}
+\contentsline {section}{\numberline {3.4}Introduction to Neural Net Machine Translation}{33}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Word Embedding}{34}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Encoding and Decoding}{35}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Adding Attention}{37}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}A Quick Historical Overview of Machine Translation and Conclusion}{38}{section.3.5}
+\contentsline {chapter}{\chapterline {Chapter\ 4}Building Translation Systems using Interlinear Glossed Text: First Attempt}{39}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{39}{section.4.1}
+\contentsline {section}{\numberline {4.2}Related Work}{40}{section.4.2}
+\contentsline {section}{\numberline {4.3}Technical Settings of the Machine Translation Experiments and Experimental Data of Scottish Gaelic Interlinear Glossed Text Corpus}{41}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Technical Settings}{41}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Experimental Data: a corpus of Scottish Gaelic Interlinear Glossed Texts}{43}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Gloss Representation Solely Does NOT Outperform Gaelic Sentences}{43}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Procedure of the Experiments}{43}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Result}{50}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Summary}{50}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Discussion and Conclusion}{51}{section.4.5}
+\contentsline {chapter}{\chapterline {Chapter\ 5}Combining Gaelic Words with Glosses}{53}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{53}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}The Underlying Heuristics}{54}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}{54}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Related work}{54}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Data Preprocessing Using the Parallel-Partial Treatment}{55}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Results of the Parallel-Partial Treatment}{56}{subsection.5.2.3}
+\contentsline {subsubsection}{Discussion}{57}{section*.1}
+\contentsline {section}{\numberline {5.3}Other Possible Treatments}{57}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}The Parallel Treatment}{58}{subsection.5.3.1}
+\contentsline {subsubsection}{Method of the Parallel Treatment}{58}{section*.2}
+\contentsline {subsubsection}{Results of the Parallel Treatment}{58}{section*.3}
+\contentsline {subsection}{\numberline {5.3.2}Interleaving Gaelic Words and Gloss Items And Concating them}{59}{subsection.5.3.2}
+\contentsline {subsubsection}{Method of the Interleaving Treatment}{59}{section*.4}
+\contentsline {subsubsection}{Method of Concating Gaelic Words and Gloss Words }{61}{section*.5}
+\contentsline {subsubsection}{Results of Concating Gaelic Words and Gloss Words}{61}{section*.6}
+\contentsline {subsection}{\numberline {5.3.3}Hybrid: Gaelic or Gloss}{61}{subsection.5.3.3}
+\contentsline {subsubsection}{Method of Hybrid}{61}{section*.7}
+\contentsline {subsubsection}{Result of Hybrid}{63}{table.5.6}
+\contentsline {section}{\numberline {5.4}Summary and Conclusion}{64}{section.5.4}
+\contentsline {chapter}{\chapterline {Chapter\ 6}Tying Up Some Loose Ends}{66}{chapter.6}
+\contentsline {section}{\numberline {6.1}Oversampling}{66}{section.6.1}
+\contentsline {section}{\numberline {6.2}Comparsion with Google Translation}{66}{section.6.2}
+\contentsline {section}{\numberline {6.3}Other Hyper-Paremeters}{66}{section.6.3}
+\contentsline {section}{\numberline {6.4}Interlinear Glossed Text Data In Other Languages}{67}{section.6.4}
+\contentsline {section}{\numberline {6.5}Conclusion}{67}{section.6.5}
+\contentsline {chapter}{\chapterline {Chapter\ 7}Implications on Theoretical Linguistics and Natural Language Processing}{68}{chapter.7}
+\contentsline {chapter}{\chapterline {Chapter\ 8}Conclusion}{69}{chapter.8}
+\contentsline {chapter}{Bibliography}{70}{chapter.8}

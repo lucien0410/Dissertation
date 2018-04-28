@@ -9,13 +9,16 @@
 \addvspace {\medskipamount }
 \addvspace {\medskipamount }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces An Example of a Perceptron}}{30}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Activation functions}}{31}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces A neural network with a hidden layer}}{32}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Encoder-decoder architecture - example of a general approach for NMT. An encoder converts a source sentence into a "meaning" vector which is passed through a decoder to produce a translation. \citep {luong17GitHub}}}{32}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Neural machine translation - example of a deep recurrent architecture proposed by for translating a source sentence ``I am a student'' into a target sentence ``Je suis \'{e}tudiant''. Here, ``<s>'' marks the start of the decoding process while ``</s>'' tells the decoder to stop. \citep {luong17GitHub}}}{33}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Attention mechanism - example of an attention-based NMT system as described in \citet {luong2015effective}. Figure \citep {luong17GitHub}.}}{34}{figure.3.6}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Activation functions}}{30}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A neural network with a hidden layer}}{31}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces A recurrent neural network with a hidden layer (clasped depiction). The hidden neuron ($h_{t}$) is connected to itself.}}{32}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces A recurrent neural network with a hidden layer (unfolded depiction)}}{33}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Encoder-decoder architecture - example of a general approach for NMT. An encoder converts a source sentence into a "meaning" vector which is passed through a decoder to produce a translation. (figure from \citet {luong17GitHub})}}{34}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Word Embeddings (figure from \citet {roweis2000nonlinear})}}{35}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Neural machine translation (figure from \citet {luong17GitHub}).}}{36}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Attention mechanism - example of an attention-based NMT system as described in \citet {luong2015effective} (figure from \citet {luong17GitHub}).}}{37}{figure.3.9}
 \addvspace {\medskipamount }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces The BLEU score is based on n-gram matches with the reference translation \citep [p. 226-227]{koehn2009statistical}}}{45}{figure.4.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The BLEU score is based on n-gram matches with the reference translation \citep [p. 226-227]{koehn2009statistical}}}{49}{figure.4.1}
 \addvspace {\medskipamount }
 \addvspace {\medskipamount }
 \addvspace {\medskipamount }
