@@ -24,7 +24,7 @@
 \newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
 %the newcommand change the selected word into 'ccr' font
 %e.g. \begin{myfont} multi-bleu.perl \end{myfont}
-%\<my packages>
+%<\my packages>
 %packages used by Koeh
 \usepackage{url}
 \usepackage{color}
@@ -171,7 +171,8 @@ The gloss line also provides morphological information. Consider the following e
     \glt   `to the horses'  
 \end{exe}
 
-The morphemes of a single word is linked by a `.'. The French word `aux' is actually a combination of three separate morphemes\footnote{A morpheme is a smallest unit of meaning. For example, `\textit{boys}' has two morphemes in it: `\textit{boy}' and `\textit{-s}', where `\textit{-s}' is a plural marker. Sometimes, the morpheme boundary is not visible. For example `\textit{went}' is composed of `\textit{go}' and `\textit{-ed}'.}: `\textit{to}', `\textit{ART}', and `\textit{PL}' and \textit{`chevaux'} is decomposed into \textit{`horse'} and \textit{`PL'}.   
+The morphemes of a single word are linked by a `.'. The French word `aux' is actually a combination of three separate morphemes\footnote{A morpheme is a smallest unit of meaning. For example, `\textit{boys}' has two morphemes in it: `\textit{boy}' and `\textit{-s}', where `\textit{-s}' is a plural marker. Sometimes, the morpheme boundary is not visible. For example `\textit{went}' is composed of `\textit{go}' and `\textit{-ed}'.}: `\textit{to}', `\textit{ART}', and `\textit{PL}' and \textit{`chevaux'} is decomposed into \textit{`horse'} and \textit{`PL'}.
+
 \citet{bickel2008leipzig} compile a set of widely used conventions of IGT called the Leipzig Glossing Rules.
 Note that they are just guidelines of the formats of Interlinear Glossed Texts, so that Interlinear Glossed Texts can be more standardized. 
 
@@ -190,7 +191,7 @@ For example, \citet{grano2008mandarin}, \citet{Chen2010}, and \citet{liu2010posi
 
 \section{The Golden Properties of Glosses}
 
-A system of meaning representations is decomposed of three components: a) meanings, b) representations, and c) a mapping between meanings and representations. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. On the other hand, gloss provides a mapping that is close to this ideal one-to-one mapping. Thus gloss should a better representation in term of representing meanings. 
+A system of meaning representations is decomposed of three components: a) meanings, b) representations, and c) a mapping between meanings and representations. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. On the other hand, gloss provides a mapping that is close to this ideal one-to-one mapping. Thus gloss should be a better representation in term of representing meanings. 
 
 Theoretically, the claim that gloss representation is closer to the ideal one-to-one mapping than natural language representation can be tested empirically. 
 Let's imagine a set of special golden meta-linguistic semantic representations, which has the following property: each concept is mapped to one and only one representation and each representation is mapped to one and only one concept. With this imaginary golden semantic representation system, we may now compare Gaelic words and glosses. First, it is expected that each golden representation token will map to more natural language words than gloss items do.
@@ -204,7 +205,7 @@ Let's imagine a set of special golden meta-linguistic semantic representations, 
 	\end{xlist}
 \end{exe}
 
-(\ref{gold_to_gd}) and (\ref{gold_to_gl}) represent a singe golden token may maps to multiple Gaelic words and glosses respectively. If we compare the size of them, it is expected that the set of Gaelic words is bigger than that of glosses, meaning that Gaelic words are more likely to be homographs than glosses are. Section \ref{sec:cluster} will provide concrete examples to exemplify this property of glosses. 
+(\ref{gold_to_gd}) and (\ref{gold_to_gl}) represent a singe golden token may map to multiple Gaelic words and glosses respectively. If we compare the size of them, it is expected that the set of Gaelic words is bigger than that of glosses, meaning that Gaelic words are more likely to be homographs than glosses are. Section \ref{sec:cluster} will provide concrete examples to exemplify this property of glosses. 
 
 For the other direction, we may determine which one, Gaelic words or glosses, is more likely to be ambiguous.   
 
@@ -220,12 +221,12 @@ For the other direction, we may determine which one, Gaelic words or glosses, is
 (\ref{gd_to_gold}) and (\ref{gl_to_gold}) show the mappings from a Gaelic word to different concepts and the mappings from a gloss to different concepts respectively. 
 (\ref{gd_gl_comp2}) is the expectation that Gaelic words are more likely to be ambiguous than glosses are. Section \ref{sec:disa} will report concrete examples to show that glosses are less likely to be ambiguous.
 
-To run statistical experiments to confirm the truth of (\ref{gd_gl_comp1}) and (\ref{gd_gl_comp2}) is the way to empirically support the claim that glosses closer to the golden representations than Gaelic words are. 
+To run statistical experiments to confirm the truth of (\ref{gd_gl_comp1}) and (\ref{gd_gl_comp2}) is the way to empirically support the claim that glosses are closer to the golden representations than Gaelic words. 
 However, in reality, this is an impossible experiment to conduct, because there are no such golden representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special golden meta-linguistic semantic representations, and the mappings between the golden representations to natural languages.}.
-In spite of the impossibility of conducting statistical experiments, we may still use some examples to show the intuition that glosses are better representations than natural languages are. The following sections describes how glosses cluster words with different forms but with the same meaning, and how glosses represent words with the same form but with different meanings with different representations. 
+In spite of the impossibility of conducting statistical experiments, we may still use some examples to show the intuition that glosses are better representations than natural languages are. The following sections describe how glosses cluster up words with different forms but with the same meaning, and how glosses represent words with the same form but with different meanings with different representations. 
 
 \subsection{Glosses Cluster Different Words with the Same Meanings (Synonyms) Into a Single representation}\label{sec:cluster}
-Gloss collapses words with different forms with the same meanings into a single gloss. In natural languages, the morphology of a word (i.e. the form of a word) may be sensitive to the phonological environments and changing into different forms. Consider the following the indefinite article in the English examples: 
+Gloss collapses words with different forms with the same meanings into a single representation. In natural languages, the morphology of a word (i.e. the form of a word) may be sensitive to the phonological environments and changing into different forms. Consider the following indefinite article in the English examples: 
 
 \begin{exe}  
 \ex \gll John ate \textbf{an} apple.\\
@@ -388,7 +389,7 @@ For as \textit{preposition} (glossed as \textit{preposition})
 	\end{xlist}
 \end{exe}
 
-Linear length of the argument of \textit{for} (i.e. the sequences in the square brackets) does not have any effect in determining what the gloss is, and instead it is the hierarchical structures that determines what the gloss is. Then the form of gloss hints to the internal structures of the sentence. 
+Linear length of the argument of \textit{for} (i.e. the sequences in the square brackets) does not have any effect in determining what the gloss is, and instead it is the hierarchical structures that determine what the gloss is. Then the form of gloss hints to the internal structures of the sentence. 
 
 A even more dramatic example comes from Mandarin Chinese. A single sequences of words may have distinctive meanings because of different parses, and the difference of parses is marked by the differences of glosses. In the following examples, the sentence `\textit{Lao3Li3 mai3 hao3 jiu3}'\footnote{These specific examples are extensively discussed in Mandarin Chinese Tone Sandhi literature (e.g. \citet{cheng1973synchronic, mei1991tone, shih1997mandarin, wang2011variation}). Critically, the constituency plays a role in Mandarin Chinese Tone Sandhi.} may have two distinct meanings depending on the status of `\textit{hao3}'.    
 
@@ -422,17 +423,14 @@ In the machine translation literature, it has been shown that the information of
 
 \section{Conclusion: What Is a Gloss Line and Why Do They Matter?} 
 The gloss line is like a linguistic version of `word embedding'. A natural language word is first converted to a gloss, which is readable for linguists. 
-Also we may view a gloss line as an artificial sentence using the purified `gloss words', a meaning representation with which one meaning is mapped to one and only one representation. It is a useful and widely used annotation algorithm that requires linguistic knowledge. Given the properties of gloss data, it can be a very useful data for machine translation. Moreover, gloss data is widely used in linguistics literature, so data is already out there and all we need to do to clean the data.
-A loose end here is that, even if all the arguments should be sound, we still have no statistical evidence to show the usefulness of the gloss data. Chapter \ref{chap:cake} and \ref{chap:cake2} tie up this loose end, in which I will report machine translation experiments using gloss data.  
+Also we may view a gloss line as an artificial sentence using the purified `gloss words', a meaning representation with which one meaning is mapped to one and only one representation. Given the properties of gloss data, it can be a very useful data for machine translation. Moreover, gloss data is widely used in linguistics literature, so data is already out there and all we need to do is to clean the data.
+A loose end here is that, even if all the arguments should be sound, we still have no statistical evidence to show the usefulness of the gloss data. Chapter \ref{chap:cake}, \ref{chap:cake2}, and \ref{chap:Tying_Up} tie up this loose end, in which I will report machine translation experiments using gloss data.  
 %\SweaveInput{Description_of_Corpus.Rnw}
 \chapter{A General Introduction of Machine Learning and Machine Translation}
 \label{chap:MT}
 
-	\begin{enumerate}   
-	\item Literature on machine translation: from statistical machine translation \citep{koehn2009statistical} to neural machine translation \citep{cho2014learning,cho2014properties,bahdanau2014neural, Koehn_NMT2017}. (Target audience: linguists)
-	\end{enumerate}
 
-The current Chapter provides a general literature review and introduction of Machine Learning and Machine Translation, before I report neural net machine translation experiments in Chapter \ref{chap:cake}, \ref{chap:cake2} and \ref{chap:Tying_Up}. The purpose of current Chapter is not meant to be a comprehensive summary of all the technical details of Machine Learning and Machine Translation, but instead this chapter aims to provide high-level descriptions of the algorithms used in Machine Learning and Machine Translation. 
+Before I report neural net machine translation experiments in Chapter \ref{chap:cake}, \ref{chap:cake2} and \ref{chap:Tying_Up}, the current chapter serves as a general literature review and introduction of Machine Learning and Machine Translation. The current chapter is not meant to be a comprehensive summary of all the technical details of Machine Learning and Machine Translation, but instead it aims to provide high-level descriptions of the algorithms used in Machine Learning and Machine Translation. 
 
 \section{What is Machine Learning?}
 
@@ -482,6 +480,7 @@ Grammaticality judgment of a sequence of strings can be viewed as a function, wh
 
 Translation can be viewed as function, too, where the input is a sentence in the source language and the output is a sentence in the target language that conveys the same meaning of the source sentence. For example, a function that translates Scottish Gaelic into English looks like:   
 
+\vbox{%
 \begin{exe}
 \ex 
 \begin{xlist}
@@ -501,8 +500,9 @@ Translation can be viewed as function, too, where the input is a sentence in the
 	\end{xlist}
 \end{xlist}
 \end{exe}
+} %end of vbox
 
-Expect for mathematical functions like (\ref{math_function}), in most of the cases, we have no direct access to a function. In other words, the function is assumed to be unknown. 
+Except for mathematical functions like (\ref{math_function}), in most of the cases, we have no direct access to a function. In other words, the function is assumed to be unknown. 
 To simulate the behaviors of an unknown function, we build a model with the hope that the model can do the same mapping as the target function.     
 Schematically, the relation between a function and a model that simulates that function is depicted below:
 
@@ -517,7 +517,7 @@ Schematically, the relation between a function and a model that simulates that f
 
 (\ref{fun_dipc}) is the unknown target function (conventionally it is represented by $f$ in the literature), and (\ref{model_dipc}) is the model that we build with the hope that it does the same mapping as $f$ (conventionally a model is represented by $g$ in the literature).
 
-In a nutshell, a model is a set of handmade mappings that simulates an unknown function. 
+In a nutshell, a model is a handmade mapping that simulates an unknown function. 
 
 \subsection{Two Different Paradigms of Building a Model}
 
@@ -528,12 +528,11 @@ Now the critical problem is how we build a models to approximate the golden targ
 A set of rules manually written by a human that attempts to approximate $f$ based on his or her own knowledge and experiences. 
 \end{exe}
 
-The Human-Reasoning approach is built on an individual's knowledge and is task-specific. 
-Taking the English grammaticality judgment task as example, this approach will mean that some expert in English grammar will come up a set of rules or some algorithms that can determine whether a sequence of strings is a grammatical English sentences. 
-The rules and algorithms are based on this expert's knowledge and they are English specific, and are not applicable to other language.     
+The Human-Reasoning approach relies on an individual's knowledge and is task-specific. 
+Taking the English grammaticality judgment task as an example, this approach means that some expert in English grammar will come up a set of rules or some algorithms that can determine whether a sequence of strings is a grammatical English sentences. 
+The rules and algorithms are based on this expert's knowledge and they are English specific, and are not applicable to other languages.     
 
-
-Another approach to build a model is using Machine Learning. Instead of building a model from our own reasoning, we may look and all the available examples and come up with a generalization. This is the Machine Learning approach. 
+Another approach to build a model is using Machine Learning. Instead of building a model from our own reasoning, we may look at all the available examples and come up with a generalization. This is the Machine Learning approach. 
 Machine Learning can be defined as follows:
 
 \begin{exe}
@@ -545,13 +544,13 @@ Machine Learning can be defined as follows:
 \end{xlist}
 \end{exe}   
 
-For the Machine Learning approach, the most critical factors of how a model is built are 1.) the generic learning algorithms and 2.) the input data from which the generic learning algorithms learns to set up the parameters of the derived model.  
+For the Machine Learning approach, the most critical factors of how a model is built are: 1.) the generic learning algorithms, and 2.) the input data from which the generic learning algorithms learns to set up the parameters of the derived model.  
 
-Taking the English grammaticality judgment task as example again, the machine learning approach will first define some generic learning algorithms and then feed the algorithms with labeled sequences, where the label is either `grammatical English sentence' or `ungrammatical English sentence'. Note that the learning algorithms is generic. This means that it is universally applicable. For example, instead of feeding the learning algorithms with English grammaticality label, we may feed the learning algorithms with Scottish Gaelic grammaticality label, and it will able to derive a model that can tell whether a sequence of strings is a grammatical Scottish Gaelic sentence. 
+Taking the English grammaticality judgment task as example again, the machine learning approach will first define some generic learning algorithm, and then feed the algorithm with labeled sequences, where the label is either `grammatical English sentence' or `ungrammatical English sentence'. Note that the learning algorithm is generic. This means that it is universally applicable. For example, instead of feeding the learning algorithm with sequences labeled with English grammaticality, we may feed the learning algorithm with sequences labeled with Scottish Gaelic grammaticality, and it will able to derive a model that can tell whether or not a sequence of strings is a grammatical Scottish Gaelic sentence. 
 
 
 In the genericness and universality of the learning algorithms, there is a reminiscence of Universal Grammar \citep{chomsky2007}. 
-Universal Grammar is a type of machine learning. Instead of teaching a set of rules, the children is giving a set of grammatical sentences and then they are able to learn grammar, and produce grammatical sentences. 
+Universal Grammar is a type of machine learning. Instead of teaching a set of rules, children are given a set of grammatical sentences and then they are able to learn grammar, and produce grammatical sentences. 
 
 \citet{chom2005_three_factors} describes three factors in language design: 1) Universal Grammar, 2) Experience, and 3) other cognitive mechanisms/limitations. This is actually a precise description of how machine learning works. Universal Grammar is the generic learning algorithm. Experience is the training data. Cognitive mechanisms are all the other hardware specification of a machine (i.e. a human brain). So, when the Experience is language X, a child acquires language X.  
 
@@ -560,7 +559,7 @@ Universal Grammar is a type of machine learning. Instead of teaching a set of ru
 %\section{A Overview of Theories in Machine Translation}
 
 \section{Statistical Machine Translation}
-Statistical Machine Translation uses statistical Machine Learning approaches to build machine translation systems \citep{brown1988statistical, brown1990statistical, brown1993mathematics, koehn2009statistical, moses}. The goal is to build a model that simulates the unknown language mapping function. The training data is parallel corpus, which a collection of pairs of a sentence in one language and the translation of the sentence in another language.
+Statistical Machine Translation uses statistical Machine Learning approaches to build machine translation systems \citep{brown1988statistical, brown1990statistical, brown1993mathematics, koehn2009statistical, moses}. The goal is to build a model that simulates the unknown language mapping function. The training data is parallel corpus, which is a collection of pairs of a sentence in one language and the translation of the sentence in another language.
 
 The fundamental translation equation of Statistical Machine Translation is shown as follows:
 
@@ -569,8 +568,8 @@ Pr(T|S)=\frac{Pr(T)Pr(S|T)}{Pr(S)}
 \end{equation}
 
 In this equation, we try to translate a sentence $S$ in the source language to a sentence $T$ in the target language. The left part of the equation represents the probability of $T$ given $S$. 
-The right side of of the equation just flips the conditional probability using Bayes' theorem. 
-The advantage of the flipping is that now $Pr(T)$ (the probability of sentence $T$). 
+The right side of the equation is just the result of the application of Bayes' theorem on the conditional probability. 
+The advantage of the conversion is that now $Pr(T)$ (the probability of sentence $T$) can be incorporated into the model. 
 This information can be retrieved by building a language model of the target language, which can estimate the probability of a sequence of strings. $Pr(S|T)$ is the translation model, which measures the probability of $S$ given $T$. 
 Given this equation, translating a given sentence $S$ simply means to find a sentence $\hat{T}$ that maximize $Pr(T|S)$.   
 
@@ -581,23 +580,26 @@ Given this equation, translating a given sentence $S$ simply means to find a sen
 Now a Statistical Machine Translation system is decomposed into two sub-models: the language model of the target and the translation model. 
 To build the language model, the common practice is to train a N-gram model given a corpus. 
 To build the translation model, we will need to use parallel corpus. 
-To understand the nature of Statistical Machine Translation, we need to look into what information is extracted from the parallel corpus. Critically, the probability of words in the source language aligned with words in the target language is the center of the translation model of Statistical Machine Translation. 
+To understand the nature of Statistical Machine Translation, we need to look into what information is extracted from the parallel corpus. Critically, the probability of words in the source language aligned with words in the target language is the heart of the translation model of Statistical Machine Translation. 
 
-Given how Statistical Machine Translation builds the translation model, Statistical Machine Translation may be viewed as a complicated algorithm of string manipulations and string alignments. 
+Given that Statistical Machine Translation builds the translation model by using the information of string alignments, Statistical Machine Translation may be viewed as a complicated algorithm of string manipulations and string alignments. 
 Importantly, this means that Statistical Machine Translation does not touch upon meaning, which limits the development and performance of Statistical Machine Translation. 
 
-As such, Statistical Machine Translation is doomed to be outperformed by other deeper algorithms that touch upon the domains of meaning. Specifically, 2016 is the year when neural net machine translation started to outperform Statistical Machine Translation. In the Conference on Machine Translation 2016, a neural machine translation system outperformed almost every statistical machine translation systems. And in the following year, the Conference on Machine Translation 2017 went neural. Almost all the submitted papers and models were using neural net machine translation systems. 
+As such, Statistical Machine Translation is doomed to be outperformed by other deeper algorithms that touch upon the domains of meaning. Specifically, 2016 is the year when neural net machine translation started to outperform Statistical Machine Translation. In the Conference on Machine Translation 2016, a neural machine translation system outperformed almost every statistical machine translation systems. And in the following year, the Conference on Machine Translation 2017 was dominated by neural systems. Almost all the submitted papers and models were using neural net machine translation systems. 
 
-In the next section, I will introduce the basics of artificial neural nets and the overview of how neural net machine translation.  
+In the next section, I will introduce the basics of artificial neural nets and the overview of neural net machine translation.  
 
 \section{Neural Net Machine Translation}\label{neural_MT}
 
+Neural Net Machine Translation is a type of machine learning. The training data (i.e. the example that machine learn from) is also parallel corpus, just like statistical machine translation. 
+In what follows, I will first provide a overview of artificial neural networks, and then I will explain how artificial neural networks translate sentences in a non-technical way.
+
 \subsection{What Is a Artificial Neural Network?}
 
-An artificial neural network is a simple but powerful computation algorithm. It can be viewed as a mathematical function: given an number or a vector of numbers as the input, it will return one and only number or vector. 
+An artificial neural network is a simple but powerful computation algorithm. It can be viewed as a mathematical function: given an number or a vector of numbers as input, it will return one and only numerical representation. 
 
 Historically, the basic structure of artificial neural networks was long completed more than 60 years ago, 
-as \citet{rosenblatt} described the design and structure of a perceptron, which is the simplest artificial neural networks. 
+as \citet{rosenblatt} described the design and structure of a perceptron, which is the simplest artificial neural network. The following figure is a depiction of a perceptron: 
 
 \begin{figure}[h]
 \caption{An Example of a Perceptron}
@@ -649,13 +651,13 @@ start chain=2,node distance=13mm
 \end{tikzpicture}
 \end{figure}
 
-In a perceptron, we have input nodes, which carry numerical values. These input nodes are connected to another node via weighted connection arrows. The newly linked node will have first has a raw numerical value. This raw value is simply the summation of the product of the numerical value of the input node and the weight of the linking arrow plus the bias value. In the example above, we will have:
+In a perceptron, we have input nodes, which carry numerical values. These input nodes are connected to another node via weighted connection arrows. The newly linked node will first have a raw numerical value. This raw value is simply the summation of the product of the numerical value of the input node and the weight of the linking arrow plus the bias value. In the example above, we will have:
 
 \begin{exe}
 \ex $Raw\ numerical\ value= x_{1}w_{1}+x_{2}w_{2}+x_{3}w_{3}+b$
 \end{exe}
 
-Then an activation function will further normalize the raw numerical value by mapping it to another value. 
+Then, an activation function will further normalize the raw numerical value by mapping it to another value. 
 
 \begin{exe}
 \ex $y=f(Raw\ numerical\ value)$
@@ -671,14 +673,12 @@ The most commonly used activation functions in artificial neural nets are Hyperb
 \includegraphics[width=0.9\textwidth]{activation_function.png}
 \end{figure} 
 
-A perceptron is the basic building blocks of neural network computation. Note that the output of a perceptron can the the input of another perceptron. 
-In this manner, the perceptron can interconnected to one and other yielding complicated networks. 
+A perceptron is the basic building blocks of neural network computation. Note that the output of a perceptron can be the input of another perceptron. 
+In this manner, the perceptron can be interconnected to one and other, yielding complex networks. 
 
+The following figure depicts a neural network with an additional layer between the input and output nodes:
 
-The following figure depicts a neural net with a hidden layer in the middle between the input and output nodes. When there are more than one hidden layer, the neural net is called deep neural net. However, the building blocks are still a simple perceptron. So, actually neural networks are simple and elegant computation operation\footnote{It seems to me that linking the perceptron is just like the simple Merge operation in the Minimalist Program.}; 
-however, they extremely powerful. They are Turing-Complete machines \citep{siegelmann1991turing, graves2014neural}. \citet{siegelmann2003neural, siegelmann2012neural} even argues that neural networks are computations beyond the Turing limit. 
-
-\begin{figure}[h]
+\begin{figure}[h!]
 \caption{A neural network with a hidden layer}
 \centering
 \begin{tikzpicture}[
@@ -723,11 +723,18 @@ net/.style={
 \end{tikzpicture}
 \end{figure}    
 
+This middle layer is called hidden layer. However, they are not really hidden; actually all the numerical values of each neuron in the hidden layer are all visible, but it is really hard to come up with a sensible interpretation on these numbers.  
+When there are more than one hidden layers, the neural net is called deep neural net. However, the building blocks are still a simple perceptron. So, actually neural networks are simple and elegant computation operation\footnote{It seems to me that linking the perceptron is just like the simple Merge operation in the Minimalist Program.}; 
+however, they extremely powerful. They are Turing-Complete machines \citep{siegelmann1991turing, graves2014neural}. \citet{siegelmann2003neural, siegelmann2012neural} even argues that neural networks are computations beyond the Turing limit. 
+
+
+
+%\newpage
 \subsection{Recurrent Neural Network}
 
-Before we start to describe how a neural machine accomplishes the translation task, it is necessary to introduce a specific type of neural networks: Recurrent Neural networks. 
+Before we start to describe how a neural machine accomplishes the translation task, it is necessary to introduce a specific type of neural networks: Recurrent neural networks. 
 
-Recall that the output of a perceptron can be the input of another perceptron. A interesting manipulation is to let the perceptron connect back to itself. with this manipulation, we have the Recurrent Neural Networks. As shown in the following figures, the hidden note is connected back to itself at each time step. As such, at each time step, there are two input sources of the hidden node: 1) the information from the past hidden node and 2) the information from a new input node.       
+Recall that the output of a perceptron can be the input of another perceptron. A interesting manipulation is to let the perceptron connect back to itself. With this manipulation, we have the Recurrent Neural Networks. As shown in the following figures, the hidden node is connected back to itself at each time step. As such, at each time step, there are two input sources of the hidden node: 1) the information from the past hidden node, and 2) the information from a new input node.       
 
 \begin{figure}
 \caption{A recurrent neural network with a hidden layer (clasped depiction). The hidden neuron ($h_{t}$) is connected to itself.}
@@ -774,16 +781,16 @@ Recall that the output of a perceptron can be the input of another perceptron. A
 \end{tikzpicture}
 \end{figure}
 
-Is this manipulation useful? And if yes, why? Yes, it turns out Recurrent Neural Networks are really useful when we are interested in modeling a sequencing phenomenon and we believe that a fraction of the sequence will effect the next fraction. The looping configuration opens the door to the history of the hidden neuron, and leads it to its future. 
+Is this manipulation useful? And if yes, why? It turns out Recurrent Neural Networks are really useful when we are interested in modeling a sequencing phenomenon and we believe that a fraction of the sequence will have an effect on the next coming fraction. The looping configuration opens the door to the history of the hidden neuron, and leads it to its future. 
 
 Recurrent neural networks are widely used. Critically, the main theme of the dissertation, Neural Net Machine Translation, is also implemented with it. The coming section provides an overview of how neural networks translate languages. 
 
 %\newpage
 \section{Introduction to Neural Net Machine Translation}
 
-My 3-year old daughter, Trina, is growing up in Tucson, Arizona, The languages that she encounters are English, Spanish and Mandarin Chinese, and thus she picks up English and Mandarin, and some Spanish. She is able to count the quantity of some objects in the three languages. When I told her \textbf{in  Mandarin} that `we can bring two candies for Alice' on the way to her preschool, and she is able to tell her best friend, Alice, in her preschool \textbf{in English} that she will give her one candy (not two because Trina has to save one candy for herself).         
+My 3-year old daughter, Trina, is growing up in Tucson, Arizona, The languages that she encounters are English, Spanish and Mandarin Chinese, and thus she picks up English and Mandarin, and some Spanish. She is able to count the quantity of objects in the three languages. When I told her \textbf{in  Mandarin} that `we can bring two candies for Alice' on the way to her preschool, and she was able to tell her best friend, Alice, in her preschool that she will give her one candy \textbf{in English} (not two because Trina has to save one candy for herself).        
 
-It is certain that a multilingual person can access the meaning of a sequence of string in a language when he or she hears it, and then produces another sequence of string in another different language with the same meaning. Given that a human brain is a neural networks machine and artificial networks networks is similar to human neural networks, it fits our intuition that artificial networks networks can translate languages, of course. Actually, this is roughly how a neural net machine translation is implemented. Consider the following figure from \citet{luong17GitHub}.
+It is certain that a multilingual person can access the meaning of a sequence of strings in a language when he or she hears it, and then produces another sequence of strings in another different language with the same meaning. Given that a human brain is a neural network machine and artificial neural networks is similar to human neural networks, it fits our intuition that artificial neural networks can translate languages, of course. Actually, this is roughly how a neural net machine translation is implemented. Consider the following figure from \citet{luong17GitHub}.
 
 \begin{figure}[h]
 \caption{Encoder-decoder architecture - example of a general approach for NMT. An encoder converts a source sentence into a "meaning" vector which is passed through a decoder to produce a translation. (figure from \citet{luong17GitHub})}
@@ -791,12 +798,12 @@ It is certain that a multilingual person can access the meaning of a sequence of
 \includegraphics[width=0.9\textwidth]{encdec.jpg}
 \end{figure} 
 
-The figure outlines the heuristic of how neural networks computation may translate Languages. When the neural net is fed with a source sentence, ``I am a student'', it will convert the sentence into a meaning representation or a thought vector \citep{devlin2015google}. This is the encoding process. Based on this meaning representation, the machine then derives another sequence of words in the target Language. Now we may take a close look of how the encoding and decoding process works. 
+The figure outlines the heuristic of how neural networks computation may translate languages. When the neural net is fed with a source sentence, ``I am a student'', it will convert the sentence into a meaning representation or a thought vector. This is the encoding process. Based on this meaning representation, the machine then derives another sequence of words in the target language. This is the decoding process. Now we may take a close look of how the encoding and decoding process works. 
 
 \subsection{Word Embedding}
-The neural machine can only process numeral representations, so the first step is to convert words into numerical representations. Specifically each word will be represented as a vector. The central idea is to map each word into a location in ``a meaning space'', and each vector is the geographical coordinates of the word. 
+The neural machine can only process numeral representations, so the first step is to convert words into numerical representations. Specifically each word will be represented as a vector. The central idea is to map each word onto a location in ``a meaning space'', and each vector is the geographical coordinates of the word. 
 This process is called word embedding. The ideal word embedding system would have the properties that words with similar meanings will be neighbors in the meaning space. 
-The most commonly used technique of building word embeddings is invented and described in \citet{mikolov2013efficient, mikolov2013distributed}. Critically, this word embedding implementation follows the distributional semantics philosophy: the meaning of a word is defined by its distribution in a corpus. So, to build a word embedding model all we need is a corpus. The training data for machine translation is a parallel corpus, which gives us two corpora: the source language corpus and target language corpus. So, the training data is sufficient for building word embedding models\footnote{It is also a common practice to build the word embedding separately using a bigger corpus when the parallel corpus is too small.}. The following figure depicts how it is like when the word embeddings are mapped to a 2D space.   
+The most commonly used technique of building word embeddings is proposed in \citet{mikolov2013efficient, mikolov2013distributed}. Critically, this word embedding implementation follows the distributional semantics philosophy: the meaning of a word is defined by its distribution in a corpus. So, to build a word embedding model all we need is a corpus. The training data for machine translation is a parallel corpus, which gives us two corpora: the source language corpus and target language corpus. So, the training data is sufficient for building word embedding models\footnote{It is also a common practice to build the word embedding separately using a bigger corpus when the parallel corpus is too small.}. The following figure depicts how it is like when the word embeddings are mapped to a 2D space.   
 
 \begin{figure}
 \caption{Word Embeddings (figure from \citet{roweis2000nonlinear})}
@@ -807,10 +814,10 @@ The most commonly used technique of building word embeddings is invented and des
 
 \subsection{Encoding and Decoding}
 
-A simple preprocessing on the data is to add tags that marks the boundary of the sentences. Each word in the source sentence is sent to recurrent network machine incrementally. 
-Note the looping configuration makes the machine to accumulate the information of all the words. When the tag that marks the end of the source sentence is fed into the machine, the encoding process is completed, and the value of the hidden neurons at this time is the meaning representation of the source sentence.  
+A simple preprocessing on the data is to add tags that marks the boundaries of the sentences. Each word in the source sentence is sent to recurrent network machine incrementally. 
+Note the looping configuration of recurrent neural networks makes it possible for the machine to accumulate the information of all the words. When the tag that marks the end of the source sentence is fed into the machine, the encoding process is completed, and the value of the hidden neurons at this time is the meaning representation of the source sentence.  
 
-Given the meaning representation, now the machine starts to decode. At each time step, it emits a word in the target language. The emitted word in the target language is copied and serving as input in the next time step of encoding. So that the output sentence can have the context information of the previous word; this trick ensures the fluency of the output sentence. 
+Given the meaning representation, now the machine starts to decode. At each time step, it emits a word in the target language. The emitted word in the target language is copied and served as input in the next time step of encoding. So that the output sentence can have the context information of the previous word; this trick ensures the fluency of the output sentence. 
 
 Consider the following figure from \citet{luong17GitHub} for a concrete example of how the encoding-decoding process works.  
 
@@ -820,25 +827,36 @@ Consider the following figure from \citet{luong17GitHub} for a concrete example 
 \includegraphics[width=0.9\textwidth]{seq2seq.jpg}
 \end{figure} 
 
-In the current example, we are trying to translate a source sentence ``I am a student'' into a target sentence ``Je suis \'{e}tudiant''. Here, ``<s>'' marks the end of the source sentences and the start of the decoding process. 
-So, at the time step of  ``<s>'', the vectors in the hidden neurons is the meaning representation. In the decoding process, the first emitted word is ``Je''. Note that ``Je'' is sent back as the input in the next time step. At this time step, ``suis'' is emitted. Now we may pay attention to what the given information are when the machine is emitting ``suis''. Specifically, the given information are 1) thought vectors plus ``je'' in the hidden layers and 2) ``je'' from the input node. When the machine emitted the tag, ``</s>'', the decoding process is completed. 
+In the current example, we are trying to translate a source sentence ``I am a student'' into a target sentence ``Je suis \'{e}tudiant''. Here, ``<s>'' marks the end of the source sentences and the starting point of the decoding process. 
+So, at the time step of  ``<s>'', the vector in the hidden neurons is the meaning representation. In the decoding process, the first emitted word is ``Je''. Note that ``Je'' is sent back as the input in the next time step, when ``suis'' is emitted. Now we may pay attention to what the given information is when the machine is emitting ``suis''. Specifically, the given information is: 1) thought vectors plus ``je'' in the hidden layers, and 2) ``je'' from the input node. When the machine emitted the tag, ``</s>'', the decoding process is completed. 
 
-This is the basic structure of a neural machine translation system proposed in \citet{cho2014learning,cho2014properties}. 
+This section covers the basic structure of a neural machine translation system proposed in \citet{cho2014properties, cho2014learning}.  
 
 
+\subsection{Adding Attention Mechanism}
 
-\subsection{Adding Attention}
+The meaning vector is the accumulated information of all the bits in the source sentence. The decoding process needs to sort out all the bits from the mixed information in the meaning vector. Actually, this is a lot to ask. The task is like to figure out what ingredients are from a pot of hot and sour soup by tasting the soup. To facilitate the sorting task of the decoding processing, \citet{bahdanau2014neural} and \citet{luong2015effective} propose methods to direct the decoder's attention to the relevant bits in the source sentence. Take the soup analogy again. With the attention mechanism, to guess what the ingredient is, the given information is now the taste of vinegar, in addition to the taste of the mixed-up soup in this time step. So that the chance of getting the right answer (i.e. vinegar) is much higher. And in the next time step, in addition to the taste of the mixed-up soup, one is also given the taste of pepper, and so on.   
+
+The following figure from \citet{luong17GitHub} nicely depicts how the attention mechanism works. 
+
 \begin{figure}[h]
-\caption{Attention mechanism - example of an attention-based NMT system as described in \citet{luong2015effective} (figure from \citet{luong17GitHub}).}
+\caption{Attention mechanism - example of an attention-based NMT system as described in \citet{luong2015effective} (figure from \citet{luong17GitHub})}
 \centering
 \includegraphics[width=0.9\textwidth]{attention_mechanism.jpg}
 \end{figure} 
 
+In the figure, the task is to translate a source sentence ``I am a student'' into a target sentence ``Je suis \'{e}tudiant''.
+The encoding process is the same, but in the decoding process additional information is also provide. In the current example, when the decoder emits the word ``je'', it is given the meaning vector, and the attention mechanism also gives the decoder 0.5  information of ``I'', 0.3 information of ``am'', 0.1 information of ``a'', and 0.1 information of ``student''. In this manner, the machine's attention is directed to ``I'' when the supposed emitted word is ``Je''. 
+
+\subsection{Summary of Neural Net Machine Translation: interlingua plus string alignment}
+
+The state-of-the-art neural network machine translation is the combination of the encoding-decoding algorithm and the attention algorithm. The meaning vector in the encoding-decoding algorithm actually can be viewed as the holy grail in translation, the interlingua representation. The attention algorithm is a reminiscence of the string alignment approach used in statistical machine translation. So, neural net machine translation is actually a combination of interlingua  translation approach and string alignment approach.   
 
 
 \section{A Quick Historical Overview of Machine Translation and Conclusion}
 
-Machine Translation is to automate the process of translating one natural language to another with using computers. The first peak of the developments of Machine Translation started in the 1940s but terminated in 1966. During this period of time, with the advent of the first computers, researchers held high expectations in Machine Translation and lots of resources are shifted into this area. However, in 1966 a report of the Automatic Language Processing Advisory Committee \citep{pierce1966language} terminated this `machine translation rush' as it revealed that too many funds and resources were shifted to Machine Translation without yielding proportional scientific developments. In 1990s, with the advent of Statistical Machine Translation approach developed at IBM, the Machine Translation came back as one of popular scientific areas. Now with the advent of the technique of Artificial Neural Net Machine Learning and other natural language process, Machine Translation is one of the most dynamic research areas.    
+Machine Translation is to automate the process of translating one natural language to another using computers. The first peak of the developments of Machine Translation started in the 1940s but terminated in 1966. During this period of time, with the advent of the first computers, researchers held high expectations in Machine Translation and lots of resources are shifted into this area. 
+ubHowever, in 1966 a report of the Automatic Language Processing Advisory Committee \citep{pierce1966language} terminated this `machine translation rush' as it revealed that too many funds and resources were shifted to Machine Translation without yielding proportional scientific developments. In 1990s, with the advent of Statistical Machine Translation approach developed at IBM, the Machine Translation came back as one of popular scientific areas. Now with the advent of the technique of Artificial Neural Net Machine Learning and other natural language processing techniques, Machine Translation is one of the most dynamic research areas.    
 \chapter{Building Translation Systems using Interlinear Glossed Text: First Attempt}
 \label{chap:cake}
 
@@ -846,11 +864,11 @@ Machine Translation is to automate the process of translating one natural langua
 \section{Introduction}
 The Innovation is to incorporate the gloss information of Interlinear Glossed Text data into machine translation.
 
-In supervised machine learning models, two factors effects the performance of the trained systems \citep{kotsiantis2007supervised}: a.) the quality of the training data and b.) the choice of the features. The properties of the gloss data as described in chapter \ref{chap:gloss} make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons. First, glosses are more purified than natural language words. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information. See chapter \ref{chap:gloss} for the discussion on the golden properties of glosses.  
+In supervised machine learning models, two factors effect the performance of the trained systems \citep{kotsiantis2007supervised}: a.) the quality of the training data and b.) the choice of the features. The properties of the gloss data as described in chapter \ref{chap:gloss} make it a better training data than natural language data (Scottish Gaelic in the current case) for the following reasons. First, glosses are more purified than natural language words. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. Glosses provide this one-to-one mapping. Second, the gloss data provides hierarchical (non-linear) syntactic parsing information. To determine what the gloss of a word is, linguists have to look for hierarchical (non-linear) context information. See chapter \ref{chap:gloss} for the discussion on the golden properties of glosses.  
 
 Therefore, theoretically incorporation of the gloss data should improve the translation systems. Specifically, I propose the following hypothesis:
 \begin{exe} 
-\ex \label{gloss_helps_hypothesis}\textbf{Gloss-helps hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
+\ex \label{gloss_helps_hypothesis}\textbf{Gloss-help hypothesis: the translation systems trained with the gloss data incorporated should outperform the systems trained with only Gaelic and English sentences pairs (i.e. without gloss data).}
 
 The hypothesis can have two versions, strong and weak:
 	\begin{xlist}
@@ -859,9 +877,9 @@ The hypothesis can have two versions, strong and weak:
 	\end{xlist}
 \end{exe}
 
-The experiments in the current chapter will reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-helps hypothesis is not empirically supported. 
+The experiments in the current chapter will reveal that replacing Gaelic words with glosses doesn't boost up the performance of the translation systems. Thus, the strong version (replacing-Gaelic-with gloss) of the Gloss-help hypothesis is not empirically supported. 
 
-This chapter describes the experiments conducted to test the strong version of the Gloss-helps hypothesis.
+This chapter describes the experiments conducted to test the strong version of the Gloss-help hypothesis.
 The rest of the chapter is organized as follows: Section \ref{relate_work} describes related works in the literature, Section \ref{sec:experimet_setting} describes the constant parameter settings across all the experiments and the corpus used in the experiments, Section \ref{gd_to_gl_to_en} tests the hypothesis in (\ref{strong_hy}), Section \ref{section:cake1_Discussion} discusses the results and conclude this chapter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work}\label{relate_work}
@@ -884,7 +902,7 @@ The following default hyper-parameter settings of OpenNMT\footnote{See their doc
 	\item Number of epochs: 13\\
 	The training process of a neural net machine translation systems is done epoch by epoch. Each epoch is an iteration of training. Here 13 means that we are going to have 13 iterations of training and thus have 13 epochs. 
 	\item Size of mini-batches: 64\\
-	Training a neural net is to let the weights of the connections between the neurons fit the training samples. Theoretically, we may ask the net adjust the weights according all the samples all together at one time. However, in practice, this is not memory efficient, and will cause errors in the process of optimizing the weight parameters. So, instead, the samples are split into smaller mini-batches, and the neural net just updates its weights to make the most accurate predictions for a mini-batch at one time. This hyper-parameter specifies the size of a mini-batch. Actually finding the right mini-batch size is not a trivial but an important question in Deep Learning. See \citet{DBLP:journals/corr/KeskarMNST16} and \citet{DBLP:journals/corr/abs-1711-00489} for the experiments and discussions on the effects of the size of mini-batches. 
+	Training a neural net is to let the weights of the connections between the neurons fit the training samples. Theoretically, we may ask the net adjust the weights according all the samples all together at one time. However, in practice, this is not memory efficient, and will cause errors in the process of optimizing the weight parameters. So, instead, the samples are split into smaller mini-batches, and the neural net just updates its weights to fit the samples in a mini-batch at one time. This hyper-parameter specifies the size of a mini-batch. Actually finding the right mini-batch size is not a trivial but an important question in Deep Learning. See \citet{DBLP:journals/corr/KeskarMNST16} and \citet{DBLP:journals/corr/abs-1711-00489} for the experiments and discussions on the effects of the size of mini-batches. 
 	\end{itemize}
 
 The settings of the hyper-parameters do have effects on the performances of the trained models.
@@ -900,11 +918,11 @@ This corpus has 8,367 Gaelic sentences, and in term of words, it has 52,778 Gael
 %The data and the scripts are accessible on GitHub\footnote{\url{https://github.com/lucien0410/Scottish_Gaelic}}, so that the results can be reproduced.  
 
 \section{Gloss Representation Solely Does NOT Outperform Gaelic Sentences} \label{gd_to_gl_to_en}
-This section tests the strong version of Gloss-helps hypothesis in (\ref{strong_hy}).
+This section tests the strong version of Gloss-help hypothesis in (\ref{strong_hy}).
 Given the assumption that gloss may be better than any natural language in terms of representing meanings, it is expected that for neural net machine translation systems it is easier to learn how to translate from the glosses of Scottish Gaelic to English than to learn how to translate from Scottish Gaelic to English. However, the results show that there is no significance difference between the two types of data (i.e. GLOSS $\rightarrow$ English and Gaelic $\rightarrow$ English).
 
 \subsection{Procedure of the Experiments}
-I use repeated random sub-sampling validation to compare the performances of the two type of models.
+I use repeated random sub-sampling validation to compare the performances of the two types of models.
 
 Totally we have 8,388 indexed 3-tuples of a Gaelic sentence, a gloss line and an English translation. Each line in the interlinear glossed text example below is an argument of a 3-tuple sample.
 
@@ -931,7 +949,7 @@ First, the samples (i.e. the 3-tuples) are randomly split into three datasets: t
    \ex 	|Index\textsubscript{Train}| = 6,388; |Index\textsubscript{Validation}| = 1,000; |Index\textsubscript{Test}| = 1,000.
    \end{xlist}
 \end{exe}
-The step above just randomly splits the indexes of the 3-tuples into three distinct sets: Index\textsubscript{Train}, Index\textsubscript{Validation}, and Index\textsubscript{Test}. Based on the indexes, we generate the sets of samples. For each index, the 3-tuple is split into two pairs: <gloss, English>, <Gaelic, English>, so that later we can compare the different effects of gloss lines and Gaelic sentences. For each pair, the first item is the source sequence, and the second item is the target sequence. The systems learns how to map the source sequence to the target sequence.   
+The step above just randomly splits the indexes of the 3-tuples into three distinct sets: Index\textsubscript{Train}, Index\textsubscript{Validation}, and Index\textsubscript{Test}. Based on the indexes, we generate the sets of samples. For each index, the 3-tuple is split into two pairs: <gloss, English>, <Gaelic, English>, so that later we can compare the different effects of gloss lines and Gaelic sentences. For each pair, the first item is the source sequence, and the second item is the target sequence. The systems learn how to map the source sequence to the target sequence.   
 
 \begin{exe}
 	\ex Gloss to English
@@ -951,7 +969,7 @@ The step above just randomly splits the indexes of the 3-tuples into three disti
 		\ex Example: <``Tha a athair nas sine na a mh\`athair.'', ``His father is older than his mother.''>
 		\end{xlist}
 \end{exe}
-The models are trained with the training set and validation set (i.e. the model learns how to map the source sequence to the target sequence). Both training set and validation set are known information for the models\footnote{Technically speaking, the validation set is part of the training data in terms of machine learning. The presence of the validation set is a special requirement of neural net machine learning, which uses the validation set to evaluate the convergence of the training.}. Specifically, the neural net system learns how to map gloss lines to English sentences from samples in (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}), and another neural net system learns how to maps Gaelic sentences to English sentences from from samples in (\ref{GDtoENTrain}) and (\ref{GDtoENVal}).
+The models are trained with the training set and validation set (i.e. the model learns how to map the source sequence to the target sequence). Both training set and validation set are known information for the models\footnote{Technically speaking, the validation set is part of the training data in terms of machine learning. The presence of the validation set is a special requirement of neural net machine learning, which uses the validation set to evaluate the convergence of the training.}. Specifically, the neural net system learns how to map gloss lines to English sentences from samples in (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}), and another neural net system learns how to map Gaelic sentences to English sentences from samples in (\ref{GDtoENTrain}) and (\ref{GDtoENVal}).
 
 \begin{exe}
 \ex Models:
@@ -986,7 +1004,7 @@ The BLEU assumes that a sentence is a bag of n-grams (n is from 1 to 4). It meas
 	\end{xlist}
 \end{exe}
 
-For simplicity, let's consider unigram precision first. With the bag of words assumption, (\ref{can1}) and (\ref{can2}) are identical in terms unigram because they have the same set\footnote{Here set does not mean the mathematical set but just unordered list.} of unigrams:   
+For simplicity, let's consider unigram precision first. With the bag of words assumption, (\ref{can1}) and (\ref{can2}) are identical in terms of unigram because they have the same set\footnote{Here set does not mean the mathematical set but just unordered list.} of unigrams:   
 
 \begin{exe}
 \ex 
@@ -1007,7 +1025,11 @@ The unigram bag of word format of the gold-standard of our example is:
 	\end{xlist}
 \end{exe}
 
-Now to calculate of the proportional similarity between the predicted bag of words and the gold-standard bags of words, BLEU uses `modified precision rate'. The technical meaning of `precision' is whether the predicted items is actually present in the gold-standard. Now the size of the bag of unigrams of the candidate is 5, the denominator of the precision rate is 5, and the denominator is how many items in the candidate set are present in the gold-standard. In the current example, \textit{one} and \textit{two} are both present in the gold-standard, so the denominator of (\ref{can1}) or (\ref{can2}) is 5. Now we have a wrongly inflated rate, 5 out of 5, 100$\%$ matched, meaning (\ref{can1}) or (\ref{can2}) is 100$\%$ similar to the gold-standard. To counter the effect of this inflation, BLEU uses `modified' precision rate. When the item in the gold-standard is matched it is crossed-out, and invisible to the predicted bag of words\footnote{This is very similar to the feature checking mechanism in the Minimalist Program: one interpretable feature normally can only check out one uninterpretable feature.}. With this modified precision measurement, the two \textit{one}s only get one score and the three \textit{two}s only get one score. Now the modified precision rate is 2 out of 5, instead of 5 out of 5. 
+Now to calculate of the proportional similarity between the predicted bag of words and the gold-standard bags of words, BLEU uses `modified precision rate'. The technical meaning of `precision' is whether the predicted items are actually present in the gold-standard. Now the size of the bag of unigrams of the candidate is 5, the denominator of the precision rate is 5, and the denominator is how many items in the candidate set are present in the gold-standard. In the current example, \textit{one} and \textit{two} are both present in the gold-standard, so the denominator of (\ref{can1}) or (\ref{can2}) is 5. 
+Now we have a wrongly inflated rate, 5 out of 5, 100$\%$ matched, meaning (\ref{can1}) or (\ref{can2}) is 100$\%$ similar to the gold-standard. 
+To counter the effect of this inflation, BLEU uses `modified' precision rate. 
+When the item in the gold-standard is matched, it is crossed-out, and invisible to the predicted bag of words\footnote{This is very similar to the feature checking mechanism in the Minimalist Program: one interpretable feature normally can only check out one uninterpretable feature.}. 
+With this modified precision measurement, the two \textit{one}s only get one score and the three \textit{two}s only get one score. Now the modified precision rate is 2 out of 5, instead of 5 out of 5. 
 
 In terms of bigrams, the same examples will be:
 
@@ -1022,7 +1044,7 @@ In terms of bigrams, the same examples will be:
 
 The denominator of the precision rate is 4 because the length of the predicted bag of words is 4; predicted sentence 1 in (\ref{bi_can1}) get 1 score because `one\_two' is matched, yielding a rate of 1 out of 4, while for predicted sentence 2 in (\ref{bi_can2}) no bigram is matched, yielding a rate of 0 out of 4. 
 
-A loose end of the current measurement is that it will wrongly give a shorter predicted sentence a higher precision rate because the shorter the smaller the denominator is. To counter this, the final version of BLUE penalize short predicted sentence by multiplying the ratio between the length of the predicted sequence and the length of the gold-standard sentence. For N from 1 to 4, each N-gram comparison yields a BLEU score; the multi-bleu score is just the average of the 4 BLEU scores (unigram to four-gram). 
+A loose end of the current measurement is that it will wrongly give a shorter predicted sentence a higher precision rate because the shorter the smaller the denominator is. To counter this, the final version of BLUE penalizes short predicted sentence by multiplying the ratio between the length of the predicted sequence and the length of the gold-standard sentence. For N from 1 to 4, each N-gram comparison yields a BLEU score; the multi-BLEU score is just the combination of the 4 BLEU scores (unigram to four-gram). 
 
 Put all together, a concise way of describing the calculation of BLUE is the following equation.  
 
@@ -1069,7 +1091,7 @@ This procedure of splitting the data into three sub-sets, training the models, a
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:52 2018
+% Mon Apr 30 02:03:23 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1098,10 +1120,10 @@ Also, after doing a paired T-test, the difference between the two types of model
 (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{GLOSStoEN}=17.70, SD\textsubscript{GLOSStoEN}=1.78; t(9)=1.97, p=0.080)
 
 \subsection{Summary}
-The ultimate practical goal of the dissertation is to use glossing data to develop better machine translation systems. Here \textit{better} means to be better than a baseline system, which is the machine translation system trained with Gaelic-to-English translation samples. The models in (\ref{ModelGDToEN}) are the baseline systems, and their scores are in the Gaelic column of table (\ref{Table:GLOSS}). These are the target scores that we aims to outperform. The experiment above is the first attempt to improve the scores by using the \textit{gloss treatment}, in which the Gaelic sentences are replaced with gloss lines.  However, the result shows that this \textit{gloss treatment} is not effective as the scores of the gloss models are not statistically higher than the baseline Gaelic-to-English models. 
+The ultimate practical goal of the dissertation is to use glossing data to develop better machine translation systems. Here \textit{better} means to be better than a baseline system, which is the machine translation system trained with Gaelic-to-English translation samples. The models in (\ref{ModelGDToEN}) are the baseline systems, and their scores are in the Gaelic column of table (\ref{Table:GLOSS}). These are the target scores that we aim to outperform. The experiment above is the first attempt to improve the scores by using the \textit{gloss treatment}, in which the Gaelic sentences are replaced with gloss lines.  However, the result shows that this \textit{gloss treatment} is not effective as the scores of the gloss models are not statistically higher than the baseline Gaelic-to-English models. 
 
 \section{Discussion and Conclusion}\label{section:cake1_Discussion}
-It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are equally good in terms of representing meanings. The strong version of the Gloss-helps hypothesis does not hold.
+It is assumed that the performances of the machine translation systems are correlated with the quality of the representation of meanings in the source sequences. Better representations of meanings yield better machine translation systems. Given the results in (\ref{gdglen_results}) that the gloss models are not better than the Gaelic models, it is concluded that glosses and natural languages are equally good in terms of representing meanings. The strong version of the Gloss-help hypothesis does not hold.
 
 There are several remarks that need to be addressed for the current result. 
 
@@ -1111,11 +1133,11 @@ The written form of a natural language is actually already optimized for represe
 
 Second, if we want to actually apply the gloss treatment to translate a Gaelic sentence to English, we encounter an immediate problem. The actual source sequence is a Gaelic sentence, while the required source sequence for the gloss treatment is a gloss line. The auto-glosser described in chapter (\ref{chap:gloss}) may convert the Gaelic sentence to a gloss line, but the conversion is not perfect at all. Given this, even if the gloss treatment should work, it is not practical unless we may convert Gaelic sentence to gloss line perfectly.      
 
-We may now combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-helps hypothesis. The experiments and results are reported in the next chapter.
+We may now combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-help hypothesis. The experiments and results are reported in the next chapter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Combining Gaelic Words with Glosses}\label{chap:cake2}
 \section{Introduction}
-In the previous chapter, we attempt to build a system by using the \textit{gloss treatment} to outperform the baseline system. It turns that solely using gloss line is not effective enough to improve the system. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
+In the previous chapter, we attempt to build a system by using the \textit{gloss treatment} to outperform the baseline system. It turns out that solely using gloss line is not effective enough to improve the system. However, this result does not falsify the gloss-help hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
 \begin{exe}
 	\ex 
 	\begin{xlist}
@@ -1126,7 +1148,7 @@ In the previous chapter, we attempt to build a system by using the \textit{gloss
 
 This section reports various ways of combining the gloss line data and the Gaelic sentence data, and the experiments and their results using these different treatments. Critically, a specific way of combining Gloss data and Gaelic date (termed as `\textit{Parallel-Partial}' treatment) boosts the performance significantly. The model trained with this specially arranged training data also significantly outperforms Google's Gaelic-to-English translation system.
 
-In this section, I will first describe the most effective treatment, termed as `\textit{Parallel-Partial}' treatment, and the results, and then I will report the experiments done with other relevant logical treatments (i.e. other ways of combining glossing data and Gaelic data). 
+In this section, I will first describe the most effective treatment, termed as `\textit{Parallel-Partial}' treatment, and the results. Next, I will report the experiments done with other relevant logical treatments (i.e. other ways of combining glossing data and Gaelic data). 
 
 \subsection{The Underlying Heuristics}\label{heuristics}
 At a high level, neural net sequence to sequence learning algorithm is learning how to map a high-dimension space to another high-dimension space. In the settings of machine translation, each dot in the high-dimension space is a meaning representation. Linking one dot to another dot is converting one representation of meaning to another, yielding the effect of translation. Given this heuristics, we may just feed the machine with all the available meaning mappings. Given the assumption that the gloss lines are linguistically guided representations of meaning, they are suitable training data for building machine translation systems. Specially, with the gloss data, we let the machine to learn the following mappings:
@@ -1148,9 +1170,9 @@ The Parallel-Partial treatment section may be viewed as a form of multi-task Seq
 
 \subsection{Data Preprocessing Using the Parallel-Partial Treatment}
 The Parallel-Partial treatment uses the training and validation data of the baseline system and that of the gloss treatment system.  
-The training and validation data of the baseline system are pairs of a Gaelic sentence and a English sentences (see (\ref{GDtoENTrain}) and (\ref{GDtoENVal}) ), 
-and the data of the gloss treatment are pairs of a gloss line and a English sentences (see (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}). 
-These two groups of data are combined in a parallel manner in the current treatment. Now the size of training set and validation set is doubled. In the baseline system and the gloss treatment system, we have 6,388 samples in the training set and 1,000 samples in the validation set. The current treatment has 12,776 samples in the training set and 2,000 samples in the validation set. This is the \textit{parallel} part of the treatment. 
+The training and validation data of the baseline system are pairs of a Gaelic sentence and a English sentence (see (\ref{GDtoENTrain}) and (\ref{GDtoENVal}) ), 
+and the data of the gloss treatment are pairs of a gloss line and a English sentence (see (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}). 
+These two groups of data are combined in a parallel manner in the current treatment. Now the sizes of training set and validation set are doubled. In the baseline system and the gloss treatment system, we have 6,388 samples in the training set and 1,000 samples in the validation set. The current treatment has 12,776 samples in the training set and 2,000 samples in the validation set. This is the \textit{parallel} part of the treatment. 
 
 Additionally, I utilize the alignment property between the Gaelic word and the gloss to further build pairs of a Gaelic word and a gloss. These pairs are also included into the training set and validation set of the current treatment. This is the \textit{partial} part of the treatment.   
 
@@ -1195,7 +1217,7 @@ Critically, the same technical settings and the same test sets in the previous e
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:53 2018
+% Mon Apr 30 02:03:24 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1224,7 +1246,7 @@ The first and the second columns are BLUE scores of the baseline systems and the
 The comparison of the average BLUE scores of the groups of systems shows that the Parallel-Partial treatment improves the performance of the baseline system by 93 percent.
 %(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33,; t(9)=48.95, p<0.010.000).
 \subsubsection{Discussion}
-With the ParaPart treatment, the baseline systems are improved for more than 93 percent. This result suggest the validity of our heuristics in section \ref{heuristics} that gloss lines can be viewed as an artifical language, and provide strong evidence for the gloss-helps hypothesis in (\ref{gloss_helps_hypothesis}).     
+With the ParaPart treatment, the baseline systems are improved for more than 93 percent. This result suggests the validity of our heuristics in section \ref{heuristics} that gloss lines can be viewed as an artifical language, and provide strong evidence for the gloss-help hypothesis in (\ref{gloss_helps_hypothesis}).     
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1259,7 +1281,7 @@ With this treatment, a chunk of interlinear glossed text is split into two pairs
 The experiments gave us the expected results. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:53 2018
+% Mon Apr 30 02:03:24 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1289,7 +1311,7 @@ However, the best treatment (i.e. the Parallel-Partial treatment) is still far b
 (M\textsubscript{Para}=29.56, SD\textsubscript{Para}=1.46; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=8.76, p < 0.01 ).
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:53 2018
+% Mon Apr 30 02:03:24 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccc}
@@ -1318,7 +1340,9 @@ Critically, the comparison between the Parallel-Partial treatment and current Pa
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Interleaving Gaelic Words and Gloss Items And Concating them}\label{treatment:InterleavingAndConCat}
 \subsubsection{Method of the Interleaving Treatment}
-Instead of putting the pairs of a Gaelic sentence and a English sentences and the pairs of a gloss line and a English sentence in a parallel manner, we may just literally blend a Gaelic sentence and a gloss line by interleaving them\footnote{\citet{ccg_target_seq} incorporate the Categorial grammar parse tags into natural sentences by interleaving the tags and the words.}. Consider the following example:
+
+Instead of putting the pairs of a Gaelic sentence and a English sentence and the pairs of a gloss line and a English sentence in a parallel manner,
+we may just literally blend a Gaelic sentence and a gloss line by interleaving them\footnote{\citet{ccg_target_seq} incorporate the Categorial grammar parse tags into natural sentences by interleaving the tags and the words.}. Consider the following example:
 
 \begin{exe} 
 \ex 
@@ -1334,13 +1358,14 @@ Instead of putting the pairs of a Gaelic sentence and a English sentences and th
 
 Given the chuck of interlinear glossed text data in (\ref{ex_interleave:in}), the Interleaving treatment generates the sample in (\ref{ex_interleave:out}).  
 
-This way of blending gloss lines and Gaelic sentences may add useful information into the training data; however, the downside of this method is to increase the length our samples on the source sequence side. In neural net machine learning, the longer the sequences are, the harder it is to preserve all the information. So, this treatment may not be effective. 
+This way of blending gloss lines and Gaelic sentences may add useful information into the training data; 
+however, the downside of this method is to increase the length of the source sequence. In neural net machine learning, the longer the sequences are, the harder it is to preserve all the information (i.e. it is harder for the attention mechanism to pay attention to the right tokens). So, this treatment may not be effective. 
 
 
 The results are given in the following table. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:53 2018
+% Mon Apr 30 02:03:24 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1368,7 +1393,7 @@ It turns out this treatment has a significant negative effect
 (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{interleavingGdGLOSS}=12.26, SD\textsubscript{interleavingGdGLOSS}=0.74,; t(9)=-17.06, p=0.000). This is not the right way of incorporating gloss line data. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Method of Concating Gaelic Words and Gloss Words }\label{treatment:Concating}
+\subsubsection{Method of Concatenating Gaelic Words and Gloss Words }\label{treatment:Concating}
 A quick and close amendment of the Interleaving approach is to concatenate the aligned Gaelic word and gloss item as a single token. Given the same chunk of interlinear glossed text data, this treatment generates the following sample:
 
 \begin{exe} 
@@ -1383,13 +1408,13 @@ A quick and close amendment of the Interleaving approach is to concatenate the a
     \end{xlist}
 \end{exe}
 
-Concating words and glosses does solve the long sequence problem; however, it causes the sparse data problem. In this arrangement, the number of the types of tokens is increased; the number of tokens of each type is decreased. Thus all the samples are put in a larger space. So, the treatment may not be effective either. 
+Concatenating words and glosses does solve the long sequence problem; however, it causes the sparse data problem. In this arrangement, the number of the types of tokens is increased; the number of tokens of each type is decreased. Thus, all the samples are put in a larger space. So, the treatment may not be effective either. 
 
 \subsubsection{Results of Concating Gaelic Words and Gloss Words}
 The performances of this treatment is given in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:53 2018
+% Mon Apr 30 02:03:24 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1418,7 +1443,7 @@ The result shows that this treatment hurts the baseline systems instead of impro
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hybrid: Gaelic or Gloss}
 \subsubsection{Method of Hybrid}
-The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic word may maps to multiple glosses, and a glosses may maps to multiple Gaelic words. Let's assume a toy chunk of interlinear glossed text data (a one-word sentence): 
+The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic word may map to multiple glosses, and a glosses may map to multiple Gaelic words. Let's assume a toy example of a chunk of interlinear glossed text data (a one-word sentence): 
 
 \begin{exe} 
 \ex 
@@ -1427,8 +1452,8 @@ The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic wo
     \glt    English translation  
 \end{exe} 
 
-Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. To decied, we need to know which one, the Gaelic word or the gloss item, is less ambiguous. 
-The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic words, then <Gloss\_item, English translation> is chosen; on the other hand if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. 
+Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. To decide, we need to know which one, the Gaelic word or the gloss item, is less ambiguous. 
+The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic words, then <Gloss\_item, English translation> is chosen; on the other hand, if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. 
 However, when the situation is tight (i.e. both the Gaelic word and gloss item are equally ambiguous), a default setting needs to be chosen. The choices of the default setting split this single treatment into two treatments: default as Gaelic or default as gloss.
 
 The following is an example of the hybrid treatment:
@@ -1446,12 +1471,12 @@ The length of the Gaelic sentence and the gloss line in the above IGT is 6. This
 \ex <``be.pres nathairichean a'chuir det t-eagal on.1s'' ,``Snakes frighten me'' >
 \end{exe} 
 
-This treatment has the same potential downside as the Concat treatment: sparsity. In this treatment, the size of the lexicon is the size of the lexicon of Gaelic word plus that of gloss, but what are really visible to the neural net is only about half size of the whole potential lexicon, because for each position it is either a Gaelic word or a gloss.
+This treatment has the same potential downside as the concatenating treatment: sparsity. In this treatment, the size of the lexicon is the size of the lexicon of Gaelic word plus that of gloss, but what are really visible to the neural net is only about half size of the whole potential lexicon, because for each position it is either a Gaelic word or a gloss.
 
 \subsubsection{Result of Hybrid}    
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:53 2018
+% Mon Apr 30 02:03:24 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1480,7 +1505,7 @@ as shown in table (\ref{Table:HybridDefaultAsGaelic}).
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:53 2018
+% Mon Apr 30 02:03:24 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1509,36 +1534,36 @@ Mean & 16.59 & 15.47 \\
 The results show that this hybrid treatment indeed suffers from the sparsity problem. 
 
 \section{Summary and Conclusion}
-Chapter \ref{chap:gloss} argues that the gloss representation is a golden representation of meanings, and thus theoretically with the gloss information incorporated, the performance of machine translation systems should improve. The experiments reported in this chapter reveal an effective way of combining gloss data and Gaelic sentences. It is found that the Parallel-Partial is highly effective, and the Gloss-helps hypothesis is empirically supported by the results. 
+Chapter \ref{chap:gloss} argues that the gloss representation is a golden representation of meanings, and thus theoretically with the gloss information incorporated, the performance of machine translation systems should improve. The experiments reported in this chapter reveal an effective way of combining gloss data and Gaelic sentences. It is found that the Parallel-Partial is highly effective, and the Gloss-help hypothesis is empirically supported by the results. 
 The complete BLEU scores of various treatments are given in the following table.
 
 %\begin{adjustbox}{angle=90} 
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:53 2018
+% Mon Apr 30 02:03:24 2018
 \begin{table}[ht]
 \centering
-\begin{tabular}{lrrrrrrrr}
+\begin{tabular}{lrrrrrrrrr}
   \hline
-\begin{sideways} Round \end{sideways} & \begin{sideways} Baseline \end{sideways} & \begin{sideways} GLOSS \end{sideways} & \begin{sideways} ParaPart \end{sideways} & \begin{sideways} Para \end{sideways} & \begin{sideways} Interleaving \end{sideways} & \begin{sideways} Concat \end{sideways} & \begin{sideways} HybrGaelic \end{sideways} & \begin{sideways} HybrGLOSS \end{sideways} \\ 
+\begin{sideways} Round \end{sideways} & \begin{sideways} Baseline \end{sideways} & \begin{sideways} GLOSS \end{sideways} & \begin{sideways} google \end{sideways} & \begin{sideways} ParaPart \end{sideways} & \begin{sideways} Para \end{sideways} & \begin{sideways} Interleaving \end{sideways} & \begin{sideways} Concat \end{sideways} & \begin{sideways} HybrGaelic \end{sideways} & \begin{sideways} HybrGLOSS \end{sideways} \\ 
   \hline
-0 & 17.29 & 18.39 & 32.64 & 30.40 & 13.67 & 15.42 & 9.44 & 15.95 \\ 
-  1 & 16.42 & 18.00 & 32.28 & 30.07 & 12.49 & 14.31 & 9.07 & 15.60 \\ 
-  2 & 15.29 & 16.02 & 29.94 & 26.05 & 11.01 & 15.38 & 7.69 & 14.15 \\ 
-  3 & 15.97 & 20.22 & 31.18 & 29.67 & 12.33 & 14.18 & 9.12 & 14.72 \\ 
-  4 & 17.79 & 19.02 & 32.83 & 28.86 & 12.56 & 18.63 & 9.08 & 15.74 \\ 
-  5 & 16.73 & 15.53 & 31.11 & 29.46 & 12.13 & 14.89 & 10.45 & 14.88 \\ 
-  6 & 17.11 & 18.00 & 32.19 & 30.57 & 11.55 & 15.16 & 8.62 & 14.45 \\ 
-  7 & 16.37 & 20.08 & 33.52 & 30.45 & 12.78 & 15.20 & 10.00 & 16.41 \\ 
-  8 & 15.93 & 15.82 & 30.93 & 28.83 & 12.43 & 15.50 & 10.52 & 15.15 \\ 
-  9 & 16.99 & 15.93 & 34.35 & 31.28 & 11.65 & 15.72 & 8.46 & 17.61 \\ 
+0 & 17.29 & 18.39 & 22.09 & 32.64 & 30.40 & 13.67 & 15.42 & 9.44 & 15.95 \\ 
+  1 & 16.42 & 18.00 & 25.38 & 32.28 & 30.07 & 12.49 & 14.31 & 9.07 & 15.60 \\ 
+  2 & 15.29 & 16.02 & 23.72 & 29.94 & 26.05 & 11.01 & 15.38 & 7.69 & 14.15 \\ 
+  3 & 15.97 & 20.22 & 23.21 & 31.18 & 29.67 & 12.33 & 14.18 & 9.12 & 14.72 \\ 
+  4 & 17.79 & 19.02 & 22.31 & 32.83 & 28.86 & 12.56 & 18.63 & 9.08 & 15.74 \\ 
+  5 & 16.73 & 15.53 & 23.41 & 31.11 & 29.46 & 12.13 & 14.89 & 10.45 & 14.88 \\ 
+  6 & 17.11 & 18.00 & 24.53 & 32.19 & 30.57 & 11.55 & 15.16 & 8.62 & 14.45 \\ 
+  7 & 16.37 & 20.08 & 22.78 & 33.52 & 30.45 & 12.78 & 15.20 & 10.00 & 16.41 \\ 
+  8 & 15.93 & 15.82 & 25.67 & 30.93 & 28.83 & 12.43 & 15.50 & 10.52 & 15.15 \\ 
+  9 & 16.99 & 15.93 & 23.42 & 34.35 & 31.28 & 11.65 & 15.72 & 8.46 & 17.61 \\ 
    \hline
-Mean & 16.59 & 17.70 & 32.10 & 29.56 & 12.26 & 15.44 & 9.24 & 15.47 \\ 
+Mean & 16.59 & 17.70 & 23.65 & 32.10 & 29.56 & 12.26 & 15.44 & 9.24 & 15.47 \\ 
    \hline
 \end{tabular}
 \caption{BLEU scores of the all treatments} 
 \label{table:complete_table}
 \end{table}
-In the next chapter, I will discuss the implications the experiments have for theoretical linguistics and natural language processing. 
+The current experimental results confirm the hypothesis that gloss helps machine translation. However, there are some potential confounding factors. The next chapter discusses these confounding factors, and reports additional experiment results that rule out them.
 
 
 % \subsection{literature}
@@ -1553,52 +1578,153 @@ In the next chapter, I will discuss the implications the experiments have for th
 \chapter{Tying Up Some Loose Ends}
 \label{chap:Tying_Up}
 
-\section{Oversampling}
+The results of the experiment in the previous chapter show that the Parallel-Partial treatment improves the baseline system (system that trained on Gaelic-to-English parallel data only) tremendously. As such, the hypothesis that gloss information helps machine translation is supported. 
+However, there are loose ends that need to be tied up. First, the effectiveness of the Parallel-Partial treatment is based on the comparison with other internal treatments. We would like to know how good it is when compared to other well-established machine translation systems.       
+Additionally, there some potential confounding factors that may jeopardize the validity of the experiment results. 
+To tie up these loose ends, this chapter report additional experiments and results.
 
-\section{Comparsion with Google Translation}
-
-\section{Other Hyper-Paremeters}
+\section{Comparison with Google Translation}
+The Parallel-Partial treatment derives superb systems compared to the baseline systems, but is it still good when we compare it to other well-established machine translation systems? 
+To answer this question, I compare our systems with Google translation.
+Specifically, I used a free Google translation API \citep{google_api} to translate the Gaelic sentences in our test set. 
+Then I calculated the BLEU scores of with the target sequences of our test set as the gold standard. In this manner, Google translation is just like an additional treatment in the comparison.  The result is shown in the following table:
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:53 2018
+% Mon Apr 30 02:03:24 2018
 \begin{table}[ht]
 \centering
-\begin{tabular}{ccccc}
+\begin{tabular}{lcccc}
   \hline
-WordEmbeddingSize & MiniBatchSize & Gaelic & Gloss & ParaPart \\ 
+Round & Gaelic (Baseline) & Gloss & ParaPartial & Google \\ 
   \hline
-100 &  16 & 28.85 & 31.07 & 33.08 \\ 
-  100 &  32 & 22.02 & 25.28 & 32.41 \\ 
-  100 &  64 & 17.29 & 12.01 & 31.58 \\ 
-  100 & 128 & 17.29 & 0.00 & 26.02 \\ 
-  200 &  16 & 29.38 & 30.45 & 35.10 \\ 
-  200 &  32 & 25.47 & 26.78 & 33.55 \\ 
-  200 &  64 & 15.24 & 18.29 & 32.00 \\ 
-  200 & 128 & 0.00 & 0.00 & 27.41 \\ 
-  300 &  16 & 29.82 & 31.62 & 34.14 \\ 
-  300 &  32 & 27.21 & 29.18 & 33.68 \\ 
-  300 &  64 & 14.75 & 18.65 & 32.41 \\ 
-  300 & 128 & 6.35 & 2.76 & 28.72 \\ 
-  400 &  16 & 29.96 & 32.03 & 34.18 \\ 
-  400 &  32 & 25.87 & 27.64 & 34.27 \\ 
-  400 &  64 & 16.19 & 19.81 & 32.52 \\ 
-  400 & 128 & 6.21 & 8.14 & 28.29 \\ 
-  500 &  16 & 31.26 & 30.81 & 34.70 \\ 
-  500 &  32 & 26.30 & 28.42 & 35.16 \\ 
-  500 &  64 & 17.29 & 18.39 & 32.64 \\ 
-  500 & 128 & 8.03 & 8.57 & 30.24 \\ 
+0 & 18.39 & 17.29 & 32.64 & 22.09 \\ 
+  1 & 18.00 & 16.42 & 32.28 & 25.38 \\ 
+  2 & 16.02 & 15.29 & 29.94 & 23.72 \\ 
+  3 & 20.22 & 15.97 & 31.18 & 23.21 \\ 
+  4 & 19.02 & 17.79 & 32.83 & 22.31 \\ 
+  5 & 15.53 & 16.73 & 31.11 & 23.41 \\ 
+  6 & 18.00 & 17.11 & 32.19 & 24.53 \\ 
+  7 & 20.08 & 16.37 & 33.52 & 22.78 \\ 
+  8 & 15.82 & 15.93 & 30.93 & 25.67 \\ 
+  9 & 15.93 & 16.99 & 34.35 & 23.42 \\ 
+   \hline
+Mean & 17.70 & 16.59 & 32.10 & 23.65 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{ParaPart} and Google Translation} 
+\label{Table:google}
+\end{table}
+It turns out the systems trained with the Parallel-Partial treatment also outperform Google translation by far.   
+
+\section{Oversampling}
+A potential confounding factor of the effectiveness of the Parallel-Partial treatment is that this treatment has more English sentences than the baseline systems. 
+
+What follows reviews what are learned in both treatments.
+
+\begin{exe}
+	\ex Mappings Learned in Baseline treatment
+	\begin{xlist}
+		\ex Gaelic sentences $\rightarrow$ English sentences
+	\end{xlist}	
+	\ex Mappings Learned in the ParaPart treatment
+	\begin{xlist}
+		\ex \label{over1} Gaelic sentences $\rightarrow$ English sentences
+		\ex \label{over2} Gloss lines $\rightarrow$ English sentences
+		\ex Gloss lines $\rightarrow$ Gaelic sentences
+		\ex Gaelic words $\rightarrow$ Gloss items
+	\end{xlist}	
+\end{exe}    
+
+Specifically, because the Parallel-Partial treatment learns the mappings in (\ref{over1}) and (\ref{over2}), the English sentences are oversampled. Oversampling of the target sequences has a positive effect, because the decoding process of the neural net machine translation system uses the language model information of the target language. Now given that in the ParaPart treatment the quantity of the English sentences (i.e. the target language) is doubled, the effectiveness of the ParaPart treatment may be just a result of this oversampling.   
+
+To exclude this confound, I oversampled the mappings in the baseline systems by repeating the mappings, so that we can have a fair comparison. Specifically, I doubled, tripled, and quadrupled the training data of the baseline treatment. The following table shows results of the oversampled baseline systems. 
+
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Mon Apr 30 02:03:24 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccccc}
+  \hline
+\begin{sideways} Round \end{sideways} & \begin{sideways} ParaPart \end{sideways} & \begin{sideways} Gaelic \end{sideways} & \begin{sideways} Double Gaelic  \end{sideways} & \begin{sideways} Triple Gaelic \end{sideways} & \begin{sideways} Quadruple Gaelic \end{sideways} \\ 
+  \hline
+0 & 32.64 & 17.29 & 29.05 & 28.52 & 29.74 \\ 
+  1 & 32.28 & 16.42 & 28.61 & 27.04 & 25.53 \\ 
+  2 & 29.94 & 15.29 & 23.78 & 28.19 & 23.60 \\ 
+  3 & 31.18 & 15.97 & 27.50 & 28.77 & 28.61 \\ 
+  4 & 32.83 & 17.79 & 25.51 & 28.43 & 28.61 \\ 
+  5 & 31.11 & 16.73 & 27.88 & 26.28 & 25.31 \\ 
+  6 & 32.19 & 17.11 & 25.72 & 27.73 & 26.50 \\ 
+  7 & 33.52 & 16.37 & 27.12 & 27.84 & 28.84 \\ 
+  8 & 30.93 & 15.93 & 25.20 & 28.40 & 29.19 \\ 
+  9 & 34.35 & 16.99 & 26.39 & 28.44 & 28.73 \\ 
+   \hline
+Mean & 32.10 & 16.59 & 26.68 & 27.96 & 27.47 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{ParaPart} and Gaelic Treatment with Oversampling} 
+\label{Table:over}
+\end{table}
+It turns that oversampling also improves the baseline systems; however, it is still not as effective as the Parallel-Partial treatment. Given this results, the oversampling confound is ruled out.
+
+\section{Other Hyper-Parameters}
+An other possible confounding factor is that maybe the set of the arbitrarily chosen hyper-parameters used in the experiments in chapter \ref{chap:cake2} just accidentally favors the Parallel-Partial treatment and disfavors the baseline treatment. To exclude this potential effect of the hyper-parameters, I sampled some hyper-parameters by changing the size of word embedding (into $\{100, 200, 300, 400, 500\}$) and the size of the mini-batches (into $\{16, 32, 64, 128\}$) using same training, validation, and test data used in round 0. The advantage of the Parallel-Partial treatment is a constant across the different settings of the hyper-parameters. The results are shown in the following table:  
+
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Mon Apr 30 02:03:24 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lllccc}
+  \hline
+Round & WordEmbeddingSize & MiniBatchSize & Gaelic & Gloss & ParaPart \\ 
+  \hline
+0 & 100 &  16 & 28.85 & 31.07 & 33.08 \\ 
+  0 & 100 &  32 & 22.02 & 25.28 & 32.41 \\ 
+  0 & 100 &  64 & 17.29 & 12.01 & 31.58 \\ 
+  0 & 100 & 128 & 17.29 & 0.00 & 26.02 \\ 
+  0 & 200 &  16 & 29.38 & 30.45 & 35.10 \\ 
+  0 & 200 &  32 & 25.47 & 26.78 & 33.55 \\ 
+  0 & 200 &  64 & 15.24 & 18.29 & 32.00 \\ 
+  0 & 200 & 128 & 0.00 & 0.00 & 27.41 \\ 
+  0 & 300 &  16 & 29.82 & 31.62 & 34.14 \\ 
+  0 & 300 &  32 & 27.21 & 29.18 & 33.68 \\ 
+  0 & 300 &  64 & 14.75 & 18.65 & 32.41 \\ 
+  0 & 300 & 128 & 6.35 & 2.76 & 28.72 \\ 
+  0 & 400 &  16 & 29.96 & 32.03 & 34.18 \\ 
+  0 & 400 &  32 & 25.87 & 27.64 & 34.27 \\ 
+  0 & 400 &  64 & 16.19 & 19.81 & 32.52 \\ 
+  0 & 400 & 128 & 6.21 & 8.14 & 28.29 \\ 
+  0 & 500 &  16 & 31.26 & 30.81 & 34.70 \\ 
+  0 & 500 &  32 & 26.30 & 28.42 & 35.16 \\ 
+  0 & 500 &  64 & 17.29 & 18.39 & 32.64 \\ 
+  0 & 500 & 128 & 8.03 & 8.57 & 30.24 \\ 
+   \hline
+mean &  &  & 19.74 & 20.00 & 32.10 \\ 
    \hline
 \end{tabular}
 \caption{BLEU scores of Round 0 using different Hyper-Parameters} 
 \label{Table:HyPara}
 \end{table}
-\section{Interlinear Glossed Text Data In Other Languages}
-To run the same experiments on Online Database of Interlinear Text \citep{ODIN, Xia2016} to show that incorporating gloss information works effectively across different languages.  
+In that table, we can see that the sizes of word embedding and mini-batch do have an effect on the performance of the trained system. However, the Parallel-Partial treatment still outperforms the baseline no matter what the hyper-parameters are. 
+
+\section{Interlinear Glossed Text Data In Other Languages: the Universality}
+Given the above results, it is properly defended that the gloss information of Scottish Gaelic can improve Scottish Gaelic to English neural machine translation systems. A interesting leak of the gloss-help-hypothesis is that maybe it ONLY works on Gaelic. Maybe the Gaelic language just has some special property that makes the gloss information relevant. Now the question is:
+
+\begin{exe}
+\ex Does the gloss-help-hypothesis hold universally across all different languages?   
+\end{exe}  
+
+This section reports the experiment result using the same settings in chapter \ref{chap:cake2} except for that the source language is NOT Gaelic. 
+
+The Online Database of Interlinear Text \citep{ODIN, Xia2016} is a perfect database to run this experiment. Specifically, this database extracted the interlinear glossed texts in published linguistic papers that are open on the Internet. The interlinear glossed texts are stored in a consistent and machine readable format, called xigt (xml for interlinear glossed text). The Online Database of Interlinear Text have interlinear glossed texts in 1,495 different languages; however, only 18 languages have more than 1,000 chunks of interlinear glossed text (i.e. the 3-tuples of a source sentence, a gloss line, and an English translation). In the current translation experiment, I use the Online Database of Interlinear Text in these 18 languages.   
+
+The result is shown in the following table:   
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Sat Apr 28 15:30:53 2018
+% Mon Apr 30 02:03:24 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccccc}
@@ -1628,14 +1754,51 @@ Mandarin & 1.13 & 0.00 & 10.25 & 3719 \\
 \caption{BLEU scores of other languages} 
 \label{Table:Other_LG_BLEU}
 \end{table}
-\section{Conclusion}
-\chapter{Implications on Theoretical Linguistics and Natural Language Processing}
-\label{chap:Implications}
+The paired t-test shows that the Parallel-Partial treatment outperforms the baseline system 
+(M\textsubscript{Baseline}=0.32, SD\textsubscript{Baseline}=1.33; M\textsubscript{ParaPart}=5.87, SD\textsubscript{ParaPart}=4.84,; t(17)=-5.56, p < 0.01) and the GLOSS treatment 
+(M\textsubscript{GLOSS}=0.27, SD\textsubscript{GLOSS}=0.70; M\textsubscript{ParaPart}=5.87, SD\textsubscript{ParaPart}=4.84,; t(17)=-5.19, p < 0.01).
 
-Cite Pater 
-Pater 2017: Generative linguistics and neural networks at 60: foundation, friction and fusion
-\chapter{Conclusion}
-Conclusion
+
+The result shows that incorporating gloss information works effectively across many different languages. Note that for Greek and Italian the ParaPart treatment has no effect. I do not have well-supported explanation for now, and also it may be true that gloss information may help different languages to different degrees. In other words, for some languages gloss information a is huge booster while for other language it is a small booster. The relation between the property of a language and how much gloss information helps that language is left for my future research.     
+
+\section{Conclusion}
+
+This chapter describes additional experiments and results to confirm the effectiveness of gloss information by excluding other potential confounding factors.
+Given all these results, we may concluded that the gloss information is an effective booster for neural net machine translation systems across different hyper-parameters and different languages.       
+\chapter{Conclusion and Future Research}
+
+In the dissertation, I introduce an very effective way of incorporating the gloss data into neural net machine translation systems.
+
+This fact suggests the gloss representation is really relevant to linguistics studies and contains useful information for linguistic studies. 
+
+The immediate merit is that it works. However, the more fundamental potential influence of the current documentation is to show that the gloss line representation is an ideal common place for natural language processing and theoretical linguistics to understand and help each other. 
+
+The scientists in linguistics and natural language precessing related computer science are working on opening the black box of human languages. 
+If opening the black box is a competition between the two camps (linguistics and natural language precessing), and the evaluation is how useful it is in real life, the natural language precessing team is making a good progress while linguistics is like an underdog. 
+
+If all the arguments reported in the dissertation should be sound, the current dissertation is a long and loud shouting sound for the linguistics camp that linguistics may have a very very practical effect in machine translation and other natural language progress domains. 
+
+The interlinear glossed text representation already has its own merit in theoretical linguistics studies even without the discussion of the current dissertation, because it is so basic and so widely used in linguistics studies. The most important discovery of the dissertation is that linguistics can be practically useful.
+
+\section{Future Research}
+
+This is just the beginning of the story line, it opens to door to many interesting questions: 
+
+\begin{exe}
+\ex what gloss
+\ex what language
+\ex other linguistics information: POS, Parse
+\ex optimization of the hyper-parameter  
+\end{exe}
+
+\section{Conclusion}
+In the dissertation, I introduce an very effective way of incorporating the gloss data into neural net machine translation systems. 
+The immediate merit is that it works. Actually, it would be really surprising if the gloss information should not have any effect.  
+Additional, how theoretical linguistics may work hand in hand with natural language processing, and how neural net machine learning may exploit linguistics are important questions in both fields (see \citet{pater2017generative} for a nice discussion on this topic). In addition to practically building better MT systems, the current work also exemplifies how theoretical linguistics may work hand in hand with natural language processing successfully. 
+
+Auto-glosser! 
+Powerful auto glossing models should be the n
+
 
 \bibliographystyle{te}
 

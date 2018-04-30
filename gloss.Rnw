@@ -24,7 +24,8 @@ The gloss line also provides morphological information. Consider the following e
     \glt   `to the horses'  
 \end{exe}
 
-The morphemes of a single word is linked by a `.'. The French word `aux' is actually a combination of three separate morphemes\footnote{A morpheme is a smallest unit of meaning. For example, `\textit{boys}' has two morphemes in it: `\textit{boy}' and `\textit{-s}', where `\textit{-s}' is a plural marker. Sometimes, the morpheme boundary is not visible. For example `\textit{went}' is composed of `\textit{go}' and `\textit{-ed}'.}: `\textit{to}', `\textit{ART}', and `\textit{PL}' and \textit{`chevaux'} is decomposed into \textit{`horse'} and \textit{`PL'}.   
+The morphemes of a single word are linked by a `.'. The French word `aux' is actually a combination of three separate morphemes\footnote{A morpheme is a smallest unit of meaning. For example, `\textit{boys}' has two morphemes in it: `\textit{boy}' and `\textit{-s}', where `\textit{-s}' is a plural marker. Sometimes, the morpheme boundary is not visible. For example `\textit{went}' is composed of `\textit{go}' and `\textit{-ed}'.}: `\textit{to}', `\textit{ART}', and `\textit{PL}' and \textit{`chevaux'} is decomposed into \textit{`horse'} and \textit{`PL'}.
+
 \citet{bickel2008leipzig} compile a set of widely used conventions of IGT called the Leipzig Glossing Rules.
 Note that they are just guidelines of the formats of Interlinear Glossed Texts, so that Interlinear Glossed Texts can be more standardized. 
 
@@ -43,7 +44,7 @@ For example, \citet{grano2008mandarin}, \citet{Chen2010}, and \citet{liu2010posi
 
 \section{The Golden Properties of Glosses}
 
-A system of meaning representations is decomposed of three components: a) meanings, b) representations, and c) a mapping between meanings and representations. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. On the other hand, gloss provides a mapping that is close to this ideal one-to-one mapping. Thus gloss should a better representation in term of representing meanings. 
+A system of meaning representations is decomposed of three components: a) meanings, b) representations, and c) a mapping between meanings and representations. The most ideal meaning representation system should be built with one-meaning-to-one-representation mappings; in other words, a meaning is mapped to one and only one representation. Natural languages fail to do so, given that synonyms and ambiguous words/phrases are ubiquitous in natural languages. On the other hand, gloss provides a mapping that is close to this ideal one-to-one mapping. Thus gloss should be a better representation in term of representing meanings. 
 
 Theoretically, the claim that gloss representation is closer to the ideal one-to-one mapping than natural language representation can be tested empirically. 
 Let's imagine a set of special golden meta-linguistic semantic representations, which has the following property: each concept is mapped to one and only one representation and each representation is mapped to one and only one concept. With this imaginary golden semantic representation system, we may now compare Gaelic words and glosses. First, it is expected that each golden representation token will map to more natural language words than gloss items do.
@@ -57,7 +58,7 @@ Let's imagine a set of special golden meta-linguistic semantic representations, 
 	\end{xlist}
 \end{exe}
 
-(\ref{gold_to_gd}) and (\ref{gold_to_gl}) represent a singe golden token may maps to multiple Gaelic words and glosses respectively. If we compare the size of them, it is expected that the set of Gaelic words is bigger than that of glosses, meaning that Gaelic words are more likely to be homographs than glosses are. Section \ref{sec:cluster} will provide concrete examples to exemplify this property of glosses. 
+(\ref{gold_to_gd}) and (\ref{gold_to_gl}) represent a singe golden token may map to multiple Gaelic words and glosses respectively. If we compare the size of them, it is expected that the set of Gaelic words is bigger than that of glosses, meaning that Gaelic words are more likely to be homographs than glosses are. Section \ref{sec:cluster} will provide concrete examples to exemplify this property of glosses. 
 
 For the other direction, we may determine which one, Gaelic words or glosses, is more likely to be ambiguous.   
 
@@ -73,12 +74,12 @@ For the other direction, we may determine which one, Gaelic words or glosses, is
 (\ref{gd_to_gold}) and (\ref{gl_to_gold}) show the mappings from a Gaelic word to different concepts and the mappings from a gloss to different concepts respectively. 
 (\ref{gd_gl_comp2}) is the expectation that Gaelic words are more likely to be ambiguous than glosses are. Section \ref{sec:disa} will report concrete examples to show that glosses are less likely to be ambiguous.
 
-To run statistical experiments to confirm the truth of (\ref{gd_gl_comp1}) and (\ref{gd_gl_comp2}) is the way to empirically support the claim that glosses closer to the golden representations than Gaelic words are. 
+To run statistical experiments to confirm the truth of (\ref{gd_gl_comp1}) and (\ref{gd_gl_comp2}) is the way to empirically support the claim that glosses are closer to the golden representations than Gaelic words. 
 However, in reality, this is an impossible experiment to conduct, because there are no such golden representation\footnote{It would solve the puzzle of semantics if one should be able to build the set of special golden meta-linguistic semantic representations, and the mappings between the golden representations to natural languages.}.
-In spite of the impossibility of conducting statistical experiments, we may still use some examples to show the intuition that glosses are better representations than natural languages are. The following sections describes how glosses cluster words with different forms but with the same meaning, and how glosses represent words with the same form but with different meanings with different representations. 
+In spite of the impossibility of conducting statistical experiments, we may still use some examples to show the intuition that glosses are better representations than natural languages are. The following sections describe how glosses cluster up words with different forms but with the same meaning, and how glosses represent words with the same form but with different meanings with different representations. 
 
 \subsection{Glosses Cluster Different Words with the Same Meanings (Synonyms) Into a Single representation}\label{sec:cluster}
-Gloss collapses words with different forms with the same meanings into a single gloss. In natural languages, the morphology of a word (i.e. the form of a word) may be sensitive to the phonological environments and changing into different forms. Consider the following the indefinite article in the English examples: 
+Gloss collapses words with different forms with the same meanings into a single representation. In natural languages, the morphology of a word (i.e. the form of a word) may be sensitive to the phonological environments and changing into different forms. Consider the following indefinite article in the English examples: 
 
 \begin{exe}  
 \ex \gll John ate \textbf{an} apple.\\
@@ -241,7 +242,7 @@ For as \textit{preposition} (glossed as \textit{preposition})
 	\end{xlist}
 \end{exe}
 
-Linear length of the argument of \textit{for} (i.e. the sequences in the square brackets) does not have any effect in determining what the gloss is, and instead it is the hierarchical structures that determines what the gloss is. Then the form of gloss hints to the internal structures of the sentence. 
+Linear length of the argument of \textit{for} (i.e. the sequences in the square brackets) does not have any effect in determining what the gloss is, and instead it is the hierarchical structures that determine what the gloss is. Then the form of gloss hints to the internal structures of the sentence. 
 
 A even more dramatic example comes from Mandarin Chinese. A single sequences of words may have distinctive meanings because of different parses, and the difference of parses is marked by the differences of glosses. In the following examples, the sentence `\textit{Lao3Li3 mai3 hao3 jiu3}'\footnote{These specific examples are extensively discussed in Mandarin Chinese Tone Sandhi literature (e.g. \citet{cheng1973synchronic, mei1991tone, shih1997mandarin, wang2011variation}). Critically, the constituency plays a role in Mandarin Chinese Tone Sandhi.} may have two distinct meanings depending on the status of `\textit{hao3}'.    
 
@@ -275,5 +276,5 @@ In the machine translation literature, it has been shown that the information of
 
 \section{Conclusion: What Is a Gloss Line and Why Do They Matter?} 
 The gloss line is like a linguistic version of `word embedding'. A natural language word is first converted to a gloss, which is readable for linguists. 
-Also we may view a gloss line as an artificial sentence using the purified `gloss words', a meaning representation with which one meaning is mapped to one and only one representation. It is a useful and widely used annotation algorithm that requires linguistic knowledge. Given the properties of gloss data, it can be a very useful data for machine translation. Moreover, gloss data is widely used in linguistics literature, so data is already out there and all we need to do to clean the data.
-A loose end here is that, even if all the arguments should be sound, we still have no statistical evidence to show the usefulness of the gloss data. Chapter \ref{chap:cake} and \ref{chap:cake2} tie up this loose end, in which I will report machine translation experiments using gloss data.  
+Also we may view a gloss line as an artificial sentence using the purified `gloss words', a meaning representation with which one meaning is mapped to one and only one representation. Given the properties of gloss data, it can be a very useful data for machine translation. Moreover, gloss data is widely used in linguistics literature, so data is already out there and all we need to do is to clean the data.
+A loose end here is that, even if all the arguments should be sound, we still have no statistical evidence to show the usefulness of the gloss data. Chapter \ref{chap:cake}, \ref{chap:cake2}, and \ref{chap:Tying_Up} tie up this loose end, in which I will report machine translation experiments using gloss data.  

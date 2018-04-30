@@ -1,12 +1,8 @@
 \chapter{A General Introduction of Machine Learning and Machine Translation}
 \label{chap:MT}
 
-	\begin{enumerate}
-	\item General review of supervised Machine learning \citep{kotsiantis2007supervised}: The goal is provide a high level of understanding of what machine learning is. Machine Learning is to learn from EXAMPLES/SAMPLES. For example, to define the meaning of `dog', instead of giving all the definable features of `dog', we feed the machine with as many as possible of information of entities of dogs that we have access. Montague Semantics is actually a variant of ML, within which `dog' is defined as `the set of all the dog that exists in the current world.'. As such, Montague Semantics is Machine Learning, because instead of defining 'dog' with certain arbitrary rules (+/- FEATURE), it says 'all the dogs entities in the current world'. Definition by samples/examples not by rules.    
-	\item Literature on machine translation: from statistical machine translation \citep{koehn2009statistical} to neural machine translation \citep{cho2014learning,cho2014properties,bahdanau2014neural, Koehn_NMT2017}. (Target audience: linguists)
-	\end{enumerate}
 
-The current Chapter provides a general literature review and introduction of Machine Learning and Machine Translation, before I report neural net machine translation experiments in Chapter \ref{chap:cake}, \ref{chap:cake2} and \ref{chap:Tying_Up}. The purpose of current Chapter is not meant to be a comprehensive summary of all the technical details of Machine Learning and Machine Translation, but instead this chapter aims to provide high-level descriptions of the algorithms used in Machine Learning and Machine Translation. 
+Before I report neural net machine translation experiments in Chapter \ref{chap:cake}, \ref{chap:cake2} and \ref{chap:Tying_Up}, the current chapter serves as a general literature review and introduction of Machine Learning and Machine Translation. The current chapter is not meant to be a comprehensive summary of all the technical details of Machine Learning and Machine Translation, but instead it aims to provide high-level descriptions of the algorithms used in Machine Learning and Machine Translation. 
 
 \section{What is Machine Learning?}
 
@@ -56,6 +52,7 @@ Grammaticality judgment of a sequence of strings can be viewed as a function, wh
 
 Translation can be viewed as function, too, where the input is a sentence in the source language and the output is a sentence in the target language that conveys the same meaning of the source sentence. For example, a function that translates Scottish Gaelic into English looks like:   
 
+\vbox{%
 \begin{exe}
 \ex 
 \begin{xlist}
@@ -75,8 +72,9 @@ Translation can be viewed as function, too, where the input is a sentence in the
 	\end{xlist}
 \end{xlist}
 \end{exe}
+} %end of vbox
 
-Expect for mathematical functions like (\ref{math_function}), in most of the cases, we have no direct access to a function. In other words, the function is assumed to be unknown. 
+Except for mathematical functions like (\ref{math_function}), in most of the cases, we have no direct access to a function. In other words, the function is assumed to be unknown. 
 To simulate the behaviors of an unknown function, we build a model with the hope that the model can do the same mapping as the target function.     
 Schematically, the relation between a function and a model that simulates that function is depicted below:
 
@@ -91,7 +89,7 @@ Schematically, the relation between a function and a model that simulates that f
 
 (\ref{fun_dipc}) is the unknown target function (conventionally it is represented by $f$ in the literature), and (\ref{model_dipc}) is the model that we build with the hope that it does the same mapping as $f$ (conventionally a model is represented by $g$ in the literature).
 
-In a nutshell, a model is a set of handmade mappings that simulates an unknown function. 
+In a nutshell, a model is a handmade mapping that simulates an unknown function. 
 
 \subsection{Two Different Paradigms of Building a Model}
 
@@ -102,10 +100,9 @@ Now the critical problem is how we build a models to approximate the golden targ
 A set of rules manually written by a human that attempts to approximate $f$ based on his or her own knowledge and experiences. 
 \end{exe}
 
-The Human-Reasoning approach is built on an individual's knowledge and is task-specific. 
-Taking the English grammaticality judgment task as example, this approach will mean that some expert in English grammar will come up a set of rules or some algorithms that can determine whether a sequence of strings is a grammatical English sentences. 
-The rules and algorithms are based on this expert's knowledge and they are English specific, and are not applicable to other language.     
-
+The Human-Reasoning approach relies on an individual's knowledge and is task-specific. 
+Taking the English grammaticality judgment task as an example, this approach means that some expert in English grammar will come up a set of rules or some algorithms that can determine whether a sequence of strings is a grammatical English sentences. 
+The rules and algorithms are based on this expert's knowledge and they are English specific, and are not applicable to other languages.     
 
 Another approach to build a model is using Machine Learning. Instead of building a model from our own reasoning, we may look and all the available examples and come up with a generalization. This is the Machine Learning approach. 
 Machine Learning can be defined as follows:
@@ -119,13 +116,13 @@ Machine Learning can be defined as follows:
 \end{xlist}
 \end{exe}   
 
-For the Machine Learning approach, the most critical factors of how a model is built are 1.) the generic learning algorithms and 2.) the input data from which the generic learning algorithms learns to set up the parameters of the derived model.  
+For the Machine Learning approach, the most critical factors of how a model is built are: 1.) the generic learning algorithms, and 2.) the input data from which the generic learning algorithms learns to set up the parameters of the derived model.  
 
-Taking the English grammaticality judgment task as example again, the machine learning approach will first define some generic learning algorithms and then feed the algorithms with labeled sequences, where the label is either `grammatical English sentence' or `ungrammatical English sentence'. Note that the learning algorithms is generic. This means that it is universally applicable. For example, instead of feeding the learning algorithms with English grammaticality label, we may feed the learning algorithms with Scottish Gaelic grammaticality label, and it will able to derive a model that can tell whether a sequence of strings is a grammatical Scottish Gaelic sentence. 
+Taking the English grammaticality judgment task as example again, the machine learning approach will first define some generic learning algorithm and then feed the algorithm with labeled sequences, where the label is either `grammatical English sentence' or `ungrammatical English sentence'. Note that the learning algorithm is generic. This means that it is universally applicable. For example, instead of feeding the learning algorithm with sequences labeled with English grammaticality, we may feed the learning algorithm with with sequences labeled with Scottish Gaelic grammaticality, and it will able to derive a model that can tell whether or not a sequence of strings is a grammatical Scottish Gaelic sentence. 
 
 
 In the genericness and universality of the learning algorithms, there is a reminiscence of Universal Grammar \citep{chomsky2007}. 
-Universal Grammar is a type of machine learning. Instead of teaching a set of rules, the children is giving a set of grammatical sentences and then they are able to learn grammar, and produce grammatical sentences. 
+Universal Grammar is a type of machine learning. Instead of teaching a set of rules, children are given a set of grammatical sentences and then they are able to learn grammar, and produce grammatical sentences. 
 
 \citet{chom2005_three_factors} describes three factors in language design: 1) Universal Grammar, 2) Experience, and 3) other cognitive mechanisms/limitations. This is actually a precise description of how machine learning works. Universal Grammar is the generic learning algorithm. Experience is the training data. Cognitive mechanisms are all the other hardware specification of a machine (i.e. a human brain). So, when the Experience is language X, a child acquires language X.  
 
@@ -143,8 +140,8 @@ Pr(T|S)=\frac{Pr(T)Pr(S|T)}{Pr(S)}
 \end{equation}
 
 In this equation, we try to translate a sentence $S$ in the source language to a sentence $T$ in the target language. The left part of the equation represents the probability of $T$ given $S$. 
-The right side of of the equation just flips the conditional probability using Bayes' theorem. 
-The advantage of the flipping is that now $Pr(T)$ (the probability of sentence $T$). 
+The right side of the equation the application of Bayes' theorem on the conditional probability. 
+The advantage of the conversion is that now $Pr(T)$ (the probability of sentence $T$) can be incorporated into the model. 
 This information can be retrieved by building a language model of the target language, which can estimate the probability of a sequence of strings. $Pr(S|T)$ is the translation model, which measures the probability of $S$ given $T$. 
 Given this equation, translating a given sentence $S$ simply means to find a sentence $\hat{T}$ that maximize $Pr(T|S)$.   
 
@@ -155,23 +152,26 @@ Given this equation, translating a given sentence $S$ simply means to find a sen
 Now a Statistical Machine Translation system is decomposed into two sub-models: the language model of the target and the translation model. 
 To build the language model, the common practice is to train a N-gram model given a corpus. 
 To build the translation model, we will need to use parallel corpus. 
-To understand the nature of Statistical Machine Translation, we need to look into what information is extracted from the parallel corpus. Critically, the probability of words in the source language aligned with words in the target language is the center of the translation model of Statistical Machine Translation. 
+To understand the nature of Statistical Machine Translation, we need to look into what information is extracted from the parallel corpus. Critically, the probability of words in the source language aligned with words in the target language is the heart of the translation model of Statistical Machine Translation. 
 
-Given how Statistical Machine Translation builds the translation model, Statistical Machine Translation may be viewed as a complicated algorithm of string manipulations and string alignments. 
+Given that Statistical Machine Translation builds the translation model by using the information of string alignments, Statistical Machine Translation may be viewed as a complicated algorithm of string manipulations and string alignments. 
 Importantly, this means that Statistical Machine Translation does not touch upon meaning, which limits the development and performance of Statistical Machine Translation. 
 
-As such, Statistical Machine Translation is doomed to be outperformed by other deeper algorithms that touch upon the domains of meaning. Specifically, 2016 is the year when neural net machine translation started to outperform Statistical Machine Translation. In the Conference on Machine Translation 2016, a neural machine translation system outperformed almost every statistical machine translation systems. And in the following year, the Conference on Machine Translation 2017 went neural. Almost all the submitted papers and models were using neural net machine translation systems. 
+As such, Statistical Machine Translation is doomed to be outperformed by other deeper algorithms that touch upon the domains of meaning. Specifically, 2016 is the year when neural net machine translation started to outperform Statistical Machine Translation. In the Conference on Machine Translation 2016, a neural machine translation system outperformed almost every statistical machine translation systems. And in the following year, the Conference on Machine Translation 2017 was dominated by neural systems. Almost all the submitted papers and models were using neural net machine translation systems. 
 
-In the next section, I will introduce the basics of artificial neural nets and the overview of how neural net machine translation.  
+In the next section, I will introduce the basics of artificial neural nets and the overview of neural net machine translation.  
 
 \section{Neural Net Machine Translation}\label{neural_MT}
 
+Neural Net Machine Translation is a type of machine learning. The training data (i.e. the example that machine learn from) is also parallel corpus, just like statistical machine translation. 
+In what follows, I will first provide a overview of artificial neural networks, and then I will explain how artificial neural networks translate sentences in a non-technical way.
+
 \subsection{What Is a Artificial Neural Network?}
 
-An artificial neural network is a simple but powerful computation algorithm. It can be viewed as a mathematical function: given an number or a vector of numbers as the input, it will return one and only number or vector. 
+An artificial neural network is a simple but powerful computation algorithm. It can be viewed as a mathematical function: given an number or a vector of numbers as input, it will return one and only numerical representation. 
 
 Historically, the basic structure of artificial neural networks was long completed more than 60 years ago, 
-as \citet{rosenblatt} described the design and structure of a perceptron, which is the simplest artificial neural networks. 
+as \citet{rosenblatt} described the design and structure of a perceptron, which is the simplest artificial neural networks. The following figure is a depiction of a perceptron: 
 
 \begin{figure}[h]
 \caption{An Example of a Perceptron}
@@ -246,14 +246,11 @@ The most commonly used activation functions in artificial neural nets are Hyperb
 \end{figure} 
 
 A perceptron is the basic building blocks of neural network computation. Note that the output of a perceptron can the the input of another perceptron. 
-In this manner, the perceptron can interconnected to one and other yielding complicated networks. 
+In this manner, the perceptron can interconnected to one and other yielding complex networks. 
 
+The following figure depicts a neural networks with an additional layer between the input and output nodes:
 
-
-The following figure depicts a neural net with a hidden layer in the middle between the input and output nodes. When there are more than one hidden layer, the neural net is called deep neural net. However, the building blocks are still a simple perceptron. So, actually neural networks are simple and elegant computation operation\footnote{It seems to me that linking the perceptron is just like the simple Merge operation in the Minimalist Program.}; 
-however, they extremely powerful. They are Turing-Complete machines \citep{siegelmann1991turing, graves2014neural}. \citet{siegelmann2003neural, siegelmann2012neural} even argues that neural networks are computations beyond the Turing limit. 
-
-\begin{figure}[h]
+\begin{figure}[h!]
 \caption{A neural network with a hidden layer}
 \centering
 \begin{tikzpicture}[
@@ -298,9 +295,16 @@ net/.style={
 \end{tikzpicture}
 \end{figure}    
 
+This middle layer is called hidden layer. However, they are not really hidden; actually all the numerical values of each neurons in the hidden layer are all visible, but it is really hard to come up with a sensible interpretation on these numbers.  
+When there are more than one hidden layer, the neural net is called deep neural net. However, the building blocks are still a simple perceptron. So, actually neural networks are simple and elegant computation operation\footnote{It seems to me that linking the perceptron is just like the simple Merge operation in the Minimalist Program.}; 
+however, they extremely powerful. They are Turing-Complete machines \citep{siegelmann1991turing, graves2014neural}. \citet{siegelmann2003neural, siegelmann2012neural} even argues that neural networks are computations beyond the Turing limit. 
+
+
+
+\newpage
 \subsection{Recurrent Neural Network}
 
-Before we start to describe how a neural machine can accomplish the translation task, it is important to talk about a specific type of neural networks: Recurrent Neural networks. 
+Before we start to describe how a neural machine accomplishes the translation task, it is necessary to introduce a specific type of neural networks: Recurrent Neural networks. 
 
 Recall that the output of a perceptron can be the input of another perceptron. A interesting manipulation is to let the perceptron connect back to itself. with this manipulation, we have the Recurrent Neural Networks. As shown in the following figures, the hidden note is connected back to itself at each time step. As such, at each time step, there are two input sources of the hidden node: 1) the information from the past hidden node and 2) the information from a new input node.       
 
@@ -353,34 +357,72 @@ Is this manipulation useful? And if yes, why? Yes, it turns out Recurrent Neural
 
 Recurrent neural networks are widely used. Critically, the main theme of the dissertation, Neural Net Machine Translation, is also implemented with it. The coming section provides an overview of how neural networks translate languages. 
 
-\newpage
+%\newpage
 \section{Introduction to Neural Net Machine Translation}
 
-My 3-year old daughter, Trina, is growing up in Tucson, Arizona, The languages that she encounters are English, Spanish and Mandarin Chinese,and thus she picks up English and Mandarin, and some Spanish. She is able count the quantity of some objects in the three languages. When I told her \textbf{in  Mandarin} that `we can bring two candies for Alice' on the way to her preschool, and she is able to tell her best friend, Alice, in her preschool \textbf{in English} that she will give her one candy (not two because Trina has to save one candy for herself).         
+My 3-year old daughter, Trina, is growing up in Tucson, Arizona, The languages that she encounters are English, Spanish and Mandarin Chinese, and thus she picks up English and Mandarin, and some Spanish. She is able to count the quantity of some objects in the three languages. When I told her \textbf{in  Mandarin} that `we can bring two candies for Alice' on the way to her preschool, and she is able to tell her best friend, Alice, in her preschool \textbf{in English} that she will give her one candy (not two because Trina has to save one candy for herself).         
 
-It is certain that a multilingual person can access the meaning of a sequence of string in a language when he or she hears it, and then produces another sequence of string in another different language with the same meaning. Given that a human brain is a neural networks machine and artificial networks networks is very similar to human neural networks, it fits our intuition that artificial networks networks can translate languages, of course. Actually, this is roughly how a neural net machine translation is implemented. Consider the following figure from \citet{luong17GitHub}.
+It is certain that a multilingual person can access the meaning of a sequence of string in a language when he or she hears it, and then produces another sequence of string in another different language with the same meaning. Given that a human brain is a neural networks machine and artificial networks networks is similar to human neural networks, it fits our intuition that artificial networks networks can translate languages, of course. Actually, this is roughly how a neural net machine translation is implemented. Consider the following figure from \citet{luong17GitHub}.
 
 \begin{figure}[h]
-\caption{Encoder-decoder architecture - example of a general approach for NMT. An encoder converts a source sentence into a "meaning" vector which is passed through a decoder to produce a translation. \citep{luong17GitHub}}
+\caption{Encoder-decoder architecture - example of a general approach for NMT. An encoder converts a source sentence into a "meaning" vector which is passed through a decoder to produce a translation. (figure from \citet{luong17GitHub})}
 \centering
 \includegraphics[width=0.9\textwidth]{encdec.jpg}
 \end{figure} 
 
+The figure outlines the heuristic of how neural networks computation may translate Languages. When the neural net is fed with a source sentence, ``I am a student'', it will convert the sentence into a meaning representation or a thought vector \citep{devlin2015google}. This is the encoding process. Based on this meaning representation, the machine then derives another sequence of words in the target Language. Now we may take a close look of how the encoding and decoding process works. 
 
-The figure outlines the heuristic of how neural networks computation may translate Languages. When the neural net is fed with a send the source sentence, ``I am a student'', it will covert the sentence into a neutral meaning representation. This is the encoding process. Based on this meaning representation, the machine then derives another sequence of words in the target Language based on the probability of how the word is.  
+\subsection{Word Embedding}
+The neural machine can only process numeral representations, so the first step is to convert words into numerical representations. Specifically each word will be represented as a vector. The central idea is to map each word into a location in ``a meaning space'', and each vector is the geographical coordinates of the word. 
+This process is called word embedding. The ideal word embedding system would have the properties that words with similar meanings will be neighbors in the meaning space. 
+The most commonly used technique of building word embeddings is invented and described in \citet{mikolov2013efficient, mikolov2013distributed}. Critically, this word embedding implementation follows the distributional semantics philosophy: the meaning of a word is defined by its distribution in a corpus. So, to build a word embedding model all we need is a corpus. The training data for machine translation is a parallel corpus, which gives us two corpora: the source language corpus and target language corpus. So, the training data is sufficient for building word embedding models\footnote{It is also a common practice to build the word embedding separately using a bigger corpus when the parallel corpus is too small.}. The following figure depicts how it is like when the word embeddings are mapped to a 2D space.   
+
+\begin{figure}
+\caption{Word Embeddings (figure from \citet{roweis2000nonlinear})}
+\centering
+\includegraphics[width=0.9\textwidth]{word_emb.png}
+\end{figure} 
+
+
+\subsection{Encoding and Decoding}
+
+A simple preprocessing on the data is to add tags that marks the boundary of the sentences. Each word in the source sentence is sent to recurrent network machine incrementally. 
+Note the looping configuration makes the machine to accumulate the information of all the words. When the tag that marks the end of the source sentence is fed into the machine, the encoding process is completed, and the value of the hidden neurons at this time is the meaning representation of the source sentence.  
+
+Given the meaning representation, now the machine starts to decode. At each time step, it emits a word in the target language. The emitted word in the target language is copied and serving as input in the next time step of encoding. So that the output sentence can have the context information of the previous word; this trick ensures the fluency of the output sentence. 
+
+Consider the following figure from \citet{luong17GitHub} for a concrete example of how the encoding-decoding process works.  
 
 \begin{figure}[h]
-\caption{Neural machine translation - example of a deep recurrent architecture proposed by for translating a source sentence ``I am a student'' into a target sentence ``Je suis \'{e}tudiant''. Here, ``<s>'' marks the start of the decoding process while ``</s>'' tells the decoder to stop. \citep{luong17GitHub}}
+\caption{Neural machine translation (figure from \citet{luong17GitHub}).}
 \centering
 \includegraphics[width=0.9\textwidth]{seq2seq.jpg}
 \end{figure} 
 
+In the current example, we are trying to translate a source sentence ``I am a student'' into a target sentence ``Je suis \'{e}tudiant''. Here, ``<s>'' marks the end of the source sentences and the start of the decoding process. 
+So, at the time step of  ``<s>'', the vectors in the hidden neurons is the meaning representation. In the decoding process, the first emitted word is ``Je''. Note that ``Je'' is sent back as the input in the next time step. At this time step, ``suis'' is emitted. Now we may pay attention to what the given information are when the machine is emitting ``suis''. Specifically, the given information are 1) thought vectors plus ``je'' in the hidden layers and 2) ``je'' from the input node. When the machine emitted the tag, ``</s>'', the decoding process is completed. 
+
+This section covers the basic structure of a neural machine translation system proposed in \citet{cho2014learning,cho2014properties}.  
+
+
+\subsection{Adding Attention Mechanism}
+
+The basic encoding-decoding approach does not perform well when the source sentence is long. The meaning vector is the accumulated information of the bits in the source sentence. The decoding process needs to sort out all the bits from the mixed information in the meaning vector. Actually, this is a lot to ask. The task is like to figure out what ingredients are from a pot of hot and sour soup by tasting the soup. To facilitate the sorting task of the decoding processing, \citet{bahdanau2014neural, luong2015effective} proposed methods to direct the decoder's attention to the relevant bits in the source sentence. Take the soup analogy again. With the attention mechanism, to guess what the ingredient is, the given information is now the taste of vinegar, in addition to the taste of the mixed-up soup in this time step. So that the chance of getting the right answer (i.e. vinegar) is much higher. And in the next time step, in addition to the taste of the mixed-up soup, one is also given the taste of pepper, and so on.   
+
+The following figure from \citet{luong17GitHub} nicely depicts how the attention mechanism works. 
+
 \begin{figure}[h]
-\caption{Attention mechanism - example of an attention-based NMT system as described in \citet{luong2015effective}. Figure \citep{luong17GitHub}.}
+\caption{Attention mechanism - example of an attention-based NMT system as described in \citet{luong2015effective} (figure from \citet{luong17GitHub})}
 \centering
 \includegraphics[width=0.9\textwidth]{attention_mechanism.jpg}
 \end{figure} 
 
+In the figure, the task is to translate a source sentence ``I am a student'' into a target sentence ``Je suis \'{e}tudiant''.
+The encoding process is the same, but in the decoding process additional information is also provide. In the current example, when the decoder emits the word ``je'', it is given the meaning vector, and the addition mechanism also gives the decoder 0.5  information of ``I'', 0.3 information of ``am'', 0.1 information of ``a'', and 0.1 information of ``student''. In this manner, the machine's attention is directed to ``I'' when the supposed emitted word is ``Je''. 
+
+\subsection{Summary of Neural Net Machine Translation}
+
+The state-of-the-art neural network machine translation is the combination of the encoding-decoding algorithm and the attention algorithm. The meaning vector in the encoding-decoding algorithm actually can be viewed as the holy grail in translation, the interlingua representation. The attention algorithm is a reminiscence of the string alignment approach used in statistical machine translation. So, neural net machine translation is actually a combination of interlingua  translation approach and string alignment approach.   
 
 
 \section{A Quick Historical Overview of Machine Translation and Conclusion}

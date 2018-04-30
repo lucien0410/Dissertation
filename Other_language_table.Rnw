@@ -4,5 +4,25 @@ require(xtable)
 n <- read.csv('Other_LG_BLEU.csv', sep=',', header = TRUE)
 xtab<-xtable(n, caption="BLEU scores of other languages",  label="Table:Other_LG_BLEU", align="lccccc")
 names(xtab)<-c('Language Names', 'Language (Baseline)', 'GLOSS', 'ParaPart', 'Sample size'  )
+
+lg<-n['Baseline'][1:18,1]
+gloss<-n['gloss'][1:18,1]
+ParaPart<-n['ParaPart'][1:18,1] 
+m_lg <- format(round(mean(lg), 2), nsmall = 2)
+m_gloss <- format(round(mean(gloss), 2), nsmall = 2)
+m_ParaPart <- format(round(mean(ParaPart), 2), nsmall = 2)
+
+sd_lg <- format(round(sd(gd), 2), nsmall = 2) 
+sd_gloss <- format(round(sd(gloss), 2), nsmall = 2) 
+sd_ParaPart <- format(round(sd(ParaPart), 2), nsmall = 2) 
+
+lg_r <-t.test( lg, ParaPart, paired=TRUE)
+lg_t_val=format(round(lg_r$statistic, 2), nsmall = 2)
+lg_p_val=format(round(lg_r$p.value, 3), nsmall = 3)
+
+gl_r <-t.test( gloss, ParaPart, paired=TRUE)
+gl_t_val=format(round(gl_r$statistic, 2), nsmall = 2)
+gl_p_val=format(round(gl_r$p.value, 3), nsmall = 3)
+
 print(xtab, include.rownames =FALSE)
 @

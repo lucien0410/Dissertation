@@ -9,46 +9,47 @@ Warning--I'm ignoring luong2015effective's extra "author" field
 --line 75 of file ref.bib
 Warning--missing school in Chen2010
 Warning--can't use both volume and number fields in levenshtein1966binary
+Warning--empty journal in pater2017generative
 Warning--empty journal in pierce1966language
 You've used 58 entries,
             2904 wiz_defined-function locations,
-            930 strings with 15217 characters,
-and the built_in function-call counts, 34736 in all, are:
-= -- 2702
+            928 strings with 15200 characters,
+and the built_in function-call counts, 34667 in all, are:
+= -- 2696
 > -- 1798
 < -- 37
 + -- 620
 - -- 536
-* -- 2749
-:= -- 5313
-add.period$ -- 162
+* -- 2742
+:= -- 5305
+add.period$ -- 161
 call.type$ -- 58
 change.case$ -- 474
 chr.to.int$ -- 56
-cite$ -- 119
-duplicate$ -- 2612
-empty$ -- 2487
+cite$ -- 120
+duplicate$ -- 2602
+empty$ -- 2478
 format.name$ -- 689
-if$ -- 6932
+if$ -- 6914
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 547
+missing$ -- 544
 newline$ -- 245
 num.names$ -- 234
-pop$ -- 1058
+pop$ -- 1061
 preamble$ -- 1
 purify$ -- 408
 quote$ -- 0
-skip$ -- 947
+skip$ -- 946
 stack$ -- 0
 substring$ -- 1301
-swap$ -- 1213
+swap$ -- 1206
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 492
-warning$ -- 3
+warning$ -- 4
 while$ -- 234
 width$ -- 0
-write$ -- 699
-(There were 5 warnings)
+write$ -- 695
+(There were 6 warnings)

@@ -1,0 +1,135 @@
+\chapter{Tying Up Some Loose Ends}
+\label{chap:Tying_Up}
+
+The results of the experiment in the previous chapter show that the Parallel-Partial treatment improves the baseline system (system that trained on Gaelic-to-English parallel data only) tremendously. As such, the hypothesis that gloss information helps machine translation is supported. 
+However, there are loose ends that need to be tied up. First, the effectiveness of the Parallel-Partial treatment is shown based on the comparison with other treatments. We would like to know how good it is compared to other well-established machine translation systems.       
+Additionally, there some potential confounding factors that may jeopardize the validity of the experiment results. 
+This chapter report additional experiments and results that tie up these loose ends.  
+
+\section{Comparison with Google Translation}
+
+
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Sun Apr 29 00:35:40 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+  \hline
+Round & Parallel-Partial Treatment & Google Translation \\ 
+  \hline
+0 & 32.64 & 22.09 \\ 
+  1 & 32.28 & 25.38 \\ 
+  2 & 29.94 & 23.72 \\ 
+  3 & 31.18 & 23.21 \\ 
+  4 & 32.83 & 22.31 \\ 
+  5 & 31.11 & 23.41 \\ 
+  6 & 32.19 & 24.53 \\ 
+  7 & 33.52 & 22.78 \\ 
+  8 & 30.93 & 25.67 \\ 
+  9 & 34.35 & 23.42 \\ 
+   \hline
+Mean & 32.10 & 23.65 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{ParaPart} and Google Translation} 
+\label{Table:google}
+\end{table}
+\section{Oversampling}
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Sun Apr 29 00:35:40 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccccc}
+  \hline
+\begin{sideways} Round \end{sideways} & \begin{sideways} ParaPart \end{sideways} & \begin{sideways} Gaelic \end{sideways} & \begin{sideways} Double Gaelic  \end{sideways} & \begin{sideways} Triple Gaelic \end{sideways} & \begin{sideways} Quadruple Gaelic \end{sideways} \\ 
+  \hline
+0 & 32.64 & 17.29 & 29.05 & 28.52 & 29.74 \\ 
+  1 & 32.28 & 16.42 & 28.61 & 27.04 & 25.53 \\ 
+  2 & 29.94 & 15.29 & 23.78 & 28.19 & 23.60 \\ 
+  3 & 31.18 & 15.97 & 27.50 & 28.77 & 28.61 \\ 
+  4 & 32.83 & 17.79 & 25.51 & 28.43 & 28.61 \\ 
+  5 & 31.11 & 16.73 & 27.88 & 26.28 & 25.31 \\ 
+  6 & 32.19 & 17.11 & 25.72 & 27.73 & 26.50 \\ 
+  7 & 33.52 & 16.37 & 27.12 & 27.84 & 28.84 \\ 
+  8 & 30.93 & 15.93 & 25.20 & 28.40 & 29.19 \\ 
+  9 & 34.35 & 16.99 & 26.39 & 28.44 & 28.73 \\ 
+   \hline
+Mean & 32.10 & 16.59 & 26.68 & 27.96 & 27.47 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Model\textsubscript{ParaPart} and Gaelic Treatment with Oversampling} 
+\label{Table:over}
+\end{table}
+\section{Other Hyper-Paremeters}
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Sun Apr 29 00:35:40 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccccc}
+  \hline
+WordEmbeddingSize & MiniBatchSize & Gaelic & Gloss & ParaPart \\ 
+  \hline
+100 &  16 & 28.85 & 31.07 & 33.08 \\ 
+  100 &  32 & 22.02 & 25.28 & 32.41 \\ 
+  100 &  64 & 17.29 & 12.01 & 31.58 \\ 
+  100 & 128 & 17.29 & 0.00 & 26.02 \\ 
+  200 &  16 & 29.38 & 30.45 & 35.10 \\ 
+  200 &  32 & 25.47 & 26.78 & 33.55 \\ 
+  200 &  64 & 15.24 & 18.29 & 32.00 \\ 
+  200 & 128 & 0.00 & 0.00 & 27.41 \\ 
+  300 &  16 & 29.82 & 31.62 & 34.14 \\ 
+  300 &  32 & 27.21 & 29.18 & 33.68 \\ 
+  300 &  64 & 14.75 & 18.65 & 32.41 \\ 
+  300 & 128 & 6.35 & 2.76 & 28.72 \\ 
+  400 &  16 & 29.96 & 32.03 & 34.18 \\ 
+  400 &  32 & 25.87 & 27.64 & 34.27 \\ 
+  400 &  64 & 16.19 & 19.81 & 32.52 \\ 
+  400 & 128 & 6.21 & 8.14 & 28.29 \\ 
+  500 &  16 & 31.26 & 30.81 & 34.70 \\ 
+  500 &  32 & 26.30 & 28.42 & 35.16 \\ 
+  500 &  64 & 17.29 & 18.39 & 32.64 \\ 
+  500 & 128 & 8.03 & 8.57 & 30.24 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of Round 0 using different Hyper-Parameters} 
+\label{Table:HyPara}
+\end{table}
+\section{Interlinear Glossed Text Data In Other Languages}
+To run the same experiments on Online Database of Interlinear Text \citep{ODIN, Xia2016} to show that incorporating gloss information works effectively across different languages.  
+
+% !Rnw root = cake_chapter.Rnw
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Sun Apr 29 00:35:40 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccccc}
+  \hline
+Language Names & Language (Baseline) & GLOSS & ParaPart & Sample size \\ 
+  \hline
+Mandarin & 1.13 & 0.00 & 10.25 & 3719 \\ 
+  German & 0.00 & 3.13 & 18.08 & 4037 \\ 
+  Greek & 0.00 & 0.00 & 0.00 & 1188 \\ 
+  Finnish & 0.00 & 0.00 & 2.56 & 1968 \\ 
+  French & 0.96 & 0.00 & 9.49 & 3099 \\ 
+  Hausa & 0.00 & 0.00 & 4.41 & 1490 \\ 
+  Hungarian & 0.00 & 0.00 & 0.00 & 1197 \\ 
+  Indonesian & 0.00 & 0.00 & 2.34 & 1211 \\ 
+  Icelandic & 0.00 & 0.00 & 9.55 & 1719 \\ 
+  Italian & 0.00 & 0.00 & 0.00 & 1366 \\ 
+  Korean & 2.70 & 2.57 & 11.90 & 3630 \\ 
+  Dutch & 0.00 & 0.00 & 9.50 & 1454 \\ 
+  Norwegian & 0.00 & 0.00 & 3.16 & 1403 \\ 
+  Polish & 0.00 & 0.00 & 5.25 & 1713 \\ 
+  Passamaquoddy & 0.00 & 0.00 & 7.41 & 1166 \\ 
+  Russian & 0.00 & 0.00 & 4.64 & 2266 \\ 
+  Spanish & 0.00 & 0.00 & 4.42 & 1733 \\ 
+  Turkish & 0.00 & 0.00 & 2.62 & 1420 \\ 
+   \hline
+\end{tabular}
+\caption{BLEU scores of other languages} 
+\label{Table:Other_LG_BLEU}
+\end{table}
+\section{Conclusion}

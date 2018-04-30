@@ -1,4 +1,4 @@
-\begin{figure}[h]
+\begin{figure}[h!]
 \caption{A neural network with a hidden layer}
 \centering
 \begin{tikzpicture}[

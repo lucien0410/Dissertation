@@ -1,0 +1,34 @@
+\chapter{Conclusion and Future Research}
+
+In the dissertation, I introduce an very effective way of incorporating the gloss data into neural net machine translation systems.
+
+This fact suggests the gloss representation is really relevant to linguistics studies and contains useful information for linguistic studies. 
+
+The immediate merit is that it works. However, the more fundamental potential influence of the current documentation is to show that the gloss line representation is an ideal common place for natural language processing and theoretical linguistics to understand and help each other. 
+
+The scientists in linguistics and natural language precessing related computer science are working on opening the black box of human languages. 
+If opening the black box is a competition between the two camps (linguistics and natural language precessing), and the evaluation is how useful it is in real life, the natural language precessing team is making a good progress while linguistics is like an underdog. 
+
+If all the arguments reported in the dissertation should be sound, the current dissertation is a long and loud shouting sound for the linguistics camp that linguistics may have a very very practical effect in machine translation and other natural language progress domains. 
+
+The interlinear glossed text representation already has its own merit in theoretical linguistics studies even without the discussion of the current dissertation, because it is so basic and so widely used in linguistics studies. The most important discovery of the dissertation is that linguistics can be practically useful.
+
+\section{Future Research}
+
+This is just the beginning of the story line, it opens to door to many interesting questions: 
+
+\begin{exe}
+\ex what gloss
+\ex what language
+\ex other linguistics information: POS, Parse
+\ex optimization of the hyper-parameter  
+\end{exe}
+
+\section{Conclusion}
+In the dissertation, I introduce an very effective way of incorporating the gloss data into neural net machine translation systems. 
+The immediate merit is that it works. Actually, it would be really surprising if the gloss information should not have any effect.  
+Additional, how theoretical linguistics may work hand in hand with natural language processing, and how neural net machine learning may exploit linguistics are important questions in both fields (see \citet{pater2017generative} for a nice discussion on this topic). In addition to practically building better MT systems, the current work also exemplifies how theoretical linguistics may work hand in hand with natural language processing successfully. 
+
+Auto-glosser! 
+Powerful auto glossing models should be the n
+

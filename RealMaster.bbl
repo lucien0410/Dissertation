@@ -108,11 +108,6 @@ Damerau, Fred~J (1964), \enquote{A technique for computer detection and
   171--176.
 \bibAnnoteFile{damerau1964technique}
 
-\bibitem[{Devlin(2015)}]{devlin2015google}
-Devlin, Hannah (2015), \enquote{Google a step closer to developing machines
-  with human-like intelligence.} \emph{The Guardian}, 21.
-\bibAnnoteFile{devlin2015google}
-
 \bibitem[{Domingos(2012)}]{domingos2012few}
 Domingos, Pedro (2012), \enquote{A few useful things to know about machine
   learning.} \emph{Communications of the ACM}, 55, 78--87.
@@ -128,6 +123,11 @@ Grano, Thomas (2008), \enquote{Mandarin hen and the syntax of declarative
 Graves, Alex, Greg Wayne, and Ivo Danihelka (2014), \enquote{Neural turing
   machines.} \emph{arXiv preprint arXiv:1410.5401}.
 \bibAnnoteFile{graves2014neural}
+
+\bibitem[{Han(2018)}]{google_api}
+Han, SuHun (2018), \enquote{Googletrans.}
+  \url{https://github.com/ssut/py-googletrans}.
+\bibAnnoteFile{google_api}
 
 \bibitem[{Johnson et~al.(2016)Johnson, Schuster, Le, Krikun, Wu, Chen, Thorat,
   Vi{\'e}gas, Wattenberg, Corrado et~al.}]{google_zero_shot}
@@ -163,11 +163,6 @@ Klein, Guillaume, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander~M. Rush
 Koehn, Philipp (2009), \emph{Statistical machine translation}. Cambridge
   University Press.
 \bibAnnoteFile{koehn2009statistical}
-
-\bibitem[{Koehn(2017)}]{Koehn_NMT2017}
-Koehn, Philipp (2017), \enquote{Neural machine translation.} \emph{CoRR},
-  abs/1709.07809, \urlprefix\url{http://arxiv.org/abs/1709.07809}.
-\bibAnnoteFile{Koehn_NMT2017}
 
 \bibitem[{Koehn et~al.(2007)Koehn, Hoang, Birch, Callison-Burch, Federico,
   Bertoldi, Cowan, Shen, Moran, Zens et~al.}]{moses}
@@ -273,6 +268,11 @@ Papineni, Kishore, Salim Roukos, Todd Ward, and Wei-Jing Zhu (2002),
   \emph{Proceedings of the 40th annual meeting on association for computational
   linguistics}, 311--318, Association for Computational Linguistics.
 \bibAnnoteFile{bleu}
+
+\bibitem[{Pater(2017)}]{pater2017generative}
+Pater, Joe (2017), \enquote{Generative linguistics and neural networks at 60:
+  foundation, friction, and fusion.}
+\bibAnnoteFile{pater2017generative}
 
 \bibitem[{Pierce and Carroll(1966)}]{pierce1966language}
 Pierce, John~R and John~B Carroll (1966), \enquote{Language and machines:

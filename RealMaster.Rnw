@@ -24,7 +24,7 @@
 \newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
 %the newcommand change the selected word into 'ccr' font
 %e.g. \begin{myfont} multi-bleu.perl \end{myfont}
-%\<my packages>
+%<\my packages>
 %packages used by Koeh
 \usepackage{url}
 \usepackage{color}
@@ -138,8 +138,7 @@
 \SweaveInput{RealCake.Rnw}
 \SweaveInput{RealCake2.Rnw}
 \SweaveInput{Tying_loose_ends.Rnw}
-\SweaveInput{Implications_ling.Rnw}
-\SweaveInput{Conclusion.Rnw}
+\SweaveInput{Conclusion_and_Future_Research.Rnw}
 
 \bibliographystyle{te}
 
