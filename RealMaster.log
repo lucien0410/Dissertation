@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  30 APR 2018 20:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  30 APR 2018 21:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1219,11 +1219,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4 \end{abstract}
-                   [1
+l.19 \end{abstract}
+                    [1
 
 
-]) (./RealMaster.ind)
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.19 \end{abstract}
+                    [2]) (./RealMaster.ind)
 Chapter 1
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1309,7 +1314,7 @@ same identifier (name{figure.3.1}) has been already used, duplicate ignored
                                                   
 l.672 T
        he most commonly used activation functions in artificial neural nets ...
-] <figures/activation_function.png, id=803, 453.19313pt x 174.6525pt>
+] <figures/activation_function.png, id=817, 453.19313pt x 174.6525pt>
 File: figures/activation_function.png Graphic file (type png)
 
 <use figures/activation_function.png>
@@ -1347,7 +1352,7 @@ l.791 \newpage
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.802 
-      ] <figures/encdec.jpg, id=837, 918.43124pt x 130.4875pt>
+      ] <figures/encdec.jpg, id=851, 918.43124pt x 130.4875pt>
 File: figures/encdec.jpg Graphic file (type jpg)
 
 <use figures/encdec.jpg>
@@ -1366,14 +1371,14 @@ l.810
                                                   
 l.810 
        <./figures/encdec.jpg>]
-<figures/word_emb.png, id=848, 636.12656pt x 422.32782pt>
+<figures/word_emb.png, id=863, 636.12656pt x 422.32782pt>
 File: figures/word_emb.png Graphic file (type png)
 
 <use figures/word_emb.png>
 Package pdftex.def Info: figures/word_emb.png used on input line 819.
 (pdftex.def)             Requested size: 390.25536pt x 259.08887pt.
  [36]
-<figures/seq2seq.jpg, id=861, 793.96625pt x 653.44125pt>
+<figures/seq2seq.jpg, id=876, 793.96625pt x 653.44125pt>
 File: figures/seq2seq.jpg Graphic file (type jpg)
 
 <use figures/seq2seq.jpg>
@@ -1396,7 +1401,7 @@ l.840
                                                   
 l.847 
        <./figures/seq2seq.jpg>]
-<figures/attention_mechanism.jpg, id=890, 668.4975pt x 495.8525pt>
+<figures/attention_mechanism.jpg, id=904, 668.4975pt x 495.8525pt>
 File: figures/attention_mechanism.jpg Graphic file (type jpg)
 
 <use figures/attention_mechanism.jpg>
@@ -1506,13 +1511,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 976--977
 
 
 Overfull \hbox (75.92421pt too wide) in paragraph at lines 985--986
-[]\T1/aer/m/n/12 Model$[]$ = Model trained with GLOSStoEN$[]$ in ([][]38a[][]) 
+[]\T1/aer/m/n/12 Model$[]$ = Model trained with GLOSStoEN$[]$ in ([][]40a[][]) 
 and GLOSStoEN$[]$
  []
 
 
 Overfull \hbox (19.99657pt too wide) in paragraph at lines 986--987
-[]\T1/aer/m/n/12 Model$[]$ = Model trained with GDtoEN$[]$ in ([][]39a[][]) and
+[]\T1/aer/m/n/12 Model$[]$ = Model trained with GDtoEN$[]$ in ([][]41a[][]) and
  GDtoEN$[]$
  []
 
@@ -1522,7 +1527,7 @@ Overfull \hbox (22.49718pt too wide) in paragraph at lines 989--990
 lic sen-tences for Model$[]$
  []
 
-[48] [49] [50] <bleu-example.pdf, id=1083, 368.37625pt x 112.42pt>
+[48] [49] [50] <bleu-example.pdf, id=1097, 368.37625pt x 112.42pt>
 File: bleu-example.pdf Graphic file (type pdf)
 
 <use bleu-example.pdf>
@@ -1770,9 +1775,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1823.
  ) 
 Here is how much of TeX's memory you used:
- 23282 strings out of 493304
- 423427 string characters out of 6139871
- 510494 words of memory out of 5000000
+ 23284 strings out of 493304
+ 423443 string characters out of 6139871
+ 510496 words of memory out of 5000000
  25685 multiletter control sequences out of 15000+600000
  65976 words of font info for 130 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1800,10 +1805,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sform10.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfrm1200.pfb>
-Output written on RealMaster.pdf (84 pages, 681043 bytes).
+Output written on RealMaster.pdf (85 pages, 684695 bytes).
 PDF statistics:
- 1543 PDF objects out of 1728 (max. 8388607)
- 1360 compressed objects within 14 object streams
- 422 named destinations out of 1000 (max. 500000)
+ 1557 PDF objects out of 1728 (max. 8388607)
+ 1373 compressed objects within 14 object streams
+ 424 named destinations out of 1000 (max. 500000)
  675 words of extra memory for PDF output out of 10000 (max. 10000000)
 
