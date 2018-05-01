@@ -133,18 +133,33 @@
 
 \chapter{Introduction}
 \label{chap:Introduction}
+\setcounter{exx}{0}
+The fundamental argument that I am trying to make in the dissertation is follows:
 
-Key information to be included:
-\begin{enumerate}
-\item outline/organization of the dissertation 
-\item Arguments to be made in the dissertation: 
-	\begin{enumerate}
-	\item To understand language, NLP and Linguistics should work together.
-    \item  Gloss is the right `lingua franca' for the two fields.
-    \item Linguistics helps NLP.
-    \item NLP helps linguistics. 
-	\end{enumerate}
-\end{enumerate}
+\begin{exe}
+	\ex Without linguistics, we only have ordinary natural language processing systems. With linguistics, we have extraordinary natural language processing systems. 
+\end{exe}
+
+Specifically, the curious question is whether or not interlinear glossed texts, a everyday tool for linguistic studies, can help machine translation. 
+The following is an example interlinear glossed text:
+
+\begin{exe}  
+\ex\label{gloss_eg} Indonesian \citep[p. 237]{sneddon2012indonesian}
+	\gll   Mereka di Jakarta sekarang. (\textit{sentence of interest})\\
+     	   they in Jakarta now (\textit{gloss line: word-by-word gloss translation})\\
+    \glt   `The are in Jakarta now.' (\textit{English translation})  
+\end{exe}
+
+The first line in an interlinear glossed text is the sentence of interest in its written form, the second line is a word by word morpheme by morpheme translation, and the third line is the corresponding English translation. 
+
+The glossing data has very interesting properties. First, it contains linguistics information. The glosses are not raw natural data, but are already processed by linguists based the linguistic theory he or she adopts. Second, it is a type of big data, because interlinear glossed texts are so widely used in linguistics.
+Both natural language processing and linguistics are studying human languages. Gloss is the right `lingua franca' for the two fields. 
+
+Also thanks to the advent of neural net sequence to sequence machine learning, which is a generic algorithm that can learn almost any sequence to sequence mapping, the chance to successful incorporate the gloss line into machine translation is also better than other past time.  
+
+With high expectations on the gloss line information, I conducted a series of machine translation experiments. It is found that the gloss information is an very effective booster for neural net machine translation systems in all conditions. 
+
+The rest of the dissertation is organized as follows: chapter 2 discusses the nature of gloss lines, and argues that they are proper representations of meanings; chapter 3 provides a general overview of machine learning and machine translation; chapter 4, chapter 5 and chapter 6 are a series of neural net machine translation experiments; chapter 7 outlines potential future researches and concludes the dissertation.  
 \chapter{What are glosses? Why are they golden representations of meanings?}
 \label{chap:gloss}
 
@@ -478,7 +493,7 @@ Grammaticality judgment of a sentence can be viewed as a function, where the inp
 \end{xlist}
 \end{exe}
 
-Translation can be viewed as function, too, where the input is a sentence in the source language and the output is a sentence in the target language that conveys the same meaning of the source sentence\footnote{Strictly speaking, translation for human translators is more like a relation instead of function, because a source may be translated to multiple target sentences. In this manner, we may have one-to-many mappings. However, given that machine translation systems return one and only one output for one input, machine translation can still be viewed as a function.}. For example, a function that translates Scottish Gaelic into English looks like:   
+Translation can be viewed as function, too, where the input is a sentence in the source language and the output is a sentence in the target language that conveys the same meaning of the source sentence\footnote{Strictly speaking, translation for human translators is more like relation instead of function, because a source may be translated to multiple target sentences. In this manner, we may have one-to-many mappings. However, given that machine translation systems return one and only one output for one input, machine translation can still be viewed as a function.}. For example, a function that translates Scottish Gaelic into English looks like:   
 
 \vbox{%
 \begin{exe}
@@ -521,7 +536,7 @@ In a nutshell, a model is a handmade mapping that simulates an unknown function.
 
 \subsection{Two Different Paradigms of Building a Model}
 
-Now the critical problem is how we build a models to approximate the golden target function. With the unknown target function being the same $f$, there can be two distinctive approaches of building the model: Human-Reasoning Approach and Machine-Learning Approach. 
+Now the critical problem is how we build a models to approximate the target function. With the unknown target function being the same $f$, there can be two distinctive approaches of building the model: Human-Reasoning Approach and Machine-Learning Approach. 
 
 \begin{exe}
 \ex Human-Reasoning Model:
@@ -1099,7 +1114,7 @@ This procedure of splitting the data into three sub-sets, training the models, a
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:46 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1225,7 +1240,7 @@ Critically, the same technical settings and the same test sets in the previous e
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1289,7 +1304,7 @@ With this treatment, a chunk of interlinear glossed text is split into two pairs
 The experiments gave us the expected results. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1319,7 +1334,7 @@ However, the best treatment (i.e. the Parallel-Partial treatment) is still far b
 (M\textsubscript{Para}=29.56, SD\textsubscript{Para}=1.46; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=8.76, p < 0.01 ).
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccc}
@@ -1373,7 +1388,7 @@ however, the downside of this method is to increase the length of the source seq
 The results are given in the following table. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1422,7 +1437,7 @@ Concatenating words and glosses does solve the long sequence problem; however, i
 The performances of this treatment is given in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1484,7 +1499,7 @@ This treatment has the same potential downside as the concatenating treatment: s
 \subsubsection{Result of Hybrid}    
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1513,7 +1528,7 @@ as shown in table (\ref{Table:HybridDefaultAsGaelic}).
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1547,7 +1562,7 @@ The complete BLEU scores of various treatments are given in the following table.
 
 %\begin{adjustbox}{angle=90} 
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrrrrr}
@@ -1601,7 +1616,7 @@ Then I calculated the BLEU scores of with the target sequences of our test set a
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcccc}
@@ -1652,7 +1667,7 @@ To exclude this confound, I oversampled the mappings in the baseline systems by 
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccccc}
@@ -1683,7 +1698,7 @@ An other possible confounding factor is that maybe the set of the arbitrarily ch
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lllccc}
@@ -1734,7 +1749,7 @@ The result is shown in the following table:
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Mon Apr 30 21:41:37 2018
+% Tue May  1 00:04:47 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccccc}

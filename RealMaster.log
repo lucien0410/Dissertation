@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  30 APR 2018 21:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  1 MAY 2018 00:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1070,6 +1070,9 @@ File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1 (rcs-revision 1.13)
 Writing index file RealMaster.idx
 (./RealMaster.aux
 
+LaTeX Warning: Label `gloss_eg' multiply defined.
+
+
 LaTeX Warning: Label `bleu_koeh' multiply defined.
 
 
@@ -1253,518 +1256,518 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 [12
 
 
-]
+] [13]
 Chapter 2
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 148.
+(hyperref)                removing `\advance' on input line 163.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 148.
+(hyperref)                removing `\hangindent' on input line 163.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 148.
+(hyperref)                removing `\@tempdima' on input line 163.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 148.
+(hyperref)                removing `\hbox' on input line 163.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 148.
+(hyperref)                removing `\hfil' on input line 163.
 
-[13
+[14
 
-] [14] [15] [16] [17] [18] [19]
-Overfull \hbox (1.36212pt too wide) in paragraph at lines 328--329
+] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (1.36212pt too wide) in paragraph at lines 343--344
 []\T1/aer/m/n/12 Semantics is de-ter-mined by hi-er-ar-chi-cal struc-tures in-s
 tead of lin-ear or-ders. [][]Berwick
  []
 
-[20] [21] [22] [23]
+[21] [22] [23] [24]
 Chapter 3
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 429.
+(hyperref)                removing `\advance' on input line 444.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 429.
+(hyperref)                removing `\hangindent' on input line 444.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 429.
+(hyperref)                removing `\@tempdima' on input line 444.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 429.
+(hyperref)                removing `\hbox' on input line 444.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 429.
+(hyperref)                removing `\hfil' on input line 444.
 
-[24
+[25
 
-] [25] [26] [27] [28] [29] [30] [31pdfTeX warning (ext4): destination with the 
+] [26] [27] [28] [29] [30] [31] [32pdfTeX warning (ext4): destination with the 
 same identifier (name{figure.3.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.672 T
+l.687 T
        he most commonly used activation functions in artificial neural nets ...
-] <figures/activation_function.png, id=817, 453.19313pt x 174.6525pt>
+] <figures/activation_function.png, id=813, 453.19313pt x 174.6525pt>
 File: figures/activation_function.png Graphic file (type png)
 
 <use figures/activation_function.png>
-Package pdftex.def Info: figures/activation_function.png used on input line 677
+Package pdftex.def Info: figures/activation_function.png used on input line 692
 .
 (pdftex.def)             Requested size: 390.25536pt x 150.39809pt.
 
-Overfull \hbox (0.81114pt too wide) in paragraph at lines 708--708
+Overfull \hbox (0.81114pt too wide) in paragraph at lines 723--723
  []\T1/aer/m/n/12 Output 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[32pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
+[33pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
 }) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.740 \subsection
+l.755 \subsection
                  {Recurrent Neural Network} <./figures/activation_function.png>
 ]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[33pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3
+[34pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3
 }) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.791 \newpage
-              ] [34pdfTeX warning (ext4): destination with the same identifier 
+l.806 \newpage
+              ] [35pdfTeX warning (ext4): destination with the same identifier 
 (name{figure.3.4}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.802 
-      ] <figures/encdec.jpg, id=851, 918.43124pt x 130.4875pt>
+l.817 
+      ] <figures/encdec.jpg, id=848, 918.43124pt x 130.4875pt>
 File: figures/encdec.jpg Graphic file (type jpg)
 
 <use figures/encdec.jpg>
-Package pdftex.def Info: figures/encdec.jpg used on input line 806.
+Package pdftex.def Info: figures/encdec.jpg used on input line 821.
 (pdftex.def)             Requested size: 390.25536pt x 55.4455pt.
- [35pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [36pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 5}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.810 
+l.825 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 3.6}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.810 
+l.825 
        <./figures/encdec.jpg>]
-<figures/word_emb.png, id=863, 636.12656pt x 422.32782pt>
+<figures/word_emb.png, id=859, 636.12656pt x 422.32782pt>
 File: figures/word_emb.png Graphic file (type png)
 
 <use figures/word_emb.png>
-Package pdftex.def Info: figures/word_emb.png used on input line 819.
+Package pdftex.def Info: figures/word_emb.png used on input line 834.
 (pdftex.def)             Requested size: 390.25536pt x 259.08887pt.
- [36]
-<figures/seq2seq.jpg, id=876, 793.96625pt x 653.44125pt>
+ [37]
+<figures/seq2seq.jpg, id=871, 793.96625pt x 653.44125pt>
 File: figures/seq2seq.jpg Graphic file (type jpg)
 
 <use figures/seq2seq.jpg>
-Package pdftex.def Info: figures/seq2seq.jpg used on input line 835.
+Package pdftex.def Info: figures/seq2seq.jpg used on input line 850.
 (pdftex.def)             Requested size: 390.25536pt x 321.18608pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[37pdfTeX warning (ext4): destination with the same identifier (name{figure.3.7
+[38pdfTeX warning (ext4): destination with the same identifier (name{figure.3.7
 }) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.840 
-       <./figures/word_emb.png>] [38pdfTeX warning (ext4): destination with the
+l.855 
+       <./figures/word_emb.png>] [39pdfTeX warning (ext4): destination with the
  same identifier (name{figure.3.8}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.847 
+l.862 
        <./figures/seq2seq.jpg>]
-<figures/attention_mechanism.jpg, id=904, 668.4975pt x 495.8525pt>
+<figures/attention_mechanism.jpg, id=900, 668.4975pt x 495.8525pt>
 File: figures/attention_mechanism.jpg Graphic file (type jpg)
 
 <use figures/attention_mechanism.jpg>
-Package pdftex.def Info: figures/attention_mechanism.jpg used on input line 853
+Package pdftex.def Info: figures/attention_mechanism.jpg used on input line 868
 .
 (pdftex.def)             Requested size: 390.25536pt x 289.4786pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[39] [40pdfTeX warning (ext4): destination with the same identifier (name{figur
+[40] [41pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.3.9}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.868 \chapter
+l.883 \chapter
               {Building Translation Systems using Interlinear Glossed Text: ...
- <./figures/attention_mechanism.jpg>] [41]
+ <./figures/attention_mechanism.jpg>] [42]
 Chapter 4
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 868.
+(hyperref)                removing `\advance' on input line 883.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 868.
+(hyperref)                removing `\hangindent' on input line 883.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 868.
+(hyperref)                removing `\@tempdima' on input line 883.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 868.
+(hyperref)                removing `\hbox' on input line 883.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 868.
+(hyperref)                removing `\hfil' on input line 883.
 
-[42
+[43
 
 ]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 902.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 917.
 
  (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [43]
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 904.
+) [44]
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 919.
 
 
 (/usr/share/R/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 904.
- [44] [45]
-Overfull \hbox (10.72798pt too wide) in paragraph at lines 928--928
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 919.
+ [45] [46]
+Overfull \hbox (10.72798pt too wide) in paragraph at lines 943--943
 []\T1/aer/bx/n/14.4 Gloss Rep-re-sen-ta-tion Solely Does NOT Out-per-form Gaeli
 c
  []
 
 
-Overfull \hbox (5.56021pt too wide) in paragraph at lines 946--947
+Overfull \hbox (5.56021pt too wide) in paragraph at lines 961--962
 []\T1/aer/m/n/12 <``Tha a athair nas sine na a mhàthair'', ``be.pres 3sm.poss f
 a-ther comp old.cmpr
  []
 
-[46]
-LaTeX Font Info:    Try loading font information for T1+ccr on input line 949.
+[47]
+LaTeX Font Info:    Try loading font information for T1+ccr on input line 964.
  (/usr/share/texlive/texmf-dist/tex/latex/ccfonts/t1ccr.fd
 File: t1ccr.fd 1999/11/22 v1.0a (WaS)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 965--966
+Underfull \hbox (badness 10000) in paragraph at lines 980--981
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 966--967
+Underfull \hbox (badness 10000) in paragraph at lines 981--982
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 967--968
+Underfull \hbox (badness 10000) in paragraph at lines 982--983
 
  []
 
 
-Overfull \hbox (11.14421pt too wide) in paragraph at lines 968--969
+Overfull \hbox (11.14421pt too wide) in paragraph at lines 983--984
 []\T1/aer/m/n/12 Example: <``be.pres 3sm.poss fa-ther comp old.cmpr comp 3sm.po
 ss mother'',
  []
 
-[47]
-Underfull \hbox (badness 10000) in paragraph at lines 974--975
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 989--990
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 975--976
+Underfull \hbox (badness 10000) in paragraph at lines 990--991
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 976--977
+Underfull \hbox (badness 10000) in paragraph at lines 991--992
 
  []
 
 
-Overfull \hbox (75.92421pt too wide) in paragraph at lines 985--986
+Overfull \hbox (75.92421pt too wide) in paragraph at lines 1000--1001
 []\T1/aer/m/n/12 Model$[]$ = Model trained with GLOSStoEN$[]$ in ([][]40a[][]) 
 and GLOSStoEN$[]$
  []
 
 
-Overfull \hbox (19.99657pt too wide) in paragraph at lines 986--987
+Overfull \hbox (19.99657pt too wide) in paragraph at lines 1001--1002
 []\T1/aer/m/n/12 Model$[]$ = Model trained with GDtoEN$[]$ in ([][]41a[][]) and
  GDtoEN$[]$
  []
 
 
-Overfull \hbox (22.49718pt too wide) in paragraph at lines 989--990
+Overfull \hbox (22.49718pt too wide) in paragraph at lines 1004--1005
 \T1/aer/m/n/12 source se-quences of the test sets (i.e. gloss-ing lines and Gae
 lic sen-tences for Model$[]$
  []
 
-[48] [49] [50] <bleu-example.pdf, id=1097, 368.37625pt x 112.42pt>
+[49] [50] [51] <bleu-example.pdf, id=1093, 368.37625pt x 112.42pt>
 File: bleu-example.pdf Graphic file (type pdf)
 
 <use bleu-example.pdf>
-Package pdftex.def Info: bleu-example.pdf used on input line 1068.
+Package pdftex.def Info: bleu-example.pdf used on input line 1083.
 (pdftex.def)             Requested size: 552.563pt x 168.62958pt.
- [51]
-Underfull \hbox (badness 10000) in paragraph at lines 1090--1092
+ [52]
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1093
+Underfull \hbox (badness 10000) in paragraph at lines 1107--1108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1093--1094
+Underfull \hbox (badness 10000) in paragraph at lines 1108--1109
 
  []
 
-[52pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+[53pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 }) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1129 
-        <./bleu-example.pdf>] [53pdfTeX warning (ext4): destination with the sa
+l.1144 
+        <./bleu-example.pdf>] [54pdfTeX warning (ext4): destination with the sa
 me identifier (name{table.4.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1133 \section
+l.1148 \section
                {Discussion and Conclusion}\label{section:cake1_Discussion}]
-[54] [55]
+[55] [56]
 Chapter 5
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 1146.
+(hyperref)                removing `\advance' on input line 1161.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 1146.
+(hyperref)                removing `\hangindent' on input line 1161.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 1146.
+(hyperref)                removing `\@tempdima' on input line 1161.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 1146.
+(hyperref)                removing `\hbox' on input line 1161.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 1146.
+(hyperref)                removing `\hfil' on input line 1161.
 
 
-Overfull \hbox (0.39166pt too wide) in paragraph at lines 1159--1160
+Overfull \hbox (0.39166pt too wide) in paragraph at lines 1174--1175
 []\T1/aer/m/n/12 In this sec-tion, I will first de-scribe the most ef-fec-tive 
 treat-ment, termed as `\T1/aer/m/it/12 Parallel-
  []
 
-[56
+[57
 
 ]
-Overfull \hbox (0.2897pt too wide) in paragraph at lines 1174--1174
+Overfull \hbox (0.2897pt too wide) in paragraph at lines 1189--1189
 []\T1/aer/bx/n/14.4 The `Parallel-Partial' Treat-ment Out-per-forms Any Other
  []
 
-[57] [58] [59] [60pdfTeX warning (ext4): destination with the same identifier (
+[58] [59] [60] [61pdfTeX warning (ext4): destination with the same identifier (
 name{table.5.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1270 
-       ] [61] [62pdfTeX warning (ext4): destination with the same identifier (n
+l.1285 
+       ] [62] [63pdfTeX warning (ext4): destination with the same identifier (n
 ame{table.5.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1357 	\begin
+l.1372 	\begin
               {xlist}pdfTeX warning (ext4): destination with the same identifie
 r (name{table.5.3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1357 	\begin
+l.1372 	\begin
               {xlist}]
-Overfull \hbox (32.42805pt too wide) in paragraph at lines 1373--1402
+Overfull \hbox (32.42805pt too wide) in paragraph at lines 1388--1417
 \T1/aer/m/n/12 It turns out this treat-ment has a sig-nif-i-cant neg-a-tive ef-
 fect (M$[]$=16.59, SD$[]$=0.74;
  []
 
-[63pdfTeX warning (ext4): destination with the same identifier (name{table.5.4}
+[64pdfTeX warning (ext4): destination with the same identifier (name{table.5.4}
 ) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1402 
+l.1417 
        ]
-Overfull \hbox (32.78159pt too wide) in paragraph at lines 1422--1450
+Overfull \hbox (32.78159pt too wide) in paragraph at lines 1437--1465
 \T1/aer/m/n/12 them (M$[]$=16.59, SD$[]$=0.74; M$[]$=15.44, SD$[]$=1.23,;
  []
 
-[64] [65pdfTeX warning (ext4): destination with the same identifier (name{table
+[65] [66pdfTeX warning (ext4): destination with the same identifier (name{table
 .5.5}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1477 
+l.1492 
        ]
-Overfull \hbox (9.53929pt too wide) in paragraph at lines 1539--1541
+Overfull \hbox (9.53929pt too wide) in paragraph at lines 1554--1556
 \T1/aer/m/n/12 than than the base-line sys-tems (M$[]$=16.59, SD$[]$=0.74; M$[]
 $=15.47,
  []
 
-[66pdfTeX warning (ext4): destination with the same identifier (name{table.5.6}
+[67pdfTeX warning (ext4): destination with the same identifier (name{table.5.6}
 ) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1543 
-       ] [67pdfTeX warning (ext4): destination with the same identifier (name{t
+l.1558 
+       ] [68pdfTeX warning (ext4): destination with the same identifier (name{t
 able.5.7}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1586 \chapter
-               {Tying Up Some Loose Ends}] [68pdfTeX warning (ext4): destinatio
+l.1601 \chapter
+               {Tying Up Some Loose Ends}] [69pdfTeX warning (ext4): destinatio
 n with the same identifier (name{table.5.8}) has been already used, duplicate i
 gnored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1586 \chapter
+l.1601 \chapter
                {Tying Up Some Loose Ends}]
 Chapter 6
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 1586.
+(hyperref)                removing `\advance' on input line 1601.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 1586.
+(hyperref)                removing `\hangindent' on input line 1601.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 1586.
+(hyperref)                removing `\@tempdima' on input line 1601.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 1586.
+(hyperref)                removing `\hbox' on input line 1601.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 1586.
+(hyperref)                removing `\hfil' on input line 1601.
 
-[69
+[70
 
-] [70pdfTeX warning (ext4): destination with the same identifier (name{table.6.
+] [71pdfTeX warning (ext4): destination with the same identifier (name{table.6.
 1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1650 
-       ] [71pdfTeX warning (ext4): destination with the same identifier (name{t
+l.1665 
+       ] [72pdfTeX warning (ext4): destination with the same identifier (name{t
 able.6.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1683 
-       ] [72pdfTeX warning (ext4): destination with the same identifier (name{t
+l.1698 
+       ] [73pdfTeX warning (ext4): destination with the same identifier (name{t
 able.6.3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1724 
-       ] [73]
-Overfull \hbox (3.79779pt too wide) in paragraph at lines 1768--1771
+l.1739 
+       ] [74]
+Overfull \hbox (3.79779pt too wide) in paragraph at lines 1783--1786
 \T1/aer/m/n/12 line sys-tems (M$[]$=0.32, SD$[]$=1.33; M$[]$=5.87, SD$[]$=4.84,
 ; t(17)=-
  []
 
 
-Overfull \hbox (15.66574pt too wide) in paragraph at lines 1768--1771
+Overfull \hbox (15.66574pt too wide) in paragraph at lines 1783--1786
 \T1/aer/m/n/12 5.56, p < 0.01) and the GLOSS treat-ment (M$[]$=0.27, SD$[]$=0.7
 0; M$[]$=5.87,
  []
 
-[74pdfTeX warning (ext4): destination with the same identifier (name{table.6.4}
+[75pdfTeX warning (ext4): destination with the same identifier (name{table.6.4}
 ) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1779 \chapter
-               {Conclusion and Future Research}] [75]
+l.1794 \chapter
+               {Conclusion and Future Research}] [76]
 Chapter 7
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\advance' on input line 1779.
+(hyperref)                removing `\advance' on input line 1794.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hangindent' on input line 1779.
+(hyperref)                removing `\hangindent' on input line 1794.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempdima' on input line 1779.
+(hyperref)                removing `\@tempdima' on input line 1794.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 1779.
+(hyperref)                removing `\hbox' on input line 1794.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hfil' on input line 1779.
+(hyperref)                removing `\hfil' on input line 1794.
 
-[76
+[77
 
-] [77] (./RealMaster.bbl [78]
+] [78] (./RealMaster.bbl [79]
 Bibliography
-[79
+[80
 
-] [80]
+] [81]
 Underfull \hbox (badness 2359) in paragraph at lines 219--223
 \T1/aer/m/n/12 Kaiser (2015), ``Multi-task se-quence to se-quence learn-ing.'' 
 \T1/aer/m/it/12 arXiv preprint
  []
 
-[81] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+[82] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [82])
-[83]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1823.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1823.
+) [83])
+[84]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1838.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1838.
  (./RealMaster.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1823.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1823.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1838.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1838.
 
 Package rerunfilecheck Info: File `RealMaster.out' has not changed.
 (rerunfilecheck)             Checksum: 2414F112B747775BBFBC6A6727F931BB;4934.
@@ -1772,12 +1775,12 @@ Package rerunfilecheck Info: File `RealMaster.out' has not changed.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1823.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1838.
  ) 
 Here is how much of TeX's memory you used:
- 23284 strings out of 493304
- 423443 string characters out of 6139871
- 510496 words of memory out of 5000000
+ 23279 strings out of 493304
+ 423402 string characters out of 6139871
+ 510486 words of memory out of 5000000
  25685 multiletter control sequences out of 15000+600000
  65976 words of font info for 130 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1805,10 +1808,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sform10.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfrm1200.pfb>
-Output written on RealMaster.pdf (85 pages, 684695 bytes).
+Output written on RealMaster.pdf (86 pages, 686732 bytes).
 PDF statistics:
- 1557 PDF objects out of 1728 (max. 8388607)
- 1373 compressed objects within 14 object streams
- 424 named destinations out of 1000 (max. 500000)
+ 1552 PDF objects out of 1728 (max. 8388607)
+ 1367 compressed objects within 14 object streams
+ 419 named destinations out of 1000 (max. 500000)
  675 words of extra memory for PDF output out of 10000 (max. 10000000)
 

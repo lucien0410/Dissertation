@@ -1,14 +1,29 @@
 \chapter{Introduction}
 \label{chap:Introduction}
+\setcounter{exx}{0}
+The fundamental argument that I am trying to make in the dissertation is follows:
 
-Key information to be included:
-\begin{enumerate}
-\item outline/organization of the dissertation 
-\item Arguments to be made in the dissertation: 
-	\begin{enumerate}
-	\item To understand language, NLP and Linguistics should work together.
-    \item  Gloss is the right `lingua franca' for the two fields.
-    \item Linguistics helps NLP.
-    \item NLP helps linguistics. 
-	\end{enumerate}
-\end{enumerate}
+\begin{exe}
+	\ex Without linguistics, we only have ordinary natural language processing systems. With linguistics, we have extraordinary natural language processing systems. 
+\end{exe}
+
+Specifically, the curious question is whether or not interlinear glossed texts, a everyday tool for linguistic studies, can help machine translation. 
+The following is an example interlinear glossed text:
+
+\begin{exe}  
+\ex\label{gloss_eg} Indonesian \citep[p. 237]{sneddon2012indonesian}
+	\gll   Mereka di Jakarta sekarang. (\textit{sentence of interest})\\
+     	   they in Jakarta now (\textit{gloss line: word-by-word gloss translation})\\
+    \glt   `The are in Jakarta now.' (\textit{English translation})  
+\end{exe}
+
+The first line in an interlinear glossed text is the sentence of interest in its written form, the second line is a word by word morpheme by morpheme translation, and the third line is the corresponding English translation. 
+
+The glossing data has very interesting properties. First, it contains linguistics information. The glosses are not raw natural data, but are already processed by linguists based the linguistic theory he or she adopts. Second, it is a type of big data, because interlinear glossed texts are so widely used in linguistics.
+Both natural language processing and linguistics are studying human languages. Gloss is the right `lingua franca' for the two fields. 
+
+Also thanks to the advent of neural net sequence to sequence machine learning, which is a generic algorithm that can learn almost any sequence to sequence mapping, the chance to successful incorporate the gloss line into machine translation is also better than other past time.  
+
+With high expectations on the gloss line information, I conducted a series of machine translation experiments. It is found that the gloss information is an very effective booster for neural net machine translation systems in all conditions. 
+
+The rest of the dissertation is organized as follows: chapter 2 discusses the nature of gloss lines, and argues that they are proper representations of meanings; chapter 3 provides a general overview of machine learning and machine translation; chapter 4, chapter 5 and chapter 6 are a series of neural net machine translation experiments; chapter 7 outlines potential future researches and concludes the dissertation.  
