@@ -16,14 +16,14 @@
 \contentsline {subsection}{\numberline {3.1.2}Two Different Paradigms of Building a Model}{27}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Statistical Machine Translation}{28}{section.3.2}
 \contentsline {section}{\numberline {3.3}Neural Net Machine Translation}{30}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}What Is a Artificial Neural Network?}{30}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}What Is a Artificial Neural Network?}{31}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Recurrent Neural Network}{33}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Introduction to Neural Net Machine Translation}{35}{section.3.4}
+\contentsline {section}{\numberline {3.4}Introduction to Neural Net Machine Translation}{34}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Word Embedding}{36}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Encoding and Decoding}{36}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Adding Attention Mechanism}{38}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}Adding Attention Mechanism}{39}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Summary of Neural Net Machine Translation: interlingua plus string alignment}{40}{subsection.3.4.4}
-\contentsline {section}{\numberline {3.5}A Quick Historical Overview of Machine Translation and Conclusion}{40}{section.3.5}
+\contentsline {section}{\numberline {3.5}A Quick Historical Overview of Machine Translation and Conclusion}{41}{section.3.5}
 \contentsline {chapter}{\chapterline {Chapter\ 4}Building Translation Systems using Interlinear Glossed Text: First Attempt}{42}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{42}{section.4.1}
 \contentsline {section}{\numberline {4.2}Related Work}{43}{section.4.2}
@@ -60,8 +60,8 @@
 \contentsline {section}{\numberline {6.2}Oversampling}{70}{section.6.2}
 \contentsline {section}{\numberline {6.3}Other Hyper-Parameters}{71}{section.6.3}
 \contentsline {section}{\numberline {6.4}Interlinear Glossed Text Data In Other Languages: the Universality}{73}{section.6.4}
-\contentsline {section}{\numberline {6.5}Conclusion}{74}{section.6.5}
-\contentsline {chapter}{\chapterline {Chapter\ 7}Conclusion and Future Research}{75}{chapter.7}
+\contentsline {section}{\numberline {6.5}Conclusion}{75}{section.6.5}
+\contentsline {chapter}{\chapterline {Chapter\ 7}Conclusion and Future Research}{76}{chapter.7}
 \contentsline {section}{\numberline {7.1}Future Research}{76}{section.7.1}
-\contentsline {section}{\numberline {7.2}Conclusion}{76}{section.7.2}
-\contentsline {chapter}{Bibliography}{77}{section.7.2}
+\contentsline {section}{\numberline {7.2}Conclusion}{77}{section.7.2}
+\contentsline {chapter}{Bibliography}{79}{section.7.2}

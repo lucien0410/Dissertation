@@ -1,11 +1,12 @@
-\begin{figure}
-\caption{A recurrent neural network with a hidden layer (clasped depiction). The hidden neuron ($h_{t}$) is connected to itself.}
+\begin{figure}[h]
+\caption{A recurrent neural network with a hidden layer. The hidden neuron ($h$) is connected to itself.}
+\label{fig:rnn1}
 \centering
 \begin{tikzpicture}
 
-  \node[neuron] (ht1) {$h_{t}$};
-  \node[io,above=2em of ht1]  (yt1) {$y_t$};
-  \node[io,below=2em of ht1]  (xt1) {$x_t$};
+  \node[neuron] (ht1) {$h$};
+  \node[io,above=2em of ht1]  (yt1) {$y$};
+  \node[io,below=2em of ht1]  (xt1) {$x$};
   \draw[conn] (ht1) -- (yt1);
   \draw[conn] (xt1) -- (ht1);
   \draw[thick,->,shorten >=1pt] (ht1.east) to [out=500,in=200,loop,looseness=4.8] (ht1.west);
@@ -14,7 +15,7 @@
 \end{figure}
 
 \begin{figure}
-\caption{A recurrent neural network with a hidden layer (unfolded depiction)}
+\caption{A recurrent neural network with a hidden layer (unfolded depiction). This figure depicts exactly the same structure in figure \ref{fig:rnn1}, the hidden neuron $h_{t}$ is linked to its past $h_{t-1}$ and its future $h_{t+1}$. Here $t$ labels time step.}
 \centering
 \begin{tikzpicture}
 \centering

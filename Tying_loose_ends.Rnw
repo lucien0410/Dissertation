@@ -1,13 +1,15 @@
 \chapter{Tying Up Some Loose Ends}
 \label{chap:Tying_Up}
 
-The results of the experiment in the previous chapter show that the Parallel-Partial treatment improves the baseline system (system that trained on Gaelic-to-English parallel data only) tremendously. As such, the hypothesis that gloss information helps machine translation is supported. 
-However, there are loose ends that need to be tied up. First, the effectiveness of the Parallel-Partial treatment is based on the comparison with other internal treatments. We would like to know how good it is when compared to other well-established machine translation systems.       
+The results of the experiment in the previous chapter show that the Parallel-Partial treatment improves the baseline system (system that trained on Gaelic-to-English parallel data only) tremendously. As such, the hypothesis that gloss information helps machine translation is supported.
+
+However, there are loose ends that need to be tied up. First, the effectiveness of the Parallel-Partial treatment demonstrated when compared with other internal treatments. We would like to know how well it performs when compared to other well-established machine translation systems.       
 Additionally, there some potential confounding factors that may jeopardize the validity of the experiment results. 
-To tie up these loose ends, this chapter report additional experiments and results.
+
+To tie up these loose ends, this chapter reports additional experiments and results.
 
 \section{Comparison with Google Translation}
-The Parallel-Partial treatment derives superb systems compared to the baseline systems, but is it still good when we compare it to other well-established machine translation systems? 
+The Parallel-Partial treatment yields superb systems compared to the baseline systems, but is it still good when we compare it to other well-established machine translation systems? 
 To answer this question, I compare our systems with Google translation.
 Specifically, I used a free Google translation API \citep{google_api} to translate the Gaelic sentences in our test set. 
 Then I calculated the BLEU scores of with the target sequences of our test set as the gold standard. In this manner, Google translation is just like an additional treatment in the comparison.  The result is shown in the following table:
@@ -19,14 +21,14 @@ It turns out the systems trained with the Parallel-Partial treatment also outper
 \section{Oversampling}
 A potential confounding factor of the effectiveness of the Parallel-Partial treatment is that this treatment has more English sentences than the baseline systems. 
 
-What follows reviews what are learned in both treatments.
+Recall what the training data for the both treatments are: 
 
 \begin{exe}
-	\ex Mappings Learned in Baseline treatment
+	\ex Mappings Learned in the Baseline treatment:
 	\begin{xlist}
 		\ex Gaelic sentences $\rightarrow$ English sentences
 	\end{xlist}	
-	\ex Mappings Learned in the ParaPart treatment
+	\ex Mappings Learned in the ParaPart treatment:
 	\begin{xlist}
 		\ex \label{over1} Gaelic sentences $\rightarrow$ English sentences
 		\ex \label{over2} Gloss lines $\rightarrow$ English sentences
@@ -44,7 +46,7 @@ To exclude this confound, I oversampled the mappings in the baseline systems by 
 It turns that oversampling also improves the baseline systems; however, it is still not as effective as the Parallel-Partial treatment. Given this results, the oversampling confound is ruled out.
 
 \section{Other Hyper-Parameters}
-An other possible confounding factor is that maybe the set of the arbitrarily chosen hyper-parameters used in the experiments in chapter \ref{chap:cake2} just accidentally favors the Parallel-Partial treatment and disfavors the baseline treatment. To exclude this potential effect of the hyper-parameters, I sampled some hyper-parameters by changing the size of word embedding (into $\{100, 200, 300, 400, 500\}$) and the size of the mini-batches (into $\{16, 32, 64, 128\}$) using same training, validation, and test data used in round 0. The advantage of the Parallel-Partial treatment is a constant across the different settings of the hyper-parameters. The results are shown in the following table:  
+An other possible confounding factor is that maybe the set of the arbitrarily chosen hyper-parameters used in the experiments in chapter \ref{chap:cake2} just accidentally favors the Parallel-Partial treatment and disfavors the baseline treatment. To exclude the potential confounding effect of the hyper-parameters, I sampled some hyper-parameters by changing the size of word embedding (into $\{100, 200, 300, 400, 500\}$) and the size of the mini-batches (into $\{16, 32, 64, 128\}$) using same training, validation, and test data used in round 0. The advantage of the Parallel-Partial treatment is consistent across the different settings of the hyper-parameters. The results are shown in the following table:  
 
 \SweaveInput{HyPara_table.Rnw}
 
@@ -65,7 +67,8 @@ The result is shown in the following table:
 
 \SweaveInput{Other_language_table.Rnw}
 
-The paired t-test shows that the Parallel-Partial treatment outperforms the baseline system 
+\newpage
+The paired t-test shows that the Parallel-Partial treatment outperforms the baseline systems 
 (M\textsubscript{Baseline}=\Sexpr{m_lg}, SD\textsubscript{Baseline}=\Sexpr{sd_lg}; M\textsubscript{ParaPart}=\Sexpr{m_ParaPart}, SD\textsubscript{ParaPart}=\Sexpr{sd_ParaPart},; t(17)=\Sexpr{lg_t_val}, p < 0.01) and the GLOSS treatment 
 (M\textsubscript{GLOSS}=\Sexpr{m_gloss}, SD\textsubscript{GLOSS}=\Sexpr{sd_gloss}; M\textsubscript{ParaPart}=\Sexpr{m_ParaPart}, SD\textsubscript{ParaPart}=\Sexpr{sd_ParaPart},; t(17)=\Sexpr{gl_t_val}, p < 0.01).
 
@@ -75,4 +78,4 @@ The result shows that incorporating gloss information works effectively across m
 \section{Conclusion}
 
 This chapter describes additional experiments and results to confirm the effectiveness of gloss information by excluding other potential confounding factors.
-Given all these results, we may concluded that the gloss information is an effective booster for neural net machine translation systems across different hyper-parameters and different languages.       
+Given all these results, we may conclude that the gloss information is an effective booster for neural net machine translation systems across different hyper-parameters and across different languages.       

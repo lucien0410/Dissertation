@@ -9,7 +9,7 @@ Before I report neural net machine translation experiments in Chapter \ref{chap:
 This section provides a general, brief and non-technical introduction of Machine Learning.
 
 \subsection{What is a Function and What is a Model?}
-Machine learning is a specific algorithm that builds a function. Before we touch upon machine learning, we need to talk about what a function is. Here a function simply means a mapping from an object to another object; to put it in another way, a function takes an input and returns an output. A general form of function is given below:
+Machine learning is a specific algorithm that builds a function. Before we touch upon machine learning, we need to talk about what a function is. Here a function simply means a mapping from an object to another object; to put it in another way, a function takes an input and returns an output. A specifical property of that function is that an input is mapped to one and only one input. A general form of function is given below:
 
 \begin{exe}
 \ex $f: X \rightarrow Y$\\
@@ -35,12 +35,12 @@ For example, the following is a simple function that takes a number as input and
 \end{xlist}
 \end{exe}
 
-Grammaticality judgment of a sequence of strings can be viewed as a function, where the input is the sequence and the output is either grammatical or ungrammatical.  
+Grammaticality judgment of a sentence can be viewed as a function, where the input is sentence and the output is either grammatical or ungrammatical.  
 
 \begin{exe}
 \ex 
 \begin{xlist}
-\ex $English\ Grammar: String \rightarrow Grammaticality$\\
+\ex $English\ Grammar: sentence \rightarrow Grammaticality$\\
 	e.g.
 	\begin{xlist}
 	\ex $English\ Grammar:  John\ loves\ Mary \rightarrow grammatical $
@@ -50,7 +50,7 @@ Grammaticality judgment of a sequence of strings can be viewed as a function, wh
 \end{xlist}
 \end{exe}
 
-Translation can be viewed as function, too, where the input is a sentence in the source language and the output is a sentence in the target language that conveys the same meaning of the source sentence. For example, a function that translates Scottish Gaelic into English looks like:   
+Translation can be viewed as function, too, where the input is a sentence in the source language and the output is a sentence in the target language that conveys the same meaning of the source sentence\footnote{Strictly speaking, translation for human translators is more like a relation instead of function, because a source may be translated to multiple target sentences. In this manner, we may have one-to-many mappings. However, given that machine translation systems return one and only one output for one input, machine translation can still be viewed as a function.}. For example, a function that translates Scottish Gaelic into English looks like:   
 
 \vbox{%
 \begin{exe}
@@ -118,13 +118,11 @@ Machine Learning can be defined as follows:
 
 For the Machine Learning approach, the most critical factors of how a model is built are: 1.) the generic learning algorithms, and 2.) the input data from which the generic learning algorithms learns to set up the parameters of the derived model.  
 
-Taking the English grammaticality judgment task as example again, the machine learning approach will first define some generic learning algorithm, and then feed the algorithm with labeled sequences, where the label is either `grammatical English sentence' or `ungrammatical English sentence'. Note that the learning algorithm is generic. This means that it is universally applicable. For example, instead of feeding the learning algorithm with sequences labeled with English grammaticality, we may feed the learning algorithm with sequences labeled with Scottish Gaelic grammaticality, and it will able to derive a model that can tell whether or not a sequence of strings is a grammatical Scottish Gaelic sentence. 
-
-
+Taking the English grammaticality judgment task as example again, the machine learning approach will first define some generic learning algorithm, and then feed the algorithm with labeled sentences, where the label is either `grammatical English sentence' or `ungrammatical English sentence'. Note that the learning algorithm is generic. This means that it is universally applicable. For example, instead of feeding the learning algorithm with sentences labeled with English grammaticality, we may feed the learning algorithm with sentences labeled with Scottish Gaelic grammaticality, and it will able to derive a model that can tell whether or not a sentence is a grammatical Scottish Gaelic sentence. Thus, the learning algorithms in machine learning is generic\footnote{
 In the genericness and universality of the learning algorithms, there is a reminiscence of Universal Grammar \citep{chomsky2007}. 
 Universal Grammar is a type of machine learning. Instead of teaching a set of rules, children are given a set of grammatical sentences and then they are able to learn grammar, and produce grammatical sentences. 
 
-\citet{chom2005_three_factors} describes three factors in language design: 1) Universal Grammar, 2) Experience, and 3) other cognitive mechanisms/limitations. This is actually a precise description of how machine learning works. Universal Grammar is the generic learning algorithm. Experience is the training data. Cognitive mechanisms are all the other hardware specification of a machine (i.e. a human brain). So, when the Experience is language X, a child acquires language X.  
+\citet{chom2005_three_factors} describes three factors in language design: 1) Universal Grammar, 2) Experience, and 3) other cognitive mechanisms/limitations. This is actually a precise description of how machine learning works. Universal Grammar is the generic learning algorithm. Experience is the training data. Cognitive mechanisms are all the other hardware specification of a machine (i.e. a human brain). So, when the Experience is language X, a child acquires language X.}.  
 
   
 
@@ -147,6 +145,12 @@ Given this equation, translating a given sentence $S$ simply means to find a sen
 
 \begin{equation}
 \hat{T}= \argmax_{T} Pr(T|S) = \argmax_{T} \frac{Pr(T)Pr(S|T)}{Pr(S)} = \argmax_{T} Pr(T)Pr(S|T)
+\end{equation}
+
+Note that the denominator, $Pr(S)$, of $\frac{Pr(T)Pr(S|T)}{Pr(S)}$ in the equation can be ignored because it is a constant when we compare all the possible $\frac{Pr(T)Pr(S|T)}{Pr(S)}$. Even though we are using probability here, Statistical machine translation still has the function structure that maps one input to an output with the input being the source sentence and the output being the target sentence. 
+
+\begin{equation}
+f_{Statistical\_machine\_translation}(S)=\argmax_{T} Pr(T)Pr(S|T)
 \end{equation}
 
 Now a Statistical Machine Translation system is decomposed into two sub-models: the language model of the target and the translation model. 
@@ -218,7 +222,7 @@ Before we start to describe how a neural machine accomplishes the translation ta
 Recall that the output of a perceptron can be the input of another perceptron. A interesting manipulation is to let the perceptron connect back to itself. With this manipulation, we have the Recurrent Neural Networks. As shown in the following figures, the hidden node is connected back to itself at each time step. As such, at each time step, there are two input sources of the hidden node: 1) the information from the past hidden node, and 2) the information from a new input node.       
 
 \SweaveInput{rnn_figure.Rnw}
-
+\newpage
 Is this manipulation useful? And if yes, why? It turns out Recurrent Neural Networks are really useful when we are interested in modeling a sequencing phenomenon and we believe that a fraction of the sequence will have an effect on the next coming fraction. The looping configuration opens the door to the history of the hidden neuron, and leads it to its future. 
 
 Recurrent neural networks are widely used. Critically, the main theme of the dissertation, Neural Net Machine Translation, is also implemented with it. The coming section provides an overview of how neural networks translate languages. 
@@ -255,7 +259,7 @@ The most commonly used technique of building word embeddings is proposed in \cit
 A simple preprocessing on the data is to add tags that marks the boundaries of the sentences. Each word in the source sentence is sent to recurrent network machine incrementally. 
 Note the looping configuration of recurrent neural networks makes it possible for the machine to accumulate the information of all the words. When the tag that marks the end of the source sentence is fed into the machine, the encoding process is completed, and the value of the hidden neurons at this time is the meaning representation of the source sentence.  
 
-Given the meaning representation, now the machine starts to decode. At each time step, it emits a word in the target language. The emitted word in the target language is copied and served as input in the next time step of encoding. So that the output sentence can have the context information of the previous word; this trick ensures the fluency of the output sentence. 
+Given the meaning representation, now the machine starts to decode. At each time step, it emits a word in the target language. The emitted word in the target language is copied and served as input in the next time step of decoding. So that the output sentence can have the context information of the previous word; this trick ensures the fluency of the output sentence. 
 
 Consider the following figure from \citet{luong17GitHub} for a concrete example of how the encoding-decoding process works.  
 
@@ -284,7 +288,7 @@ The following figure from \citet{luong17GitHub} nicely depicts how the attention
 \end{figure} 
 
 In the figure, the task is to translate a source sentence ``I am a student'' into a target sentence ``Je suis \'{e}tudiant''.
-The encoding process is the same, but in the decoding process additional information is also provide. In the current example, when the decoder emits the word ``je'', it is given the meaning vector, and the attention mechanism also gives the decoder 0.5  information of ``I'', 0.3 information of ``am'', 0.1 information of ``a'', and 0.1 information of ``student''. In this manner, the machine's attention is directed to ``I'' when the supposed emitted word is ``Je''. 
+The encoding process is the same, but in the decoding process additional information is also provide. In the current example, when the decoder emits the word ``je'', it is given the meaning vector, and additionally the attention mechanism also gives the decoder 50\% of the information of ``I'', 30\% of the information of ``am'', 10\% of the information of ``a'', and 10\% of the information of ``student''. In this manner, the machine's attention is directed to ``I'' when the supposed emitted word is ``Je''. The attention mechanism is very similar to alignment; in the current example, ``Je'' is 50\% aligned to ``I'', 30\% aligned to ``am'', 10\% aligned to ``a'', and 10\% aligned to ``student''. 
 
 \subsection{Summary of Neural Net Machine Translation: interlingua plus string alignment}
 

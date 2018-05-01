@@ -1,4 +1,4 @@
-\begin{thebibliography}{58}
+\begin{thebibliography}{59}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -226,6 +226,12 @@ Luong, Minh-Thang, Hieu Pham, and Christopher~D Manning (2014),
   \enquote{Effective approaches to attention-based neural machine translation.}
   \emph{arXiv preprint arXiv:1410.5401}.
 \bibAnnoteFile{luong2015effective}
+
+\bibitem[{Mahdavi~Mazdeh(2018)}]{Mohsen}
+Mahdavi~Mazdeh, Mohsen (2018), \enquote{The quantitative nature of meters in
+  persian folk songs and pop song lyrics.} In \emph{First North American
+  Conference on Iranian Linguistics}.
+\bibAnnoteFile{Mohsen}
 
 \bibitem[{Mei(1991)}]{mei1991tone}
 Mei, Tsu-Lin (1991), \enquote{Tone sandhi and morphological relics.}
