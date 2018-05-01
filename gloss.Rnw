@@ -195,6 +195,7 @@ In (\ref{tree}) it is shown that \textit{fly} is more embedded than \textit{swim
 
 Syntax is also all about hierarchical structures. Consider the following sentence:
 
+\vbox{% 
 \begin{exe}
 \ex 
 	\begin{xlist}
@@ -203,6 +204,7 @@ Syntax is also all about hierarchical structures. Consider the following sentenc
 	\ex \label{aux_inver3} Can\textsubscript{2} birds that can\textsubscript{1} fly  swim? 
 	\end{xlist}
 \end{exe}
+}
 
 (\ref{aux_inver1}) is a declarative sentence. To derive an interrogative sentence from it, the auxiliary needs to be moved; however, only \textit{can\textsubscript{2}} can be moved but not \textit{can\textsubscript{1}}, even thought \textit{can\textsubscript{1}} is linearly closer to the sentence initial position. Again, it is all because of the hierarchical structures. \textit{Can\textsubscript{2}} is in the matrix clause while \textit{can\textsubscript{1}} is in the embedded relative clause.
 

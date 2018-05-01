@@ -244,10 +244,11 @@ It is assumed that the performances of the machine translation systems are corre
 
 There are several remarks that need to be addressed for the current result. 
 
-First, the result falsifies the point of view about glosses in chapter (\ref{chap:gloss}) that the gloss line is a golden semantic representation hand-crafted by linguists.
+First, the result falsifies the point of view about glosses in chapter \ref{chap:gloss} that the gloss line is a golden semantic representation hand-crafted by linguists.
 It turns that this artificial language, the gloss lines, is only marginal better than Gaelic, as the mean BLEU score of the gloss treatment is slightly higher than that of the baseline systems. This can be viewed as an evidence of language evolution.
 The written form of a natural language is actually already optimized for representing semantics to the same degree of gloss line representations.
 
-Second, if we want to actually apply the gloss treatment to translate a Gaelic sentence to English, we encounter an immediate problem. The actual source sequence is a Gaelic sentence, while the required source sequence for the gloss treatment is a gloss line. The auto-glosser described in chapter (\ref{chap:gloss}) may convert the Gaelic sentence to a gloss line, but the conversion is not perfect at all. Given this, even if the gloss treatment should work, it is not practical unless we may convert Gaelic sentence to gloss line perfectly.      
+Second, if we want to actually apply the gloss treatment to translate a Gaelic sentence to English, we encounter an immediate problem. The actual source sequence is a Gaelic sentence, while the required source sequence for the gloss treatment is a gloss line. 
+For this treatment to be really viable, we will first need an automatic glosser that convert the Gaelic sentence to a gloss line with 100\% accuracy. Given this, even if the gloss treatment should work, it is not practical unless we may convert Gaelic sentence to gloss line perfectly.      
 
-We may now combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-help hypothesis. The experiments and results are reported in the next chapter.
+In the next chapter, I am going to combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-help hypothesis. 

@@ -134,14 +134,14 @@
 \chapter{Introduction}
 \label{chap:Introduction}
 \setcounter{exx}{0}
-The fundamental argument that I am trying to make in the dissertation is follows:
+The fundamental argument that I am trying to make in the dissertation is as follows:
 
 \begin{exe}
 	\ex Without linguistics, we only have ordinary natural language processing systems. With linguistics, we have extraordinary natural language processing systems. 
 \end{exe}
 
-Specifically, the curious question is whether or not interlinear glossed texts, a everyday tool for linguistic studies, can help machine translation. 
-The following is an example interlinear glossed text:
+Specifically, the curious question is whether or not interlinear glossed texts, an everyday tool for linguistic studies, can help machine translation. 
+The following is an example of interlinear glossed text:
 
 \begin{exe}  
 \ex\label{gloss_eg} Indonesian \citep[p. 237]{sneddon2012indonesian}
@@ -152,12 +152,12 @@ The following is an example interlinear glossed text:
 
 The first line in an interlinear glossed text is the sentence of interest in its written form, the second line is a word by word morpheme by morpheme translation, and the third line is the corresponding English translation. 
 
-The glossing data has very interesting properties. First, it contains linguistics information. The glosses are not raw natural data, but are already processed by linguists based the linguistic theory he or she adopts. Second, it is a type of big data, because interlinear glossed texts are so widely used in linguistics.
+The glossing data has very interesting properties. First, it contains linguistics information. The glosses are not raw natural data, but are already processed by linguists based on the linguistic theory they adopt. Second, it is a type of big data, because interlinear glossed texts are so widely used in linguistics.
 Both natural language processing and linguistics are studying human languages. Gloss is the right `lingua franca' for the two fields. 
 
-Also thanks to the advent of neural net sequence to sequence machine learning, which is a generic algorithm that can learn almost any sequence to sequence mapping, the chance to successful incorporate the gloss line into machine translation is also better than other past time.  
+Also thanks to the advent of neural net sequence to sequence machine learning, which is a generic algorithm that can learn almost any sequence to sequence mapping, the chance to successful incorporate the gloss line into machine translation is also better than in the past.  
 
-With high expectations on the gloss line information, I conducted a series of machine translation experiments. It is found that the gloss information is an very effective booster for neural net machine translation systems in all conditions. 
+With high expectations on the gloss line information, I conducted a series of machine translation experiments. It is found that the gloss information is a very effective booster for neural net machine translation systems in all conditions. 
 
 The rest of the dissertation is organized as follows: chapter 2 discusses the nature of gloss lines, and argues that they are proper representations of meanings; chapter 3 provides a general overview of machine learning and machine translation; chapter 4, chapter 5 and chapter 6 are a series of neural net machine translation experiments; chapter 7 outlines potential future researches and concludes the dissertation.  
 \chapter{What are glosses? Why are they golden representations of meanings?}
@@ -357,6 +357,7 @@ In (\ref{tree}) it is shown that \textit{fly} is more embedded than \textit{swim
 
 Syntax is also all about hierarchical structures. Consider the following sentence:
 
+\vbox{% 
 \begin{exe}
 \ex 
 	\begin{xlist}
@@ -365,6 +366,7 @@ Syntax is also all about hierarchical structures. Consider the following sentenc
 	\ex \label{aux_inver3} Can\textsubscript{2} birds that can\textsubscript{1} fly  swim? 
 	\end{xlist}
 \end{exe}
+}
 
 (\ref{aux_inver1}) is a declarative sentence. To derive an interrogative sentence from it, the auxiliary needs to be moved; however, only \textit{can\textsubscript{2}} can be moved but not \textit{can\textsubscript{1}}, even thought \textit{can\textsubscript{1}} is linearly closer to the sentence initial position. Again, it is all because of the hierarchical structures. \textit{Can\textsubscript{2}} is in the matrix clause while \textit{can\textsubscript{1}} is in the embedded relative clause.
 
@@ -547,7 +549,7 @@ The Human-Reasoning approach relies on an individual's knowledge and is task-spe
 Taking the English grammaticality judgment task as an example, this approach means that some expert in English grammar will come up a set of rules or some algorithms that can determine whether a sequence of strings is a grammatical English sentences. 
 The rules and algorithms are based on this expert's knowledge and they are English specific, and are not applicable to other languages.     
 
-Another approach to build a model is using Machine Learning. Instead of building a model from our own reasoning, we may look at all the available examples and come up with a generalization. This is the Machine Learning approach. 
+Another approach to build a model is using Machine Learning. Instead of building a model from our own reasoning, we may collect all the available examples and let a machine learn from the examples. This is the Machine Learning approach. 
 Machine Learning can be defined as follows:
 
 \begin{exe}
@@ -613,7 +615,7 @@ In the next section, I will introduce the basics of artificial neural nets and t
 Neural Net Machine Translation is a type of machine learning. The training data (i.e. the example that machine learn from) is also parallel corpus, just like statistical machine translation. 
 In what follows, I will first provide a overview of artificial neural networks, and then I will explain how artificial neural networks translate sentences in a non-technical way.
 
-\subsection{What Is a Artificial Neural Network?}
+\subsection{What Is an Artificial Neural Network?}
 
 An artificial neural network is a simple but powerful computation algorithm. It can be viewed as a mathematical function: given an number or a vector of numbers as input, it will return one and only numerical representation. 
 
@@ -749,8 +751,6 @@ This middle layer is called hidden layer. However, they are not really hidden; a
 When there are more than one hidden layers, the neural net is called deep neural net. However, the building blocks are still a simple perceptron. So, actually neural networks are simple and elegant computation operation\footnote{It seems to me that linking the perceptron is just like the simple Merge operation in the Minimalist Program.}; 
 however, they extremely powerful. They are Turing-Complete machines \citep{siegelmann1991turing, graves2014neural}. \citet{siegelmann2003neural, siegelmann2012neural} even argues that neural networks are computations beyond the Turing limit. 
 
-
-
 %\newpage
 \subsection{Recurrent Neural Network}
 
@@ -879,7 +879,9 @@ The state-of-the-art neural network machine translation is the combination of th
 \section{A Quick Historical Overview of Machine Translation and Conclusion}
 
 Machine Translation is to automate the process of translating one natural language to another using computers. The first peak of the developments of Machine Translation started in the 1940s but terminated in 1966. During this period of time, with the advent of the first computers, researchers held high expectations in Machine Translation and lots of resources are shifted into this area. 
-ubHowever, in 1966 a report of the Automatic Language Processing Advisory Committee \citep{pierce1966language} terminated this `machine translation rush' as it revealed that too many funds and resources were shifted to Machine Translation without yielding proportional scientific developments. In 1990s, with the advent of Statistical Machine Translation approach developed at IBM, the Machine Translation came back as one of popular scientific areas. Now with the advent of the technique of Artificial Neural Net Machine Learning and other natural language processing techniques, Machine Translation is one of the most dynamic research areas.    
+However, in 1966 a report of the Automatic Language Processing Advisory Committee \citep{pierce1966language} terminated this `machine translation rush' as it revealed that too many funds and resources were shifted to Machine Translation without yielding proportional scientific developments. 
+In 1990s, with the advent of Statistical Machine Translation approach developed at IBM, the Machine Translation came back as one of popular scientific areas. 
+Now with the advent of the technique of Artificial Neural Net Machine Learning and other natural language processing techniques, Machine Translation is one of the most dynamic research areas.    
 \chapter{Building Translation Systems using Interlinear Glossed Text: First Attempt}
 \label{chap:cake}
 
@@ -1114,7 +1116,7 @@ This procedure of splitting the data into three sub-sets, training the models, a
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:46 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1150,13 +1152,14 @@ It is assumed that the performances of the machine translation systems are corre
 
 There are several remarks that need to be addressed for the current result. 
 
-First, the result falsifies the point of view about glosses in chapter (\ref{chap:gloss}) that the gloss line is a golden semantic representation hand-crafted by linguists.
+First, the result falsifies the point of view about glosses in chapter \ref{chap:gloss} that the gloss line is a golden semantic representation hand-crafted by linguists.
 It turns that this artificial language, the gloss lines, is only marginal better than Gaelic, as the mean BLEU score of the gloss treatment is slightly higher than that of the baseline systems. This can be viewed as an evidence of language evolution.
 The written form of a natural language is actually already optimized for representing semantics to the same degree of gloss line representations.
 
-Second, if we want to actually apply the gloss treatment to translate a Gaelic sentence to English, we encounter an immediate problem. The actual source sequence is a Gaelic sentence, while the required source sequence for the gloss treatment is a gloss line. The auto-glosser described in chapter (\ref{chap:gloss}) may convert the Gaelic sentence to a gloss line, but the conversion is not perfect at all. Given this, even if the gloss treatment should work, it is not practical unless we may convert Gaelic sentence to gloss line perfectly.      
+Second, if we want to actually apply the gloss treatment to translate a Gaelic sentence to English, we encounter an immediate problem. The actual source sequence is a Gaelic sentence, while the required source sequence for the gloss treatment is a gloss line. 
+For this treatment to be really viable, we will first need an automatic glosser that convert the Gaelic sentence to a gloss line with 100\% accuracy. Given this, even if the gloss treatment should work, it is not practical unless we may convert Gaelic sentence to gloss line perfectly.      
 
-We may now combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-help hypothesis. The experiments and results are reported in the next chapter.
+In the next chapter, I am going to combine Gaelic and Gloss sentences as the training data to test the weak version of the Gloss-help hypothesis. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Combining Gaelic Words with Glosses}\label{chap:cake2}
 \section{Introduction}
@@ -1240,7 +1243,7 @@ Critically, the same technical settings and the same test sets in the previous e
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1304,7 +1307,7 @@ With this treatment, a chunk of interlinear glossed text is split into two pairs
 The experiments gave us the expected results. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1334,7 +1337,7 @@ However, the best treatment (i.e. the Parallel-Partial treatment) is still far b
 (M\textsubscript{Para}=29.56, SD\textsubscript{Para}=1.46; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=8.76, p < 0.01 ).
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccc}
@@ -1388,7 +1391,7 @@ however, the downside of this method is to increase the length of the source seq
 The results are given in the following table. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1437,7 +1440,7 @@ Concatenating words and glosses does solve the long sequence problem; however, i
 The performances of this treatment is given in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1499,7 +1502,7 @@ This treatment has the same potential downside as the concatenating treatment: s
 \subsubsection{Result of Hybrid}    
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1528,7 +1531,7 @@ as shown in table (\ref{Table:HybridDefaultAsGaelic}).
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1562,7 +1565,7 @@ The complete BLEU scores of various treatments are given in the following table.
 
 %\begin{adjustbox}{angle=90} 
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrrrrr}
@@ -1603,8 +1606,8 @@ The current experimental results confirm the hypothesis that gloss helps machine
 
 The results of the experiment in the previous chapter show that the Parallel-Partial treatment improves the baseline system (system that trained on Gaelic-to-English parallel data only) tremendously. As such, the hypothesis that gloss information helps machine translation is supported.
 
-However, there are loose ends that need to be tied up. First, the effectiveness of the Parallel-Partial treatment demonstrated when compared with other internal treatments. We would like to know how well it performs when compared to other well-established machine translation systems.       
-Additionally, there some potential confounding factors that may jeopardize the validity of the experiment results. 
+However, there are loose ends that need to be tied up. First, the effectiveness of the Parallel-Partial treatment is demonstrated when compared with other internal treatments. We would like to know how well it performs when compared to other well-established machine translation systems.       
+Additionally, there are some potential confounding factors that may jeopardize the validity of the experiment results. 
 
 To tie up these loose ends, this chapter reports additional experiments and results.
 
@@ -1612,11 +1615,11 @@ To tie up these loose ends, this chapter reports additional experiments and resu
 The Parallel-Partial treatment yields superb systems compared to the baseline systems, but is it still good when we compare it to other well-established machine translation systems? 
 To answer this question, I compare our systems with Google translation.
 Specifically, I used a free Google translation API \citep{google_api} to translate the Gaelic sentences in our test set. 
-Then I calculated the BLEU scores of with the target sequences of our test set as the gold standard. In this manner, Google translation is just like an additional treatment in the comparison.  The result is shown in the following table:
+Then I calculated the BLEU scores of Google's predicted outputs with the target sequences of our test set as the gold standard. In this manner, Google translation is just like an additional treatment in the comparison. The result is shown in the following table:
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcccc}
@@ -1640,12 +1643,12 @@ Mean & 17.70 & 16.59 & 32.10 & 23.65 \\
 \caption{BLEU scores of Model\textsubscript{ParaPart} and Google Translation} 
 \label{Table:google}
 \end{table}
-It turns out the systems trained with the Parallel-Partial treatment also outperform Google translation by far.   
+It turns out the systems trained with the Parallel-Partial treatment also vastly outperform Google translation.   
 
 \section{Oversampling}
 A potential confounding factor of the effectiveness of the Parallel-Partial treatment is that this treatment has more English sentences than the baseline systems. 
 
-Recall what the training data for the both treatments are: 
+Recall what the training data for both treatments are: 
 
 \begin{exe}
 	\ex Mappings Learned in the Baseline treatment:
@@ -1661,13 +1664,13 @@ Recall what the training data for the both treatments are:
 	\end{xlist}	
 \end{exe}    
 
-Specifically, because the Parallel-Partial treatment learns the mappings in (\ref{over1}) and (\ref{over2}), the English sentences are oversampled. Oversampling of the target sequences has a positive effect, because the decoding process of the neural net machine translation system uses the language model information of the target language. Now given that in the ParaPart treatment the quantity of the English sentences (i.e. the target language) is doubled, the effectiveness of the ParaPart treatment may be just a result of this oversampling.   
+Specifically, because the Parallel-Partial treatment learns the mappings in (\ref{over1}) and (\ref{over2}), the English sentences are oversampled. Oversampling of the target sequences has a positive effect, because the decoding process of the neural net machine translation system uses the language model information of the target language. Now given that in the ParaPart treatment the quantity of English sentences (i.e. the target language) is doubled, the effectiveness of the ParaPart treatment may be just a result of this oversampling.   
 
 To exclude this confound, I oversampled the mappings in the baseline systems by repeating the mappings, so that we can have a fair comparison. Specifically, I doubled, tripled, and quadrupled the training data of the baseline treatment. The following table shows results of the oversampled baseline systems. 
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccccc}
@@ -1691,14 +1694,14 @@ Mean & 32.10 & 16.59 & 26.68 & 27.96 & 27.47 \\
 \caption{BLEU scores of Model\textsubscript{ParaPart} and Gaelic Treatment with Oversampling} 
 \label{Table:over}
 \end{table}
-It turns that oversampling also improves the baseline systems; however, it is still not as effective as the Parallel-Partial treatment. Given this results, the oversampling confound is ruled out.
+It turns out that oversampling also improves the baseline systems; however, it is still not as effective as the Parallel-Partial treatment. Given these results, the oversampling confound is ruled out.
 
 \section{Other Hyper-Parameters}
-An other possible confounding factor is that maybe the set of the arbitrarily chosen hyper-parameters used in the experiments in chapter \ref{chap:cake2} just accidentally favors the Parallel-Partial treatment and disfavors the baseline treatment. To exclude the potential confounding effect of the hyper-parameters, I sampled some hyper-parameters by changing the size of word embedding (into $\{100, 200, 300, 400, 500\}$) and the size of the mini-batches (into $\{16, 32, 64, 128\}$) using same training, validation, and test data used in round 0. The advantage of the Parallel-Partial treatment is consistent across the different settings of the hyper-parameters. The results are shown in the following table:  
+Another possible confounding factor is that maybe the set of the arbitrarily chosen hyper-parameters used in the experiments in chapter \ref{chap:cake2} just accidentally favors the Parallel-Partial treatment and disfavors the baseline treatment. To exclude the potential confounding effect of the hyper-parameters, I sampled some hyper-parameters by changing the size of word embedding (into $\{100, 200, 300, 400, 500\}$) and the size of the mini-batches (into $\{16, 32, 64, 128\}$) using the same training, validation, and test data used in round 0. The advantage of the Parallel-Partial treatment is consistent across the different settings of the hyper-parameters. The results are shown in the following table:  
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lllccc}
@@ -1732,24 +1735,24 @@ mean &  &  & 19.74 & 20.00 & 32.10 \\
 \caption{BLEU scores of Round 0 using different Hyper-Parameters} 
 \label{Table:HyPara}
 \end{table}
-In that table, we can see that the sizes of word embedding and mini-batch do have an effect on the performance of the trained system. However, the Parallel-Partial treatment still outperforms the baseline no matter what the hyper-parameters are. 
+In the table, we can see that the sizes of word embedding and mini-batches do have an effect on the performance of the trained system. However, the Parallel-Partial treatment still outperforms the baseline no matter what the hyper-parameters are. 
 
 \section{Interlinear Glossed Text Data In Other Languages: the Universality}
-Given the above results, it is properly defended that the gloss information of Scottish Gaelic can improve Scottish Gaelic to English neural machine translation systems. A interesting leak of the gloss-help-hypothesis is that maybe it ONLY works on Gaelic. Maybe the Gaelic language just has some special property that makes the gloss information relevant. Now the question is:
+Given the above results, it is properly defended that the gloss information of Scottish Gaelic can improve Scottish Gaelic to English neural machine translation systems. An interesting leak of the gloss-help-hypothesis is that maybe it only works on Gaelic. Maybe the Gaelic language just has some special property that makes the gloss information relevant. Now the question is:
 
 \begin{exe}
-\ex Does the gloss-help-hypothesis hold universally across all different languages?   
+\ex Does the gloss-help-hypothesis hold universally across different languages?   
 \end{exe}  
 
-This section reports the experiment result using the same settings in chapter \ref{chap:cake2} except for that the source language is NOT Gaelic. 
+This section reports the experiment result using the same settings as in chapter \ref{chap:cake2} except for the fact that the source language is not Gaelic. 
 
-The Online Database of Interlinear Text \citep{ODIN, Xia2016} is a perfect database to run this experiment. Specifically, this database extracted the interlinear glossed texts in published linguistic papers that are open on the Internet. The interlinear glossed texts are stored in a consistent and machine readable format, called xigt (xml for interlinear glossed text). The Online Database of Interlinear Text have interlinear glossed texts in 1,495 different languages; however, only 18 languages have more than 1,000 chunks of interlinear glossed text (i.e. the 3-tuples of a source sentence, a gloss line, and an English translation). In the current translation experiment, I use the Online Database of Interlinear Text in these 18 languages.   
+The Online Database of Interlinear Text \citep{ODIN, Xia2016} is a perfect database to run this experiment. Specifically, this database extracted the interlinear glossed texts in published linguistic papers that are open on the Internet. The interlinear glossed texts are stored in a consistent and machine readable format, called xigt (xml for interlinear glossed text). The Online Database of Interlinear Text contains interlinear glossed texts in 1,495 different languages; however, only 18 languages have more than 1,000 chunks of interlinear glossed text (i.e. the 3-tuples of a source sentence, a gloss line, and an English translation). In the current translation experiment, I use the Online Database of Interlinear Text in these 18 languages.   
 
 The result is shown in the following table:   
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 00:04:47 2018
+% Tue May  1 15:11:07 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccccc}
@@ -1785,26 +1788,26 @@ The paired t-test shows that the Parallel-Partial treatment outperforms the base
 (M\textsubscript{GLOSS}=0.27, SD\textsubscript{GLOSS}=0.70; M\textsubscript{ParaPart}=5.87, SD\textsubscript{ParaPart}=4.84,; t(17)=-5.19, p < 0.01).
 
 
-The result shows that incorporating gloss information works effectively across many different languages. Note that for Greek and Italian the ParaPart treatment has no effect. I do not have well-supported explanation for now, and also it may be true that gloss information may help different languages to different degrees. In other words, for some languages gloss information a is huge booster while for other language it is a small booster. The relation between the property of a language and how much gloss information helps that language is left for my future research.     
+The result shows that incorporating gloss information works effectively across many different languages. Note that for Greek and Italian the ParaPart treatment has no effect. I do not have a well-supported explanation for now, and also it may be true that gloss information may help different languages to different degrees. In other words, for some languages gloss information is a huge booster while for other languages it is a small booster. The relation between the property of a language and how much gloss information helps that language is left for my future research.     
 
 \section{Conclusion}
 
 This chapter describes additional experiments and results to confirm the effectiveness of gloss information by excluding other potential confounding factors.
-Given all these results, we may conclude that the gloss information is an effective booster for neural net machine translation systems across different hyper-parameters and across different languages.       
+Given all these results, we may conclude that the gloss information is an effective booster for neural net machine translation systems across different hyper-parameters and languages.       
 \chapter{Conclusion and Future Research}
 
 \section{Future Research}
 
-In the current work, it is discovered that the gloss information boosts up machine translation systems. This is not the end of the story, but just the beginning of a new story line, as it opens the door to many interesting questions:
+In my current work, I discovered that the gloss information boosts up machine translation systems. This is not the end of the story, but just a beginning, as it opens the door to many interesting questions:
 
 \begin{exe}
 \ex
 	\begin{xlist}
-	\ex The Gloss representation is not actually standardized. There are many variants. How and what to gloss is based on the linguist's theoretical interests. For example, if one is studying gender agreements, the gender information must be properly glossed. However, if one is interested in the metrical structure, he may just gloss the word as its syllable weigh\footnote{see \citet{Mohsen} for examples for this type of notation.}. Is there way to determine what type of gloss representation is most suitable for what type of natural language processing task?
+	\ex The Gloss representation is not actually standardized. There are many variants. How and what to gloss is based on the linguist's theoretical interests. For example, if one is studying gender agreements, the gender information must be properly glossed. However, if one is interested in the metrical structure, one may just gloss the word as its syllable weight\footnote{see \citet{Mohsen} for examples for this type of notation.}. Is there a way to determine what type of gloss representation is most suitable for a type of natural language processing task?
 	\ex Are the machine translation BLEU scores correlated to the correctness of the glosses? For example, a linguistic theory argues that $X$ should be glossed as $p$ and $q$ in different context, while another linguistic theory argues that $X$ should be glossed as $p$ in all context. Can we use machine translation experiments to validate these two theories? Can we say the theory with a higher BLEU score is more accurate than the other? 
 	\ex In chapter \ref{chap:Tying_Up}, I used the gloss from 18 different languages. It seems that for some language the gloss information is really helpful, and for others it is not that helpful. Can we come up with a typological generalization on the pattern of the BLEU scores based on the properties of the language?  
-	\ex Gloss information help machine translation. How about other linguistics information, like part of speech tags, and parse tree? Or can we incorporate all the information? How? 
-	\ex What is the optimal hyper-parameter setting? Can we make a sensible linguistic interpretation on the setting? In chapter \ref{chap:Tying_Up}, I tried various hyper-parameters to train the models. The optimal setting for the Gaelic treatment is Word Embedding Size being 500 and Mini-Batch size being 16, for Gloss treatment the optimal setting is 400 and 16, and for the Parallel-partial treatment, it is 500 and 32. What is going on here?    
+	\ex Gloss information helps machine translation. How about other linguistics information, like part of speech tags, and parse trees? Can we incorporate all the information? How so? 
+	\ex What is the optimal hyper-parameter setting? Can we make a sensible linguistic interpretation on the setting? In chapter \ref{chap:Tying_Up}, I tried various hyper-parameters to train the models. The optimal setting for the Gaelic treatment is Word Embedding Size being 500 and Mini-Batch size being 16; for Gloss treatment the optimal setting is 400 and 16; for the Parallel-partial treatment, it is 500 and 32. What is going on here?    
 	\end{xlist}
 \end{exe}
 
@@ -1812,18 +1815,18 @@ In short, there are many other puzzling questions for my future research.
 
 \section{Conclusion}
 
-In the dissertation, I introduce an very effective way of incorporating the gloss data into neural net machine translation systems.
+In the dissertation, I introduce a very effective way of incorporating the gloss data into neural net machine translation systems.
 
 The interlinear glossed text representation already has its own merit in theoretical linguistic studies even without the discussion of the current dissertation. It is so basic and so widely used in linguistics studies. The most important discovery of the dissertation is that linguistics can be practically useful.
 
-This fact suggests the gloss representation is relevant to machine translation and other natural language processing applications. 
+This fact suggests that gloss information is relevant to machine translation and other natural language processing applications. 
 
 How theoretical linguistics may work hand in hand with natural language processing, and how neural net machine learning may exploit linguistics are important questions in both fields (see \citet{pater2017generative} for a nice discussion on this topic). In addition to practically building better machine translation systems, the current work also exemplifies how theoretical linguistics may work hand in hand with natural language processing successfully.
 
-The more fundamental potential influence of the current documentation is to show that the gloss line representation is an ideal common place for natural language processing and theoretical linguistics to understand and help each other. 
+The more fundamental potential influence of the current documentation is to show that the gloss line representation is an ideal meeting point for natural language processing and theoretical linguistics to understand and help each other. 
 
 The scientists in linguistics and natural language precessing related computer science are studying the black box of human languages. 
-If opening the black box is a competition between the two camps (linguistics and natural language precessing), and the evaluation is how useful it is in real life, the natural language precessing camp is making a good progress, while linguistics is like an underdog. 
+If opening the black box is a competition between the two camps (linguistics and natural language precessing), and the evaluation is how useful it is in real life, the natural language precessing camp is making good progress, while linguistics is like an underdog. 
 If all the arguments reported in the dissertation should be sound, the current dissertation is a loud shouting voice from the linguistics camp that linguistics may have a practical and positive effect in machine translation and other natural language processing applications. 
 
 To build ordinary systems for natural language processing, theoretical linguistics is optional. However, to build extraordinary systems, theoretical linguistics is necessary.
