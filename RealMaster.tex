@@ -59,6 +59,7 @@
 \input{mathenv}
 \input{syms}
 \usepackage{graphicx}
+\usepackage{pdfpages}
 \usepackage{psfrag}
 \usepackage{afterpage}
 \usepackage{subfigure}
@@ -1116,7 +1117,7 @@ This procedure of splitting the data into three sub-sets, training the models, a
 After ten rounds of repeated random sub-sampling validation, ten pairs of scores of the two models are generated, as shown in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:38 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1243,7 +1244,7 @@ Critically, the same technical settings and the same test sets in the previous e
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1307,7 +1308,7 @@ With this treatment, a chunk of interlinear glossed text is split into two pairs
 The experiments gave us the expected results. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1337,7 +1338,7 @@ However, the best treatment (i.e. the Parallel-Partial treatment) is still far b
 (M\textsubscript{Para}=29.56, SD\textsubscript{Para}=1.46; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=8.76, p < 0.01 ).
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccc}
@@ -1391,7 +1392,7 @@ however, the downside of this method is to increase the length of the source seq
 The results are given in the following table. 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1440,7 +1441,7 @@ Concatenating words and glosses does solve the long sequence problem; however, i
 The performances of this treatment is given in the following table.
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1502,7 +1503,7 @@ This treatment has the same potential downside as the concatenating treatment: s
 \subsubsection{Result of Hybrid}    
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1531,7 +1532,7 @@ as shown in table (\ref{Table:HybridDefaultAsGaelic}).
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcc}
@@ -1565,7 +1566,7 @@ The complete BLEU scores of various treatments are given in the following table.
 
 %\begin{adjustbox}{angle=90} 
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrrrrrr}
@@ -1619,7 +1620,7 @@ Then I calculated the BLEU scores of Google's predicted outputs with the target 
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lcccc}
@@ -1670,7 +1671,7 @@ To exclude this confound, I oversampled the mappings in the baseline systems by 
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccccc}
@@ -1701,7 +1702,7 @@ Another possible confounding factor is that maybe the set of the arbitrarily cho
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{lllccc}
@@ -1752,7 +1753,7 @@ The result is shown in the following table:
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Tue May  1 15:11:07 2018
+% Wed May 23 23:45:39 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccccc}

@@ -59,6 +59,7 @@
 \input{mathenv}
 \input{syms}
 \usepackage{graphicx}
+\usepackage{pdfpages}
 \usepackage{psfrag}
 \usepackage{afterpage}
 \usepackage{subfigure}
