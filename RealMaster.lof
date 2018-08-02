@@ -13,12 +13,13 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces A neural network with a hidden layer}}{34}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces A recurrent neural network with a hidden layer. The hidden neuron ($h$) is connected to itself.}}{35}{figure.3.4}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces A recurrent neural network with a hidden layer (unfolded depiction). This figure depicts exactly the same structure in figure \ref {fig:rnn1}, the hidden neuron $h_{t}$ is linked to its past $h_{t-1}$ and its future $h_{t+1}$. Here $t$ labels time step.}}{36}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Encoder-decoder architecture - example of a general approach for NMT. An encoder converts a source sentence into a "meaning" vector which is passed through a decoder to produce a translation. (figure from \citet {luong17GitHub})}}{36}{figure.3.6}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Encoder-decoder architecture - example of a general approach for NMT. An encoder converts a source sentence into a "meaning" vector which is passed through a decoder to produce a translation. (figure from \citet {luong17GitHub})}}{37}{figure.3.6}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Word Embeddings (figure from \citet {roweis2000nonlinear})}}{38}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Neural machine translation (figure from \citet {luong17GitHub}).}}{39}{figure.3.8}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Neural Machine Translation (figure from \citet {luong17GitHub}).}}{40}{figure.3.8}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Attention mechanism - example of an attention-based NMT system as described in \citet {luong2015effective} (figure from \citet {luong17GitHub})}}{41}{figure.3.9}
 \addvspace {\medskipamount }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces The BLEU score is based on n-gram matches with the reference translation \citep [p. 226-227]{koehn2009statistical}}}{53}{figure.4.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The BLEU score is based on n-gram matches with the reference translation \citep [p. 226-227]{koehn2009statistical}}}{54}{figure.4.1}
+\addvspace {\medskipamount }
 \addvspace {\medskipamount }
 \addvspace {\medskipamount }
 \addvspace {\medskipamount }

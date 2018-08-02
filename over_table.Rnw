@@ -15,5 +15,5 @@ n<- subset(n, select=c("Round", "ParaPart", "Gaelic", "OverGaelic", "Over3", "Ov
 xtab<-xtable(n, caption="BLEU scores of Model\\textsubscript{ParaPart} and Gaelic Treatment with Oversampling",  label="Table:over", align="llccccc")
 names(xtab)<-c('Round', 'ParaPart', 'Gaelic', 'Double Gaelic ', 'Triple Gaelic', 'Quadruple Gaelic' )
 hlines <- c(-1,0,10, nrow(xtab))
-print(xtab,include.rownames =FALSE, hline.after = hlines, rotate.colnames=TRUE)
+print(xtab,include.rownames =FALSE, hline.after = hlines, rotate.colnames=TRUE,table.placement="H")
 @

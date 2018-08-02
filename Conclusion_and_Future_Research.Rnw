@@ -2,16 +2,16 @@
 
 \section{Future Research}
 
-In my current work, I discovered that the gloss information boosts up machine translation systems. This is not the end of the story, but just a beginning, as it opens the door to many interesting questions:
+In my current work, I discovered that gloss information can improve Machine Translation systems. This is not the end of the story, but just a beginning, as it opens the door to many interesting questions:
 
 \begin{exe}
 \ex
 	\begin{xlist}
 	\ex The Gloss representation is not actually standardized. There are many variants. How and what to gloss is based on the linguist's theoretical interests. For example, if one is studying gender agreements, the gender information must be properly glossed. However, if one is interested in the metrical structure, one may just gloss the word as its syllable weight\footnote{see \citet{Mohsen} for examples for this type of notation.}. Is there a way to determine what type of gloss representation is most suitable for a type of natural language processing task?
-	\ex Are the machine translation BLEU scores correlated to the correctness of the glosses? For example, a linguistic theory argues that $X$ should be glossed as $p$ and $q$ in different context, while another linguistic theory argues that $X$ should be glossed as $p$ in all context. Can we use machine translation experiments to validate these two theories? Can we say the theory with a higher BLEU score is more accurate than the other? 
-	\ex In chapter \ref{chap:Tying_Up}, I used the gloss from 18 different languages. It seems that for some language the gloss information is really helpful, and for others it is not that helpful. Can we come up with a typological generalization on the pattern of the BLEU scores based on the properties of the language?  
-	\ex Gloss information helps machine translation. How about other linguistics information, like part of speech tags, and parse trees? Can we incorporate all the information? How so? 
-	\ex What is the optimal hyper-parameter setting? Can we make a sensible linguistic interpretation on the setting? In chapter \ref{chap:Tying_Up}, I tried various hyper-parameters to train the models. The optimal setting for the Gaelic treatment is Word Embedding Size being 500 and Mini-Batch size being 16; for Gloss treatment the optimal setting is 400 and 16; for the Parallel-partial treatment, it is 500 and 32. What is going on here?    
+	\ex Are the Machine Translation BLEU scores correlated to the correctness of the glosses? For example, a linguistic theory argues that $X$ should be glossed as $p$ and $q$ in different context, while another linguistic theory argues that $X$ should be glossed as $p$ in all context. Can we use Machine Translation experiments to validate these two theories? Can we say the theory with a higher BLEU score is more accurate than the other? 
+	\ex In chapter \ref{chap:Tying_Up}, I used the gloss from 18 different languages. It seems that for some language the gloss information is really helpful, and for others it is not that helpful. Can we come up with a typological generalization on the pattern of the BLEU scores based on the properties of the language? 
+	\ex Gloss information helps Machine Translation. How about other linguistics information, like part of speech tags, and parse trees? Can we incorporate all the information? How so? 
+	\ex What is the optimal hyper-parameter setting? Can we make a sensible linguistic interpretation on the setting? In chapter \ref{chap:Tying_Up}, I tried various hyper-parameters to train the models. The optimal setting for the Gaelic treatment is Word Embedding Size being 500 and Mini-Batch size being 16; for Gloss treatment the optimal setting is 400 and 16; for the Parallel-partial treatment, it is 500 and 32. What is going on here?  
 	\end{xlist}
 \end{exe}
 
@@ -19,19 +19,19 @@ In short, there are many other puzzling questions for my future research.
 
 \section{Conclusion}
 
-In the dissertation, I introduce a very effective way of incorporating the gloss data into neural net machine translation systems.
+In the dissertation, I introduce a very effective way of incorporating gloss data into Neural Machine Translation systems.
 
-The interlinear glossed text representation already has its own merit in theoretical linguistic studies even without the discussion of the current dissertation. It is so basic and so widely used in linguistics studies. The most important discovery of the dissertation is that linguistics can be practically useful.
+The Interlinear Glossed Text representation already has its own merit in theoretical linguistic studies, even without the discussion of the current dissertation. It is so basic and so widely used in linguistics studies. The most important discovery of the dissertation is that linguistics can be useful and practical.
 
-This fact suggests that gloss information is relevant to machine translation and other natural language processing applications. 
+This fact suggests that gloss information is relevant to Machine Translation and other natural language processing applications. 
 
-How theoretical linguistics may work hand in hand with natural language processing, and how neural net machine learning may exploit linguistics are important questions in both fields (see \citet{pater2017generative} for a nice discussion on this topic). In addition to practically building better machine translation systems, the current work also exemplifies how theoretical linguistics may work hand in hand with natural language processing successfully.
+How theoretical linguistics may work hand in hand with natural language processing, and how Neural machine learning may exploit linguistics are important questions in both fields (see \citet{pater2017generative} for a nice discussion on this topic). In addition to practically building better Machine Translation systems, the current work also exemplifies how theoretical linguistics may work hand in hand with natural language processing successfully.
 
 The more fundamental potential influence of the current documentation is to show that the gloss line representation is an ideal meeting point for natural language processing and theoretical linguistics to understand and help each other. 
 
 The scientists in linguistics and natural language precessing related computer science are studying the black box of human languages. 
-If opening the black box is a competition between the two camps (linguistics and natural language precessing), and the evaluation is how useful it is in real life, the natural language precessing camp is making good progress, while linguistics is like an underdog. 
-If all the arguments reported in the dissertation should be sound, the current dissertation is a loud shouting voice from the linguistics camp that linguistics may have a practical and positive effect in machine translation and other natural language processing applications. 
+If opening the black box is a competition between the two camps (linguistics and natural language precessing), and the evaluation is how useful it is in real life, the natural language precessing camp is making good progress, while linguistics is an underdog. 
+If all the arguments reported in the dissertation should be sound, the current dissertation is a loud shouting voice from the linguistics camp that linguistics may have a practical and positive effect in Machine Translation and other natural language processing applications. 
 
 To build ordinary systems for natural language processing, theoretical linguistics is optional. However, to build extraordinary systems, theoretical linguistics is necessary.
 

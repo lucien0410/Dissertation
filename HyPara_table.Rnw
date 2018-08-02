@@ -4,5 +4,5 @@ require(xtable)
 n <- read.csv('HyPara.csv', sep=',', header = TRUE)
 xtab<-xtable(n, caption="BLEU scores of Round 0 using different Hyper-Parameters",  label="Table:HyPara", align="llllccc")
 hlines <- c(-1,0,20, nrow(xtab))
-print(xtab, include.rownames =FALSE, hline.after = hlines,)
+print(xtab, include.rownames =FALSE, hline.after = hlines,table.placement="H")
 @

@@ -268,12 +268,12 @@ Nadejde, Maria, Siva Reddy, Rico Sennrich, Tomasz Dwojak, Marcin
   Translation}, 68--79.
 \bibAnnoteFile{ccg_target_seq}
 
-\bibitem[{Papineni et~al.(2002)Papineni, Roukos, Ward, and Zhu}]{bleu}
+\bibitem[{Papineni et~al.(2002)Papineni, Roukos, Ward, and Zhu}]{BLEU}
 Papineni, Kishore, Salim Roukos, Todd Ward, and Wei-Jing Zhu (2002),
   \enquote{Bleu: a method for automatic evaluation of machine translation.} In
   \emph{Proceedings of the 40th annual meeting on association for computational
   linguistics}, 311--318, Association for Computational Linguistics.
-\bibAnnoteFile{bleu}
+\bibAnnoteFile{BLEU}
 
 \bibitem[{Pater(2017)}]{pater2017generative}
 Pater, Joe (2017), \enquote{Generative linguistics and neural networks at 60:

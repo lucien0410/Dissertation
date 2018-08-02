@@ -15,7 +15,7 @@ This section reports various ways of combining the gloss line data and the Gaeli
 In this section, I will first describe the most effective treatment, termed as `\textit{Parallel-Partial}' treatment, and the results. Next, I will report the experiments done with other relevant logical treatments (i.e. other ways of combining glossing data and Gaelic data). 
 
 \subsection{The Underlying Heuristics}\label{heuristics}
-At a high level, neural net sequence to sequence learning algorithm is learning how to map a high-dimension space to another high-dimension space. In the settings of machine translation, each dot in the high-dimension space is a meaning representation. Linking one dot to another dot is converting one representation of meaning to another, yielding the effect of translation. Given this heuristics, we may just feed the machine with all the available meaning mappings. Given the assumption that the gloss lines are linguistically guided representations of meaning, they are suitable training data for building machine translation systems. Specially, with the gloss data, we let the machine to learn the following mappings:
+At a high level, a Neural sequence to sequence Machine Learning algorithm is learning how to map a high-dimension space to another high-dimension space. In the settings of Machine Translation, each dot in the high-dimension space is a meaning representation. Linking one dot to another dot is converting one representation of meaning to another, yielding the effect of translation. Given this heuristics, we may just feed the machine with all the available meaning mappings. Given the assumption that the gloss lines are linguistically guided representations of meaning, they are suitable training data for building Machine Translation systems. Specially, with the gloss data, we let the machine to learn the following mappings:
 
 \begin{exe}
 	\ex Mappings Learned in the ParaPart treatment
@@ -30,7 +30,7 @@ At a high level, neural net sequence to sequence learning algorithm is learning 
 \section{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}
 
 \subsection{Related work}
-The Parallel-Partial treatment section may be viewed as a form of multi-task Sequence to Sequence Learning \citep{luong2015multi}. Specifically, the parallel part of the treatment is very similar to the data manipulation used in building multi-language translation systems \citep{google_zero_shot}.  
+The Parallel-Partial (ParaPart) treatment section may be viewed as a form of multi-task Sequence to Sequence Learning \citep{luong2015multi}. Specifically, the parallel part of the treatment is very similar to the data manipulation used in building multi-language translation systems \citep{google_zero_shot}.  
 
 \subsection{Data Preprocessing Using the Parallel-Partial Treatment}
 The Parallel-Partial treatment uses the training and validation data of the baseline system and that of the gloss treatment system.  
@@ -77,28 +77,28 @@ The samples in (\ref{sample_para}) and (\ref{sample_partial}) are the training d
 
 \subsection{Results of the Parallel-Partial Treatment}
 
-Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. The same split of the original IGTs is used, so as long as it is the same round, the training, validation and test are the same set of IGTs. The only difference is that now the training and validation IGT data are treated with the Parallel-Partial treatment. The results show that the Parallel-Partial treatment has a tremendous effect in improving the baseline system. 
+Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. The same split of the original IGTs is used, so as long as it is the same round, the training, validation and test are the same set of IGTs. The only difference is that now the training and validation IGT data are treated with the Parallel-Partial treatment. The results in table \ref{Table:ParaPart} show that the Parallel-Partial treatment has a tremendous effect in improving the baseline system. 
 
 \SweaveInput{ParaPart_table.Rnw}
 
-The first and the second columns are BLUE scores of the baseline systems and the systems with the Parallel-Partial treatment respectively. The latter is significantly better than the former
+The first and the second columns are BLEU scores of the baseline systems and the systems with the Parallel-Partial treatment respectively. The latter is significantly better than the former
 (M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment}; t(9)=\Sexpr{t_val}, p<0.01).
-The comparison of the average BLUE scores of the groups of systems shows that the Parallel-Partial treatment improves the performance of the baseline system by 93 percent.
+The comparison of the average BLEU scores of the groups of systems shows that the Parallel-Partial treatment improves the performance of the baseline system by 93 percent.
 %(M\textsubscript{GDToEn}=\Sexpr{m_gd}, SD\textsubscript{GDToEn}=\Sexpr{sd_gd}; M\textsubscript{ParaPart}=\Sexpr{m_Treatment}, SD\textsubscript{ParaPart}=\Sexpr{sd_Treatment},; t(9)=\Sexpr{t_val}, p<0.01\Sexpr{p_val}).
 \subsubsection{Discussion}
-With the ParaPart treatment, the baseline systems are improved for more than 93 percent. This result suggests the validity of our heuristics in section \ref{heuristics} that gloss lines can be viewed as an artifical language, and provide strong evidence for the gloss-help hypothesis in (\ref{gloss_helps_hypothesis}).     
+With the ParaPart treatment, the baseline systems are improved by more than 93 percent. This result suggests the validity of our heuristics in section \ref{heuristics} that gloss lines can be viewed as an artifical language, and provides strong evidence for the gloss-help hypothesis in (\ref{gloss_helps_hypothesis}).     
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Other Possible Treatments}
-This section reports other possible ways of blending the Gaelic sentences and gloss lines\footnote{There must be other possible and logical ways to blend in gloss that are beyond my imagination. It seems me to that by simply attempting to incorporate gloss information we open many other doors to the possible ways of improving machine translation systems. This is another merit of combining theoretical linguists to natural language processing.}.
+This section reports other possible ways of blending the Gaelic sentences and gloss lines\footnote{There must be other possible and logical ways to blend in gloss that are beyond my imagination. It seems me to that by simply attempting to incorporate gloss information we open many other doors to the possible ways of improving Machine Translation systems. This is another merit of combining theoretical linguists to natural language processing.}.
 However, all of these treatments are not as effective as the Parallel-Partial treatment. Again, the same procedure and the same test datasets are used across all the experiments. 
 
 
 \subsection{The Parallel Treatment}\label{treatment:Para}
 \subsubsection{Method of the Parallel Treatment}
 The Parallel treatment is using the parallel part of the Parallel-Partial treatment without exploiting the alignment properties of gloss lines.
-It is expected that this treatment will improve the baseline systems but will not be as effective as the Parallel-Partial treatment.
+It is expected that this treatment will improve the baseline systems, but will not be as effective as the Parallel-Partial treatment.
 
 With this treatment, a chunk of interlinear glossed text is split into two pairs. For example, the chunk of interlinear glossed text in (\ref{igt}) becomes two samples in (\ref{sample_pair}): 
 \begin{exe} 
@@ -148,7 +148,7 @@ we may just literally blend a Gaelic sentence and a gloss line by interleaving t
     \end{xlist}
 \end{exe}
 
-Given the chuck of interlinear glossed text data in (\ref{ex_interleave:in}), the Interleaving treatment generates the sample in (\ref{ex_interleave:out}).  
+Given the chunk of interlinear glossed text data in (\ref{ex_interleave:in}), the Interleaving treatment generates the sample in (\ref{ex_interleave:out}).  
 
 This way of blending gloss lines and Gaelic sentences may add useful information into the training data; 
 however, the downside of this method is to increase the length of the source sequence. In neural net machine learning, the longer the sequences are, the harder it is to preserve all the information (i.e. it is harder for the attention mechanism to pay attention to the right tokens). So, this treatment may not be effective. 
@@ -215,7 +215,7 @@ The length of the Gaelic sentence and the gloss line in the above IGT is 6. This
 \ex <``be.pres nathairichean a'chuir det t-eagal on.1s'' ,``Snakes frighten me'' >
 \end{exe} 
 
-This treatment has the same potential downside as the concatenating treatment: sparsity. In this treatment, the size of the lexicon is the size of the lexicon of Gaelic word plus that of gloss, but what are really visible to the neural net is only about half size of the whole potential lexicon, because for each position it is either a Gaelic word or a gloss.
+This treatment has the same potential downside as the concatenating treatment: sparsity. In this treatment, the size of the lexicon is the size of the lexicon of Gaelic word plus that of gloss, but what are really visible to the neural net is only about half the size of the whole potential lexicon, because for each position it is either a Gaelic word or a gloss.
 
 \subsubsection{Result of Hybrid}    
 \SweaveInput{ReplacingGaelic_table.Rnw}
@@ -230,7 +230,7 @@ When the default setting is the Gaelic word, the performances are sightly worse 
 The results show that this hybrid treatment indeed suffers from the sparsity problem. 
 
 \section{Summary and Conclusion}
-Chapter \ref{chap:gloss} argues that the gloss representation is a golden representation of meanings, and thus theoretically with the gloss information incorporated, the performance of machine translation systems should improve. The experiments reported in this chapter reveal an effective way of combining gloss data and Gaelic sentences. It is found that the Parallel-Partial is highly effective, and the Gloss-help hypothesis is empirically supported by the results. 
+Chapter \ref{chap:gloss} argues that the gloss representation is a golden representation of meanings, and thus theoretically with the gloss information incorporated, the performance of Machine Translation systems should improve. The experiments reported in this chapter reveal an effective way of combining gloss data and Gaelic sentences. It is found that the Parallel-Partial is highly effective, and the Gloss-help hypothesis is empirically supported by the results. 
 The complete BLEU scores of various treatments are given in the following table.
 
 %\begin{adjustbox}{angle=90} 
@@ -244,10 +244,10 @@ xtab2<-xtable(n,caption="BLEU scores of the all treatments",  label="table:compl
 hlines <- c(-1,0,10, nrow(xtab2))
 names(xtab2)<-c('Round', 'Baseline', 'GLOSS', "google", 'ParaPart', 'Para', 'Interleaving', 'Concat', 'HybrGaelic', 'HybrGLOSS')
 xtab2<-xtab2
-print(xtab2,include.rownames =FALSE, hline.after = hlines, rotate.colnames=TRUE)
+print(xtab2,include.rownames =FALSE, hline.after = hlines, rotate.colnames=TRUE,table.placement="H")
 @
 
-The current experimental results confirm the hypothesis that gloss helps machine translation. However, there are some potential confounding factors. The next chapter discusses these confounding factors, and reports additional experiment results that rule out them.
+The current experimental results confirm the hypothesis that gloss helps Machine Translation. However, there are some potential confounding factors. The next chapter discusses these confounding factors, and reports additional experiment results that rule out them.
 
 
 % \subsection{literature}

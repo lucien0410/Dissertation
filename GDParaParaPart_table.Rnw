@@ -17,5 +17,5 @@ p_val=format(round(r$p.value, 2), nsmall = 3)
 xtab<-xtable(n, caption="BLEU scores of Model\\textsubscript{GDtoEN}, Model\\textsubscript{ParatoEN} and Model\\textsubscript{ParaParttoEN} ",  label="Table:Concating", align="llccc")
 names(xtab)<-c('Round', 'Gaelic (Baseline)', 'Para', 'ParaPart' )
 hlines <- c(-1,0,10, nrow(xtab))
-print(xtab, include.rownames =FALSE, hline.after = hlines)
+print(xtab, include.rownames =FALSE, hline.after = hlines, table.placement="H")
 @

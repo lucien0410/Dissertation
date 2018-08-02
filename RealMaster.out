@@ -14,14 +14,14 @@
 \BOOKMARK [2][-]{subsection.3.1.1}{What is a Function and What is a Model?}{section.3.1}% 14
 \BOOKMARK [2][-]{subsection.3.1.2}{Two Different Paradigms of Building a Model}{section.3.1}% 15
 \BOOKMARK [1][-]{section.3.2}{Statistical Machine Translation}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.3}{Neural Net Machine Translation}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.3}{Neural Machine Translation}{chapter.3}% 17
 \BOOKMARK [2][-]{subsection.3.3.1}{What Is an Artificial Neural Network?}{section.3.3}% 18
 \BOOKMARK [2][-]{subsection.3.3.2}{Recurrent Neural Network}{section.3.3}% 19
-\BOOKMARK [1][-]{section.3.4}{Introduction to Neural Net Machine Translation}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.4}{Introduction to Neural Machine Translation}{chapter.3}% 20
 \BOOKMARK [2][-]{subsection.3.4.1}{Word Embedding}{section.3.4}% 21
 \BOOKMARK [2][-]{subsection.3.4.2}{Encoding and Decoding}{section.3.4}% 22
 \BOOKMARK [2][-]{subsection.3.4.3}{Adding Attention Mechanism}{section.3.4}% 23
-\BOOKMARK [2][-]{subsection.3.4.4}{Summary of Neural Net Machine Translation: interlingua plus string alignment}{section.3.4}% 24
+\BOOKMARK [2][-]{subsection.3.4.4}{Summary of Neural Machine Translation: interlingua plus string alignment}{section.3.4}% 24
 \BOOKMARK [1][-]{section.3.5}{A Quick Historical Overview of Machine Translation and Conclusion}{chapter.3}% 25
 \BOOKMARK [0][-]{chapter.4}{Chapter 4. \040Building Translation Systems using Interlinear Glossed Text: First Attempt}{}% 26
 \BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 27
@@ -56,3 +56,5 @@
 \BOOKMARK [1][-]{section.7.1}{Future Research}{chapter.7}% 56
 \BOOKMARK [1][-]{section.7.2}{Conclusion}{chapter.7}% 57
 \BOOKMARK [0][-]{section.7.2}{\1}{}% 58
+\BOOKMARK [0][-]{section*.9}{Appendices}{}% 59
+\BOOKMARK [0][-]{Appendix.1.A}{Appendix A. \040Some Appendix}{}% 60

@@ -1,15 +1,15 @@
 \chapter{Tying Up Some Loose Ends}
 \label{chap:Tying_Up}
 
-The results of the experiment in the previous chapter show that the Parallel-Partial treatment improves the baseline system (system that trained on Gaelic-to-English parallel data only) tremendously. As such, the hypothesis that gloss information helps machine translation is supported.
+The results of the experiment in the previous chapter show that the Parallel-Partial treatment improves the baseline system (system that trained on Gaelic-to-English parallel data only) tremendously. As such, the hypothesis that gloss information helps Machine Translation is supported.
 
-However, there are loose ends that need to be tied up. First, the effectiveness of the Parallel-Partial treatment is demonstrated when compared with other internal treatments. We would like to know how well it performs when compared to other well-established machine translation systems.       
+However, there are loose ends that need to be tied up. First, the effectiveness of the Parallel-Partial treatment is demonstrated when compared with other internal treatments. We would like to know how well it performs when compared to other well-established Machine Translation systems.       
 Additionally, there are some potential confounding factors that may jeopardize the validity of the experiment results. 
 
 To tie up these loose ends, this chapter reports additional experiments and results.
 
 \section{Comparison with Google Translation}
-The Parallel-Partial treatment yields superb systems compared to the baseline systems, but is it still good when we compare it to other well-established machine translation systems? 
+The Parallel-Partial treatment yields superb systems compared to the baseline systems, but is it still good when we compare it to other well-established Machine Translation systems? 
 To answer this question, I compare our systems with Google translation.
 Specifically, I used a free Google translation API \citep{google_api} to translate the Gaelic sentences in our test set. 
 Then I calculated the BLEU scores of Google's predicted outputs with the target sequences of our test set as the gold standard. In this manner, Google translation is just like an additional treatment in the comparison. The result is shown in the following table:
@@ -37,9 +37,9 @@ Recall what the training data for both treatments are:
 	\end{xlist}	
 \end{exe}    
 
-Specifically, because the Parallel-Partial treatment learns the mappings in (\ref{over1}) and (\ref{over2}), the English sentences are oversampled. Oversampling of the target sequences has a positive effect, because the decoding process of the neural net machine translation system uses the language model information of the target language. Now given that in the ParaPart treatment the quantity of English sentences (i.e. the target language) is doubled, the effectiveness of the ParaPart treatment may be just a result of this oversampling.   
+Specifically, because the Parallel-Partial treatment learns the mappings in (\ref{over1}) and (\ref{over2}), the English sentences are oversampled. Oversampling of the target sequences has a positive effect, because the decoding process of the Neural Machine Translation system uses the language model information of the target language. Now given that in the ParaPart treatment the quantity of English sentences (i.e. the target language) is doubled, the effectiveness of the ParaPart treatment may be just a result of this oversampling.   
 
-To exclude this confound, I oversampled the mappings in the baseline systems by repeating the mappings, so that we can have a fair comparison. Specifically, I doubled, tripled, and quadrupled the training data of the baseline treatment. The following table shows results of the oversampled baseline systems. 
+To exclude this confounding factor, I oversampled the mappings in the baseline systems by repeating the mappings, so that we can have a fair comparison. Specifically, I doubled, tripled, and quadrupled the training data of the baseline treatment. The following table shows results of the oversampled baseline systems. 
 
 \SweaveInput{over_table.Rnw}
 
@@ -53,7 +53,7 @@ Another possible confounding factor is that maybe the set of the arbitrarily cho
 In the table, we can see that the sizes of word embedding and mini-batches do have an effect on the performance of the trained system. However, the Parallel-Partial treatment still outperforms the baseline no matter what the hyper-parameters are. 
 
 \section{Interlinear Glossed Text Data In Other Languages: the Universality}
-Given the above results, it is properly defended that the gloss information of Scottish Gaelic can improve Scottish Gaelic to English neural machine translation systems. An interesting leak of the gloss-help-hypothesis is that maybe it only works on Gaelic. Maybe the Gaelic language just has some special property that makes the gloss information relevant. Now the question is:
+Given the above results, it is properly defended that the gloss information of Scottish Gaelic can improve Scottish Gaelic to English Neural Machine Translation systems. An interesting confounding factor of the gloss-help-hypothesis is that maybe it only works on Gaelic. Maybe the Gaelic language just has some special property that makes the gloss information relevant. Now the question is:
 
 \begin{exe}
 \ex Does the gloss-help-hypothesis hold universally across different languages?   
@@ -78,4 +78,4 @@ The result shows that incorporating gloss information works effectively across m
 \section{Conclusion}
 
 This chapter describes additional experiments and results to confirm the effectiveness of gloss information by excluding other potential confounding factors.
-Given all these results, we may conclude that the gloss information is an effective booster for neural net machine translation systems across different hyper-parameters and languages.       
+Given all these results, we may conclude that the gloss information is an effective booster for Neural Machine Translation systems across different hyper-parameters and languages.       

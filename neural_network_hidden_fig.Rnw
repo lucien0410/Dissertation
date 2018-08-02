@@ -1,4 +1,4 @@
-\begin{figure}[h!]
+\begin{figure}[h]
 \caption{A neural network with a hidden layer}
 \centering
 \begin{tikzpicture}[
@@ -42,6 +42,6 @@ net/.style={
 \draw[->] (mat-6-3) -- node[above] {Ouput} +(2cm,0);
 \end{tikzpicture}
 
-\rule{0in}{1.2em}$^\dag$\scriptsize For clarity, I don't show the bias nodes here.\\
+\rule{0in}{1.2em}$^\dag$\scriptsize For clarity, I do not show the bias nodes here.\\
 
 \end{figure}    

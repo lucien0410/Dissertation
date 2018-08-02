@@ -15,6 +15,6 @@ p_val=format(round(r$p.value, 3), nsmall = 3)
 xtab<-xtable(n, caption="BLEU scores of Model\\textsubscript{ParaPart} and Google Translation",  label="Table:google", align="llcccc")
 names(xtab)<-c('Round', 'Gaelic (Baseline)', 'Gloss', 'ParaPartial', 'Google' )
 hlines <- c(-1,0,10, nrow(xtab))
-print(xtab, include.rownames =FALSE, hline.after = hlines)
+print(xtab, include.rownames =FALSE, hline.after = hlines, table.placement="H")
 #print(xtab,include.rownames =FALSE, hline.after = hlines, rotate.colnames=TRUE)
 @

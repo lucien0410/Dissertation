@@ -20,6 +20,7 @@
 \usepackage{fixltx2e}
 \usepackage{rotating}
 \usepackage{Sweave}
+\usepackage[toc,page]{appendix}
 
 \newcommand*{\myfont}{\fontfamily{ccr}\selectfont}
 %the newcommand change the selected word into 'ccr' font
@@ -141,9 +142,14 @@
 \SweaveInput{Tying_loose_ends.Rnw}
 \SweaveInput{Conclusion_and_Future_Research.Rnw}
 
+
 \bibliographystyle{te}
 
 \bibliography{ref}
 
 %% ================================================================
+\begin{appendices}
+\chapter{Some Appendix}
+The contents...
+\end{appendices}
 \end{document}

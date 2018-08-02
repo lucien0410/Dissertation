@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Combining Gaelic Words with Glosses}\label{gd_plus_gl_to_en}
+\chapter{Combining Gaelic Words with Glosses}\label{chap:cake2}
 \section{Introduction}
-In the previous section, we attempt to build a system by using the \textit{gloss treatment} to outperform the baseline system. It turns that using gloss line solely is not effective enough to improve the system. However, this result does not falsify the gloss-helps hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
+In the previous chapter, we attempt to build a system by using the \textit{gloss treatment} to outperform the baseline system. It turns out that solely using gloss line is not effective enough to improve the system. However, this result does not falsify the gloss-help hypothesis; instead, it indicates that combination of the gloss line data and the Gaelic sentence data is necessary. In other words, the questions now are: 
 \begin{exe}
 	\ex 
 	\begin{xlist}
@@ -12,15 +12,31 @@ In the previous section, we attempt to build a system by using the \textit{gloss
 
 This section reports various ways of combining the gloss line data and the Gaelic sentence data, and the experiments and their results using these different treatments. Critically, a specific way of combining Gloss data and Gaelic date (termed as `\textit{Parallel-Partial}' treatment) boosts the performance significantly. The model trained with this specially arranged training data also significantly outperforms Google's Gaelic-to-English translation system.
 
-In this section, I will first describe the most effective treatment, termed as `\textit{Parallel-Partial}' treatment, and the results, and then I will report the experiments done with other relevant logical treatments (i.e. other ways of combining glossing data and Gaelic data). 
+In this section, I will first describe the most effective treatment, termed as `\textit{Parallel-Partial}' treatment, and the results. Next, I will report the experiments done with other relevant logical treatments (i.e. other ways of combining glossing data and Gaelic data). 
+
+\subsection{The Underlying Heuristics}\label{heuristics}
+At a high level, a Neural sequence to sequence Machine Learning algorithm is learning how to map a high-dimension space to another high-dimension space. In the settings of Machine Translation, each dot in the high-dimension space is a meaning representation. Linking one dot to another dot is converting one representation of meaning to another, yielding the effect of translation. Given this heuristics, we may just feed the machine with all the available meaning mappings. Given the assumption that the gloss lines are linguistically guided representations of meaning, they are suitable training data for building Machine Translation systems. Specially, with the gloss data, we let the machine to learn the following mappings:
+
+\begin{exe}
+	\ex Mappings Learned in the ParaPart treatment
+	\begin{xlist}
+		\ex Gaelic sentences $\rightarrow$ English sentences
+		\ex Gloss lines $\rightarrow$ English sentences
+		\ex Gloss lines $\rightarrow$ Gaelic sentences
+		\ex Gaelic words $\rightarrow$ Gloss items
+	\end{xlist}	
+\end{exe}    
 
 \section{The `Parallel-Partial' Treatment Outperforms Any Other Treatments and the Baseline Significantly}
 
+\subsection{Related work}
+The Parallel-Partial (ParaPart) treatment section may be viewed as a form of multi-task Sequence to Sequence Learning \citep{luong2015multi}. Specifically, the parallel part of the treatment is very similar to the data manipulation used in building multi-language translation systems \citep{google_zero_shot}.  
+
 \subsection{Data Preprocessing Using the Parallel-Partial Treatment}
 The Parallel-Partial treatment uses the training and validation data of the baseline system and that of the gloss treatment system.  
-The training and validation data of the baseline system are pairs of a Gaelic sentence and a English sentences (see (\ref{GDtoENTrain}) and (\ref{GDtoENVal}) ), 
-and the data of the gloss treatment are pairs of a gloss line and a English sentences (see (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}). 
-These two groups of data are combined in a parallel manner in the current treatment. Now the size of training set and validation set is doubled. In the baseline system and the gloss treatment system, we have 6,388 samples in the training set and 1,000 samples in the validation set. The current treatment has 12,776 samples in the training set and 2,000 samples in the validation set. This is the \textit{parallel} part of the treatment. 
+The training and validation data of the baseline system are pairs of a Gaelic sentence and a English sentence (see (\ref{GDtoENTrain}) and (\ref{GDtoENVal}) ), 
+and the data of the gloss treatment are pairs of a gloss line and a English sentence (see (\ref{GLOSStoENTrain}) and (\ref{GLOSStoENVal}). 
+These two groups of data are combined in a parallel manner in the current treatment. Now the sizes of training set and validation set are doubled. In the baseline system and the gloss treatment system, we have 6,388 samples in the training set and 1,000 samples in the validation set. The current treatment has 12,776 samples in the training set and 2,000 samples in the validation set. This is the \textit{parallel} part of the treatment. 
 
 Additionally, I utilize the alignment property between the Gaelic word and the gloss to further build pairs of a Gaelic word and a gloss. These pairs are also included into the training set and validation set of the current treatment. This is the \textit{partial} part of the treatment.   
 
@@ -31,19 +47,20 @@ For concreteness, consider the following interlinear glossed text:
     \glt    `His father is older than his mother.'  
 \end{exe}
 
-With the interlinear glossed text, the parallel treatment will generate two pairs of samples:
+With the interlinear glossed text, the parallel treatment will generate three pairs of samples:
 
 \begin{exe}
-	\ex
+	\ex\label{sample_para}
 	\begin{xlist}
 		\ex Gaelic to English: \\<``Tha a athair nas sine na a mh\`athair'', ``His father is older than his mother.''>
 		\ex Gloss to English: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``His father is older than his mother''>
+		\ex Gloss to Gaelic: \\<``be.pres 3sm.poss father comp old.cmpr comp 3sm.poss mother'', ``Tha a athair nas sine na a mh\`athair''>
 	\end{xlist}
 \end{exe}
 
 The partial treatment then generates pairs of a Gaelic word and a gloss token: 
 \begin{exe}
-	\ex
+	\ex\label{sample_partial}
 	\begin{xlist}
 		\ex <``Tha'', ``be.pres''>
 		\ex <``a'', ``3sm.poss''>
@@ -56,14 +73,16 @@ The partial treatment then generates pairs of a Gaelic word and a gloss token:
 	\end{xlist}
 \end{exe}
 
+The samples in (\ref{sample_para}) and (\ref{sample_partial}) are the training data for this Parallel-Partial treatment. 
+
 \subsection{Results of the Parallel-Partial Treatment}
 
-With the training and validation data ready, now we can train models and evaluate them. Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. The only difference is the training and validation data. As shown in the following table, the Parallel-Partial treatment has a tremendous effect in improving the baseline system.        
+Critically, the same technical settings and the same test sets in the previous experiments are used, and the same procedures are executed. The same split of the original IGTs is used, so as long as it is the same round, the training, validation and test are the same set of IGTs. The only difference is that now the training and validation IGT data are treated with the Parallel-Partial treatment. The results in table \ref{Table:ParaPart} show that the Parallel-Partial treatment has a tremendous effect in improving the baseline system. 
 
 % !Rnw root = cake_chapter.Rnw
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Thu Apr  5 16:52:03 2018
-\begin{table}[ht]
+% Wed Aug  1 21:03:47 2018
+\begin{table}[H]
 \centering
 \begin{tabular}{lcc}
   \hline
@@ -86,19 +105,26 @@ Mean & 16.59 & 32.10 \\
 \caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ParaParttoEn}} 
 \label{Table:ParaPart}
 \end{table}
-The first and the second columns are BLUE scores of the baseline systems and the systems with the Parallel-Partial treatment respectively. The latter is significantly better than the former
+The first and the second columns are BLEU scores of the baseline systems and the systems with the Parallel-Partial treatment respectively. The latter is significantly better than the former
 (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=48.95, p<0.01).
-The comparison of the average BLUE scores of the groups of systems shows that the Parallel-Partial treatment improves the performance of the baseline system for 93 percent.
+The comparison of the average BLEU scores of the groups of systems shows that the Parallel-Partial treatment improves the performance of the baseline system by 93 percent.
 %(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33,; t(9)=48.95, p<0.010.000).
+\subsubsection{Discussion}
+With the ParaPart treatment, the baseline systems are improved by more than 93 percent. This result suggests the validity of our heuristics in section \ref{heuristics} that gloss lines can be viewed as an artifical language, and provides strong evidence for the gloss-help hypothesis in (\ref{gloss_helps_hypothesis}).     
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Other Possible Treatments}
-This section reports other possible ways of blending the Gaelic sentences and gloss lines. However, all of these treatments are not as effective as the Parallel-Partial treatment. Again, the same procedure and the same test datasets are used across all the experiments.    
+This section reports other possible ways of blending the Gaelic sentences and gloss lines\footnote{There must be other possible and logical ways to blend in gloss that are beyond my imagination. It seems me to that by simply attempting to incorporate gloss information we open many other doors to the possible ways of improving Machine Translation systems. This is another merit of combining theoretical linguists to natural language processing.}.
+However, all of these treatments are not as effective as the Parallel-Partial treatment. Again, the same procedure and the same test datasets are used across all the experiments. 
+
 
 \subsection{The Parallel Treatment}\label{treatment:Para}
 \subsubsection{Method of the Parallel Treatment}
-The Parallel treatment is using the parallel part of the Parallel-Partial treatment. With this treatment, a chunk of interlinear glossed text is split into two pairs. For example, the chunk of interlinear glossed text in (\ref{igt}) becomes two samples in (\ref{sample_pair}): 
+The Parallel treatment is using the parallel part of the Parallel-Partial treatment without exploiting the alignment properties of gloss lines.
+It is expected that this treatment will improve the baseline systems, but will not be as effective as the Parallel-Partial treatment.
+
+With this treatment, a chunk of interlinear glossed text is split into two pairs. For example, the chunk of interlinear glossed text in (\ref{igt}) becomes two samples in (\ref{sample_pair}): 
 \begin{exe} 
 \ex \label{igt}
 	\gll    Tha a athair nas sine na a mh\`athair.\\  
@@ -116,65 +142,23 @@ The Parallel treatment is using the parallel part of the Parallel-Partial treatm
 \end{exe}
 
 \subsubsection{Results of the Parallel Treatment}\label{treatment:Para_result}
-% !Rnw root = cake_chapter.Rnw
-% latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Thu Apr  5 16:52:04 2018
-\begin{table}[ht]
-\centering
-\begin{tabular}{lcc}
-  \hline
-Round & Gaelic (Baseline) & Para \\ 
-  \hline
-0 & 17.29 & 25.42 \\ 
-  1 & 16.42 & 25.32 \\ 
-  2 & 15.29 & 20.72 \\ 
-  3 & 15.97 & 22.22 \\ 
-  4 & 17.79 & 24.27 \\ 
-  5 & 16.73 & 24.55 \\ 
-  6 & 17.11 & 27.03 \\ 
-  7 & 16.37 & 25.34 \\ 
-  8 & 15.93 & 24.24 \\ 
-  9 & 16.99 & 25.96 \\ 
-   \hline
-Mean & 16.59 & 24.51 \\ 
-   \hline
-\end{tabular}
-\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ParatoEn}} 
-\label{Table:Para}
-\end{table}The table in (\ref{Table:Para}) compares the performances of this treatment and the baseline. Critically, the Parallel treatment is effective in improving the baseline systems (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{Para}=24.51, SD\textsubscript{Para}=1.84; t(9)=17.50, p < 0.01). 
-% !Rnw root = cake_chapter.Rnw
+The experiments gave us the expected results. 
+%\SweaveInput{Para_table.Rnw}
+The table in (\ref{Table:Para}) compares the performances of this treatment and the baseline. Critically, the Parallel treatment is effective in improving the baseline systems (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{Para}=32.10, SD\textsubscript{Para}=1.33; t(9)=48.95, p < 0.01). 
+%\SweaveInput{GDParaParaPart_null_table.Rnw}
 %GDParaParaPart1_table.Rnw does NOT print out anything but just load the sexpr variables 
 However, the best treatment (i.e. the Parallel-Partial treatment) is still far better than this Parallel treatment 
-(M\textsubscript{Para}=24.51, SD\textsubscript{Para}=1.84; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=18.73, p < 0.01 ).
-% !Rnw root = cake_chapter.Rnw
-% latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Thu Apr  5 16:52:04 2018
-\begin{table}[ht]
-\centering
-\begin{tabular}{lccc}
-  \hline
-Round & Gaelic (Baseline) & Para & ParaPart \\ 
-  \hline
-0 & 17.29 & 25.42 & 32.64 \\ 
-  1 & 16.42 & 25.32 & 32.28 \\ 
-  2 & 15.29 & 20.72 & 29.94 \\ 
-  3 & 15.97 & 22.22 & 31.18 \\ 
-  4 & 17.79 & 24.27 & 32.83 \\ 
-  5 & 16.73 & 24.55 & 31.11 \\ 
-  6 & 17.11 & 27.03 & 32.19 \\ 
-  7 & 16.37 & 25.34 & 33.52 \\ 
-  8 & 15.93 & 24.24 & 30.93 \\ 
-  9 & 16.99 & 25.96 & 34.35 \\ 
-   \hline
-Mean & 16.59 & 24.51 & 32.10 \\ 
-   \hline
-\end{tabular}
-\caption{BLEU scores of Model\textsubscript{GDtoEN}, Model\textsubscript{ParatoEN} and Model\textsubscript{ParaParttoEN} } 
-\label{Table:Concating}
-\end{table}
+(M\textsubscript{Para}=16.59, SD\textsubscript{Para}=0.74; M\textsubscript{ParaPart}=32.10, SD\textsubscript{ParaPart}=1.33; t(9)=48.95, p < 0.01 ).
+%\SweaveInput{GDParaParaPart_table.Rnw}
+
+Critically, the comparison between the Parallel-Partial treatment and current Parallel-Only treatment shows the effectiveness of the word-gloss alignments. Our conjecture on the effectiveness is that with the pairs of a gloss item and a Gaelic word present in the training data, the burden of the attention algorithm \citep{bahdanau2014neural} is largely alleviated. In other words, instead of asking the attention algorithm to estimate what to attend to, we explicitly teach the machine the alignment between the Gaelic word and the corresponding gloss. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Interleaving Gaelic Words and Gloss Items And Concating them}\label{treatment:InterleavingAndConCat}
 \subsubsection{Method of the Interleaving Treatment}
-Instead of putting the pairs of a Gaelic sentence and a English sentences and the pairs of a gloss line and a English sentence in a parallel manner, we may just literally blend a Gaelic sentence and a gloss line by interleaving them. Consider the following example:
+
+Instead of putting the pairs of a Gaelic sentence and a English sentence and the pairs of a gloss line and a English sentence in a parallel manner,
+we may just literally blend a Gaelic sentence and a gloss line by interleaving them\footnote{\citet{ccg_target_seq} incorporate the Categorial grammar parse tags into natural sentences by interleaving the tags and the words.}. Consider the following example:
 
 \begin{exe} 
 \ex 
@@ -188,39 +172,20 @@ Instead of putting the pairs of a Gaelic sentence and a English sentences and th
     \end{xlist}
 \end{exe}
 
-Given the chuck of interlinear glossed text data in (\ref{ex_interleave:in}), the Interleaving treatment generates the sample in (\ref{ex_interleave:out}).  
+Given the chunk of interlinear glossed text data in (\ref{ex_interleave:in}), the Interleaving treatment generates the sample in (\ref{ex_interleave:out}).  
+
+This way of blending gloss lines and Gaelic sentences may add useful information into the training data; 
+however, the downside of this method is to increase the length of the source sequence. In neural net machine learning, the longer the sequences are, the harder it is to preserve all the information (i.e. it is harder for the attention mechanism to pay attention to the right tokens). So, this treatment may not be effective. 
+
+
 The results are given in the following table. 
-% !Rnw root = cake_chapter.Rnw
-% latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Thu Apr  5 16:52:04 2018
-\begin{table}[ht]
-\centering
-\begin{tabular}{lcc}
-  \hline
-Round & Gaelic (Baseline) & interleavingGdGLOSS \\ 
-  \hline
-0 & 17.29 & 13.67 \\ 
-  1 & 16.42 & 12.49 \\ 
-  2 & 15.29 & 11.01 \\ 
-  3 & 15.97 & 12.33 \\ 
-  4 & 17.79 & 12.56 \\ 
-  5 & 16.73 & 12.13 \\ 
-  6 & 17.11 & 11.55 \\ 
-  7 & 16.37 & 12.78 \\ 
-  8 & 15.93 & 12.43 \\ 
-  9 & 16.99 & 11.65 \\ 
-   \hline
-Mean & 16.59 & 12.26 \\ 
-   \hline
-\end{tabular}
-\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{interleavingGdGLOSStoEn}} 
-\label{Table:interleavingGdGLOSS}
-\end{table}\newline
+%\SweaveInput{interleavingGdGLOSS_table.Rnw}
+\newline
 It turns out this treatment has a significant negative effect
-(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{interleavingGdGLOSS}=12.26, SD\textsubscript{interleavingGdGLOSS}=0.74,; t(9)=-17.06, p=0.000). This is not the right way of incorporating gloss line data. 
+(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{interleavingGdGLOSS}=32.10, SD\textsubscript{interleavingGdGLOSS}=1.33,; t(9)=48.95, p=0.000). This is not the right way of incorporating gloss line data. 
 
-
-\subsubsection{Method of Concating Gaelic Words and Gloss Words }\label{treatment:Concating}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Method of Concatenating Gaelic Words and Gloss Words }\label{treatment:Concating}
 A quick and close amendment of the Interleaving approach is to concatenate the aligned Gaelic word and gloss item as a single token. Given the same chunk of interlinear glossed text data, this treatment generates the following sample:
 
 \begin{exe} 
@@ -235,40 +200,18 @@ A quick and close amendment of the Interleaving approach is to concatenate the a
     \end{xlist}
 \end{exe}
 
+Concatenating words and glosses does solve the long sequence problem; however, it causes the sparse data problem. In this arrangement, the number of the types of tokens is increased; the number of tokens of each type is decreased. Thus, all the samples are put in a larger space. So, the treatment may not be effective either. 
+
 \subsubsection{Results of Concating Gaelic Words and Gloss Words}
 The performances of this treatment is given in the following table.
-% !Rnw root = cake_chapter.Rnw
-% latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Thu Apr  5 16:52:04 2018
-\begin{table}[ht]
-\centering
-\begin{tabular}{lcc}
-  \hline
-Round & Gaelic (Baseline) & ConcatGLOSSGaelic \\ 
-  \hline
-0 & 17.29 & 15.42 \\ 
-  1 & 16.42 & 14.31 \\ 
-  2 & 15.29 & 15.38 \\ 
-  3 & 15.97 & 14.18 \\ 
-  4 & 17.79 & 18.63 \\ 
-  5 & 16.73 & 14.89 \\ 
-  6 & 17.11 & 15.16 \\ 
-  7 & 16.37 & 15.20 \\ 
-  8 & 15.93 & 15.50 \\ 
-  9 & 16.99 & 15.72 \\ 
-   \hline
-Mean & 16.59 & 15.44 \\ 
-   \hline
-\end{tabular}
-\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{ConcatGLOSSGaelictoEn} } 
-\label{Table:Concating}
-\end{table}\newline
-The result shows that this treatment hurts the baseline systems badly instead of improving them (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ConcatGLOSSGaelic}=15.44, SD\textsubscript{ConcatGLOSSGaelic}=1.23,; t(9)=-3.64, p=0.010).
+%\SweaveInput{concat_table.Rnw}
+\newline
+The result shows that this treatment hurts the baseline systems instead of improving them (M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ConcatGLOSSGaelic}=32.10, SD\textsubscript{ConcatGLOSSGaelic}=1.33,; t(9)=48.95, p=0.000).
 
-%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hybrid: Gaelic or Gloss}
 \subsubsection{Method of Hybrid}
-The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic word may maps to multiple gloss, and a glosses may maps to multiple Gaelic words. Let's assume a toy chunk of interlinear glossed text data (a one-word sentence): 
+The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic word may map to multiple glosses, and a glosses may map to multiple Gaelic words. Let's assume a toy example of a chunk of interlinear glossed text data (a one-word sentence): 
 
 \begin{exe} 
 \ex 
@@ -277,106 +220,72 @@ The Hybrid treatment aims to reduce the potential lexical ambiguity. A Gaelic wo
     \glt    English translation  
 \end{exe} 
 
-Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. The criterion is which one, the Gaelic word or the gloss item, is less ambiguous. The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic word, then <Gloss\_item, English translation> is chosen; other the other hand if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. However, when the situation is tight (i.e. both the Gaelic word and gloss item are equally ambiguous), a default setting is needed to be chosen. The choices of the default setting split this single treatment into two treatments: default as Gaelic or default as gloss.
+Now we aim to build a single sample that is either <Gaelic\_word, English translation > or <Gloss\_item, English translation >. To decide, we need to know which one, the Gaelic word or the gloss item, is less ambiguous. 
+The less ambiguous one is the winner. For example, if the Gaelic word is potentially mapped to 10 glosses and if the gloss item is potentially mapped 2 Gaelic words, then <Gloss\_item, English translation> is chosen; on the other hand, if the ambiguity situation is reverted, then <Gaelic\_word, English translation > is chosen. 
+However, when the situation is tight (i.e. both the Gaelic word and gloss item are equally ambiguous), a default setting needs to be chosen. The choices of the default setting split this single treatment into two treatments: default as Gaelic or default as gloss.
+
+The following is an example of the hybrid treatment:
+
+\begin{exe}
+\ex
+	\gll tha nathairichean a'chuir an t-eagal orm\\
+		 be.pres snake.vn put det fear on.1s\\
+	\glt `Snakes frighten me' 
+\end{exe} 
+
+The length of the Gaelic sentence and the gloss line in the above IGT is 6. This means 6 ambiguity comparisons need to be made to decide which one, Gaelic word or gloss, should take the position. The final production of this hybrid treatment on the above IGT is shown as follows:
+
+\begin{exe}
+\ex <``be.pres nathairichean a'chuir det t-eagal on.1s'' ,``Snakes frighten me'' >
+\end{exe} 
+
+This treatment has the same potential downside as the concatenating treatment: sparsity. In this treatment, the size of the lexicon is the size of the lexicon of Gaelic word plus that of gloss, but what are really visible to the neural net is only about half size of the whole potential lexicon, because for each position it is either a Gaelic word or a gloss.
+
 \subsubsection{Result of Hybrid}    
-% !Rnw root = cake_chapter.Rnw
-% latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Thu Apr  5 16:52:04 2018
-\begin{table}[ht]
-\centering
-\begin{tabular}{lcc}
-  \hline
-Round & Gaelic (Baseline) & HybridDefaultAsGaelic \\ 
-  \hline
-0 & 17.29 & 9.44 \\ 
-  1 & 16.42 & 9.07 \\ 
-  2 & 15.29 & 7.69 \\ 
-  3 & 15.97 & 9.12 \\ 
-  4 & 17.79 & 9.08 \\ 
-  5 & 16.73 & 10.45 \\ 
-  6 & 17.11 & 8.62 \\ 
-  7 & 16.37 & 10.00 \\ 
-  8 & 15.93 & 10.52 \\ 
-  9 & 16.99 & 8.46 \\ 
-   \hline
-Mean & 16.59 & 9.24 \\ 
-   \hline
-\end{tabular}
-\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{HybridDefaultAsGaelictoEn}} 
-\label{Table:HybridDefaultAsGaelic}
-\end{table}When the default setting is the Gaelic word, the performances are significantly worse than than the baseline systems, as shown in table (\ref{Table:HybridDefaultAsGaelic}).  
-(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=9.24, SD\textsubscript{ReplacingGaelic}=0.89,; t(9)=-21.03, p < 0.01).
+%\SweaveInput{ReplacingGaelic_table.Rnw}
+When the default setting is the Gaelic word, the performances are significantly worse than the baseline systems
+(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=32.10, SD\textsubscript{ReplacingGaelic}=1.33,; t(9)=48.95, p < 0.01), 
+as shown in table (\ref{Table:HybridDefaultAsGaelic}).
 
+%\SweaveInput{ReplacingGLOSS_table.Rnw}
+When the default setting is the Gaelic word, the performances are sightly worse than than the baseline systems 
+(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=32.10, SD\textsubscript{ReplacingGaelic}=1.33,; t(9)=48.95, p < 0.01 ), as shown in table (\ref{Table:HybridDefaultAsGLOSS}).
 
-
-% !Rnw root = cake_chapter.Rnw
-% latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Thu Apr  5 16:52:04 2018
-\begin{table}[ht]
-\centering
-\begin{tabular}{lcc}
-  \hline
-Round & Gaelic (Baseline) & HybridDefaultAsGLOSS \\ 
-  \hline
-0 & 17.29 & 15.95 \\ 
-  1 & 16.42 & 15.60 \\ 
-  2 & 15.29 & 14.15 \\ 
-  3 & 15.97 & 14.72 \\ 
-  4 & 17.79 & 15.74 \\ 
-  5 & 16.73 & 14.88 \\ 
-  6 & 17.11 & 14.45 \\ 
-  7 & 16.37 & 16.41 \\ 
-  8 & 15.93 & 15.15 \\ 
-  9 & 16.99 & 17.61 \\ 
-   \hline
-Mean & 16.59 & 15.47 \\ 
-   \hline
-\end{tabular}
-\caption{BLEU scores of Model\textsubscript{GDtoEN} and Model\textsubscript{HybridDefaultAsGLOSS}} 
-\label{Table:HybridDefaultAsGLOSS}
-\end{table}When the default setting is the Gaelic word, the performances are sightly worse than than the baseline systems, as shown in table (\ref{Table:HybridDefaultAsGLOSS}).
-(M\textsubscript{GDToEn}=16.59, SD\textsubscript{GDToEn}=0.74; M\textsubscript{ReplacingGaelic}=15.47, SD\textsubscript{ReplacingGaelic}=1.03,; t(9)=-3.67, p < 0.01 ).
-
+The results show that this hybrid treatment indeed suffers from the sparsity problem. 
 
 \section{Summary and Conclusion}
-The chapter reports machine translation experiments that aims to find how the gloss line information can improve the performance of the baseline Gaelic-to-English translation systems. It is found that the Parallel-Partial is highly effective. The complete BLEU scores of various treatments are given in the following table.
+Chapter \ref{chap:gloss} argues that the gloss representation is a golden representation of meanings, and thus theoretically with the gloss information incorporated, the performance of Machine Translation systems should improve. The experiments reported in this chapter reveal an effective way of combining gloss data and Gaelic sentences. It is found that the Parallel-Partial is highly effective, and the Gloss-help hypothesis is empirically supported by the results. 
+The complete BLEU scores of various treatments are given in the following table.
 
 %\begin{adjustbox}{angle=90} 
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
-% Thu Apr  5 16:52:04 2018
+% Wed Aug  1 21:03:47 2018
 \begin{table}[ht]
 \centering
-\begin{tabular}{lrrrrrrrr}
+\begin{tabular}{lrrrrrrrrr}
   \hline
-\begin{sideways} Round \end{sideways} & \begin{sideways} Baseline \end{sideways} & \begin{sideways} GLOSS \end{sideways} & \begin{sideways} ParaPart \end{sideways} & \begin{sideways} Para \end{sideways} & \begin{sideways} Interleaving \end{sideways} & \begin{sideways} Concat \end{sideways} & \begin{sideways} HybrGaelic \end{sideways} & \begin{sideways} HybrGLOSS \end{sideways} \\ 
+\begin{sideways} Round \end{sideways} & \begin{sideways} Baseline \end{sideways} & \begin{sideways} GLOSS \end{sideways} & \begin{sideways} google \end{sideways} & \begin{sideways} ParaPart \end{sideways} & \begin{sideways} Para \end{sideways} & \begin{sideways} Interleaving \end{sideways} & \begin{sideways} Concat \end{sideways} & \begin{sideways} HybrGaelic \end{sideways} & \begin{sideways} HybrGLOSS \end{sideways} \\ 
   \hline
-0 & 17.29 & 18.39 & 32.64 & 25.42 & 13.67 & 15.42 & 9.44 & 15.95 \\ 
-  1 & 16.42 & 18.00 & 32.28 & 25.32 & 12.49 & 14.31 & 9.07 & 15.60 \\ 
-  2 & 15.29 & 16.02 & 29.94 & 20.72 & 11.01 & 15.38 & 7.69 & 14.15 \\ 
-  3 & 15.97 & 20.22 & 31.18 & 22.22 & 12.33 & 14.18 & 9.12 & 14.72 \\ 
-  4 & 17.79 & 19.02 & 32.83 & 24.27 & 12.56 & 18.63 & 9.08 & 15.74 \\ 
-  5 & 16.73 & 15.53 & 31.11 & 24.55 & 12.13 & 14.89 & 10.45 & 14.88 \\ 
-  6 & 17.11 & 18.00 & 32.19 & 27.03 & 11.55 & 15.16 & 8.62 & 14.45 \\ 
-  7 & 16.37 & 20.08 & 33.52 & 25.34 & 12.78 & 15.20 & 10.00 & 16.41 \\ 
-  8 & 15.93 & 15.82 & 30.93 & 24.24 & 12.43 & 15.50 & 10.52 & 15.15 \\ 
-  9 & 16.99 & 15.93 & 34.35 & 25.96 & 11.65 & 15.72 & 8.46 & 17.61 \\ 
+0 & 17.29 & 18.39 & 22.09 & 32.64 & 30.40 & 13.67 & 15.42 & 9.44 & 15.95 \\ 
+  1 & 16.42 & 18.00 & 25.38 & 32.28 & 30.07 & 12.49 & 14.31 & 9.07 & 15.60 \\ 
+  2 & 15.29 & 16.02 & 23.72 & 29.94 & 26.05 & 11.01 & 15.38 & 7.69 & 14.15 \\ 
+  3 & 15.97 & 20.22 & 23.21 & 31.18 & 29.67 & 12.33 & 14.18 & 9.12 & 14.72 \\ 
+  4 & 17.79 & 19.02 & 22.31 & 32.83 & 28.86 & 12.56 & 18.63 & 9.08 & 15.74 \\ 
+  5 & 16.73 & 15.53 & 23.41 & 31.11 & 29.46 & 12.13 & 14.89 & 10.45 & 14.88 \\ 
+  6 & 17.11 & 18.00 & 24.53 & 32.19 & 30.57 & 11.55 & 15.16 & 8.62 & 14.45 \\ 
+  7 & 16.37 & 20.08 & 22.78 & 33.52 & 30.45 & 12.78 & 15.20 & 10.00 & 16.41 \\ 
+  8 & 15.93 & 15.82 & 25.67 & 30.93 & 28.83 & 12.43 & 15.50 & 10.52 & 15.15 \\ 
+  9 & 16.99 & 15.93 & 23.42 & 34.35 & 31.28 & 11.65 & 15.72 & 8.46 & 17.61 \\ 
    \hline
-Mean & 16.59 & 17.70 & 32.10 & 24.51 & 12.26 & 15.44 & 9.24 & 15.47 \\ 
+Mean & 16.59 & 17.70 & 23.65 & 32.10 & 29.56 & 12.26 & 15.44 & 9.24 & 15.47 \\ 
    \hline
 \end{tabular}
-\caption{BLEU scores of the treatments} 
+\caption{BLEU scores of the all treatments} 
 \label{table:complete_table}
-\end{table}%\end{adjustbox}
+\end{table}
+The current experimental results confirm the hypothesis that gloss helps Machine Translation. However, there are some potential confounding factors. The next chapter discusses these confounding factors, and reports additional experiment results that rule out them.
 
-The aim of chapter is to report and document how the experiments are done and what the results are. This is merely reporting the linguist and non-linguistic facts. The implications and relevant works in the literature will be discussed in the next chapter.   
 
-
-(
-Hi Mike: 
-The current chapter reports the what are done and how (i.e. the fact);
-the next chapter I will discuss the why questions, and discuss similar works in the literature.  
-
-)
 % \subsection{literature}
 
 % what about \ref{Table:interleavingGdGLOSS} \ref{table:complete_table}
